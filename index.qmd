@@ -1,0 +1,14 @@
+---
+title: "STAT 250 Lab Primers"
+---
+
+This website provides lab primers to practice the code used in STAT 250: Applied Statistics for Science and Technology at California State University, Monterey Bay.  It uses the following packages:  
+
+1. `ggformula`  
+2. `mosaic`  
+3. `dplyr`  
+4. `readr`
+5. `stats`  
+
+
+
