@@ -66,7 +66,9 @@ One of the key parts of statistical analyses is good organization of your data i
 
 You should always work in a project in R to help organize all the files associated with that particular project.
 
-R expects data to be organized in a particular way to calculate and manipulate your raw data into statistics. Read [Data and Presentations (5 min)](https://dtkaplan.github.io/statPREP/Notes/Data_and_presentations.html){target="_blank"} and then complete the tutorial [Foundations: Data Tables (5 min)](https://dtkaplan.shinyapps.io/Data_tables/){target="_blank"} regarding how data tables need to be arranged for statistical analyses. (You may need to refresh each page after you advance to show all the data/images. The first page of the tutorial is referring to data you saw in your reading.)
+R expects data to be organized in a particular way to calculate and manipulate your raw data into statistics. Read [Data and Presentations (5 min)](https://dtkaplan.github.io/statPREP/Notes/Data_and_presentations.html){target="_blank"} regarding how data tables need to be arranged for statistical analyses (Tabular and Tidy). 
+
+
 
 ------------------------------------------------------------------------
 
@@ -77,7 +79,7 @@ R, at its most basic, can be thought of as the most powerful calculator you've e
 Let's take a closer look at R commands. Complete the following primer: [RStudio Primer: Programming Basics (25 min)](https://r-primers.andrewheiss.com/basics/02-programming-basics/){target="_blank"}. (One additional note: the chapter gives some indication of the rules around object names, but doesn't include one last rule: object names can't have spaces!
 
 
-### 3.1 Loading Packages
+### 3.1 Loading Packages{#loading-packages}
 
 R comes with what is called a "Base" **package**, which contains numerous functions. There are tens of thousands of additional packages that contain even more packages for everything from 3-D visualizations to machine learning algorithms.  To use functions from other packages you must first install the package
 
@@ -186,7 +188,7 @@ study2 <- mutate(study2, day = factor(day, levels = c("M", "T", "W", "R", "F", "
 ```
 
 ```{r}
-#| label: scatterplot
+#| label: barplot
 gf_col(hours ~ day, data = study2, 
        ylab = "Hours spent studying in week 1 and week 2", 
        xlab = "Day of the week")
@@ -215,6 +217,12 @@ To be able to work with the dataframe in R, we need to read the csv file into R,
 #| label: read_csv-only
 read_csv("study.csv")
 ```
+
+
+::: {.callout-warning collapse="true"}
+## Error: `could not find function "read_csv"`
+If you get the error `could not find function "read_csv"` be sure you ran the code in Section 3.1.
+:::
 
 That is okay, but that code alone means that R reads it and then immediately forgets it. If you tried this, your data wouldn't appear in your "Environment" pane. We need R to remember *and store* the information in its active memory.
 
