@@ -54,7 +54,7 @@ Recall your earlier reading "Why R?" to remember all the reasons we will be lear
 
 ## Part 1: R Orientation
 
-You have gotten a quick orientation to R in class. If you need a refresher, read, watch and follow along with [Chapter 3.4: RStudio Layout (12 min)](https://ismayc.github.io/rbasics-book/3-rstudiobasics.html#rstudio-layout) in your own RStudio window to understand the use of different panes. You only need to read the entirety (including subsections) of Chapter 3.4, not the entire chapter 3. Don't feel like you need to understand all of the coding at this point, just get a sense of what each pane does.
+You have gotten a quick orientation to R in class. If you need a refresher, read, watch and follow along with [Chapter 3.4: RStudio Layout (12 min)](https://ismayc.github.io/rbasics-book/3-rstudiobasics.html#rstudio-layout){target="_blank"} in your own RStudio window to understand the use of different panes. You only need to read the entirety (including subsections) of Chapter 3.4, not the entire chapter 3. Don't feel like you need to understand all of the coding at this point, just get a sense of what each pane does.
 
 Now that we have an overview of R, lets get started using R! Don't forget to start by first opening the lab project!
 
@@ -66,7 +66,7 @@ One of the key parts of statistical analyses is good organization of your data i
 
 You should always work in a project in R to help organize all the files associated with that particular project.
 
-R expects data to be organized in a particular way to calculate and manipulate your raw data into statistics. Read "[Data and Presentations (5 min)](https://dtkaplan.github.io/statPREP/Notes/Data_and_presentations.html)" and then complete the tutorial [Foundations: Data Tables (5 min)](https://dtkaplan.shinyapps.io/Data_tables/) regarding how data tables need to be arranged for statistical analyses. (You may need to refresh each page after you advance to show all the data/images. The first page of the tutorial is referring to data you saw in your reading.)
+R expects data to be organized in a particular way to calculate and manipulate your raw data into statistics. Read [Data and Presentations (5 min)](https://dtkaplan.github.io/statPREP/Notes/Data_and_presentations.html){target="_blank"} and then complete the tutorial [Foundations: Data Tables (5 min)](https://dtkaplan.shinyapps.io/Data_tables/){target="_blank"} regarding how data tables need to be arranged for statistical analyses. (You may need to refresh each page after you advance to show all the data/images. The first page of the tutorial is referring to data you saw in your reading.)
 
 ------------------------------------------------------------------------
 
@@ -74,7 +74,7 @@ R expects data to be organized in a particular way to calculate and manipulate y
 
 R, at its most basic, can be thought of as the most powerful calculator you've ever had. R isn't powerful just from its calculation ability, but its ability to utilize ***functions*** to apply complex mathematical operations to whole sets of data, which is what we're going to learn.
 
-Let's take a closer look at R commands. Complete the following primer: [RStudio Primer: Programming Basics (25 min)](https://r-primers.andrewheiss.com/basics/02-programming-basics/). (One additional note: the chapter gives some indication of the rules around object names, but doesn't include one last rule: object names can't have spaces!
+Let's take a closer look at R commands. Complete the following primer: [RStudio Primer: Programming Basics (25 min)](https://r-primers.andrewheiss.com/basics/02-programming-basics/){target="_blank"}. (One additional note: the chapter gives some indication of the rules around object names, but doesn't include one last rule: object names can't have spaces!
 
 
 ### 3.1 Loading Packages
@@ -87,7 +87,7 @@ R comes with what is called a "Base" **package**, which contains numerous functi
 install.packages(c("ggformula", "mosaic", "tidyverse"))
 ```
 
-**Installation only needs to happen once**.  If you are using the [CSUMB Cal ICOR Server](csumb.jupyter.cal-icor.org) then the above packages are already installed and do not need to be installed again.
+**Installation only needs to happen once**.  If you are using the [CSUMB Cal ICOR Server](https://csumb.jupyter.cal-icor.org){target="_blank"} then the above packages are already installed and do not need to be installed again.
 
 **Loading packages must happen each session**. We should always load our packages first thing. Go ahead and run the following code to load our needed packages.
 
@@ -298,7 +298,7 @@ A few other useful functions can help us understand the dataset we loaded into R
 
 ## Part 4: R Grammer & Errors
 
-One of the most frustrating parts for people learning R is troubleshooting errors. R is incredibly powerful, but it is *dumb*. It can't guess what you meant, nor add in a comma that you forgot to type. Read [Chapter 6: Deciphering Common R Errors (5 min)](https://ismayc.github.io/rbasics-book/6-errors.html) which covers the most common errors in R and how to decipher them. R errors aren't always clear to new users, but they almost always will direct you to where the problem occurs. Sometimes that is just telling you that it can't find the file or object you are trying to point it to. Other times, it will repeat your code right up to the point where it didn't understand. That helps focus your attention when searching for errors.
+One of the most frustrating parts for people learning R is troubleshooting errors. R is incredibly powerful, but it is *dumb*. It can't guess what you meant, nor add in a comma that you forgot to type. Read [Chapter 6: Deciphering Common R Errors (5 min)](https://ismayc.github.io/rbasics-book/6-errors.html){target="_blank"} which covers the most common errors in R and how to decipher them. R errors aren't always clear to new users, but they almost always will direct you to where the problem occurs. Sometimes that is just telling you that it can't find the file or object you are trying to point it to. Other times, it will repeat your code right up to the point where it didn't understand. That helps focus your attention when searching for errors.
 
 
 

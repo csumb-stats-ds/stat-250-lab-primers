@@ -294,7 +294,7 @@ Digital Accessibility
 </section>
 <section id="part-1-r-orientation" class="level2">
 <h2 class="anchored" data-anchor-id="part-1-r-orientation">Part 1: R Orientation</h2>
-<p>You have gotten a quick orientation to R in class. If you need a refresher, read, watch and follow along with <a href="https://ismayc.github.io/rbasics-book/3-rstudiobasics.html#rstudio-layout">Chapter 3.4: RStudio Layout (12 min)</a> in your own RStudio window to understand the use of different panes. You only need to read the entirety (including subsections) of Chapter 3.4, not the entire chapter 3. Don’t feel like you need to understand all of the coding at this point, just get a sense of what each pane does.</p>
+<p>You have gotten a quick orientation to R in class. If you need a refresher, read, watch and follow along with <a href="https://ismayc.github.io/rbasics-book/3-rstudiobasics.html#rstudio-layout" target="_blank">Chapter 3.4: RStudio Layout (12 min)</a> in your own RStudio window to understand the use of different panes. You only need to read the entirety (including subsections) of Chapter 3.4, not the entire chapter 3. Don’t feel like you need to understand all of the coding at this point, just get a sense of what each pane does.</p>
 <p>Now that we have an overview of R, lets get started using R! Don’t forget to start by first opening the lab project!</p>
 <hr>
 </section>
@@ -302,20 +302,20 @@ Digital Accessibility
 <h2 class="anchored" data-anchor-id="part-2-data-organization">Part 2: Data Organization</h2>
 <p>One of the key parts of statistical analyses is good organization of your data itself and your files.</p>
 <p>You should always work in a project in R to help organize all the files associated with that particular project.</p>
-<p>R expects data to be organized in a particular way to calculate and manipulate your raw data into statistics. Read “<a href="https://dtkaplan.github.io/statPREP/Notes/Data_and_presentations.html">Data and Presentations (5 min)</a>” and then complete the tutorial <a href="https://dtkaplan.shinyapps.io/Data_tables/">Foundations: Data Tables (5 min)</a> regarding how data tables need to be arranged for statistical analyses. (You may need to refresh each page after you advance to show all the data/images. The first page of the tutorial is referring to data you saw in your reading.)</p>
+<p>R expects data to be organized in a particular way to calculate and manipulate your raw data into statistics. Read <a href="https://dtkaplan.github.io/statPREP/Notes/Data_and_presentations.html" target="_blank">Data and Presentations (5 min)</a> and then complete the tutorial <a href="https://dtkaplan.shinyapps.io/Data_tables/" target="_blank">Foundations: Data Tables (5 min)</a> regarding how data tables need to be arranged for statistical analyses. (You may need to refresh each page after you advance to show all the data/images. The first page of the tutorial is referring to data you saw in your reading.)</p>
 <hr>
 </section>
 <section id="part-3-r-coding" class="level2">
 <h2 class="anchored" data-anchor-id="part-3-r-coding">Part 3: R Coding</h2>
 <p>R, at its most basic, can be thought of as the most powerful calculator you’ve ever had. R isn’t powerful just from its calculation ability, but its ability to utilize <strong><em>functions</em></strong> to apply complex mathematical operations to whole sets of data, which is what we’re going to learn.</p>
-<p>Let’s take a closer look at R commands. Complete the following primer: <a href="https://r-primers.andrewheiss.com/basics/02-programming-basics/">RStudio Primer: Programming Basics (25 min)</a>. (One additional note: the chapter gives some indication of the rules around object names, but doesn’t include one last rule: object names can’t have spaces!</p>
+<p>Let’s take a closer look at R commands. Complete the following primer: <a href="https://r-primers.andrewheiss.com/basics/02-programming-basics/" target="_blank">RStudio Primer: Programming Basics (25 min)</a>. (One additional note: the chapter gives some indication of the rules around object names, but doesn’t include one last rule: object names can’t have spaces!</p>
 <section id="loading-packages" class="level3">
 <h3 class="anchored" data-anchor-id="loading-packages">3.1 Loading Packages</h3>
 <p>R comes with what is called a “Base” <strong>package</strong>, which contains numerous functions. There are tens of thousands of additional packages that contain even more packages for everything from 3-D visualizations to machine learning algorithms. To use functions from other packages you must first install the package</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"ggformula"</span>, <span class="st">"mosaic"</span>, <span class="st">"tidyverse"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Installation only needs to happen once</strong>. If you are using the <a href="csumb.jupyter.cal-icor.org">CSUMB Cal ICOR Server</a> then the above packages are already installed and do not need to be installed again.</p>
+<p><strong>Installation only needs to happen once</strong>. If you are using the <a href="https://csumb.jupyter.cal-icor.org" target="_blank">CSUMB Cal ICOR Server</a> then the above packages are already installed and do not need to be installed again.</p>
 <p><strong>Loading packages must happen each session</strong>. We should always load our packages first thing. Go ahead and run the following code to load our needed packages.</p>
 <div class="cell">
 <div>
@@ -576,7 +576,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </section>
 <section id="part-4-r-grammer-errors" class="level2">
 <h2 class="anchored" data-anchor-id="part-4-r-grammer-errors">Part 4: R Grammer &amp; Errors</h2>
-<p>One of the most frustrating parts for people learning R is troubleshooting errors. R is incredibly powerful, but it is <em>dumb</em>. It can’t guess what you meant, nor add in a comma that you forgot to type. Read <a href="https://ismayc.github.io/rbasics-book/6-errors.html">Chapter 6: Deciphering Common R Errors (5 min)</a> which covers the most common errors in R and how to decipher them. R errors aren’t always clear to new users, but they almost always will direct you to where the problem occurs. Sometimes that is just telling you that it can’t find the file or object you are trying to point it to. Other times, it will repeat your code right up to the point where it didn’t understand. That helps focus your attention when searching for errors.</p>
+<p>One of the most frustrating parts for people learning R is troubleshooting errors. R is incredibly powerful, but it is <em>dumb</em>. It can’t guess what you meant, nor add in a comma that you forgot to type. Read <a href="https://ismayc.github.io/rbasics-book/6-errors.html" target="_blank">Chapter 6: Deciphering Common R Errors (5 min)</a> which covers the most common errors in R and how to decipher them. R errors aren’t always clear to new users, but they almost always will direct you to where the problem occurs. Sometimes that is just telling you that it can’t find the file or object you are trying to point it to. Other times, it will repeat your code right up to the point where it didn’t understand. That helps focus your attention when searching for errors.</p>
 
 
 <script type="webr-data">

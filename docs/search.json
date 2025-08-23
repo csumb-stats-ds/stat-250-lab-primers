@@ -37,7 +37,7 @@
     "href": "lab-1-primer/lab-1-intro-r-primer.html#part-2-data-organization",
     "title": "Lab1: Introduction to R Primer",
     "section": "Part 2: Data Organization",
-    "text": "Part 2: Data Organization\nOne of the key parts of statistical analyses is good organization of your data itself and your files.\nYou should always work in a project in R to help organize all the files associated with that particular project.\nR expects data to be organized in a particular way to calculate and manipulate your raw data into statistics. Read “Data and Presentations (5 min)” and then complete the tutorial Foundations: Data Tables (5 min) regarding how data tables need to be arranged for statistical analyses. (You may need to refresh each page after you advance to show all the data/images. The first page of the tutorial is referring to data you saw in your reading.)",
+    "text": "Part 2: Data Organization\nOne of the key parts of statistical analyses is good organization of your data itself and your files.\nYou should always work in a project in R to help organize all the files associated with that particular project.\nR expects data to be organized in a particular way to calculate and manipulate your raw data into statistics. Read Data and Presentations (5 min) and then complete the tutorial Foundations: Data Tables (5 min) regarding how data tables need to be arranged for statistical analyses. (You may need to refresh each page after you advance to show all the data/images. The first page of the tutorial is referring to data you saw in your reading.)",
     "crumbs": [
       "Lab Primers",
       "Lab 1 Primer"
