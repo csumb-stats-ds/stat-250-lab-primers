@@ -6,8 +6,7 @@ This website provides lab primers to practice the code used in STAT 250: Applied
 
 1. `ggformula`  
 2. `mosaic`  
-3. `dplyr`  
-4. `readr`
+3. `tidyverse`  
 5. `stats`  
 
 
