@@ -91,8 +91,16 @@ install.packages(c("ggformula", "mosaic", "tidyverse"))
 
 **Loading packages must happen each session**. We should always load our packages first thing. Go ahead and run the following code to load our needed packages.
 
+```{r}
+#| label: setup-r
+#| include: false
+library(ggformula)  #graphics
+library(mosaic)   #summary statistics
+library(tidyverse) #data management
+```
+
 ```{webr}
-#| label: setup
+#| label: setup-webr
 library(ggformula)  #graphics
 library(mosaic)   #summary statistics
 library(tidyverse) #data management
@@ -107,7 +115,7 @@ To get R (or any software) to do anything, there are two important questions you
 
 The answers to those questions can help us fill in the boxes of our generic formula template:
 
-![Figure 1: Generic Goal Template](images/formula-goal.png){fig-align="center" fig-alt:"Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R. It states "goal(formula, data = mydata, ...)"}
+![Figure 1: Generic Goal Template](images/formula-goal.png){fig-align="center" fig-alt="Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R. It states goal(formula, data = mydata, ...)" height=100}
 
 
 **Q. What do you want R to do?**
@@ -133,23 +141,23 @@ Generally, functions are written as the name of the function followed by parenth
 
 Sometimes, functions need more than one argument. R functions require the first argument supplied to them to be something specific, but then arguments can be added as needed -- those additional arguments need to be *named* so that R knows exactly what you are trying to specify. Named arguments always have the form:
 
-![Figure 2: Generic Argument Syntax](images/options.png){fig-align="center" fig-alt:"Text that provides the template needed to add arguments to the functions used in the mosiac and ggformula packages in R. It states "option = value"}
+![Figure 2: Generic Argument Syntax](images/options.png){fig-align="center" fig-alt="Text that provides the template needed to add arguments to the functions used in the mosiac and ggformula packages in R. It states option = value" height=100}
 
 Those arguments are added as needed in place of the `...` in our template (Fig 3). We can include as many arguments as needed as long as we seperate each one with a comma.
 
-![Figure 3: Adding Argumetns into Functions Syntax](images/full-formula.png){fig-align="center" fig-alt:"Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R with additional arguments. It states "goal(formula, data = mydata, options = value, ...)"}
+![Figure 3: Adding Argumetns into Functions Syntax](images/full-formula.png){fig-align="center" fig-alt="Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R with additional arguments. It states goal(formula, data = mydata, options = value, ...)" height=200}
 
 #### Formula Template
 
 The `formula` argument in our template is where we define the variable of data to which we want to apply our goal. There are actually a few options for what that variable can look like, depending on the variables we wish to use. We use `y` to designate our y-axis variable, `x` to designate our x-axis variable (or in the second case, one single variable), and `z` to designate a conditioning variable that lets us create seperate panals when we group data. The `|z` can also be applied to the single variable `~x`.
 
-![Figure 1: Generic Goal Template](images/formula-goal.png){fig-align="center" fig-alt:"Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R. It states goal(formula, data = mydata, ...)}
+![Figure 1: Generic Goal Template](images/formula-goal.png){fig-align="center" fig-alt="Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R. It states goal(formula, data = mydata, ...)" height=100}
 
 #### Assembling the pieces
 
 Now we need to put together the pieces we've learned with our actual scenario. For example, we might keep a record of the number of hours spent studying on each day of the week during week 1 and during week 2 of the semester. We want to make a graphic of the hours spent studying on each day of the week. In this case, we have two variables: `hours` and `day`, so we'll use the template:
 
-![Figure 4: All Possible Generic Function Syntax](images/all-three-formulas.png){fig-align="center" fig-alt:"Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R. It states "goal(y ~ x, data = mydata, ...)", then "goal( ~ x, data = mydata, ...)", "goal(y ~ x | z, data = mydata, ...)"}
+![Figure 4: All Possible Generic Function Syntax](images/all-three-formulas.png){fig-align="center" fig-alt="Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R. It states goal(y ~ x, data = mydata, ...), then goal( ~ x, data = mydata, ...), goal(y ~ x | z, data = mydata, ...)" height=300}
 
 So let's identify the pieces.
 
@@ -174,7 +182,7 @@ study2 <- read_csv("study2.csv")
 #| label: factors-study2
 #| include: false
 
-study2 <- mutate(study, day = factor(day, levels = c("M", "T", "W", "R", "F", "Sa", "Su")))
+study2 <- mutate(study2, day = factor(day, levels = c("M", "T", "W", "R", "F", "Sa", "Su")))
 ```
 
 ```{r}
@@ -188,7 +196,7 @@ Learning any new software can feel daunting, but referring back to this template
 
 
 
-### 3.2: Vectors, Objects, & Dataframes
+### 3.3: Vectors, Objects, & Dataframes
 
 The real power of R comes not from calculating values like a calculator, but in manipulating sets of data. ***Vectors*** are sets of data that are organized together. Groups of vectors that are associated are ***dataframes***.
 
@@ -212,7 +220,7 @@ That is okay, but that code alone means that R reads it and then immediately for
 
 We can *store* information in R to use again later as an ***object***. An object is a name given to a set of information in R. It can hold dataframes, vectors, numbers, or outputs from commands. To **store** information, we have to use an ***assignment operator***, `<-`. Anything on the right of the assignment operator is stored as the name on the left of the assignment operators.
 
-![Figure 5: Generic Stored Object and Assignment Syntax*](images/object-assigned-data.png){fig-align="center" fig-alt:"Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R but assign them to an object name. It states "object <- goal(formula, data = mydata, ...)"}
+![Figure 5: Generic Stored Object and Assignment Syntax*](images/object-assigned-data.png){fig-align="center" fig-alt="Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R but assign them to an object name. It states object <- goal(formula, data = mydata, ...)" height=100}
 
 Names of objects in R can be *almost* anything, as long as it doesn't start with a number, doesn't contain a mathematical operator (\*, /, \^, etc.) and doesn't contain a space. It is also good practice not to name objects the same as function names.
 
@@ -223,7 +231,13 @@ Thus, my code now becomes
 study <- read_csv("study.csv")
 ```
 
-If you look at the *Environment* pane, a new object has appeared. We can look at all the data within these vectors again by typing the object name into the line of code without any other function. Doing so will print the dataframe to your screen as an output.
+If you were to look at the *Environment* pane, a new object would have appeared in RStudio. 
+
+![Figure 6: Environment Pane](images/environment-study.png){fig-align="center" fig-alt="The Environment Pane in RStudio which shows under Data, the object study which has 7 obs. of 3 variables."}
+
+
+
+We can look at all the data within these vectors again by typing the object name into the line of code without any other function. Doing so will print the dataframe to your screen as an output.
 
 ```{webr}
 #| label: print-study
@@ -255,13 +269,13 @@ mean(~ wk1, data = study)
 or the total number of hours studied across week 1:
 
 ```{webr}
-#| label: mean-study
+#| label: sum-study
 sum(~ wk1, data = study)
 ```
 
 
 
-Some functions don't accept the `data` argument. In those cases, we identify the dataframe and variable using the structure: DATAFRAME\$VARIABLE. We can then find the total number of rows in `study` using the function `length()`
+Some functions don't accept the `data` argument. In those cases, we identify the dataframe and variable using the structure: `DATAFRAME$VARIABLE`. We can then find the total number of rows in `study` using the function `length()`
 
 ```{webr}
 #| label: length-study-wk1
@@ -272,7 +286,9 @@ You will notice that `mean()` and `sum()` calculated a single value *across* the
 
 For example, if instead of the total number of hours studied *across* the week, we wanted to know the total number of hours studied *on each day of the week, between weeks*. We can't use `sum()` because it collapses the information of the days of the week. We can instead *add our vectors* together:
 
-```{r}
+```{webr}
+#| label: add-wk1-wk2
+
 study$wk1 + study$wk2
 ```
 
@@ -280,7 +296,7 @@ You will notice that the output of this is to return a vector. Each element of t
 
 A few other useful functions can help us understand the dataset we loaded into R. `ncol()` lets us determine the number of variables in the dataset. `nrow()` lets us determine the number of rows (sometimes the same as cases) in the dataset.
 
-## 3.5: R Grammer & Errors
+## Part 4: R Grammer & Errors
 
 One of the most frustrating parts for people learning R is troubleshooting errors. R is incredibly powerful, but it is *dumb*. It can't guess what you meant, nor add in a comma that you forgot to type. Read [Chapter 6: Deciphering Common R Errors (5 min)](https://ismayc.github.io/rbasics-book/6-errors.html) which covers the most common errors in R and how to decipher them. R errors aren't always clear to new users, but they almost always will direct you to where the problem occurs. Sometimes that is just telling you that it can't find the file or object you are trying to point it to. Other times, it will repeat your code right up to the point where it didn't understand. That helps focus your attention when searching for errors.
 

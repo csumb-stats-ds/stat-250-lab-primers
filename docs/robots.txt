@@ -1,0 +1,1 @@
+Sitemap: https://csumb-stat-ds.github.io/stat-250-lab-primers/sitemap.xml
