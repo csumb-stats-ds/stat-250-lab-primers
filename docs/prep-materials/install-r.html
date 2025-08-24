@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Quarto – STAT 250 Lab Primers</title>
+<title>Optional: Installing R and RStudio – STAT 250 Lab Primers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../prep-materials/install-r.html" rel="next">
-<link href="../prep-materials/rstudio-orientation.html" rel="prev">
+<link href="../lab-1-primer/lab-1-intro-r-primer.html" rel="next">
+<link href="../prep-materials/intro-to-quarto.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prep-materials/rstudio-orientation.html">Getting Started with R</a></li><li class="breadcrumb-item"><a href="../prep-materials/intro-to-quarto.html">Introduction to Quarto</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prep-materials/rstudio-orientation.html">Getting Started with R</a></li><li class="breadcrumb-item"><a href="../prep-materials/install-r.html">Optional: Install R and RStudio</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,13 +153,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../prep-materials/intro-to-quarto.html" class="sidebar-item-text sidebar-link active">
+  <a href="../prep-materials/intro-to-quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../prep-materials/install-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../prep-materials/install-r.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Optional: Install R and RStudio</span></a>
   </div>
 </li>
@@ -225,17 +225,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#principles-of-reproducibility" id="toc-principles-of-reproducibility" class="nav-link active" data-scroll-target="#principles-of-reproducibility">Principles of Reproducibility</a>
+  <li><a href="#step-1-installing-r" id="toc-step-1-installing-r" class="nav-link active" data-scroll-target="#step-1-installing-r">Step 1: Installing <code>R</code></a>
   <ul class="collapse">
-  <li><a href="#file-management" id="toc-file-management" class="nav-link" data-scroll-target="#file-management">File Management</a></li>
+  <li><a href="#updating-your-version-of-r" id="toc-updating-your-version-of-r" class="nav-link" data-scroll-target="#updating-your-version-of-r">Updating Your Version of R</a></li>
+  <li><a href="#installing-r" id="toc-installing-r" class="nav-link" data-scroll-target="#installing-r">Installing R</a>
+  <ul class="collapse">
+  <li><a href="#useful-video-installing-r-and-rstudio---windows" id="toc-useful-video-installing-r-and-rstudio---windows" class="nav-link" data-scroll-target="#useful-video-installing-r-and-rstudio---windows">📽️ Useful Video: Installing R and RStudio - Windows</a></li>
+  <li><a href="#useful-video-installing-r-and-rstudio---mac" id="toc-useful-video-installing-r-and-rstudio---mac" class="nav-link" data-scroll-target="#useful-video-installing-r-and-rstudio---mac">📽️ Useful Video: Installing R and RStudio - Mac</a></li>
+  <li><a href="#if-you-are-a-windows-user" id="toc-if-you-are-a-windows-user" class="nav-link" data-scroll-target="#if-you-are-a-windows-user">If you are a <em>Windows</em> user:</a></li>
+  <li><a href="#if-you-are-macos-user" id="toc-if-you-are-macos-user" class="nav-link" data-scroll-target="#if-you-are-macos-user">If you are <em>macOS</em> user:</a></li>
+  <li><a href="#if-you-are-a-linux-user" id="toc-if-you-are-a-linux-user" class="nav-link" data-scroll-target="#if-you-are-a-linux-user">If you are a <em>Linux</em> user:</a></li>
   </ul></li>
-  <li><a href="#reproducible-documents" id="toc-reproducible-documents" class="nav-link" data-scroll-target="#reproducible-documents">Reproducible Documents</a>
-  <ul class="collapse">
-  <li><a href="#introduction-to-quarto" id="toc-introduction-to-quarto" class="nav-link" data-scroll-target="#introduction-to-quarto">Introduction to Quarto</a>
-  <ul class="collapse">
-  <li><a href="#recommended-reading-intro-to-quarto" id="toc-recommended-reading-intro-to-quarto" class="nav-link" data-scroll-target="#recommended-reading-intro-to-quarto">📖 Recommended Reading: Intro to Quarto</a></li>
-  <li><a href="#html-documents" id="toc-html-documents" class="nav-link" data-scroll-target="#html-documents">HTML Documents</a></li>
   </ul></li>
+  <li><a href="#step-2-install-rstudio" id="toc-step-2-install-rstudio" class="nav-link" data-scroll-target="#step-2-install-rstudio">Step 2: Install RStudio</a>
+  <ul class="collapse">
+  <li><a href="#updating-your-version-of-rstudio" id="toc-updating-your-version-of-rstudio" class="nav-link" data-scroll-target="#updating-your-version-of-rstudio">Updating Your Version of RStudio</a></li>
+  <li><a href="#installing-rstudio" id="toc-installing-rstudio" class="nav-link" data-scroll-target="#installing-rstudio">Installing RStudio</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/csumb-stat-ds/stat-250-lab-primers/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -243,9 +248,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prep-materials/rstudio-orientation.html">Getting Started with R</a></li><li class="breadcrumb-item"><a href="../prep-materials/intro-to-quarto.html">Introduction to Quarto</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prep-materials/rstudio-orientation.html">Getting Started with R</a></li><li class="breadcrumb-item"><a href="../prep-materials/install-r.html">Optional: Install R and RStudio</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introduction to Quarto</h1>
+<h1 class="title">Optional: Installing R and RStudio</h1>
 </div>
 
 
@@ -262,41 +267,117 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The theme of this lesson is good management of your files and data. In part two of this week’s coursework you will learn how to identify <strong>folders</strong> and <strong>paths</strong>, and create <strong>Quarto documents</strong>.</p>
-<section id="principles-of-reproducibility" class="level1">
-<h1>Principles of Reproducibility</h1>
-<section id="file-management" class="level2">
-<h2 class="anchored" data-anchor-id="file-management">File Management</h2>
-<p>As boring as it sounds, file management is arguably one of the most important skills a data scientist should have. The reproducibility of a project depends just as much on the way in which the project was stored as the computing tools used. While using R and Quarto make an important step in creating a reproducible analysis, there are other pieces that are arguably just as important—such as file management.</p>
-<p>Believe it or not, your computer has <strong>multiple</strong> locations** where files can be stored. There has been a bit of a generational shift as computers have evolved: the “file system” metaphor itself is outdated because no one uses physical files anymore.</p>
-<p>[This article]((https://futurism.com/the-byte/gen-z-kids-file-systems) makes the argument that with modern search capabilities, most people use their computers as a laundry hamper instead of as a nice, organized filing cabinet. However, the laundry hamper approach doesn’t play nicely with working in R and creating Quarto documents.</p>
-<p>A good programmer will store files according to the <a href="https://www.projecttier.org/tier-protocol/protocol-4-0/">Project TIER protocol</a>. More specifically, you will have:</p>
+<p>For our class we do not need to install R and RStudio as we will be using the <a href="https://csumb.jupyter.cal-icor.org/">CSUMB Cal ICOR Hub R Server</a>.</p>
+<p>After you leave CSUMB, though, you will want to be able to access R and RStudio on your own computer. We are going to learn about / refresh our memory on R and RStudio to make sure you have a <strong>local</strong> installations of both R and RStudio on your computer.</p>
+<hr>
+<section id="step-1-installing-r" class="level1">
+<h1>Step 1: Installing <code>R</code></h1>
+<p>As mentioned above, you will need to have local installations of both R (the software) and RStudio (the interface for working in R). <strong>Do not skip this step if you already have both R and RStudio installed on your computer</strong>, as you need to ensure you are using the most up to date version of R and RStudio.</p>
+<section id="updating-your-version-of-r" class="level2">
+<h2 class="anchored" data-anchor-id="updating-your-version-of-r">Updating Your Version of R</h2>
+<p>If you already have <code>R</code> downloaded, you need to confirm that you have the most up to date version of <code>R</code>. <strong>Do not ignore these instructions.</strong> If you neglect to update your version of R, you may find that updating a package will make it so your code will not run.</p>
 <ul>
-<li>a “Stat 250” folder in your Documents folder, containing <strong>all</strong> your materials associated with STAT 250</li>
-<li>a sub-folder for each week (e.g., Week 1, Week 2)</li>
-<li>separate folders within each week for each assignment (e.g., Practice Activity, Lab)</li>
+<li>Step 1: Open RStudio</li>
+<li>Step 2: At the top of the the Console it will say what version of R you are using</li>
 </ul>
+<p><img src="images/week-1/r-version.png" class="img-fluid" alt="A screenshot of what version of R should appear when you open RStudio. The version reads 'R version 4.5.1 (2025-06-13) -- 'Great Square Root''."></p>
+<p>If the version <strong>is not</strong> 4.5.1 (like the image above), you need to update your version of R! The simplest way to do this is to follow the instructions below to install R.</p>
 </section>
+<section id="installing-r" class="level2">
+<h2 class="anchored" data-anchor-id="installing-r">Installing R</h2>
+<p>Download and install R by going to <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a>. Here, you will find three options for installing R—click on the option for your computer’s operating system.</p>
+<section id="useful-video-installing-r-and-rstudio---windows" class="level3">
+<h3 class="anchored" data-anchor-id="useful-video-installing-r-and-rstudio---windows">📽️ <a href="https://youtu.be/n8kP7c_QbLA?si=gUyTqtQDO4v6VlZE">Useful Video: Installing R and RStudio - Windows</a></h3>
 </section>
-<section id="reproducible-documents" class="level1">
-<h1>Reproducible Documents</h1>
-<p>Over the last ten years, science has experienced a “reproducibility” crisis. Meaning, a substantial portion of scientific findings were unable to be recreated because people didn’t sufficiently document the processes they used. As such, a foundational aspect of scientific research is using tools which allow others to reproduce your findings.</p>
-<p>Enter Quarto—a dynamic document that allows us to interweave R code and written text in the <strong>same</strong> document. Gone are the days of copying and pasting the results of your R code into a Word document—breaking the connection between your analysis and your report. Quarto is here to save the day!</p>
-<section id="introduction-to-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-quarto">Introduction to Quarto</h2>
-<section id="recommended-reading-intro-to-quarto" class="level3">
-<h3 class="anchored" data-anchor-id="recommended-reading-intro-to-quarto">📖 <a href="https://r4ds.hadley.nz/quarto.html">Recommended Reading: Intro to Quarto</a></h3>
+<section id="useful-video-installing-r-and-rstudio---mac" class="level3">
+<h3 class="anchored" data-anchor-id="useful-video-installing-r-and-rstudio---mac">📽️ <a href="http://youtu.be/tXZDoMlXfTE?hd=1">Useful Video: Installing R and RStudio - Mac</a></h3>
 </section>
-<section id="html-documents" class="level3">
-<h3 class="anchored" data-anchor-id="html-documents">HTML Documents</h3>
-<p>We will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:</p>
+<section id="if-you-are-a-windows-user" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-are-a-windows-user">If you are a <em>Windows</em> user:</h3>
 <ul>
-<li><p><a href="https://quarto.org/docs/output-formats/html-basics.html">a discussion of the basics of formatting HTML documents in Quarto</a></p></li>
-<li><p><a href="https://quarto.org/docs/reference/formats/html.html">the list of all HTML Formatting options for Quarto documents</a></p></li>
+<li><p>Click on “Download R for Windows”</p></li>
+<li><p>Click on “base”</p></li>
+<li><p>Click on the Download link.</p></li>
+<li><p>When you open the execution file (<code>.exe</code>) you will be prompted with a variety of questions about installing R. Feel free to use the default features / settings that come with R (continue to click “Ok” until the download starts).</p></li>
 </ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Multiple Versions of R
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Beware that if you had a previous version of R downloaded on your PC, that old version will not be deleted when you download the most recent version of R. We do not want to have two versions of R installed, as your computer can get confused what version of R to use. So, you need to remove the old version of R.</p>
+<p>To do this you need to:</p>
+<ul>
+<li>Navigate to your computer’s settings</li>
+<li>Click on the “Apps” option on the left-hand panel</li>
+<li>Search for or scroll down to R</li>
+<li>Find the older version of R</li>
+</ul>
+<p><img src="images/week-1/multiple-versions-of-r.png" class="img-fluid" alt="A screenshot of a PC with two different versions of R installed---version 4.3.1 and version 4.4.1."></p>
+<ul>
+<li>Click on the <code>...</code> on the right side</li>
+<li>Select “Uninstall”</li>
+</ul>
+<p><img src="images/week-1/uninstall-old-r-version.png" class="img-fluid" alt="A screenshot of selecting the (...) option to uninstall the older version of R."></p>
+</div>
+</div>
+</section>
+<section id="if-you-are-macos-user" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-are-macos-user">If you are <em>macOS</em> user:</h3>
+<ul>
+<li><p>Click on “Download R for (Mac) OS X”</p></li>
+<li><p>Under “Latest release:” click on R-X.X.X.pkg, where R-X.X.X is the version number. For example, the latest version of R as of October 31, 2024 was R-4.4.2 (Pile of Leaves).</p></li>
+<li><p>When installing, use the default features / settings that come with R (click Ok until the download starts).</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Troubleshooting for Macs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>First, identify which version of OSx you are running. <a href="https://support.apple.com/en-us/HT201260">How-to</a></p>
+<p>Next, find out which version of <code>R</code> your computer can run. <a href="https://cran.r-project.org/bin/macosx/">Link</a></p>
+<p>If this version is 3.6 or later, download the latest version that your computer can handle.</p>
+<p>If this version is 3.4 or earlier, you’re going to run in to some trouble. I recommend updating your version of OSx, if you are willing. If you can’t, then you can use <a href="https://posit.cloud/">Posit Cloud</a> to run <code>R</code> and RStudio on a free server. However, I recommend strongly against this option; your files will not be saved indefinitely, you will have limited hours to complete your work, your computing power will be limited, and you will need an internet connection at all times to do your work.</p>
+</div>
+</div>
+</section>
+<section id="if-you-are-a-linux-user" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-are-a-linux-user">If you are a <em>Linux</em> user:</h3>
+<p>Click on “Download R for Linux” and choose your distribution for more information on installing <code>R</code> for your setup.</p>
+</section>
+</section>
+</section>
+<section id="step-2-install-rstudio" class="level1">
+<h1>Step 2: Install RStudio</h1>
+<p>RStudio is an Integrated Development Environment (IDE) for <code>R</code>. What does that mean? Well, if you think of <code>R</code> as a language, which it is, you can think of RStudio as a program that helps you write and work in the language. Back in the dark ages, people wrote programs in text editors and then used the command line to compile those programs and run them. RStudio makes programming in <code>R</code> much easier and this course requires you to use it!</p>
+<section id="updating-your-version-of-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="updating-your-version-of-rstudio">Updating Your Version of RStudio</h2>
+<p>If you already have RStudio, you need to double check if you have the most recent version. You <strong>will not</strong> have access to the newest features for Quarto documents unless you have the most recent version of RStudio.</p>
+<ul>
+<li>Step 1: Open RStudio</li>
+<li>Step 2: Click on “Help” in the upper menu</li>
+<li>Step 3: Click on “Check for Updates”</li>
+</ul>
+<p>If there are no updates to RStudio since you installed it, you are good to go! If you need to update RStudio, you will be sent to Posit (the parent company) to download the most recent version of RStudio desktop.</p>
+</section>
+<section id="installing-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="installing-rstudio">Installing RStudio</h2>
+<p>Downloading the most recent version of RStudio works the same way regardless of whether you’ve never downloaded RStudio before or if you just need to update your version of RStudio.</p>
+<p>When you navigate to the RStudio download page (<a href="https://rstudio.com/products/rstudio/download/" class="uri">https://rstudio.com/products/rstudio/download/</a>), the website should automatically detect your computer’s operating system. So, you should be able to simply click the blue “Download RStudio Desktop for [insert operating system here]” button.</p>
+<p>Clicking the button will begin installing RStudio. Once the download has completed, you will need to open the application file (on a Mac this is a <code>.dmg</code> file, on Windows this is an <code>exe</code> file).</p>
+<hr>
 
 
-</section>
 </section>
 </section>
 
@@ -702,13 +783,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../prep-materials/rstudio-orientation.html" class="pagination-link" aria-label="RStudio Orientation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">RStudio Orientation</span>
+      <a href="../prep-materials/intro-to-quarto.html" class="pagination-link" aria-label="Introduction to Quarto">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to Quarto</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../prep-materials/install-r.html" class="pagination-link" aria-label="Optional: Install R and RStudio">
-        <span class="nav-page-text">Optional: Install R and RStudio</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../lab-1-primer/lab-1-intro-r-primer.html" class="pagination-link" aria-label="Lab 1 Primer">
+        <span class="nav-page-text">Lab 1 Primer</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

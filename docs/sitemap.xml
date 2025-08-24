@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/prep-materials/rstudio-orientation.html</loc>
-    <lastmod>2025-08-24T00:22:20.464Z</lastmod>
+    <lastmod>2025-08-24T04:55:37.027Z</lastmod>
   </url>
   <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-1-primer/lab-1-intro-r-primer.html</loc>
-    <lastmod>2025-08-23T23:41:16.348Z</lastmod>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/prep-materials/install-r.html</loc>
+    <lastmod>2025-08-24T05:08:40.246Z</lastmod>
   </url>
   <url>
     <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/index.html</loc>
     <lastmod>2025-08-23T21:13:41.319Z</lastmod>
   </url>
   <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-1-primer/lab-1-intro-r-primer.html</loc>
+    <lastmod>2025-08-23T23:41:16.348Z</lastmod>
+  </url>
+  <url>
     <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/prep-materials/intro-to-quarto.html</loc>
-    <lastmod>2025-08-24T00:27:46.636Z</lastmod>
+    <lastmod>2025-08-24T04:59:15.911Z</lastmod>
   </url>
 </urlset>
