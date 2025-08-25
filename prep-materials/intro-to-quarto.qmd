@@ -69,3 +69,9 @@ recommend checking out:
 -   [a discussion of the basics of formatting HTML documents in Quarto](https://quarto.org/docs/output-formats/html-basics.html)
 
 -   [the list of all HTML Formatting options for Quarto documents](https://quarto.org/docs/reference/formats/html.html)
+
+### Getting in the Details of Quarto
+
+The following video goes into the details about the ways to adopt and work with Quarto documents to produce reproducible analyses.
+
+<iframe src="https://csumb.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=c8347496-cc96-4f7c-9ebe-b344004212af&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Introduction to Quarto" ></iframe>

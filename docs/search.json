@@ -182,7 +182,7 @@
     "href": "prep-materials/intro-to-quarto.html#introduction-to-quarto",
     "title": "Introduction to Quarto",
     "section": "Introduction to Quarto",
-    "text": "Introduction to Quarto\n\n📖 Recommended Reading: Intro to Quarto\n\n\nHTML Documents\nWe will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:\n\na discussion of the basics of formatting HTML documents in Quarto\nthe list of all HTML Formatting options for Quarto documents",
+    "text": "Introduction to Quarto\n\n📖 Recommended Reading: Intro to Quarto\n\n\nHTML Documents\nWe will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:\n\na discussion of the basics of formatting HTML documents in Quarto\nthe list of all HTML Formatting options for Quarto documents\n\n\n\nGetting in the Details of Quarto\nThe following video goes into the details about the ways to adopt and work with Quarto documents to produce reproducible analyses.",
     "crumbs": [
       "Getting Started with R",
       "Introduction to Quarto"
