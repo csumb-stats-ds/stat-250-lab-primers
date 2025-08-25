@@ -145,13 +145,13 @@ Sometimes, functions need more than one argument. R functions require the first 
 
 ![Figure 2: Generic Argument Syntax](images/options.png){fig-align="center" fig-alt="Text that provides the template needed to add arguments to the functions used in the mosiac and ggformula packages in R. It states option = value" height=100}
 
-Those arguments are added as needed in place of the `...` in our template (Fig 3). We can include as many arguments as needed as long as we seperate each one with a comma.
+Those arguments are added as needed in place of the `...` in our template (Fig 3). We can include as many arguments as needed as long as we separate each one with a comma.
 
-![Figure 3: Adding Argumetns into Functions Syntax](images/full-formula.png){fig-align="center" fig-alt="Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R with additional arguments. It states goal(formula, data = mydata, options = value, ...)" height=200}
+![Figure 3: Adding Arguments into Functions Syntax](images/full-formula.png){fig-align="center" fig-alt="Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R with additional arguments. It states goal(formula, data = mydata, options = value, ...)" height=200}
 
 #### Formula Template
 
-The `formula` argument in our template is where we define the variable of data to which we want to apply our goal. There are actually a few options for what that variable can look like, depending on the variables we wish to use. We use `y` to designate our y-axis variable, `x` to designate our x-axis variable (or in the second case, one single variable), and `z` to designate a conditioning variable that lets us create seperate panals when we group data. The `|z` can also be applied to the single variable `~x`.
+The `formula` argument in our template is where we define the variable of data to which we want to apply our goal. There are actually a few options for what that variable can look like, depending on the variables we wish to use. We use `y` to designate our y-axis variable, `x` to designate our x-axis variable (or in the second case, one single variable), and `z` to designate a conditioning variable that lets us create separate panels when we group data. The `|z` can also be applied to the single variable `~x`.
 
 ![Figure 1: Generic Goal Template](images/formula-goal.png){fig-align="center" fig-alt="Text that provides the template needed to run the functions used in the mosiac and ggformula packages in R. It states goal(formula, data = mydata, ...)" height=100}
 
@@ -202,7 +202,7 @@ Learning any new software can feel daunting, but referring back to this template
 
 The real power of R comes not from calculating values like a calculator, but in manipulating sets of data. ***Vectors*** are sets of data that are organized together. Groups of vectors that are associated are ***dataframes***.
 
-For example, we could load version of our data on hours spent studying in week 1 and week 2 that has three columns, one for day and one for each week. Go ahead and run the following code.
+For example, we could load version of our data on hours spent studying in week 1 and week 2 that has three columns, one for day and one for each week. 
 
 ```{r}
 #| label: read-study
@@ -211,7 +211,7 @@ study <- read_csv("study.csv", show_col_types = FALSE)
 study
 ```
 
-To be able to work with the dataframe in R, we need to read the csv file into R, using `read_csv()` which comes from the `tidyverse` package. We apply that function to the name of the csv file we wish to load, inside quotation marks.
+To be able to work with the dataframe in R, we need to read the csv file into R, using `read_csv()` which comes from the `tidyverse` package. We apply that function to the name of the csv file we wish to load, inside quotation marks. Go ahead and run the following code.
 
 ```{webr}
 #| label: read_csv-only
@@ -232,20 +232,20 @@ We can *store* information in R to use again later as an ***object***. An object
 
 Names of objects in R can be *almost* anything, as long as it doesn't start with a number, doesn't contain a mathematical operator (\*, /, \^, etc.) and doesn't contain a space. It is also good practice not to name objects the same as function names.
 
-Thus, my code now becomes
+Thus, my code now becomes the following (run it and see what happens!).
 
 ```{webr}
 #| label: read-study-web
 study <- read_csv("study.csv")
 ```
 
-If you were to look at the *Environment* pane, a new object would have appeared in RStudio. 
+You won't see the data, just some information about the data, but if you were to look at the *Environment* pane, a new object would have appeared in RStudio. 
 
 ![Figure 6: Environment Pane](images/environment-study.png){fig-align="center" fig-alt="The Environment Pane in RStudio which shows under Data, the object study which has 7 obs. of 3 variables."}
 
 
 
-We can look at all the data within these vectors again by typing the object name into the line of code without any other function. Doing so will print the dataframe to your screen as an output.
+We can look at all the data within these vectors again by typing the object name into the line of code without any other function. Doing so will print the dataframe to your screen as an output. Go ahead and run the code.
 
 ```{webr}
 #| label: print-study
