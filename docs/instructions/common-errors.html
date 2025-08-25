@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Quarto – STAT 250 Lab Primers</title>
+<title>common-errors – STAT 250 Lab Primers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../prep-materials/install-r.html" rel="next">
-<link href="../prep-materials/rstudio-orientation.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +80,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prep-materials/rstudio-orientation.html">Getting Started with R</a></li><li class="breadcrumb-item"><a href="../prep-materials/intro-to-quarto.html">Introduction to Quarto</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      STAT 250 Lab Primers
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -141,13 +141,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Getting Started with R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../prep-materials/rstudio-orientation.html" class="sidebar-item-text sidebar-link">
@@ -156,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../prep-materials/intro-to-quarto.html" class="sidebar-item-text sidebar-link active">
+  <a href="../prep-materials/intro-to-quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Quarto</span></a>
   </div>
 </li>
@@ -228,17 +228,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#principles-of-reproducibility" id="toc-principles-of-reproducibility" class="nav-link active" data-scroll-target="#principles-of-reproducibility">Principles of Reproducibility</a>
+  <li><a href="#part-4-r-grammer-errors" id="toc-part-4-r-grammer-errors" class="nav-link active" data-scroll-target="#part-4-r-grammer-errors">Part 4: R Grammer &amp; Errors</a>
   <ul class="collapse">
-  <li><a href="#file-management" id="toc-file-management" class="nav-link" data-scroll-target="#file-management">File Management</a></li>
-  </ul></li>
-  <li><a href="#reproducible-documents" id="toc-reproducible-documents" class="nav-link" data-scroll-target="#reproducible-documents">Reproducible Documents</a>
-  <ul class="collapse">
-  <li><a href="#introduction-to-quarto" id="toc-introduction-to-quarto" class="nav-link" data-scroll-target="#introduction-to-quarto">Introduction to Quarto</a>
-  <ul class="collapse">
-  <li><a href="#recommended-reading-intro-to-quarto" id="toc-recommended-reading-intro-to-quarto" class="nav-link" data-scroll-target="#recommended-reading-intro-to-quarto">📖 Recommended Reading: Intro to Quarto</a></li>
-  <li><a href="#html-documents" id="toc-html-documents" class="nav-link" data-scroll-target="#html-documents">HTML Documents</a></li>
-  </ul></li>
+  <li><a href="#common-error-package-not-loaded" id="toc-common-error-package-not-loaded" class="nav-link" data-scroll-target="#common-error-package-not-loaded">4.1 Common Error: Package Not Loaded</a></li>
+  <li><a href="#common-error-data-not-imported-correctly" id="toc-common-error-data-not-imported-correctly" class="nav-link" data-scroll-target="#common-error-data-not-imported-correctly">4.2 Common Error: Data Not Imported Correctly</a></li>
+  <li><a href="#common-error-mispelled-object-name" id="toc-common-error-mispelled-object-name" class="nav-link" data-scroll-target="#common-error-mispelled-object-name">4.3 Common Error: Mispelled Object Name</a></li>
+  <li><a href="#common-error" id="toc-common-error" class="nav-link" data-scroll-target="#common-error">4.4 Common Error:</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/csumb-stat-ds/stat-250-lab-primers/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -246,9 +241,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prep-materials/rstudio-orientation.html">Getting Started with R</a></li><li class="breadcrumb-item"><a href="../prep-materials/intro-to-quarto.html">Introduction to Quarto</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Quarto</h1>
+<h1 class="title">common-errors</h1>
 </div>
 
 
@@ -265,41 +260,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The theme of this lesson is good management of your files and data. In part two of this week’s coursework you will learn how to identify <strong>folders</strong> and <strong>paths</strong>, and create <strong>Quarto documents</strong>.</p>
-<section id="principles-of-reproducibility" class="level1">
-<h1>Principles of Reproducibility</h1>
-<section id="file-management" class="level2">
-<h2 class="anchored" data-anchor-id="file-management">File Management</h2>
-<p>As boring as it sounds, file management is arguably one of the most important skills a data scientist should have. The reproducibility of a project depends just as much on the way in which the project was stored as the computing tools used. While using R and Quarto make an important step in creating a reproducible analysis, there are other pieces that are arguably just as important—such as file management.</p>
-<p>Believe it or not, your computer has <strong>multiple</strong> locations** where files can be stored. There has been a bit of a generational shift as computers have evolved: the “file system” metaphor itself is outdated because no one uses physical files anymore.</p>
-<p>[This article]((https://futurism.com/the-byte/gen-z-kids-file-systems) makes the argument that with modern search capabilities, most people use their computers as a laundry hamper instead of as a nice, organized filing cabinet. However, the laundry hamper approach doesn’t play nicely with working in R and creating Quarto documents.</p>
-<p>A good programmer will store files according to the <a href="https://www.projecttier.org/tier-protocol/protocol-4-0/">Project TIER protocol</a>. More specifically, you will have:</p>
-<ul>
-<li>a “Stat 250” folder in your Documents folder, containing <strong>all</strong> your materials associated with STAT 250</li>
-<li>a sub-folder for each week (e.g., Week 1, Week 2)</li>
-<li>separate folders within each week for each assignment (e.g., Practice Activity, Lab)</li>
-</ul>
+<section id="part-4-r-grammer-errors" class="level2">
+<h2 class="anchored" data-anchor-id="part-4-r-grammer-errors">Part 4: R Grammer &amp; Errors</h2>
+<p>One of the most frustrating parts for people learning R is troubleshooting errors. R is incredibly powerful, but it is <em>dumb</em>. It can’t guess what you meant, nor add in a comma that you forgot to type. Read <a href="https://ismayc.github.io/rbasics-book/6-errors.html" target="_blank">Chapter 6: Deciphering Common R Errors (5 min)</a> which covers the most common errors in R and how to decipher them. R errors aren’t always clear to new users, but they almost always will direct you to where the problem occurs. Sometimes that is just telling you that it can’t find the file or object you are trying to point it to. Other times, it will repeat your code right up to the point where it didn’t understand. That helps focus your attention when searching for errors.</p>
+<section id="common-error-package-not-loaded" class="level3">
+<h3 class="anchored" data-anchor-id="common-error-package-not-loaded">4.1 Common Error: Package Not Loaded</h3>
 </section>
+<section id="common-error-data-not-imported-correctly" class="level3">
+<h3 class="anchored" data-anchor-id="common-error-data-not-imported-correctly">4.2 Common Error: Data Not Imported Correctly</h3>
 </section>
-<section id="reproducible-documents" class="level1">
-<h1>Reproducible Documents</h1>
-<p>Over the last ten years, science has experienced a “reproducibility” crisis. Meaning, a substantial portion of scientific findings were unable to be recreated because people didn’t sufficiently document the processes they used. As such, a foundational aspect of scientific research is using tools which allow others to reproduce your findings.</p>
-<p>Enter Quarto—a dynamic document that allows us to interweave R code and written text in the <strong>same</strong> document. Gone are the days of copying and pasting the results of your R code into a Word document—breaking the connection between your analysis and your report. Quarto is here to save the day!</p>
-<section id="introduction-to-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-quarto">Introduction to Quarto</h2>
-<section id="recommended-reading-intro-to-quarto" class="level3">
-<h3 class="anchored" data-anchor-id="recommended-reading-intro-to-quarto">📖 <a href="https://r4ds.hadley.nz/quarto.html">Recommended Reading: Intro to Quarto</a></h3>
+<section id="common-error-mispelled-object-name" class="level3">
+<h3 class="anchored" data-anchor-id="common-error-mispelled-object-name">4.3 Common Error: Mispelled Object Name</h3>
 </section>
-<section id="html-documents" class="level3">
-<h3 class="anchored" data-anchor-id="html-documents">HTML Documents</h3>
-<p>We will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:</p>
-<ul>
-<li><p><a href="https://quarto.org/docs/output-formats/html-basics.html">a discussion of the basics of formatting HTML documents in Quarto</a></p></li>
-<li><p><a href="https://quarto.org/docs/reference/formats/html.html">the list of all HTML Formatting options for Quarto documents</a></p></li>
-</ul>
+<section id="common-error" class="level3">
+<h3 class="anchored" data-anchor-id="common-error">4.4 Common Error:</h3>
 
 
-</section>
 </section>
 </section>
 
@@ -703,18 +679,6 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../prep-materials/rstudio-orientation.html" class="pagination-link" aria-label="RStudio Orientation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">RStudio Orientation</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../prep-materials/install-r.html" class="pagination-link" aria-label="Optional: Install R and RStudio">
-        <span class="nav-page-text">Optional: Install R and RStudio</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
