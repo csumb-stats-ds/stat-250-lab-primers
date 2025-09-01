@@ -51,28 +51,28 @@ website:
       contents: 
       - href: lab-1-primer/lab-1-intro-r-primer.qmd
         text: "Lab 1 Primer"
-      - href: 
+      - href: lab-2-primer/lab-2-intro-quarto-primer.qmd
         text: "Lab 2 Primer"
-      - href: 
-        text: "Lab 3 Primer"
-      - href: 
-        text: "Lab 4 Primer"
-      - href: 
-        text: "Lab 5 Primer"
-      - href: 
-        text: "Lab 6 Primer"      
-      - href: 
-        text: "Lab 7 Primer"        
-      - href: 
-        text: "Lab 8 Primer"        
-      - href: 
-        text: "Lab 9 Primer"        
-      - href: 
-        text: "Lab 10 Primer"        
-      - href: 
-        text: "Lab 11 Primer"
-      - href: 
-        text: "Lab 12 Primer"
+      # - href: 
+      #   text: "Lab 3 Primer"
+      # - href: 
+      #   text: "Lab 4 Primer"
+      # - href: 
+      #   text: "Lab 5 Primer"
+      # - href: 
+      #   text: "Lab 6 Primer"      
+      # - href: 
+      #   text: "Lab 7 Primer"        
+      # - href: 
+      #   text: "Lab 8 Primer"        
+      # - href: 
+      #   text: "Lab 9 Primer"        
+      # - href: 
+      #   text: "Lab 10 Primer"        
+      # - href: 
+      #   text: "Lab 11 Primer"
+      # - href: 
+      #   text: "Lab 12 Primer"
        
 format:
   html:
