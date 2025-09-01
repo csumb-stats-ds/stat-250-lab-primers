@@ -1,5 +1,5 @@
 ---
-title: "Lab 2: Introduction to R Primer"
+title: "Lab 2: Introduction to Quarto Primer"
 format: 
   live-html:
     webr:
