@@ -279,10 +279,10 @@ window.Quarto = {
   </ul></li>
   <li><a href="#part-2-exploratory-data-analysis-for-single-numeric-variables---r-code" id="toc-part-2-exploratory-data-analysis-for-single-numeric-variables---r-code" class="nav-link" data-scroll-target="#part-2-exploratory-data-analysis-for-single-numeric-variables---r-code">Part 2: Exploratory Data Analysis for Single Numeric Variables - R Code</a>
   <ul class="collapse">
-  <li><a href="#reading-in-data" id="toc-reading-in-data" class="nav-link" data-scroll-target="#reading-in-data">Reading in Data</a></li>
-  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
-  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots">Boxplots</a></li>
-  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics">Summary Statistics</a></li>
+  <li><a href="#reading-in-data" id="toc-reading-in-data" class="nav-link" data-scroll-target="#reading-in-data">2.1 Reading in Data</a></li>
+  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">2.2 Histograms</a></li>
+  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots">2.3 Boxplots</a></li>
+  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics">2.4 Summary Statistics</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/csumb-stat-ds/stat-250-lab-primers/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -586,7 +586,7 @@ Digital Accessibility
 <p>Here are some examples of the type of mathematics you will use within your Quarto documents.</p>
 <section id="greek-letters" class="level4">
 <h4 class="anchored" data-anchor-id="greek-letters">Greek Letters</h4>
-<p>We often want to use statistical symbols within markdown to denote parameters with Greek letters. They are called by using a backslash (<code>\</code>) and then the full name of the greek letter, such as <code>\alpha</code>, and surrounded by <code>$</code> to be called within the equation-mode:</p>
+<p>We often want to use statistical symbols within markdown to denote parameters with Greek letters. They are called by using a backslash (<code>\</code>) and then the full name of the Greek letter, such as <code>\alpha</code>, and surrounded by <code>$</code> to be called within the equation-mode:</p>
 <div class="grid">
 <div class="g-col-6">
 <div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>$\sigma$</span>
@@ -707,7 +707,7 @@ Digital Accessibility
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: mean-wk1-assigned</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="in">mwk1 &lt;- mean(~wk1, data = study) # calculates mean and saves it as mWk1</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="in">mwk1 &lt;- mean(~wk1, data = study) # calculates mean and saves it as mwk11</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="in">mwk1 # prints to screen the value saved to the object name</span></span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -787,7 +787,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </div>
 </div>
 <section id="reading-in-data" class="level3">
-<h3 class="anchored" data-anchor-id="reading-in-data">Reading in Data</h3>
+<h3 class="anchored" data-anchor-id="reading-in-data">2.1 Reading in Data</h3>
 <p>Next, we must be sure to read in the data AND assign it to an <code>object</code> name so that we can call it later in other functions.</p>
 <div class="cell">
 <div>
@@ -802,7 +802,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>Read the output and add the argument to the function above to “quiet this message”.</p>
 </section>
 <section id="histograms" class="level3">
-<h3 class="anchored" data-anchor-id="histograms">Histograms</h3>
+<h3 class="anchored" data-anchor-id="histograms">2.2 Histograms</h3>
 <p>Histograms are a great way to explore the distribution (shape, center, spread, outliers) of a variable. Here is the basic structure for a histogram of body mass of the penguins. Add the following arguments.</p>
 <ul>
 <li>a x-axis label that says “Body Mass (g) of Three Penguin Species in the Palmer Archipelago”<br>
@@ -846,7 +846,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </div>
 </section>
 <section id="boxplots" class="level3">
-<h3 class="anchored" data-anchor-id="boxplots">Boxplots</h3>
+<h3 class="anchored" data-anchor-id="boxplots">2.3 Boxplots</h3>
 <p>Boxplots are a great way to explore the distribution (shape, center, spread, outliers) of a variable, though they do not give us information about modality. Here is the basic structure for a boxplot of body mass of the penguins. Add the following arguments.</p>
 <ul>
 <li>a x-axis label that says “Body Mass (g) of Three Penguin Species in the Palmer Archipelago”</li>
@@ -864,12 +864,12 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex-box-1">
 <div class="cell" data-exercise="ex-box-1" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex-box-1">
-<code id="interpolate-11" class="solution-code d-none">gf_histogram(~ body_mass_g, 
-             data = penguins,
-             xlab = "Body Mass (g) of Three Penguin Species in the Palmer Archipelago")</code>
-<div class="sourceCode cell-code" id="interpolate-12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-12-1"><a href="#interpolate-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span> body_mass_g, </span>
-<span id="interpolate-12-2"><a href="#interpolate-12-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> penguins,</span>
-<span id="interpolate-12-3"><a href="#interpolate-12-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">xlab =</span> <span class="st">"Body Mass (g) of Three Penguin Species in the Palmer Archipelago"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<code id="interpolate-11" class="solution-code d-none">gf_boxplot(~ body_mass_g, 
+           data = penguins,
+           xlab = "Body Mass (g) of Three Penguin Species in the Palmer Archipelago")</code>
+<div class="sourceCode cell-code" id="interpolate-12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-12-1"><a href="#interpolate-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span> body_mass_g, </span>
+<span id="interpolate-12-2"><a href="#interpolate-12-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> penguins,</span>
+<span id="interpolate-12-3"><a href="#interpolate-12-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Body Mass (g) of Three Penguin Species in the Palmer Archipelago"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -881,7 +881,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <p>If you want to make a boxplot that compares a variable across groups, you can either use the formula structure:</p>
 <ul>
 <li><code>numeric_variable ~ group_variable</code></li>
-<li><code>group_variable ~ numberic_variable</code></li>
+<li><code>group_variable ~ numeric_variable</code></li>
 </ul>
 <p>Try switching the order of the two variables below and see what changes.</p>
 <div class="cell">
@@ -896,8 +896,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </div>
 </section>
 <section id="summary-statistics" class="level3">
-<h3 class="anchored" data-anchor-id="summary-statistics">Summary Statistics</h3>
-<p>There are a lot of functions we learned for summary statistics, include:</p>
+<h3 class="anchored" data-anchor-id="summary-statistics">2.4 Summary Statistics</h3>
+<p>There are a lot of functions we learned for summary statistics, including:</p>
 <ul>
 <li><code>mean()</code></li>
 <li><code>median()</code></li>
@@ -907,8 +907,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <li><code>max()</code></li>
 <li><code>min()</code></li>
 </ul>
-<p>Remember to include <code>na.rm = TRUE</code> if you have missing data to avoid getin <code>NA</code> as your answer.</p>
-<p>Caclulate the mean for body mass for penguins.</p>
+<p>Remember to include <code>na.rm = TRUE</code> if you have missing data to avoid getting <code>NA</code> as your answer.</p>
+<p>Calculate the mean for body mass for penguins.</p>
 <div class="cell" data-exercise="ex-mean">
 <div>
 <div id="webr-15" class="exercise-cell">
@@ -922,8 +922,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex-mean">
 <div class="cell" data-exercise="ex-mean" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex-mean">
-<code id="interpolate-17" class="solution-code d-none">mean(~ body_mass_g, data = penguins)</code>
-<div class="sourceCode cell-code" id="interpolate-18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-18-1"><a href="#interpolate-18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="sc">~</span> body_mass_g, <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<code id="interpolate-17" class="solution-code d-none">mean(~ body_mass_g, data = penguins, na.rm = TRUE)</code>
+<div class="sourceCode cell-code" id="interpolate-18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-18-1"><a href="#interpolate-18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="sc">~</span> body_mass_g, <span class="at">data =</span> penguins, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -932,14 +932,15 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJleC1tZWFuIiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJncmFkZXRoaXM6OmdyYWRlX3RoaXNfY29kZSgpIn0=
 </script>
 </div>
-<p>You can also calculate the mean, or other statistics, split across multiple groups, such as species. Try replacing <code>mean()</code> with other functions. Remember to add <code>na.rm = TRUE</code> if you get <code>NA</code> as an output.</p>
+<p>You can also calculate the mean, or other statistics, split across multiple groups, such as species. Try replacing <code>sd()</code> with other functions.</p>
+<p>Remember to add <code>na.rm = TRUE</code> if you get <code>NA</code> as an output.</p>
 <div class="cell">
 <div>
 <div id="webr-20" class="exercise-cell">
 
 </div>
 <script type="webr-20-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6Im11bHRpLXN0YXRzIiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJtZWFuKGJvZHlfbWFzc19nIH4gc3BlY2llcywgZGF0YSA9IHBlbmd1aW5zKSJ9
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6Im11bHRpLXN0YXRzIiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJzZChib2R5X21hc3NfZyB+IHNwZWNpZXMsIGRhdGEgPSBwZW5ndWlucykifQ==
 </script>
 </div>
 </div>
