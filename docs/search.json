@@ -68,6 +68,7 @@
   {
     "objectID": "lab-1-primer/lab-1-intro-r-primer.html",
     "href": "lab-1-primer/lab-1-intro-r-primer.html",
+<<<<<<< HEAD
     "title": "Lab 1: Introduction to R Primer",
     "section": "",
     "text": "Digital Accessibility\n\n\n\n\n\nPlease note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.",
@@ -149,6 +150,9 @@
     "objectID": "index.html",
     "href": "index.html",
     "title": "STAT 250 Lab Primers",
+=======
+    "title": "Lab1: Introduction to R Primer",
+>>>>>>> 534cb47925782a633bd9e756b627d0c5ac41ee3b
     "section": "",
     "text": "This website provides lab primers to practice the code used in STAT 250: Applied Statistics for Science and Technology at California State University, Monterey Bay. It uses the following packages:\n\nggformula\n\nmosaic\n\ntidyverse\n\nstats",
     "crumbs": [
@@ -194,6 +198,41 @@
     "title": "Lab 2: Introduction to R Primer",
     "section": "Part 2: Exploratory Data Analysis for Single Numeric Variables - R Code",
     "text": "Part 2: Exploratory Data Analysis for Single Numeric Variables - R Code\nHere is a review of some of the code you will use in the rest of Lab 2.\nRemember to first run the set up chunks first and check that all necessary packages are loaded.\n\n\n\n\n\n\n\n\n\nReading in Data\nNext, we must be sure to read in the data AND assign it to an object name so that we can call it later in other functions.\n\n\n\n\n\n\n\n\n\n\nHistograms\nHistograms are a great way to explore the distribution (shape, center, spread, outliers) of a variable. Here is the basic structure for a histogram of body mass of the penguins. Add the following arguments.\n\na x-axis label that says “Body Mass (g) of Three Penguin Species in the Palmer Archipelago”\n\na y-axis label that say “Number of Penguins”\nmodify the bin width to 200\nadd the argument color = \"black\" to outline the bars\n\n\n\n\n\n\n\n\n\n\n\n\ngf_histogram(~ body_mass_g, \n             data = penguins,\n             xlab = \"Body Mass (g) of Three Penguin Species in the Palmer Archipelago\",\n             ylab = \"Number of Penguins\",\n             binwidth = 200,\n             color = \"black\")\ngf_histogram(~ body_mass_g, \n             data = penguins,\n             xlab = \"Body Mass (g) of Three Penguin Species in the Palmer Archipelago\",\n             ylab = \"Number of Penguins\",\n             binwidth = 200,\n             color = \"black\")\n\n\n\n\n\nBoxplots\n\n\nSummary Statistics",
+    "crumbs": [
+      "Lab Primers",
+      "Lab 2 Primer"
+    ]
+  },
+  {
+    "objectID": "instructions/common-errors.html",
+    "href": "instructions/common-errors.html",
+    "title": "common-errors",
+    "section": "",
+    "text": "One of the most frustrating parts for people learning R is troubleshooting errors. R is incredibly powerful, but it is dumb. It can’t guess what you meant, nor add in a comma that you forgot to type. Read Chapter 6: Deciphering Common R Errors (5 min) which covers the most common errors in R and how to decipher them. R errors aren’t always clear to new users, but they almost always will direct you to where the problem occurs. Sometimes that is just telling you that it can’t find the file or object you are trying to point it to. Other times, it will repeat your code right up to the point where it didn’t understand. That helps focus your attention when searching for errors."
+  },
+  {
+    "objectID": "instructions/common-errors.html#part-4-r-grammer-errors",
+    "href": "instructions/common-errors.html#part-4-r-grammer-errors",
+    "title": "common-errors",
+    "section": "",
+    "text": "One of the most frustrating parts for people learning R is troubleshooting errors. R is incredibly powerful, but it is dumb. It can’t guess what you meant, nor add in a comma that you forgot to type. Read Chapter 6: Deciphering Common R Errors (5 min) which covers the most common errors in R and how to decipher them. R errors aren’t always clear to new users, but they almost always will direct you to where the problem occurs. Sometimes that is just telling you that it can’t find the file or object you are trying to point it to. Other times, it will repeat your code right up to the point where it didn’t understand. That helps focus your attention when searching for errors."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STAT 250 Lab Primers",
+    "section": "",
+    "text": "This website provides lab primers to practice the code used in STAT 250: Applied Statistics for Science and Technology at California State University, Monterey Bay. It uses the following packages:\n\nggformula\n\nmosaic\n\ntidyverse\n\nstats",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "lab-2-primer/lab-2-eda-primer.html",
+    "href": "lab-2-primer/lab-2-eda-primer.html",
+    "title": "lab-2-eda-primer",
+    "section": "",
+    "text": "Coming soon…",
     "crumbs": [
       "Lab Primers",
       "Lab 2 Primer"

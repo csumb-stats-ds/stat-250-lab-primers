@@ -51,7 +51,11 @@ website:
       contents: 
       - href: lab-1-primer/lab-1-intro-r-primer.qmd
         text: "Lab 1 Primer"
+<<<<<<< HEAD
       - href: lab-2-primer/lab-2-intro-quarto-primer.qmd
+=======
+      - href: lab-2-primer/lab-2-eda-primer.qmd
+>>>>>>> 534cb47925782a633bd9e756b627d0c5ac41ee3b
         text: "Lab 2 Primer"
       # - href: 
       #   text: "Lab 3 Primer"
