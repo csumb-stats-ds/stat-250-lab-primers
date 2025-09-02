@@ -398,6 +398,7 @@ $\mu_{male}$
 
 
 #### Symbols over Letters
+
 We can call our special statistical symbols in a similar way, such as `\bar{x}`. In this case, the `bar` symbol will be applied over the `x`, to make our statistical symbol for sample mean: $\bar{x}$. 
 
 ::: {.grid}
@@ -489,7 +490,7 @@ By running the code as above, we calculated the mean, but didn't save it as an `
 ```{r}
 #| echo: fenced
 #| label: mean-wk1-assigned
-mwk1 <- mean(~wk1, data = study) # calculates mean and saves it as mwk11
+mwk1 <- mean(~wk1, data = study) # calculates mean and saves it as mwk1
 mwk1 # prints to screen the value saved to the object name
 ```
 
@@ -743,6 +744,27 @@ sd(body_mass_g ~ species, data = penguins)
 ```
 
 
+There are also some ways to generate multiple different statistics at once.  Try the following two codes and note what information they provide.  
+
+What information does `df_stats` provide?   
+
+```{webr}
+#| label: df-stats
+df_stats(~body_mass_g, data = penguins)
+```
 
 
+What information does `quantile()` provide?  
+
+```{webr}
+#| label: quantile
+quantile(~body_mass_g, data = penguins)
+```
+
+
+## Final Reminders  
+
+Remember, all the code needed for the labs can be found in your course notebook, through the chapter, in the "How to do it in R" section at the end of each chapter, or in the appendix of the notebook.   
+
+Please see Canvas for information on the Math/Stat Cafe, the CLC Supplemental Instruction and Drop-in Hours, and your Instructor's Student Hours (Office Hours) if you need any additional help.
 
