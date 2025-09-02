@@ -1,0 +1,173 @@
+---
+title: 'Lab #3 Primer'
+author: "NAME"
+format: live-html
+embed-resources: true
+html-math-method: mathml
+execute: 
+  warning: false
+  echo: true
+  message: false
+---
+
+
+## Skills
+
+* Describe and identify sampling techniques and any potential biases from them.  
+* Write a statistical research question which clearly defines the purpose, population, parameter, and variable of interest.  
+* Describe the sampling distribution of a statistic and define the standard error of a statistic.  Be able to distinguish the standard deviation from the standard error.  
+* Calculate the standard error.  
+* Given a study, describe the sampling distribution of $\bar{x}$ as specifically as possible.   
+* Explain that in order to estimate the population parameter, we must quantify the uncertainty from our point estimate.  
+* Identify and define the population and parameter of interest in a given study.  
+* Construct and interpret a confidence interval in the context of the problem.  
+*	Draw conclusions that apply to the population based on the results of the confidence interval; interpret the information in context.  
+
+```{r echo=FALSE}
+library(checkdown)
+```
+
+
+
+***
+ **Reminder**: Before starting, load the "ggformula" and "mosaic" packages we need for statistical and graphical functions using the `library()` function in the code chunk below. 
+
+```{webr}
+library(__graphics package__)
+library(__stats package__)
+```
+
+
+***
+
+## Penny Age 
+
+Coins are stamped with the year in which they were minted, and stay in circulation until they are too worn, at which point they are removed from circulation. With the rising cost of raw materials, it is more expensive to manufacture pennies than the coin is worth. Furthermore, as the US moves towards a more cashless society, the use of physical coins is declining, making the penny less necessary. On May 22, 2025, The U.S. Treasury Department announced it would end penny production starting in 2026. We are going to estimate the mean age of all circulating U.S. pennies. Rolls of pennies were collected from a bank in Marina, California in Spring 2020. The data of the age of the penny (in number of years) since 2019 can be found in `PennyAge_2019.csv`.   
+
+<!-- A prior study several decades ago on pennies found the population mean age of a circulating coin was $\mu=12.264$, with a population standard deviation of $\sigma=9.608$. Given the rise of card and electronic payment methods which might decrease how often cash is used, we are going to investigate if the mean age of all circulating U.S. coins has increased. Let's see if the mean age of the coins you sampled is greater from the standard of 12.264 years. -->
+
+
+1. Complete the code below to (1) read in the csv file `PennyAge_2019.csv` and store it as the object `penny`, and (2) print the variable names.
+
+```{webr}
+penny <- read.csv("_____filename_____")
+_____function_____(penny)
+```
+
+
+2. Use `gf_hist` to create a histogram of the sample distribution, being sure to label axes appropriately.
+
+
+```{webr}
+__goal__(~__variable__, data=__dataframe__,
+         xlab = "__x axis label__",
+         ylab = "__y axis label__")
+```
+
+
+
+3. Use `df_stats` to calculate the descriptive statistics.
+
+```{webr}
+__goal__(~__variable__, data=__dataframe__)
+```
+
+
+
+
+***
+
+4. What do the symbols $\mu$, $\bar{x}$, $s$, $n$ represent? Arrange the descriptions in order.
+
+```{r echo=FALSE}
+check_question(answer = c("Population mean", "Sample mean", "Sample standard deviation", "Sample size"), type = "in_order")
+```
+<br>
+
+
+5. Identify the population of interest.  
+
+```{r echo=FALSE}
+check_question("all US pennies", 
+               options = c("all coins", 
+                           "all US coins", 
+                           "all US pennies", 
+                           "all US pennies from the Marina bank"), 
+               type = "radio")
+```
+<br>
+
+
+<!-- Check the conditions for constructing a confidence interval on your data. The conditions are listed, you just need to answer if they were met and justify why in the context of the question, including context or evidence from your study. -->
+
+<!-- > 1. Random sample: [Met?]; [Justification]   -->
+<!--   2. Normality or Sufficient sample size:  [Met?] -->
+<!--       2a. Is the sample from a Normally distributed population or does the sample data have a roughly bell-shaped or symmetric distribution? [Yes / No]; [Justification]        -->
+<!--       2b. Is the sample size sufficient? [Yes / No]; [Justification] -->
+      
+
+
+6. Let's use a model to find a 95% confidence interval.    
+- Go to: http://www.rossmanchance.com/applets/2021/tbia/TBIA.html   
+- Change the scenario to 'one mean'  
+- Enter your sample's $n$, $\bar{x}$, and $s$ into the fields, then 'calculate'  
+- Click "Confidence Interval".  
+- Enter the correct confidence level.  
+- Click 'Calculate.'  
+- The confidence interval and degrees of freedom are displayed.  
+
+Record the calculated confidence interval and degrees of freedom that is returned.
+<!-- > CI = (____, ____), df = ____ -->
+
+Lower bound:
+```{r echo=FALSE}
+check_question(answer = 15.3840, right = "correct", wrong = "not correct")
+```
+
+Upper bound: 
+```{r echo=FALSE}
+check_question(answer = 17.3045, right = "correct", wrong = "not correct")
+```
+
+df:
+```{r echo=FALSE}
+check_question(answer = 1004, right = "correct", wrong = "not correct")
+```
+<br>
+
+7. Arrange the words to interpret your confidence interval in the context of the question.
+
+<!-- > Based on a sample, we are **[insert confidence level]** that the **[write parameter of interest]** is a single value between **[insert lower bound value]** and **[insert upper bound value]** **[insert units]**.     -->
+
+```{r echo=FALSE}
+check_question(c("Based on a sample", 
+                 "we are 95% confident that",
+                 "the true mean age of US pennies",
+                 "is a single value",
+                 "between LB and UB"), 
+               type = "in_order", alignment = "vertical")
+```
+<br>
+
+
+<!-- 7. Is there evidence from Exploratory Data Analysis that the ideal outdoor temperature of Californians is more than 78? Be sure to cite the evidence, as well as describe why it supplies evidence for the value of the parameter.   -->
+
+
+
+8. Can we generalize to the population of interest? 
+<!-- Why or why not? If so, explain why. If not, explain why and, if applicable, the population that could be generalized to. -->
+
+```{r echo=FALSE}
+check_question("Yes, because we can assume pennies from a bank are a natural random sample.", options = c("Yes, because we can assume pennies from a bank are a natural random sample.", "Yes, because our sample size is greater than 30.", "No"), type = "checkbox")
+```
+<br>
+
+
+9. To use the model to calculate the confidence interval, a condition/conditions needed to be satisfied. Which condition(s) are they?  
+<!-- What if you hadn't met that condition? What would that mean for your conclusion? -->
+
+```{r echo=FALSE}
+check_question(c("Normality","Sufficient Sample Size"), options = c("Normality", "Sufficient Sample Size", "Random Sample"), type = "checkbox", random_answer_order = TRUE)
+```
+
+
