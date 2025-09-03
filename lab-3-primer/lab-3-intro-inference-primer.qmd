@@ -1,35 +1,53 @@
 ---
-title: 'Lab #3 Primer'
-author: "NAME"
-format: live-html
-embed-resources: true
-html-math-method: mathml
+title: "Lab 3: Introduction to Inference Primer"
+format: 
+  live-html:
+    webr:
+      packages: 
+        - ggformula
+        - mosaic
+        - tidyverse
+      resources: 
+        - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-2-primer/penguins.csv
+      cell-options:
+        warning: true
+        completion: false
 execute: 
   warning: false
-  echo: true
   message: false
+  echo: true
+code-copy: true
+code-overflow: wrap
+toc: true
+css: ../styles.css
 ---
 
 
-## Skills
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
 
-* Describe and identify sampling techniques and any potential biases from them.  
-* Write a statistical research question which clearly defines the purpose, population, parameter, and variable of interest.  
-* Describe the sampling distribution of a statistic and define the standard error of a statistic.  Be able to distinguish the standard deviation from the standard error.  
-* Calculate the standard error.  
-* Given a study, describe the sampling distribution of $\bar{x}$ as specifically as possible.   
-* Explain that in order to estimate the population parameter, we must quantify the uncertainty from our point estimate.  
-* Identify and define the population and parameter of interest in a given study.  
-* Construct and interpret a confidence interval in the context of the problem.  
-*	Draw conclusions that apply to the population based on the results of the confidence interval; interpret the information in context.  
-
-```{r echo=FALSE}
+```{r}
+#| label: theme
+#| include: false
+#| edit: false
+library(ggplot2)
+library(tidyverse)
 library(checkdown)
+theme_set(theme_light())
+options(ggplot2.continuous.color = scale_color_viridis_c, 
+        ggplot2.continuous.fill = scale_fill_viridis_c,
+        ggplot2.discrete.color = scale_color_viridis_d,
+        ggplot2.discrete.fill = scale_fill_viridis_d)
 ```
 
+::: {.callout-note collapse="true"}
+## Digital Accessibility
+
+Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
+:::
 
 
-***
+## Getting Setup
  **Reminder**: Before starting, load the "ggformula" and "mosaic" packages we need for statistical and graphical functions using the `library()` function in the code chunk below. 
 
 ```{webr}
