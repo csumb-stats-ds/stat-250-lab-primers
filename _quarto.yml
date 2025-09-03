@@ -53,7 +53,7 @@ website:
         text: "Lab 1 Primer"
       - href: lab-2-primer/lab-2-eda-primer.qmd
         text: "Lab 2 Primer"
-      # - href: 
+      # - href: lab-3-primer/lab-3-intro-inference-primer.qmd
       #   text: "Lab 3 Primer"
       # - href: 
       #   text: "Lab 4 Primer"
