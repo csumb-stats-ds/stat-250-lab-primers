@@ -26,12 +26,11 @@ css: ../styles.css
 {{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 {{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
 
-```{r}
+```{webr}
 #| label: theme
 #| include: false
 #| edit: false
 library(ggplot2)
-library(tidyverse)
 theme_set(theme_light())
 options(ggplot2.continuous.color = scale_color_viridis_c, 
         ggplot2.continuous.fill = scale_fill_viridis_c,
@@ -574,7 +573,7 @@ This will print out any errors in your code chunks, but still render the documen
 The most common errors in your markdown that can cause issues are deleting back ticks (`) around your code chunks or dashes (-) from around the YAML code, so always check that first.
 
 
-## Part 2: Exploratory Data Analysis for Single Numeric Variables - R Code
+## Part 2: R Code: Exploratory Data Analysis for Single Numeric Variables
 
 Here is a review of some of the code you will use in the rest of Lab 2.  
 
@@ -603,8 +602,8 @@ Read the output and add the argument to the function above to "quiet this messag
 
 Histograms are a great way to explore the distribution (shape, center, spread, outliers) of a variable. Here is the basic structure for a histogram of body mass of the penguins. Add the following arguments.  
 
-- a x-axis label that says "Body Mass (g) of Three Penguin Species in the Palmer Archipelago"  
-- a y-axis label that say "Number of Penguins" 
+- a x-axis label that says `"Body Mass (g) of Three Penguin Species in the Palmer Archipelago"`  
+- a y-axis label that say `"Number of Penguins"` 
 - modify the bin width to 200
 - add the argument `color = "black"` to outline the bars
 
@@ -644,7 +643,7 @@ gradethis::grade_this_code()
 
 Boxplots are a great way to explore the distribution (shape, center, spread, outliers) of a variable, though they do not give us information about modality. Here is the basic structure for a boxplot of body mass of the penguins. Add the following arguments.  
 
-- a x-axis label that says "Body Mass (g) of Three Penguin Species in the Palmer Archipelago"  
+- a x-axis label that says `"Body Mass (g) of Three Penguin Species in the Palmer Archipelago"`  
 
 ```{webr}
 #| label: boxplot-1
