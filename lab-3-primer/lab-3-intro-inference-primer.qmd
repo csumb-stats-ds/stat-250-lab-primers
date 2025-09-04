@@ -159,7 +159,7 @@ check_question(answer = "all US pennies",
 
 Let's use a model to find a 95% confidence interval.    
 
-- Go to: [Applet(http://www.rossmanchance.com/applets/2021/tbia/TBIA.html)  
+- Go to: [Confidence Interval Applet](http://www.rossmanchance.com/applets/2021/tbia/TBIA.html)  
 - Change the scenario to 'one mean'  
 - Enter your sample's $n$, $\bar{x}$, and $s$ into the fields, then 'calculate'  
 - Click "Confidence Interval".  
