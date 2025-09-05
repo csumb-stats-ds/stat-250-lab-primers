@@ -761,6 +761,37 @@ quantile(~body_mass_g, data = penguins)
 ```
 
 
+
+## Help Understanding the Basal Metabolic Rate for Bivalves
+
+In the first question you are given the abstract from the following paper:   
+
+[Metabolic rates, climate and macroevolution: a case study using Neogene molluscs](https://royalsocietypublishing.org/doi/10.1098/rspb.2018.1292)
+
+Here are some tips for critically reading the abstract: 
+
+**Prior to Reading**
+
+- What do I know about this topic?
+- What do I think I will learn about this topic?
+- After reading the title, what do I think this reading will be about?
+
+**During Reading**
+
+- Do I understand what I just read? Look up any words you do not understand.
+- Does it make sense?
+- Do I have a clear picture in my head about this information?
+- What more can I do to understand this?
+ 
+**After Reading**
+
+- What were the most important points in this reading?
+- What new information did I learn?
+- How does it fit in with what I already know?
+- Should I go back and reread any part of this material so I can better understand it?
+
+
+
 ## Final Reminders  
 
 Remember, all the code needed for the labs can be found in your course notebook, through the chapter, in the "How to do it in R" section at the end of each chapter, or in the appendix of the notebook.   
