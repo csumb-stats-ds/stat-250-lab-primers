@@ -104,6 +104,9 @@ Complete the code below to (1) read in the csv file `penny-age-2019.csv` and sto
 penny <- read_csv("_____filename_____")
 ```
 
+You can modify the code above to hide the output if you want.
+
+
 ```{webr}
 #| label: name-data
 #| exercise: ex-name
@@ -136,7 +139,9 @@ gradethis::grade_this_code()
 Use `gf_histogram()` to create a histogram of the sample distribution, being sure to label axes appropriately. Replace the underscored components. With good labels such as:  
 
 - `"Age in Years of US Pennies from Marina, CA Bank (Sp 2020)"`
-- `"Number of Pennies"`
+- `"Number of Pennies"`  
+- Try a bin width of 5 years  
+- Set the lower bound of the bars to 0 so it doesn't look like we have negative ages.  
 
 
 ```{webr}
@@ -144,7 +149,8 @@ Use `gf_histogram()` to create a histogram of the sample distribution, being sur
 #| exercise: ex-hist
 __goal__(~ __variable__, data = __dataframe__,
          xlab = "__x axis label__",
-         ylab = "__y axis label__")
+         ylab = "__y axis label__",
+         color = "black") #outlines bars
 ```
 
 ::: {.solution exercise="ex-hist"}
@@ -155,8 +161,11 @@ __goal__(~ __variable__, data = __dataframe__,
 #| exercise: ex-hist
 #| solution: true
 gf_histogram(~ age, data = penny,
-         xlab = "Age in Years of US Pennies from Marina, CA Bank (Sp 2020)",
-         ylab = "Number of Pennies")
+             xlab = "Age in Years of US Pennies from Marina, CA Bank (Sp 2020)",
+             ylab = "Number of Pennies",
+             binwidth = 5,
+             boundary = 0,
+             color = "black")
 ```
 
 :::

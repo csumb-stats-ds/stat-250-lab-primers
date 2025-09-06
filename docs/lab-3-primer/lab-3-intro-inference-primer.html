@@ -385,6 +385,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </script>
 </div>
 </div>
+<p>You can modify the code above to hide the output if you want.</p>
 <div class="cell" data-exercise="ex-name">
 <div>
 <div id="webr-9" class="exercise-cell">
@@ -414,7 +415,11 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <p>Use <code>gf_histogram()</code> to create a histogram of the sample distribution, being sure to label axes appropriately. Replace the underscored components. With good labels such as:</p>
 <ul>
 <li><code>"Age in Years of US Pennies from Marina, CA Bank (Sp 2020)"</code></li>
-<li><code>"Number of Pennies"</code></li>
+<li><code>"Number of Pennies"</code><br>
+</li>
+<li>Try a bin width of 5 years<br>
+</li>
+<li>Set the lower bound of the bars to 0 so it doesn’t look like we have negative ages.</li>
 </ul>
 <div class="cell" data-exercise="ex-hist">
 <div>
@@ -422,7 +427,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 
 </div>
 <script type="webr-14-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4LWhpc3QiLCJsYWJlbCI6Imhpc3RvZ3JhbSIsIndhcm5pbmciOnRydWV9LCJjb2RlIjoiX19nb2FsX18ofiBfX3ZhcmlhYmxlX18sIGRhdGEgPSBfX2RhdGFmcmFtZV9fLFxuICAgICAgICAgeGxhYiA9IFwiX194IGF4aXMgbGFiZWxfX1wiLFxuICAgICAgICAgeWxhYiA9IFwiX195IGF4aXMgbGFiZWxfX1wiKSJ9
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4LWhpc3QiLCJsYWJlbCI6Imhpc3RvZ3JhbSIsIndhcm5pbmciOnRydWV9LCJjb2RlIjoiX19nb2FsX18ofiBfX3ZhcmlhYmxlX18sIGRhdGEgPSBfX2RhdGFmcmFtZV9fLFxuICAgICAgICAgeGxhYiA9IFwiX194IGF4aXMgbGFiZWxfX1wiLFxuICAgICAgICAgeWxhYiA9IFwiX195IGF4aXMgbGFiZWxfX1wiLFxuICAgICAgICAgY29sb3IgPSBcImJsYWNrXCIpICNvdXRsaW5lcyBiYXJzIn0=
 </script>
 </div>
 </div>
@@ -430,11 +435,17 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex-hist" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex-hist">
 <code id="interpolate-16" class="solution-code d-none">gf_histogram(~ age, data = penny,
-         xlab = "Age in Years of US Pennies from Marina, CA Bank (Sp 2020)",
-         ylab = "Number of Pennies")</code>
+             xlab = "Age in Years of US Pennies from Marina, CA Bank (Sp 2020)",
+             ylab = "Number of Pennies",
+             binwidth = 5,
+             boundary = 0,
+             color = "black")</code>
 <div class="sourceCode cell-code" id="interpolate-17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-17-1"><a href="#interpolate-17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span> age, <span class="at">data =</span> penny,</span>
-<span id="interpolate-17-2"><a href="#interpolate-17-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">xlab =</span> <span class="st">"Age in Years of US Pennies from Marina, CA Bank (Sp 2020)"</span>,</span>
-<span id="interpolate-17-3"><a href="#interpolate-17-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">ylab =</span> <span class="st">"Number of Pennies"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-17-2"><a href="#interpolate-17-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">xlab =</span> <span class="st">"Age in Years of US Pennies from Marina, CA Bank (Sp 2020)"</span>,</span>
+<span id="interpolate-17-3"><a href="#interpolate-17-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">ylab =</span> <span class="st">"Number of Pennies"</span>,</span>
+<span id="interpolate-17-4"><a href="#interpolate-17-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">binwidth =</span> <span class="dv">5</span>,</span>
+<span id="interpolate-17-5"><a href="#interpolate-17-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">boundary =</span> <span class="dv">0</span>,</span>
+<span id="interpolate-17-6"><a href="#interpolate-17-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -486,11 +497,11 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_3837" onsubmit="return validate_form_3837()" method="post">
+<form name="form_43615" onsubmit="return validate_form_43615()" method="post">
 <table data-quarto-disable-processing="true">
-<tbody id="task_3837">
+<tbody id="task_43615">
 <tr>
-<td id="answer_3837_1" style="padding:5px; border:1px solid #ccc;">Population Mean</td>
+<td id="answer_43615_2" style="padding:5px; border:1px solid #ccc;">Sample Mean</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -498,7 +509,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_3837_3" style="padding:5px; border:1px solid #ccc;">Sample Standard Deviation</td>
+<td id="answer_43615_1" style="padding:5px; border:1px solid #ccc;">Population Mean</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -506,7 +517,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_3837_2" style="padding:5px; border:1px solid #ccc;">Sample Mean</td>
+<td id="answer_43615_4" style="padding:5px; border:1px solid #ccc;">Sample Size</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -514,16 +525,16 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_3837_4" style="padding:5px; border:1px solid #ccc;">Sample Size</td>
+<td id="answer_43615_3" style="padding:5px; border:1px solid #ccc;">Sample Standard Deviation</td>
 </tr>
 </tbody>
 </table>
 <input type="submit" value="check">
-<div id="result_3837"></div>
+<div id="result_43615"></div>
 </form>
-<script>function validate_form_3837() {var text;var ch = document.getElementById('task_3837').children; if(ch[0].children[0].id == 'answer_3837_1'&ch[2].children[0].id == 'answer_3837_2'&ch[4].children[0].id == 'answer_3837_3'&ch[6].children[0].id == 'answer_3837_4'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_3837').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
+<script>function validate_form_43615() {var text;var ch = document.getElementById('task_43615').children; if(ch[0].children[0].id == 'answer_43615_1'&ch[2].children[0].id == 'answer_43615_2'&ch[4].children[0].id == 'answer_43615_3'&ch[6].children[0].id == 'answer_43615_4'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_43615').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_3837').innerText == 'Correct';text = res1;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_43615').innerText == 'Correct';text = res1;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -534,25 +545,25 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="2.4.2" class="anchored" data-anchor-id="identify-the-population-of-interest."><span class="header-section-number">2.4.2</span> Identify the population of interest.</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_84903" onsubmit="return validate_form_84903()" method="post">
-<input type="radio" name="answer_84903" id="answer_84903_1" value="all coins">
+<form name="form_67552" onsubmit="return validate_form_67552()" method="post">
+<input type="radio" name="answer_67552" id="answer_67552_1" value="all coins">
 <label>all coins</label>
 <br>
-<input type="radio" name="answer_84903" id="answer_84903_2" value="all US coins">
+<input type="radio" name="answer_67552" id="answer_67552_2" value="all US coins">
 <label>all US coins</label>
 <br>
-<input type="radio" name="answer_84903" id="answer_84903_3" value="all US pennies">
+<input type="radio" name="answer_67552" id="answer_67552_3" value="all US pennies">
 <label>all US pennies</label>
 <br>
-<input type="radio" name="answer_84903" id="answer_84903_4" value="all US pennies from the Marina bank">
+<input type="radio" name="answer_67552" id="answer_67552_4" value="all US pennies from the Marina bank">
 <label>all US pennies from the Marina bank</label>
 <br>
 <input type="submit" value="check">
-<div id="result_84903"></div>
+<div id="result_67552"></div>
 </form>
-<script>function validate_form_84903() {var x, text; var x = document.forms['form_84903']['answer_84903'].value;if (x == 'all US pennies'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_84903').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_67552() {var x, text; var x = document.forms['form_67552']['answer_67552'].value;if (x == 'all US pennies'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_67552').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_3837').innerText == 'Correct'; res2 = document.getElementById('result_84903').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_43615').innerText == 'Correct'; res2 = document.getElementById('result_67552').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -589,14 +600,14 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="2.5.1" class="anchored" data-anchor-id="lower-bound"><span class="header-section-number">2.5.1</span> Lower bound:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_33256" onsubmit="return validate_form_33256()" method="post">
-<input type="text" placeholder="" name="answer_33256">
+<form name="form_65133" onsubmit="return validate_form_65133()" method="post">
+<input type="text" placeholder="" name="answer_65133">
 <input type="submit" value="check">
-<div id="result_33256"></div>
+<div id="result_65133"></div>
 </form>
-<script>function validate_form_33256() {var x, text; var x = document.forms['form_33256']['answer_33256'].value;if (x == '15.384'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_33256').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_65133() {var x, text; var x = document.forms['form_65133']['answer_65133'].value;if (x == '15.384'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_65133').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_3837').innerText == 'Correct'; res2 = document.getElementById('result_84903').innerText == 'Correct'; res3 = document.getElementById('result_33256').innerText == 'correct';text = res1 + res2 + res3;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_43615').innerText == 'Correct'; res2 = document.getElementById('result_67552').innerText == 'Correct'; res3 = document.getElementById('result_65133').innerText == 'correct';text = res1 + res2 + res3;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -606,14 +617,14 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="2.5.2" class="anchored" data-anchor-id="upper-bound"><span class="header-section-number">2.5.2</span> Upper bound:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_24801" onsubmit="return validate_form_24801()" method="post">
-<input type="text" placeholder="" name="answer_24801">
+<form name="form_11920" onsubmit="return validate_form_11920()" method="post">
+<input type="text" placeholder="" name="answer_11920">
 <input type="submit" value="check">
-<div id="result_24801"></div>
+<div id="result_11920"></div>
 </form>
-<script>function validate_form_24801() {var x, text; var x = document.forms['form_24801']['answer_24801'].value;if (x == '17.3045'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_24801').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_11920() {var x, text; var x = document.forms['form_11920']['answer_11920'].value;if (x == '17.3045'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_11920').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_3837').innerText == 'Correct'; res2 = document.getElementById('result_84903').innerText == 'Correct'; res3 = document.getElementById('result_33256').innerText == 'correct'; res4 = document.getElementById('result_24801').innerText == 'correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_43615').innerText == 'Correct'; res2 = document.getElementById('result_67552').innerText == 'Correct'; res3 = document.getElementById('result_65133').innerText == 'correct'; res4 = document.getElementById('result_11920').innerText == 'correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -623,14 +634,14 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="2.5.3" class="anchored" data-anchor-id="df"><span class="header-section-number">2.5.3</span> df:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_25404" onsubmit="return validate_form_25404()" method="post">
-<input type="text" placeholder="" name="answer_25404">
+<form name="form_16270" onsubmit="return validate_form_16270()" method="post">
+<input type="text" placeholder="" name="answer_16270">
 <input type="submit" value="check">
-<div id="result_25404"></div>
+<div id="result_16270"></div>
 </form>
-<script>function validate_form_25404() {var x, text; var x = document.forms['form_25404']['answer_25404'].value;if (x == '1004'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_25404').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_16270() {var x, text; var x = document.forms['form_16270']['answer_16270'].value;if (x == '1004'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_16270').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_3837').innerText == 'Correct'; res2 = document.getElementById('result_84903').innerText == 'Correct'; res3 = document.getElementById('result_33256').innerText == 'correct'; res4 = document.getElementById('result_24801').innerText == 'correct'; res5 = document.getElementById('result_25404').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_43615').innerText == 'Correct'; res2 = document.getElementById('result_67552').innerText == 'Correct'; res3 = document.getElementById('result_65133').innerText == 'correct'; res4 = document.getElementById('result_11920').innerText == 'correct'; res5 = document.getElementById('result_16270').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -642,11 +653,11 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <!-- > Based on a sample, we are **[insert confidence level]** that the **[write parameter of interest]** is a single value between **[insert lower bound value]** and **[insert upper bound value]** **[insert units]**.     -->
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_25058" onsubmit="return validate_form_25058()" method="post">
+<form name="form_25486" onsubmit="return validate_form_25486()" method="post">
 <table data-quarto-disable-processing="true">
-<tbody id="task_25058">
+<tbody id="task_25486">
 <tr>
-<td id="answer_25058_4" style="padding:5px; border:1px solid #ccc;">is a single value</td>
+<td id="answer_25486_3" style="padding:5px; border:1px solid #ccc;">the true mean age of US pennies</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -654,7 +665,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_25058_1" style="padding:5px; border:1px solid #ccc;">Based on a sample</td>
+<td id="answer_25486_1" style="padding:5px; border:1px solid #ccc;">Based on a sample</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -662,7 +673,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_25058_3" style="padding:5px; border:1px solid #ccc;">the true mean age of US pennies</td>
+<td id="answer_25486_4" style="padding:5px; border:1px solid #ccc;">is a single value</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -670,7 +681,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_25058_2" style="padding:5px; border:1px solid #ccc;">we are 95% confident that</td>
+<td id="answer_25486_2" style="padding:5px; border:1px solid #ccc;">we are 95% confident that</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -678,16 +689,16 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_25058_5" style="padding:5px; border:1px solid #ccc;">between LB and UB</td>
+<td id="answer_25486_5" style="padding:5px; border:1px solid #ccc;">between LB and UB</td>
 </tr>
 </tbody>
 </table>
 <input type="submit" value="check">
-<div id="result_25058"></div>
+<div id="result_25486"></div>
 </form>
-<script>function validate_form_25058() {var text;var ch = document.getElementById('task_25058').children; if(ch[0].children[0].id == 'answer_25058_1'&ch[2].children[0].id == 'answer_25058_2'&ch[4].children[0].id == 'answer_25058_3'&ch[6].children[0].id == 'answer_25058_4'&ch[8].children[0].id == 'answer_25058_5'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_25058').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
+<script>function validate_form_25486() {var text;var ch = document.getElementById('task_25486').children; if(ch[0].children[0].id == 'answer_25486_1'&ch[2].children[0].id == 'answer_25486_2'&ch[4].children[0].id == 'answer_25486_3'&ch[6].children[0].id == 'answer_25486_4'&ch[8].children[0].id == 'answer_25486_5'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_25486').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_3837').innerText == 'Correct'; res2 = document.getElementById('result_84903').innerText == 'Correct'; res3 = document.getElementById('result_33256').innerText == 'correct'; res4 = document.getElementById('result_24801').innerText == 'correct'; res5 = document.getElementById('result_25404').innerText == 'correct'; res6 = document.getElementById('result_25058').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_43615').innerText == 'Correct'; res2 = document.getElementById('result_67552').innerText == 'Correct'; res3 = document.getElementById('result_65133').innerText == 'correct'; res4 = document.getElementById('result_11920').innerText == 'correct'; res5 = document.getElementById('result_16270').innerText == 'correct'; res6 = document.getElementById('result_25486').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -700,22 +711,22 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <!-- Why or why not? If so, explain why. If not, explain why and, if applicable, the population that could be generalized to. -->
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_50598" onsubmit="return validate_form_50598()" method="post">
-<input type="checkbox" id="answer_50598_1" value="Yes, because we can assume pennies from a bank are a natural random sample.">
+<form name="form_21077" onsubmit="return validate_form_21077()" method="post">
+<input type="checkbox" id="answer_21077_1" value="Yes, because we can assume pennies from a bank are a natural random sample.">
 <label>Yes, because we can assume pennies from a bank are a natural random sample.</label>
 <br>
-<input type="checkbox" id="answer_50598_2" value="Yes, because our sample size is greater than 30.">
+<input type="checkbox" id="answer_21077_2" value="Yes, because our sample size is greater than 30.">
 <label>Yes, because our sample size is greater than 30.</label>
 <br>
-<input type="checkbox" id="answer_50598_3" value="No">
+<input type="checkbox" id="answer_21077_3" value="No">
 <label>No</label>
 <br>
 <input type="submit" value="check">
-<div id="result_50598"></div>
+<div id="result_21077"></div>
 </form>
-<script>function validate_form_50598() {var text; var x1 = document.getElementById('answer_50598_1'); var x2 = document.getElementById('answer_50598_2'); var x3 = document.getElementById('answer_50598_3'); if (x1.checked == true&x2.checked == false&x3.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_50598').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_21077() {var text; var x1 = document.getElementById('answer_21077_1'); var x2 = document.getElementById('answer_21077_2'); var x3 = document.getElementById('answer_21077_3'); if (x1.checked == true&x2.checked == false&x3.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_21077').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_3837').innerText == 'Correct'; res2 = document.getElementById('result_84903').innerText == 'Correct'; res3 = document.getElementById('result_33256').innerText == 'correct'; res4 = document.getElementById('result_24801').innerText == 'correct'; res5 = document.getElementById('result_25404').innerText == 'correct'; res6 = document.getElementById('result_25058').innerText == 'Correct'; res7 = document.getElementById('result_50598').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_43615').innerText == 'Correct'; res2 = document.getElementById('result_67552').innerText == 'Correct'; res3 = document.getElementById('result_65133').innerText == 'correct'; res4 = document.getElementById('result_11920').innerText == 'correct'; res5 = document.getElementById('result_16270').innerText == 'correct'; res6 = document.getElementById('result_25486').innerText == 'Correct'; res7 = document.getElementById('result_21077').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -727,22 +738,22 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <!-- What if you hadn't met that condition? What would that mean for your conclusion? -->
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_9390" onsubmit="return validate_form_9390()" method="post">
-<input type="checkbox" id="answer_9390_1" value="Random Sample">
+<form name="form_55215" onsubmit="return validate_form_55215()" method="post">
+<input type="checkbox" id="answer_55215_1" value="Random Sample">
 <label>Random Sample</label>
 <br>
-<input type="checkbox" id="answer_9390_2" value="Normality">
-<label>Normality</label>
-<br>
-<input type="checkbox" id="answer_9390_3" value="Sufficient Sample Size">
+<input type="checkbox" id="answer_55215_2" value="Sufficient Sample Size">
 <label>Sufficient Sample Size</label>
 <br>
+<input type="checkbox" id="answer_55215_3" value="Normality">
+<label>Normality</label>
+<br>
 <input type="submit" value="check">
-<div id="result_9390"></div>
+<div id="result_55215"></div>
 </form>
-<script>function validate_form_9390() {var text; var x1 = document.getElementById('answer_9390_1'); var x2 = document.getElementById('answer_9390_2'); var x3 = document.getElementById('answer_9390_3'); if (x1.checked == false&x2.checked == true&x3.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_9390').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_55215() {var text; var x1 = document.getElementById('answer_55215_1'); var x2 = document.getElementById('answer_55215_2'); var x3 = document.getElementById('answer_55215_3'); if (x1.checked == false&x2.checked == true&x3.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_55215').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_3837').innerText == 'Correct'; res2 = document.getElementById('result_84903').innerText == 'Correct'; res3 = document.getElementById('result_33256').innerText == 'correct'; res4 = document.getElementById('result_24801').innerText == 'correct'; res5 = document.getElementById('result_25404').innerText == 'correct'; res6 = document.getElementById('result_25058').innerText == 'Correct'; res7 = document.getElementById('result_50598').innerText == 'Correct'; res8 = document.getElementById('result_9390').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_43615').innerText == 'Correct'; res2 = document.getElementById('result_67552').innerText == 'Correct'; res3 = document.getElementById('result_65133').innerText == 'correct'; res4 = document.getElementById('result_11920').innerText == 'correct'; res5 = document.getElementById('result_16270').innerText == 'correct'; res6 = document.getElementById('result_25486').innerText == 'Correct'; res7 = document.getElementById('result_21077').innerText == 'Correct'; res8 = document.getElementById('result_55215').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
          return false;
          }}</script>
 </div>
