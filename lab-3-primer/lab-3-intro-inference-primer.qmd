@@ -60,9 +60,30 @@ Please note that all images were created with modifications to the defaults to m
 
 ```{webr}
 #| label: setup
+#| exercise: ex-set
 library(tidyverse) #data management
 library(__graphics package__)
 library(__stats package__)
+```
+
+::: {.solution exercise="ex-set"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex-set
+#| solution: true
+library(tidyverse) #data management
+library(mosaic)
+library(ggformula)
+```
+
+:::
+
+```{webr}
+#| exercise: ex-set
+#| check: true
+gradethis::grade_this_code()
 ```
 
 
@@ -80,22 +101,69 @@ Complete the code below to (1) read in the csv file `penny-age-2019.csv` and sto
 
 ```{webr}
 #| label: read-data
+#| exercise: ex-read
 penny <- read_csv("_____filename_____")
 _____function_____(penny)
 ```
 
 
+::: {.solution exercise="ex-read"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex-read
+#| solution: true
+penny <- read_csv("penny-age-2019.csv")
+names(penny)
+```
+
+:::
+
+```{webr}
+#| exercise: ex-read
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+
 ### Visualize the Data
 
-Use `gf_histogram()` to create a histogram of the sample distribution, being sure to label axes appropriately. Replace the underscored components. 
+Use `gf_histogram()` to create a histogram of the sample distribution, being sure to label axes appropriately. Replace the underscored components. With good labels such as:  
+
+- `"Age in Years of US Pennies from Marina, CA Bank (Sp 2020)"`
+- `"Number of Pennies"`
 
 
 ```{webr}
 #| label: histogram
+#| exercise: ex-hist
 __goal__(~ __variable__, data = __dataframe__,
          xlab = "__x axis label__",
          ylab = "__y axis label__")
 ```
+
+::: {.solution exercise="ex-hist"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex-hist
+#| solution: true
+gf_histogram(~ age, data = penny,
+         xlab = "Age in Years of US Pennies from Marina, CA Bank (Sp 2020)",
+         ylab = "Number of Pennies)
+```
+
+:::
+
+```{webr}
+#| exercise: ex-hist
+#| check: true
+gradethis::grade_this_code()
+```
+
 
 
 ### Calculate Summary Statistics 
@@ -104,8 +172,29 @@ Use `df_stats()` to calculate the descriptive statistics. Replace is the undersc
 
 ```{webr}
 #| label: summary-stats
+#| exercise: ex-stats
 __goal__(~ __variable__, data = __dataframe__)
 ```
+
+
+::: {.solution exercise="ex-stats"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex-stats
+#| solution: true
+df_stats(~ age, data = penny)
+```
+
+:::
+
+```{webr}
+#| exercise: ex-stats
+#| check: true
+gradethis::grade_this_code()
+```
+
 
 
 
