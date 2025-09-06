@@ -183,7 +183,7 @@ gradethis::grade_this_code()
 #| label: shape
 #| echo: false
 check_question(answer = c("Unimodal", 
-                          "Skewed Left"),
+                          "Skewed Right"),
                options = c("Symmetric",
                            "Skewed Right",
                            "Skewed Left",
