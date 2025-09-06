@@ -101,27 +101,30 @@ Complete the code below to (1) read in the csv file `penny-age-2019.csv` and sto
 
 ```{webr}
 #| label: read-data
-#| exercise: ex-read
 penny <- read_csv("_____filename_____")
+```
+
+```{webr}
+#| label: name-data
+#| exercise: ex-name
 _____function_____(penny)
 ```
 
 
-::: {.solution exercise="ex-read"}
+::: {.solution exercise="ex-name"}
 
 #### Solution
 
 ```{webr}
-#| exercise: ex-read
+#| exercise: ex-name
 #| solution: true
-penny <- read_csv("penny-age-2019.csv")
 names(penny)
 ```
 
 :::
 
 ```{webr}
-#| exercise: ex-read
+#| exercise: ex-name
 #| check: true
 gradethis::grade_this_code()
 ```
@@ -153,7 +156,7 @@ __goal__(~ __variable__, data = __dataframe__,
 #| solution: true
 gf_histogram(~ age, data = penny,
          xlab = "Age in Years of US Pennies from Marina, CA Bank (Sp 2020)",
-         ylab = "Number of Pennies)
+         ylab = "Number of Pennies")
 ```
 
 :::
