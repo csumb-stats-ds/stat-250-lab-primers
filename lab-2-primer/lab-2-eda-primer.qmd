@@ -770,6 +770,7 @@ In the first question you are given the abstract from the following paper:
 
 Here are some tips for critically reading the abstract: 
 
+
 **Prior to Reading**
 
 - What do I know about this topic?

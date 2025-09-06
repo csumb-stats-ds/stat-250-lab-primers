@@ -1,5 +1,5 @@
 ---
-title: "Lab 3: Introduction to Inference Primer"
+title: "Lab 4: Estimation of a Population Mean Primer"
 format: 
   live-html:
     webr:
@@ -8,19 +8,22 @@ format:
         - mosaic
         - tidyverse
       resources: 
-        - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-2-primer/penguins.csv
+        - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-4-primer/honey-bee-colonies-2020.csv
       cell-options:
         warning: true
         completion: false
+        eval: false
 execute: 
   warning: false
   message: false
   echo: true
+  eval: false
 code-copy: true
 code-overflow: wrap
 toc: true
 number-sections: true
 css: ../styles.css
+draft: true
 ---
 
 
@@ -44,6 +47,9 @@ options(ggplot2.continuous.color = scale_color_viridis_c,
 #| label: setup-checkdown
 #| include: false
 library(checkdown)
+library(ggformula)
+library(mosaic)
+library(tidyverse)
 ```
 
 
@@ -52,3 +58,934 @@ library(checkdown)
 
 Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
 :::
+
+
+## Getting Started
+
+
+First, be sure you have installed `ggformula` and `mosaic`. Remember, you only need to install each package once on your machine. 
+
+Then, be sure to load the packages `ggformula` and `mosaic`, using the `library()` function. Remember, you need to do this with each new Quarto/RMarkdown document or R Session. Add the package names in each of the blanks below to load in the indicated packages. 
+
+```{webr}
+#| exercise: ex_1
+#| caption: Loading Packages
+library(_________) #for graphs
+library(_________) #for statistics
+```
+
+
+::: {.solution exercise="ex_1"}
+
+#### Solution
+
+`library()` loads in packages. You need to supply the package name you need to load inside the parentheses.
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+#| echo: false
+library(ggformula) #for graphs
+library(mosaic) #for statistics
+```
+
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+#| echo: false
+gradethis::grade_this_code()
+```
+
+
+
+
+## Honeybee Population Decline
+
+Many ecologists and citizens are concerned that the population of honeybees is declining. Honeybees perform an essential ecosystem service of pollinating crops in California and across the United States. Ecologists are concerned about the use of pesticides and the rise of colony collapse disorder.   
+
+The U.S. Department of Agriculture (USDA) collects information about the number of honeybee colonies in the United States. Researchers at the USDA reached out to registered apiarists (bee keepers) in each state on a week that was selected by random number generation, starting in 2000. They record the total number of honeybee colonies reported in each selected week. 
+
+The dataset `honey-bee-colonies-2020.csv` has the data recorded in the variable `Colonies`, which records the number of honeybee colonies, in thousands. 
+
+
+Modify the function below to read in the dataset we will use in the example and store it as the object `bee`. 
+
+```{webr}
+#| exercise: ex_2
+bee <- ________("HoneyBeeColonies_since2000.csv")
+```
+
+
+::: {.solution exercise="ex_2"}
+
+#### Solution
+
+We need a function that will read in our csv file and save it as the object `bee`. In the example below, you only need to fill in the function `read_csv`. 
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+#| echo: false
+bee <- read_csv("honey-bee-colonies-2020.csv")
+```
+
+:::
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+#| echo: false
+gradethis::grade_this_code()
+```
+
+
+
+## Study Components
+
+Before we work on creating and evaluating a confidence interval for these data, it is helpful to make sure we understand the data and how it is structured. Can you identify   
+
+- the case?  
+- the population?  
+- the variable of interest and its type?  
+- the sampling design?   
+
+Once you think you have identified the components, check your understanding below. 
+
+
+#### Which of the following is the variable of interest and its type in this research question?
+
+
+```{r}
+#| label: components-q1
+#| echo: false
+checkdown::check_question(options = c("size of honeybee colony", 
+                          "number of honeybee colonies",
+                          "number of honeybee colonies in the US", 
+                          "number of bees in a colony",
+                          "average number of colonies per keeper", 
+                          "average number of honeybee colonies in the U.S.", 
+                          "categorical nominal", 
+                          "categorical ordinal", 
+                          "numeric discrete", 
+                          "numeric continuous"), 
+               answer = c("number of honeybee colonies in the US", 
+                          "numeric discrete"), 
+               right = "Great job!", 
+               wrong = "Not quite. Check the hints below.", 
+               type = "checkbox", 
+               button_label = "Check Your Answer")
+```
+
+<br>
+
+```{r}
+#| label: components-q1-hint1
+#| echo: false
+checkdown::check_hint(hint_text = "The variable(s) of interest is the variable the research question is interested in. Other variables can be measured but not included in a given research question.",
+           hint_title = "Click Here for Hint about Variable",
+           type = "onclick")
+```
+
+```{r}
+#| label: components-q1-hint2
+#| echo: false
+checkdown::check_hint(hint_text = "Once you have identified the variable, is it recording a quantity of something or not? If not, is there a heirarchy/order to the levels? If it is, are the values able to take any quantity (given the precision of the measuring tool)?",
+           hint_title = "Click Here for Hint about Variable Type",
+           type = "onclick")
+```
+
+
+
+#### Which of the following is the case in this dataset?
+
+```{r}
+#| label: components-q2
+#| echo: false
+checkdown::check_question(options = c("a honeybee", 
+                          "all honeybees", 
+                          "all honeybee colonies", 
+                          "a honeybee colony", 
+                          "all honeybee colonies in the U.S.", 
+                          "a honeybee colony in the U.S.", 
+                          "a year", 
+                          "a week", 
+                          "all weeks since 2000"), 
+               answer = c("a week"), 
+               right = "Great job! You recognized the unit that was being selected.", 
+               wrong = "Look at the scenario again -- what is the unit that is being selected or the unit on which the variable is being measured?", 
+               type = "radio", 
+               button_label = "Check Your Answer")
+```
+
+<br>
+
+
+```{r}
+#| label: components-q2-hint
+#| echo: false
+checkdown::check_hint(hint_text = "A case is the single unit on which the variable is measured.",
+           hint_title = "Click Here for Hint",
+           type = "onclick")
+```
+
+
+<br>
+
+#### Which of the following is the population of interest for this research question?
+
+```{r}
+#| label: components-q3
+#| echo: false
+checkdown::check_question(options = c("a honeybee", 
+                          "all honeybees", 
+                          "all honeybee colonies", 
+                          "a honeybee colony", 
+                          "all honeybee colonies in the U.S.", 
+                          "a honeybee colony in the U.S.", 
+                          "a year", 
+                          "a week", 
+                          "all weeks since 2000"), 
+               answer = c("all weeks since 2000"), 
+               right = "Great job!", 
+               wrong = "Recall that a population can have any variable measured on the cases within it -- did you pick an option that has part of the variable included?", 
+               type = "radio", 
+               button_label = "Check Your Answer")
+```
+
+<br>
+
+```{r}
+#| label: components-q3-hint
+#| echo: false
+checkdown::check_hint(hint_text = "A population of interest is a collection of all possible cases that the researcher wants to know about.",
+           hint_title = "Click Here for Hint",
+           type = "onclick")
+```
+
+<br>
+
+#### Which of the following could be the sample for this study?
+
+```{r}
+#| label: components-q4
+#| echo: false
+checkdown::check_question(options = c("all honeybee colonies", 
+                          "20 honeybee colonies", 
+                          "all honeybee colonies in the U.S.", 
+                          "20 honeybee colonies in the U.S.", 
+                          "20 weeks since 2000", 
+                          "mean number of honeybee colonies in the US",
+                          "a week", 
+                          "all weeks since 2000", 
+                          "mean number of weeks since 2000"), 
+               answer = c("20 weeks since 2000"), 
+               right = "Great job!", 
+               wrong = "A sample is just the selected cases from the population. Review your answers above", 
+               type = "radio", 
+               button_label = "Check Your Answer")
+```
+
+<br>
+
+```{r}
+#| label: components-q4-hint
+#| echo: false
+checkdown::check_hint(hint_text = "A sample is collection of the selected cases from the population.",
+           hint_title = "Click Here for Hint",
+           type = "onclick")
+```
+
+<br>
+
+
+#### What is the sampling method used by the researchers? 
+
+```{r}
+#| label: components-q5
+#| echo: false
+checkdown::check_question(options = c("Volunteer Sample", 
+                          "Convenience Sample", 
+                          "Stratified Random Sample", 
+                          "Simple Random Sample"), 
+               answer = c("Simple Random Sample"), 
+               right = "Great job!", 
+               wrong = "Check the hint, read the scenario and try again.", 
+               type = "radio", 
+               random_answer_order = TRUE,
+               button_label = "Check Your Answer")
+```
+
+<br>
+
+```{r}
+#| label: components-q5-hint
+#| echo: false
+checkdown::check_hint(hint_text = "Focus on how the case is being chosen - by what method is the case selected from the population?",
+           hint_title = "Click Here for Hint",
+           type = "onclick")
+```
+
+
+<br> 
+
+
+#### If we were to calculate the average size of a honeybee colony in the U.S. from 50 selected colonies, that would be an example of a... 
+
+```{r}
+#| label: components-q6
+#| echo: false
+checkdown::check_question(options = c("parameter", 
+                          "statistic", 
+                          "population", 
+                          "sample"), 
+               answer = c("statistic"), 
+               right = "Great job!", 
+               wrong = "Check the hint, read the scenario and try again.", 
+               type = "select", 
+               random_answer_order = TRUE,
+               button_label = "Check Your Answer")
+```
+
+<br>
+
+```{r}
+#| label: components-q6-hint1
+#| echo: false
+checkdown::check_hint(hint_text = "Statisics and parameters are numerical summaries calculated on either samples or populations, respectively.",
+           hint_title = "Click Here for Hint 1",
+           type = "onclick")
+```
+
+```{r}
+#| label: components-q6-hint2
+#| echo: false
+checkdown::check_hint(hint_text = "Numerical summaries are values we can calculate that summarize across cases. For example, we can calculate the number of students in a classroom with blonde hair, rather than just scanning the raw data. That 'count' is a numerical summary, as it summarizes the data from each case into a a number for the group.",
+           hint_title = "Click Here for Hint 2",
+           type = "onclick")
+```
+
+<br>
+
+
+
+### Single Numeric Variable Graphics
+
+#### Histogram
+
+To create a histogram of a single numeric variable, we use the following structure: 
+
+```{webr}
+#| eval: false
+gf_histogram(~ x, data = mydata)
+```
+
+where `x` is the name of the variable you wish to graph that is stored in the dataset named `mydata`. 
+
+Recall that we already loaded in our data on the prior page and named it `bee`. We want to graph the variable `Colonies` that occurs in the `bee` dataset. 
+
+```{webr}
+#| exercise: ex_3
+#| caption: Create a basic histogram
+gf_histogram(~_________, data = __________)
+```
+
+
+::: {.solution exercise="ex_3"}
+
+##### Solution
+
+Fill in the `x` blank with the name of the variable. Fill in the `mydata` blank with the dataset object name. 
+
+```{webr}
+#| exercise: ex_3
+#| solution: true
+#| echo: false
+gf_histogram(~Colonies, data = bee)
+
+```
+
+:::
+
+```{webr}
+#| exercise: ex_3
+#| check: true
+#| echo: false
+gradethis::grade_this_code()
+```
+
+
+That histogram is quite hard to read, so we can add some arguments to the basic code to help us visualize the data better. 
+Recall you can use the following arguments:
+
+* xlab = "___"  : label the x-axis  
+* ylab = "___"  : label the y-axis  
+* boundary = ##  : set the number where bins begin   
+* color = "___"  : add an outline around the bins to see them better; fill in this blank with a color name  
+* binwidth = ##  : adjust the width of bins  
+
+Adjust the arguments in the code chunk below until your graphic looks like this:
+
+
+```{r, echo=FALSE}
+gf_histogram(~Colonies, data = bee,
+             xlab = "Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 ", 
+             ylab = "Frequency",
+             binwidth = 50, 
+             boundary = 0, 
+             color = "black")
+```
+
+```{webr}
+#| exercise: ex_4
+#| caption: Adjust the code below to match the image above
+gf_histogram(~_________, data = __________, 
+             xlab = "_____________________", 
+             ylab = "_______________", 
+             binwidth = ___, 
+             boundary = ___, 
+             color = "______")
+```
+
+
+::: {.solution exercise="ex_4"}
+
+##### Solution
+
+Any multiple of the binwidth will work for the `boundary` entry, but 0 is the easiest to use most of the time. Your x-axis label should include the full variable, units, and the population. The y-axis could be labeled the frequency of the *case*, in context, if you like. In this scenario, that would be "Frequency of Weeks." If you need to review the variables, population or case, review in the prior section.  
+
+```{webr}
+#| exercise: ex_4
+#| solution: true
+#| echo: false
+gf_histogram(~Colonies, data = bee,
+             xlab = "Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 ", 
+             ylab = "Frequency",
+             binwidth = 50, 
+             boundary = 0, 
+             color = "black")
+```
+
+:::
+
+```{webr}
+#| exercise: ex_4
+#| check: true
+#| echo: false
+gradethis::grade_this_code()
+```
+
+
+
+
+#### Boxplot
+
+To create a boxplot of a single numeric variable, we use the following structure: 
+
+```{webr}
+#| eval: false
+gf_boxplot(~ x, data = mydata)
+```
+
+where `x` is the name of the variable you wish to graph that is stored in the dataset named `mydata`. 
+
+Recall that we already loaded in our data on the prior page and named it `bee`. We want to graph the variable `Colonies` that occurs in the `bee` dataset. 
+
+```{webr}
+#| exercise: ex_5
+#| caption: Create a basic boxplot
+____________(~_________, data = __________)
+```
+
+
+::: {.solution exercise="ex_5"}
+
+##### Solution
+
+Fill in the `x` blank with the name of the variable. Fill in the `mydata` blank with the dataset object name. The function to make a boxplot is `gf_boxplot`.  
+
+```{webr}
+#| exercise: ex_5
+#| solution: true
+#| echo: false
+gf_boxplot(~Colonies, data = bee)
+```
+
+:::
+
+```{webr}
+#| exercise: ex_5
+#| check: true
+#| echo: false
+gradethis::grade_this_code()
+```
+
+
+We only need a little adjustment to the boxplot because it is based on statistics. We can use the following following arguments:
+
+* xlab = "___"  : label the x-axis  
+* ylab = "___"  : label the y-axis  
+
+::: {callout note}
+
+##### Question 7: Is there a y-axis in a single numeric variable boxplot? 
+
+```{r}
+#| label: eda-q7
+#| echo: false
+checkdown::check_question(options = c("no", 
+                          "yes"),
+               answer = c("no"), 
+               right = "Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.", 
+               wrong = "Check your notes and try again", 
+               type = "checkbox", 
+               button_label = "Check Your Answer")
+```
+
+:::
+
+
+Now re-create your boxplot with the appropriate axis label(s). 
+
+```{webr}
+#| exercise: ex_6
+#| caption: Create a boxplot with the correct axis label(s).
+
+```
+
+
+::: {.solution exercise="ex_6"}
+
+##### Solution
+
+Since the single numeric variable is horizontal, the x-axis is the variable being graphed and should be labeled. The y-axis is meaningless and should not be. Your x-axis label should include the full variable, units, and the population. If you need to review the variables, population or case, review in the prior section.  
+
+```{webr}
+#| exercise: ex_6
+#| solution: true
+#| echo: false
+gf_boxplot(~Colonies, data = bee,
+             xlab = "Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 ")
+```
+
+:::
+
+```{webr}
+#| exercise: ex_6
+#| check: true
+#| echo: false
+gradethis::grade_this_code()
+```
+
+
+
+
+
+::: {callout note}
+<!--- these use the graphics only so I put them here. Should all questions be at the end under 'check your understanding? --->
+
+
+#### Question 8. What is the shape and modality of these data? 
+<!--- Adjust answer? Thought roughly symmetric from histogram / stats (which they don't have yet), but boxplot looks slightly left-skewed? --->
+
+```{r}
+#| label: eda-q8
+#| echo: false
+checkdown::check_question(options = c("symmetric", 
+                          "right skewed",
+                          "left skewed", 
+                          "unimodal",
+                          "bimodal", 
+                          "multimodal", 
+                          "unable to determine shape", 
+                          "unable to determine modality"), 
+               answer = c("symmetric", 
+                          "unimodal"), 
+               right = "Great job!", 
+               wrong = "Not quite. Check the hints below.", 
+               type = "checkbox", 
+               button_label = "Check Your Answer")
+```
+
+<!--- insert note here about symmetry vs. skewness if close call. (slighly left skewed vs. roughly symmetric). May also insert note about what can you determine from each of histogram or boxplot.  --->
+
+
+
+#### Question 9. Based on the shape, the mean should be _______ the median.  
+<!--- answer set for if consider symmetric; edit if think not --->
+
+```{r}
+#| label: eda-q9
+#| echo: false
+checkdown::check_question(options = c("greater than", 
+                          "less than",
+                          "equivalent to"), 
+               answer = c("equivalent to"), 
+               right = "Great job!", 
+               wrong = "Not quite. Review in your notebook how means and medians are calculated.", 
+               type = "select", 
+               button_label = "Check Your Answer")
+```
+
+:::
+
+### Single Numeric Variable Summary Statistics
+
+We can calculate the single numeric variable summary statistics using the following structure: 
+
+```{webr}
+#| eval: false
+goal(~x, data = mydata)
+```
+
+where `x` is the name of the numeric variable stored inside the dataframe object named `mydata`. `goal` stands in for any of the summary statistic functions we might use, such as: 
+* `mean` 
+* `median`
+* `sd`
+* `IQR`
+* `quantile`
+* `df_stats`
+
+All of these functions use the exact same structure (and the same basic structure as your graphics) for single numeric variables. 
+
+Use the code chunk below to calculate some summary statistics. 
+
+```{webr}
+#| exercise: ex_7
+#| caption: Calculate summary statisics
+
+```
+
+
+```{r, eval=FALSE, echo=FALSE}
+df_stats(~Colonies, data = bee)
+```
+
+### Check Your Understanding
+
+You may need to refer to the graphics or summary statistics you calculated above to answer these questions. 
+
+
+#### Question 10. How many cases have between 2301 and 2504 thousand colonies? 
+
+```{r}
+#| label: eda-q10
+#| echo: false
+checkdown::check_question(answer = 5, title = "Enter your answer below")
+```
+
+####
+
+```{r}
+#| label: eda-q10-hint1
+#| echo: false
+checkdown::check_hint(hint_text = "Use the code chunk below to calculate some statistics. What statistics do those numbers coresspond to?",
+           hint_title = "Click Here for Hint 1",
+           type = "onclick")
+```
+
+```{r}
+#| label: eda-q10-hint2
+#| echo: false
+checkdown::check_hint(hint_text = "What percent of cases would you expect between those values? What is your sample size? Can you now calculate the number of cases that have values of the variable between those values?",
+           hint_title = "Click Here for Hint 2",
+           type = "onclick")
+```
+
+
+#### Question 11. What is the name for the distance between 2504 and 2672.75 thousand colonies on the boxplot? 
+
+```{r}
+#| label: eda-q11
+#| echo: false
+checkdown::check_question(answer = c("inter-quartile range"), 
+                          placeholder = "write answers in all lower case",
+                          right = "Great job!", 
+                          wrong = "Not quite. Check your spelling or the hints below.", 
+                          button_label = "Check Your Answer")
+```
+
+####
+
+```{r}
+#| label: eda-q11-hint
+#| echo: false
+checkdown::check_hint(hint_text = "What statisitcs do those values correspond to? Is there a name for the spread between them?",
+           hint_title = "Click Here for Hint",
+           type = "onclick")
+```
+
+
+
+#### Question 12. There are more cases that have values between 2301 and 2504 thousand colonies than cases that have values between 2672.75 and 2812 thousand colonies. 
+
+```{r}
+#| label: eda-q12
+#| echo: false
+checkdown::check_question(options = c("true", "false"), 
+               answer = c("false"), 
+               right = "Great job!", 
+               wrong = "Not quite. Check the hints below.", 
+               type = "checkbox", 
+               button_label = "Check Your Answer")
+```
+
+####
+
+```{r}
+#| label: eda-q12-hint
+#| echo: false
+checkdown::check_hint(hint_text = "What statisitcs do those values correspond to? What do you know about the percent of cases that occurs between each set of values?",
+           hint_title = "Click Here for Hint",
+           type = "onclick")
+```
+
+
+
+#### Question 13. The cases that have values between 2301 and 2504 thousand colonies are more dispersed then the cases that have values between 2672.75 and 2812 thousand colonies. 
+
+
+
+```{r}
+#| label: eda-q13
+#| echo: false
+checkdown::check_question(options = c("true", "false"), 
+               answer = c("true"), 
+               right = "Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out", 
+               wrong = "Not quite. Check the hints below.", 
+               type = "checkbox", 
+               button_label = "Check Your Answer")
+```
+
+####
+
+```{r}
+#| label: eda-q13-hint
+#| echo: false
+checkdown::check_hint(hint_text = "Try looking at the boxplot and identifying the statistics on it.",
+           hint_title = "Click Here for Hint",
+           type = "onclick")
+```
+
+
+
+#### Question 14. We could have determined the modality of the distribution without making a histogram (i.e. with just statistics or the boxplot). 
+
+```{r}
+#| label: eda-q14
+#| echo: false
+checkdown::check_question(options = c("true", "false"), 
+               answer = c("false"), 
+               right = "Great job! Modality can only be seen on a histogram.", 
+               wrong = "Not quite. Check the hints below.", 
+               type = "checkbox", 
+               button_label = "Check Your Answer")
+```
+
+####
+
+```{r}
+#| label: eda-q14-hint
+#| echo: false
+checkdown::check_hint(hint_text = "Review what modality measures. Can you see frequency in the statistics of a numeric variable or on a boxplot?",
+           hint_title = "Click Here for Hint",
+           type = "onclick")
+```
+
+
+### Calculating a single numeric confidence interval using `qt()`
+
+Using `qt()` is useful if you do not have the raw data, but instead are only given summary statistics. 
+
+To calculate a confidence interval, we can recall its equation: 
+
+$$ \bar{x} \pm t^* \cdot \frac{s}{\sqrt{n}} $$
+
+
+Most of those values, namely $\bar{x}, s, n$, can be found in our summary statistics output: 
+
+<!--- since code not going to display, should this instead use summarize to only output those with headers? Or keep this format of output they are used to? If this, perhaps questions for them to identify each part? (marked up, remove if change this) --->
+```{r stat-output, echo=FALSE}
+df_stats(~Colonies, data = bee)
+```
+
+#### Question 15. From this output identify each value appropriatly: 
+<!--- the expression() function isn't working to create an x-bar. Ideas? Tried expression (outside paste as well), bquote, and just latex as well as loading the grDevices packages the plotmath syntex is inside.--->
+```{r}
+#| label: eda-q15a
+#| echo: false
+checkdown::check_question(answer = 2591.3, 
+               title = paste0("What is the value of ", expression(bar(x)), "?"),
+               button_label = "Check Your Answer")
+```
+
+```{r}
+#| label: eda-q15b
+#| echo: false
+checkdown::check_question(answer = 141.1066, 
+              title = "What is the value of $s$?",
+               button_label = "Check Your Answer")
+```
+
+```{r}
+#| label: eda-q15c
+#| echo: false
+checkdown::check_question(answer = 20, 
+              title = "What is the value of $n$?",
+               button_label = "Check Your Answer")
+```
+
+
+Since we know those values, we only need to calculate $t^*$. The t-critical value is calculated using the function `qt()` using this structure:
+
+```{r qt-template, eval = FALSE}
+qt(1-alpha/2, df)
+```
+
+
+The first entry, is the area to the left of our critical value, if $1-\alpha$ is our confidence level. qt() will calculate the value of t (t-critical value) that binds that area to the left of it, given your degrees of freedom, $df = n-1$. 
+
+If we are calculating a 95% confidence interval, then: 
+
+* the confidence level $1-\alpha$ = 0.95, and thus
+* $\alpha$ = 0.05. 
+
+Since we know the sample size is 20, then: 
+
+* the degrees of freedom ($df = n-1$) is 19
+
+Thus, our code to get the critical value is: 
+
+```{webr}
+#| label: qt-ex
+qt(1-0.05/2, 19)
+```
+
+With this value, we can use R to calculate the confidence intervals:
+
+```{r manual-CI-calc}
+2591.3 + 2.093024*(141.1066/sqrt(20))
+2591.3 - 2.093024*(141.1066/sqrt(20))
+```
+
+We can do the same calculation with saved objects, letting us be careful to (1) not round (as those initial outputs may be) and (2) not make a mistake typing values. All we need to do is set each part of our equation as an object value from its direct calculation. The objects `xbar`, `s`, `n`, and `crit` are made for you. Use those names together to calculate the confidence interval upper bound. 
+
+
+```{r, results = FALSE}
+xbar<-mean(~Colonies, data = bee)
+s<-sd(~Colonies, data = bee)
+n<-length(bee$Colonies)
+crit<-qt(1-0.05/2, n-1)
+```
+
+
+```{webr}
+#|exercise: ex_8
+#|caption: Use the object names to calculate the CI upper bound. 
+____ + _____ * (_____ / _______(_______))
+```
+
+
+
+::: {.solution exercise="ex_8"}
+
+##### Solution
+
+You could take the equation we solved manually and replace the values for the objects that store those value inside them. 
+```{webr}
+#| exercise: ex_8
+#| solution: true
+#| echo: false
+xbar + crit * (s / sqrt(n))
+```
+
+:::
+
+```{webr}
+#| exercise: ex_8
+#| check: true
+#| echo: false
+gradethis::grade_this_code()
+```
+
+
+To finish our confidence interval calculations, we would run the same code but with a "-" instead of a "+" to calculate the lower bound. 
+
+
+
+
+
+
+### Calculating a single numeric confidence interval using `t.test()`
+
+If we have raw data, then we can use the `t.test()` function to calculate a confidence interval. 
+
+The structure of the function is as follows:
+
+```{r t-test-template, eval=FALSE}
+t.test(~x, data = mydata, conf.level = 1-alpha)$conf.int
+```
+
+where
+
+* `x` is your variable of data for which you want to calculate a confidence interval
+* `mydata` is the name of the dataframe object in R  
+* `1-alpha` is replaced by your confidence level, in proportions (e.g.: 0.95)
+
+Thus, for our 95% confidence interval for our honeybee colony data (recall the variable is `Colonies` and the dataframe we stored it as is `bee`), the function would be:
+
+```{webr}
+#|label: t-test-demo
+t.test(~Colonies, data = bee, conf.level = 0.95)$conf.int
+```
+
+The output supplies first the lower bound (2525.26), then the upper bound (2657.34) and displays your confidence level below again. 
+
+Edit the code below to calculate a 99% confidence interval. 
+
+```{webr}
+#|exercise: ex_9
+#|caption: Edit the code to calculate a 99% CI
+t.test(~Colonies, data = bee, conf.level = 0.95)$conf.int
+```
+
+::: {.solution exercise="ex_9"}
+
+##### Solution
+
+You could take the equation we solved manually and replace the values for the objects that store those value inside them. 
+```{webr}
+#| exercise: ex_9
+#| solution: true
+#| echo: false
+t.test(~Colonies, data = bee, conf.level = 0.99)$conf.int
+```
+
+:::
+
+```{webr}
+#| exercise: ex_9
+#| check: true
+#| echo: false
+gradethis::grade_this_code()
+```
+
+
+
+#### Arrange the words to **interpret** your confidence interval in the context of the question.
+
+<!-- > Based on a sample, we are **[insert confidence level]** that the **[write parameter of interest]** is a single value between **[insert lower bound value]** and **[insert upper bound value]** **[insert units]**.     -->
+
+```{r}
+#| label: ci-interpretation
+#| echo: false
+check_question(c("Based on a sample", 
+                 "we are 95% confident that",
+                 "the true mean age of US pennies",
+                 "is a single value",
+                 "between LB and UB"), 
+               type = "in_order", alignment = "vertical")
+```
+<br>
+
