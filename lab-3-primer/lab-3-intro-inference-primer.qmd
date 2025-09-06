@@ -74,8 +74,8 @@ library(__stats package__)
 #| exercise: ex-set
 #| solution: true
 library(tidyverse) #data management
-library(mosaic)
 library(ggformula)
+library(mosaic)
 ```
 
 :::
