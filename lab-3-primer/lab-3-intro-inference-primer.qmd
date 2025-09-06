@@ -126,7 +126,7 @@ check_question(answer = c("Population Mean",
                           "Sample Mean", 
                           "Sample Standard Deviation", 
                           "Sample Size"), 
-               type = "in_order")
+               type = "in_order", alignment = "vertical")
 ```
 <br>
 
