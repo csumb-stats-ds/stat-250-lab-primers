@@ -336,22 +336,22 @@ check_question(c("Based on a sample",
 
 
 
-#### Can we generalize to the population of interest? 
+#### What needs to be true in order to generalize to the population of interest? 
 <!-- Why or why not? If so, explain why. If not, explain why and, if applicable, the population that could be generalized to. -->
 
 ```{r}
 #| label: generalize
 #| echo: false
-check_question(answer = "Yes, because we can assume pennies from a bank are a natural random sample.", 
-               options = c("Yes, because we can assume pennies from a bank are a natural random sample.", 
-                           "Yes, because our sample size is greater than 30.", 
-                           "No"), type = "checkbox")
+check_question(answer = "Pennies from a bank are a natural random sample from all US Pennies.", 
+               options = c("Pennies from a bank are a natural random sample from all US Pennies.", 
+                           "The sample size is greater than 30.", 
+                           "The data are symmetric and unimodal."), type = "checkbox")
 ```
 <br>
 
 
 
-#### To use the model to calculate the confidence interval, a condition/conditions needed to be satisfied. Which condition(s) are they?  
+#### To use the model (t-distribution) to calculate the confidence interval, a condition/conditions need to be satisfied. Which condition(s) are they?  
 <!-- What if you hadn't met that condition? What would that mean for your conclusion? -->
 
 ```{r}
