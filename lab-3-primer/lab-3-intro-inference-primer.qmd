@@ -177,6 +177,26 @@ gradethis::grade_this_code()
 ```
 
 
+#### Describe the shape of the distribution of penny ages in our sample.
+
+```{r}
+#| label: shape
+#| echo: false
+check_question(answer = c("Unimodal", 
+                          "Skewed Left"),
+               options = c("Symmetric",
+                           "Skewed Right",
+                           "Skewed Left",
+                           "Unimodal",
+                           "Bimodal",
+                           "Uniform"),
+               type = "checkbox")
+```
+<br>
+
+
+
+
 
 ### Calculate Summary Statistics 
 
