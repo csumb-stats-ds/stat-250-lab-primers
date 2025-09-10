@@ -104,7 +104,7 @@ Complete the code below to (1) read in the csv file `penny-age-2019.csv` and sto
 penny <- read_csv("_____filename_____")
 ```
 
-You can modify the code above to hide the output if you want.
+You can modify the code above to hide the output if you want, by adding `show_col_types = FALSE` to the function.
 
 
 ```{webr}
@@ -258,10 +258,10 @@ check_question(answer = c("Population Mean",
 ```{r}
 #| label: population
 #| echo: false
-check_question(answer = "all US pennies", 
+check_question(answer = "all circulating US pennies", 
                options = c("all coins", 
                            "all US coins", 
-                           "all US pennies", 
+                           "all circulating US pennies", 
                            "all US pennies from the Marina bank"), 
                type = "radio")
 ```
@@ -288,14 +288,14 @@ Let's use a model to find a 95% confidence interval.
 - Click 'Calculate.'  
 - The confidence interval and degrees of freedom are displayed.  
 
-Record the calculated confidence interval and degrees of freedom that is returned.  Keep all 4 decimal places in your answers.  
+Record the calculated confidence interval and degrees of freedom that is returned.  **Keep all 4 decimal places in your answers.**  
 <!-- > CI = (____, ____), df = ____ -->
 
 #### Lower bound:
 ```{r}
 #| label: lower-bound
 #| echo: false
-check_question(answer = 15.3840, right = "correct", wrong = "not correct")
+check_question(answer = c(15.3840, 15.384), right = "correct", wrong = "not correct")
 ```
 
 #### Upper bound: 
@@ -322,9 +322,9 @@ check_question(answer = 1004, right = "correct", wrong = "not correct")
 ```{r}
 #| label: ci-interpretation
 #| echo: false
-check_question(c("Based on a sample", 
+check_question(c("Based on our sample", 
                  "we are 95% confident that",
-                 "the true mean age of US pennies",
+                 "the true mean age of all circulating US pennies",
                  "is a single value",
                  "between LB and UB"), 
                type = "in_order", alignment = "vertical")
@@ -342,8 +342,8 @@ check_question(c("Based on a sample",
 ```{r}
 #| label: generalize
 #| echo: false
-check_question(answer = "Pennies from a bank are a natural random sample from all US Pennies.", 
-               options = c("Pennies from a bank are a natural random sample from all US Pennies.", 
+check_question(answer = "Pennies from a bank are a natural random sample from all circulating US Pennies.", 
+               options = c("Pennies from a bank are a natural random sample from all circulating US Pennies.", 
                            "The sample size is greater than 30.", 
                            "The data are symmetric and unimodal."), type = "checkbox")
 ```
