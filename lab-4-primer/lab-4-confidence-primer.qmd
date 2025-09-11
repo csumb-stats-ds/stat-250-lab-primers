@@ -144,6 +144,23 @@ gradethis::grade_this_code()
 
 ## Study Components
 
+Here is are a few rows of the data: 
+
+```{r}
+#| label: data-preview
+#| echo: false
+library(readr)
+library(dplyr)
+library(gt)
+bee_display <- read_csv("honey-bee-colonies-2020.csv", show_col_types = FALSE)
+slice_sample(bee_display, n = 10) |> 
+  gt::gt() |> 
+  gt::tab_header(title = "Honey Bee Colonies in the US")
+
+```
+
+
+
 Before we work on creating and evaluating a confidence interval for these data, it is helpful to make sure we understand the data and how it is structured. Can you identify   
 
 - the case?  
@@ -376,7 +393,7 @@ checkdown::check_hint(hint_text = "Numerical summaries are values we can calcula
 
 To create a histogram of a single numeric variable, we use the following structure: 
 
-```{webr}
+```{r}
 #| eval: false
 gf_histogram(~ x, data = mydata)
 ```
@@ -429,6 +446,8 @@ Adjust the arguments in the code chunk below until your graphic looks like this:
 
 
 ```{r, echo=FALSE}
+#| label: histogram-example
+#| echo: false
 gf_histogram(~Colonies, data = bee,
              xlab = "Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 ", 
              ylab = "Frequency",
