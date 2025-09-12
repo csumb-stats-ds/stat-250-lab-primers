@@ -458,6 +458,15 @@ library(ggformula)
 ```
 
 
+You can also comment your code, which is a way of annotating it without affecting the code, using a `#` followed by text.  
+
+```{r}
+#| echo: fenced
+#| label: print-answer
+42*42  #the Answer to the Ultimate Question of Life, the Universe, and Everything, Squared
+```
+
+
 ### 1.5 In-line code
 
 ```{r}

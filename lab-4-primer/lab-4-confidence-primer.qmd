@@ -113,32 +113,32 @@ The dataset `honey-bee-colonies-2020.csv` has the data recorded in the variable 
 Modify the function below to read in the dataset we will use in the example and store it as the object `bee`. 
 
 ```{webr}
-#| exercise: ex_2
-bee <- ________("HoneyBeeColonies_since2000.csv")
+#| label: read-bee
+bee <- ________("honey-bee-colonies-2020.csv")
 ```
 
 
-::: {.solution exercise="ex_2"}
+<!-- ::: {.solution exercise="ex_2"} -->
 
-#### Solution
+<!-- #### Solution -->
 
-We need a function that will read in our csv file and save it as the object `bee`. In the example below, you only need to fill in the function `read_csv`. 
+<!-- We need a function that will read in our csv file and save it as the object `bee`. In the example below, you only need to fill in the function `read_csv`.  -->
 
-```{webr}
-#| exercise: ex_2
-#| solution: true
-#| echo: false
-bee <- read_csv("honey-bee-colonies-2020.csv")
-```
+<!-- ```{webr} -->
+<!-- #| exercise: ex_2 -->
+<!-- #| solution: true -->
+<!-- #| echo: false -->
+<!-- bee <- read_csv("honey-bee-colonies-2020.csv") -->
+<!-- ``` -->
 
-:::
+<!-- ::: -->
 
-```{webr}
-#| exercise: ex_2
-#| check: true
-#| echo: false
-gradethis::grade_this_code()
-```
+<!-- ```{webr} -->
+<!-- #| exercise: ex_2 -->
+<!-- #| check: true -->
+<!-- #| echo: false -->
+<!-- gradethis::grade_this_code() -->
+<!-- ``` -->
 
 
 
@@ -418,7 +418,6 @@ Fill in the `x` blank with the name of the variable. Fill in the `mydata` blank 
 ```{webr}
 #| exercise: ex_3
 #| solution: true
-#| echo: false
 gf_histogram(~Colonies, data = bee)
 
 ```
@@ -428,7 +427,6 @@ gf_histogram(~Colonies, data = bee)
 ```{webr}
 #| exercise: ex_3
 #| check: true
-#| echo: false
 gradethis::grade_this_code()
 ```
 
@@ -445,7 +443,7 @@ Recall you can use the following arguments:
 Adjust the arguments in the code chunk below until your graphic looks like this:
 
 
-```{r, echo=FALSE}
+```{r}
 #| label: histogram-example
 #| echo: false
 gf_histogram(~Colonies, data = bee,
@@ -477,7 +475,6 @@ Any multiple of the binwidth will work for the `boundary` entry, but 0 is the ea
 ```{webr}
 #| exercise: ex_4
 #| solution: true
-#| echo: false
 gf_histogram(~Colonies, data = bee,
              xlab = "Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 ", 
              ylab = "Frequency",
@@ -490,7 +487,6 @@ gf_histogram(~Colonies, data = bee,
 
 ```{webr}
 #| exercise: ex_4
-#| check: true
 #| echo: false
 gradethis::grade_this_code()
 ```
@@ -501,8 +497,7 @@ gradethis::grade_this_code()
 #### Boxplot
 
 To create a boxplot of a single numeric variable, we use the following structure: 
-
-```{webr}
+```{r}
 #| eval: false
 gf_boxplot(~ x, data = mydata)
 ```
@@ -527,7 +522,6 @@ Fill in the `x` blank with the name of the variable. Fill in the `mydata` blank 
 ```{webr}
 #| exercise: ex_5
 #| solution: true
-#| echo: false
 gf_boxplot(~Colonies, data = bee)
 ```
 
@@ -536,7 +530,6 @@ gf_boxplot(~Colonies, data = bee)
 ```{webr}
 #| exercise: ex_5
 #| check: true
-#| echo: false
 gradethis::grade_this_code()
 ```
 
@@ -546,9 +539,8 @@ We only need a little adjustment to the boxplot because it is based on statistic
 * xlab = "___"  : label the x-axis  
 * ylab = "___"  : label the y-axis  
 
-::: {callout note}
 
-##### Question 7: Is there a y-axis in a single numeric variable boxplot? 
+#### Is there a y-axis in a single numeric variable boxplot? 
 
 ```{r}
 #| label: eda-q7
@@ -583,7 +575,6 @@ Since the single numeric variable is horizontal, the x-axis is the variable bein
 ```{webr}
 #| exercise: ex_6
 #| solution: true
-#| echo: false
 gf_boxplot(~Colonies, data = bee,
              xlab = "Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 ")
 ```
@@ -593,7 +584,6 @@ gf_boxplot(~Colonies, data = bee,
 ```{webr}
 #| exercise: ex_6
 #| check: true
-#| echo: false
 gradethis::grade_this_code()
 ```
 
@@ -601,11 +591,10 @@ gradethis::grade_this_code()
 
 
 
-::: {callout note}
-<!--- these use the graphics only so I put them here. Should all questions be at the end under 'check your understanding? --->
+<br>
 
 
-#### Question 8. What is the shape and modality of these data? 
+#### What is the shape and modality of these data? 
 <!--- Adjust answer? Thought roughly symmetric from histogram / stats (which they don't have yet), but boxplot looks slightly left-skewed? --->
 
 ```{r}
@@ -613,25 +602,33 @@ gradethis::grade_this_code()
 #| echo: false
 checkdown::check_question(options = c("symmetric", 
                           "right skewed",
-                          "left skewed", 
+                          "slightly left skewed", 
                           "unimodal",
                           "bimodal", 
                           "multimodal", 
                           "unable to determine shape", 
                           "unable to determine modality"), 
-               answer = c("symmetric", 
+               answer = c("slightly left skewed", 
                           "unimodal"), 
                right = "Great job!", 
-               wrong = "Not quite. Check the hints below.", 
+               wrong = "Not quite. Check hint below.", 
                type = "checkbox", 
                button_label = "Check Your Answer")
 ```
 
 <!--- insert note here about symmetry vs. skewness if close call. (slighly left skewed vs. roughly symmetric). May also insert note about what can you determine from each of histogram or boxplot.  --->
 
+```{r}
+#| label: components-q8-hint
+#| echo: false
+checkdown::check_hint(hint_text = "The skew is slight, but it is there, especially when you look at the boxplot.",
+           hint_title = "Click Here for Hint",
+           type = "onclick")
+```
 
 
-#### Question 9. Based on the shape, the mean should be _______ the median.  
+
+#### Based on the shape, the mean should be _______ the median.  
 <!--- answer set for if consider symmetric; edit if think not --->
 
 ```{r}
@@ -640,7 +637,7 @@ checkdown::check_question(options = c("symmetric",
 checkdown::check_question(options = c("greater than", 
                           "less than",
                           "equivalent to"), 
-               answer = c("equivalent to"), 
+               answer = c("less than"), 
                right = "Great job!", 
                wrong = "Not quite. Review in your notebook how means and medians are calculated.", 
                type = "select", 
@@ -653,7 +650,7 @@ checkdown::check_question(options = c("greater than",
 
 We can calculate the single numeric variable summary statistics using the following structure: 
 
-```{webr}
+```{r}
 #| eval: false
 goal(~x, data = mydata)
 ```
@@ -671,13 +668,15 @@ All of these functions use the exact same structure (and the same basic structur
 Use the code chunk below to calculate some summary statistics. 
 
 ```{webr}
-#| exercise: ex_7
-#| caption: Calculate summary statisics
+#| label: calculate-summary-statisics
+
 
 ```
 
 
-```{r, eval=FALSE, echo=FALSE}
+```{r}
+#| label: all-stats
+#| echo: false
 df_stats(~Colonies, data = bee)
 ```
 
@@ -686,7 +685,7 @@ df_stats(~Colonies, data = bee)
 You may need to refer to the graphics or summary statistics you calculated above to answer these questions. 
 
 
-#### Question 10. How many cases have between 2301 and 2504 thousand colonies? 
+#### How many cases have between 2301 and 2504 thousand colonies? 
 
 ```{r}
 #| label: eda-q10
@@ -694,7 +693,7 @@ You may need to refer to the graphics or summary statistics you calculated above
 checkdown::check_question(answer = 5, title = "Enter your answer below")
 ```
 
-####
+<br>
 
 ```{r}
 #| label: eda-q10-hint1
@@ -713,7 +712,7 @@ checkdown::check_hint(hint_text = "What percent of cases would you expect betwee
 ```
 
 
-#### Question 11. What is the name for the distance between 2504 and 2672.75 thousand colonies on the boxplot? 
+#### What is the name for the distance between 2504 and 2672.75 thousand colonies on the boxplot? 
 
 ```{r}
 #| label: eda-q11
@@ -725,7 +724,7 @@ checkdown::check_question(answer = c("inter-quartile range"),
                           button_label = "Check Your Answer")
 ```
 
-####
+<br>
 
 ```{r}
 #| label: eda-q11-hint
@@ -737,7 +736,7 @@ checkdown::check_hint(hint_text = "What statisitcs do those values correspond to
 
 
 
-#### Question 12. There are more cases that have values between 2301 and 2504 thousand colonies than cases that have values between 2672.75 and 2812 thousand colonies. 
+#### There are more cases that have values between 2301 and 2504 thousand colonies than cases that have values between 2672.75 and 2812 thousand colonies. 
 
 ```{r}
 #| label: eda-q12
@@ -750,7 +749,7 @@ checkdown::check_question(options = c("true", "false"),
                button_label = "Check Your Answer")
 ```
 
-####
+<br>
 
 ```{r}
 #| label: eda-q12-hint
@@ -762,7 +761,7 @@ checkdown::check_hint(hint_text = "What statisitcs do those values correspond to
 
 
 
-#### Question 13. The cases that have values between 2301 and 2504 thousand colonies are more dispersed then the cases that have values between 2672.75 and 2812 thousand colonies. 
+#### The cases that have values between 2301 and 2504 thousand colonies are more dispersed then the cases that have values between 2672.75 and 2812 thousand colonies. 
 
 
 
@@ -777,7 +776,7 @@ checkdown::check_question(options = c("true", "false"),
                button_label = "Check Your Answer")
 ```
 
-####
+<br>
 
 ```{r}
 #| label: eda-q13-hint
@@ -789,7 +788,7 @@ checkdown::check_hint(hint_text = "Try looking at the boxplot and identifying th
 
 
 
-#### Question 14. We could have determined the modality of the distribution without making a histogram (i.e. with just statistics or the boxplot). 
+#### We could have determined the modality of the distribution without making a histogram (i.e. with just statistics or the boxplot). 
 
 ```{r}
 #| label: eda-q14
@@ -802,7 +801,8 @@ checkdown::check_question(options = c("true", "false"),
                button_label = "Check Your Answer")
 ```
 
-####
+<br>
+
 
 ```{r}
 #| label: eda-q14-hint
@@ -825,11 +825,13 @@ $$ \bar{x} \pm t^* \cdot \frac{s}{\sqrt{n}} $$
 Most of those values, namely $\bar{x}, s, n$, can be found in our summary statistics output: 
 
 <!--- since code not going to display, should this instead use summarize to only output those with headers? Or keep this format of output they are used to? If this, perhaps questions for them to identify each part? (marked up, remove if change this) --->
-```{r stat-output, echo=FALSE}
+```{r}
+#| label: stat-output
+#| echo: false
 df_stats(~Colonies, data = bee)
 ```
 
-#### Question 15. From this output identify each value appropriatly: 
+#### From this output identify each value appropriatly: 
 <!--- the expression() function isn't working to create an x-bar. Ideas? Tried expression (outside paste as well), bquote, and just latex as well as loading the grDevices packages the plotmath syntex is inside.--->
 ```{r}
 #| label: eda-q15a
