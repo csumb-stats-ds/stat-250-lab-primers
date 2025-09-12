@@ -23,7 +23,6 @@ code-overflow: wrap
 toc: true
 number-sections: true
 css: ../styles.css
-draft: true
 ---
 
 
