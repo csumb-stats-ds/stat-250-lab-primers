@@ -12,12 +12,10 @@ format:
       cell-options:
         warning: true
         completion: false
-        eval: false
 execute: 
-  warning: false
+  warning: false 
   message: false
   echo: true
-  eval: false
 code-copy: true
 code-overflow: wrap
 toc: true
@@ -61,7 +59,6 @@ Please note that all images were created with modifications to the defaults to m
 
 ## Getting Started
 
-
 First, be sure you have installed `ggformula` and `mosaic`. Remember, you only need to install each package once on your machine. 
 
 Then, be sure to load the packages `ggformula` and `mosaic`, using the `library()` function. Remember, you need to do this with each new Quarto/RMarkdown document or R Session. Add the package names in each of the blanks below to load in the indicated packages. 
@@ -83,7 +80,6 @@ library(_________) #for statistics
 ```{webr}
 #| exercise: ex_1
 #| solution: true
-#| echo: false
 library(ggformula) #for graphs
 library(mosaic) #for statistics
 ```
@@ -93,7 +89,6 @@ library(mosaic) #for statistics
 ```{webr}
 #| exercise: ex_1
 #| check: true
-#| echo: false
 gradethis::grade_this_code()
 ```
 
@@ -445,7 +440,7 @@ Adjust the arguments in the code chunk below until your graphic looks like this:
 ```{r}
 #| label: histogram-example
 #| echo: false
-gf_histogram(~Colonies, data = bee,
+gf_histogram(~Colonies, data = bee_display,
              xlab = "Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 ", 
              ylab = "Frequency",
              binwidth = 50, 
@@ -454,7 +449,7 @@ gf_histogram(~Colonies, data = bee,
 ```
 
 ```{webr}
-#| exercise: ex_4
+#| exercise: ex_4_1
 #| caption: Adjust the code below to match the image above
 gf_histogram(~_________, data = __________, 
              xlab = "_____________________", 
@@ -465,14 +460,14 @@ gf_histogram(~_________, data = __________,
 ```
 
 
-::: {.solution exercise="ex_4"}
+::: {.solution exercise="ex_4_1"}
 
 ##### Solution
 
 Any multiple of the binwidth will work for the `boundary` entry, but 0 is the easiest to use most of the time. Your x-axis label should include the full variable, units, and the population. The y-axis could be labeled the frequency of the *case*, in context, if you like. In this scenario, that would be "Frequency of Weeks." If you need to review the variables, population or case, review in the prior section.  
 
 ```{webr}
-#| exercise: ex_4
+#| exercise: ex_4_1
 #| solution: true
 gf_histogram(~Colonies, data = bee,
              xlab = "Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 ", 
@@ -485,7 +480,7 @@ gf_histogram(~Colonies, data = bee,
 :::
 
 ```{webr}
-#| exercise: ex_4
+#| exercise: ex_4_1
 #| echo: false
 gradethis::grade_this_code()
 ```
@@ -676,7 +671,7 @@ Use the code chunk below to calculate some summary statistics.
 ```{r}
 #| label: all-stats
 #| echo: false
-df_stats(~Colonies, data = bee)
+df_stats(~Colonies, data = bee_display)
 ```
 
 ### Check Your Understanding
@@ -827,7 +822,7 @@ Most of those values, namely $\bar{x}, s, n$, can be found in our summary statis
 ```{r}
 #| label: stat-output
 #| echo: false
-df_stats(~Colonies, data = bee)
+df_stats(~Colonies, data = bee_display)
 ```
 
 #### From this output identify each value appropriatly: 
@@ -893,9 +888,9 @@ We can do the same calculation with saved objects, letting us be careful to (1) 
 
 
 ```{r, results = FALSE}
-xbar<-mean(~Colonies, data = bee)
-s<-sd(~Colonies, data = bee)
-n<-length(bee$Colonies)
+xbar<-mean(~Colonies, data = bee_display)
+s<-sd(~Colonies, data = bee_display)
+n<-length(bee_display$Colonies)
 crit<-qt(1-0.05/2, n-1)
 ```
 
