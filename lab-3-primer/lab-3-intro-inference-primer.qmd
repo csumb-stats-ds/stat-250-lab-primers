@@ -295,7 +295,7 @@ Record the calculated confidence interval and degrees of freedom that is returne
 ```{r}
 #| label: lower-bound
 #| echo: false
-check_question(answer = c(15.3840, 15.384), right = "correct", wrong = "not correct")
+check_question(answer = c(15.3840), right = "correct", wrong = "not correct")
 ```
 
 #### Upper bound: 
