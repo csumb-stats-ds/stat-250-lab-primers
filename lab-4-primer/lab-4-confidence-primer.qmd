@@ -174,7 +174,6 @@ Once you think you have identified the components, check your understanding belo
 
 #### Which of the following is the variable of interest and its type in this research question?
 
-
 ```{r}
 #| label: components-q1
 #| echo: false
@@ -194,8 +193,6 @@ checkdown::check_question(options = c("size of honeybee colony",
                type = "checkbox", 
                button_label = "Check Your Answer")
 ```
-
-<br>
 
 ```{r}
 #| label: components-q1-hint1
@@ -236,8 +233,6 @@ checkdown::check_question(options = c("a honeybee",
                button_label = "Check Your Answer")
 ```
 
-<br>
-
 
 ```{r}
 #| label: components-q2-hint
@@ -271,8 +266,6 @@ checkdown::check_question(options = c("a honeybee",
                button_label = "Check Your Answer")
 ```
 
-<br>
-
 ```{r}
 #| label: components-q3-hint
 #| echo: false
@@ -304,7 +297,6 @@ checkdown::check_question(options = c("all honeybee colonies",
                button_label = "Check Your Answer")
 ```
 
-<br>
 
 ```{r}
 #| label: components-q4-hint
@@ -333,8 +325,6 @@ checkdown::check_question(options = c("Volunteer Sample",
                random_answer_order = TRUE,
                button_label = "Check Your Answer")
 ```
-
-<br>
 
 ```{r}
 #| label: components-q5-hint
@@ -554,7 +544,6 @@ checkdown::check_question(options = c("no",
                button_label = "Check Your Answer")
 ```
 
-:::
 
 
 Now re-create your boxplot with the appropriate axis label(s). 
@@ -587,11 +576,6 @@ gf_boxplot(~Colonies, data = bee,
 gradethis::grade_this_code()
 ```
 
-
-
-
-
-<br>
 
 
 #### What is the shape and modality of these data? 
@@ -644,7 +628,7 @@ checkdown::check_question(options = c("greater than",
                button_label = "Check Your Answer")
 ```
 
-:::
+
 
 ### Single Numeric Variable Summary Statistics
 
@@ -656,6 +640,7 @@ goal(~x, data = mydata)
 ```
 
 where `x` is the name of the numeric variable stored inside the dataframe object named `mydata`. `goal` stands in for any of the summary statistic functions we might use, such as: 
+
 * `mean` 
 * `median`
 * `sd`
@@ -694,8 +679,6 @@ You may need to refer to the graphics or summary statistics you calculated above
 checkdown::check_question(answer = 5, title = "Enter your answer below")
 ```
 
-<br>
-
 ```{r}
 #| label: eda-q10-hint1
 #| echo: false
@@ -727,7 +710,6 @@ checkdown::check_question(answer = c("inter-quartile range",
                           button_label = "Check Your Answer")
 ```
 
-<br>
 
 ```{r}
 #| label: eda-q11-hint
@@ -752,8 +734,6 @@ checkdown::check_question(options = c("true", "false"),
                button_label = "Check Your Answer")
 ```
 
-<br>
-
 ```{r}
 #| label: eda-q12-hint
 #| echo: false
@@ -765,8 +745,6 @@ checkdown::check_hint(hint_text = "What statisitcs do those values correspond to
 
 
 #### The cases that have values between 2301 and 2504 thousand colonies are more dispersed then the cases that have values between 2672.75 and 2812 thousand colonies. 
-
-
 
 ```{r}
 #| label: eda-q13
@@ -840,7 +818,7 @@ df_stats(~Colonies, data = bee_display)
 #| label: eda-q15a
 #| echo: false
 checkdown::check_question(answer = 2591.3, 
-               title = paste0("What is the value of ", expression(bar(x)), "?"),
+               title = "What is the value of \bar(x)?",
                button_label = "Check Your Answer")
 ```
 
@@ -864,7 +842,7 @@ checkdown::check_question(answer = 20,
 Since we know those values, we only need to calculate $t^*$. The t-critical value is calculated using the function `qt()` using this structure:
 
 ```{r qt-template, eval = FALSE}
-qt(1-alpha/2, df)
+qt(1 - alpha/2, df)
 ```
 
 
@@ -883,7 +861,7 @@ Thus, our code to get the critical value is:
 
 ```{webr}
 #| label: qt-ex
-qt(1-0.05/2, 19)
+qt(1 - 0.05/2, 19)
 ```
 
 With this value, we can use R to calculate the confidence intervals:
@@ -1019,5 +997,4 @@ check_question(c("Based on the sample",
                type = "in_order", alignment = "vertical")
 ```
 
-<br>
 
