@@ -355,8 +355,6 @@ checkdown::check_question(options = c("parameter",
                button_label = "Check Your Answer")
 ```
 
-<br>
-
 ```{r}
 #| label: components-q6-hint1
 #| echo: false
@@ -757,8 +755,6 @@ checkdown::check_question(options = c("true", "false"),
                button_label = "Check Your Answer")
 ```
 
-<br>
-
 ```{r}
 #| label: eda-q13-hint
 #| echo: false
@@ -781,9 +777,6 @@ checkdown::check_question(options = c("true", "false"),
                type = "checkbox", 
                button_label = "Check Your Answer")
 ```
-
-<br>
-
 
 ```{r}
 #| label: eda-q14-hint
@@ -814,11 +807,12 @@ df_stats(~Colonies, data = bee_display)
 
 #### From this output identify each value appropriatly: 
 <!--- the expression() function isn't working to create an x-bar. Ideas? Tried expression (outside paste as well), bquote, and just latex as well as loading the grDevices packages the plotmath syntex is inside.--->
+
 ```{r}
 #| label: eda-q15a
 #| echo: false
 checkdown::check_question(answer = 2591.3, 
-               title = "What is the value of \bar(x)?",
+               title = "What is the value of $\bar(x)$?",
                button_label = "Check Your Answer")
 ```
 
