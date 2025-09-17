@@ -292,6 +292,7 @@ Record the calculated confidence interval and degrees of freedom that is returne
 <!-- > CI = (____, ____), df = ____ -->
 
 #### Lower bound:
+
 ```{r}
 #| label: lower-bound
 #| echo: false
@@ -299,6 +300,7 @@ check_question(answer = c(15.3840), right = "correct", wrong = "not correct")
 ```
 
 #### Upper bound: 
+
 ```{r}
 #| label: upper-bound
 #| echo: false
@@ -306,6 +308,7 @@ check_question(answer = 17.3045, right = "correct", wrong = "not correct")
 ```
 
 #### df:
+
 ```{r}
 #| label: degree-freedom
 #| echo: false
