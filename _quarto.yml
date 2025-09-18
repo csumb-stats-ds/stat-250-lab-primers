@@ -55,8 +55,8 @@ website:
         text: "Lab 2 Primer"
       - href: lab-3-primer/lab-3-intro-inference-primer.qmd
         text: "Lab 3 Primer"
-      # - href: 
-      #   text: "Lab 4 Primer"
+      - href: lab-4-primer/lab-4-confidence-primer.qmd
+        text: "Lab 4 Primer"
       # - href: 
       #   text: "Lab 5 Primer"
       # - href: 

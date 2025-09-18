@@ -442,6 +442,7 @@ gf_histogram(~Colonies, data = bee_display,
              color = "black")
 ```
 
+
 ```{webr}
 #| exercise: ex_4_1
 #| caption: Adjust the code below to match the image above
@@ -701,7 +702,7 @@ checkdown::check_hint(hint_text = "What percent of cases would you expect betwee
 #| echo: false
 checkdown::check_question(answer = c("inter-quartile range",
                                      "iqr", 
-                                     "interquartil range"), 
+                                     "interquartile range"), 
                           placeholder = "write answer in lower case",
                           right = "Great job!", 
                           wrong = "Not quite. Check your spelling or the hints below.", 
@@ -812,7 +813,7 @@ df_stats(~Colonies, data = bee_display)
 #| label: eda-q15a
 #| echo: false
 checkdown::check_question(answer = 2591.3, 
-               title = "What is the value of $\bar(x)$?",
+               title = paste("What is the value of x-bar?"),
                button_label = "Check Your Answer")
 ```
 
@@ -985,7 +986,7 @@ gradethis::grade_this_code()
 #| echo: false
 check_question(c("Based on the sample", 
                  "we are 95% confident that",
-                 "the mean number of bee colonies per week",
+                 "the true mean number of bee colonies across all weeks in the US since 2000",
                  "is a single value",
                  "between LB and UB"), 
                type = "in_order", alignment = "vertical")
