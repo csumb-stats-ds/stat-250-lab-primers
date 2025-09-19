@@ -476,7 +476,7 @@ gf_histogram(~Colonies, data = bee,
 
 ```{webr}
 #| exercise: ex_4_1
-#| echo: false
+#| check: true
 gradethis::grade_this_code()
 ```
 
