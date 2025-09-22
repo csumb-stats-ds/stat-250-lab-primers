@@ -1,0 +1,311 @@
+---
+title: "Lab 5: Two Group EDA and QQ Plot Primer"
+format: 
+  live-html:
+    webr:
+      packages: 
+        - ggformula
+        - mosaic
+        - tidyverse
+      resources: 
+        - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-5-primer/nvss-births-2022.csv
+        - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-5-primer/prof-ratings.csv
+      cell-options:
+        warning: true
+        completion: false
+execute: 
+  warning: false 
+  message: false
+  echo: true
+code-copy: true
+code-overflow: wrap
+toc: true
+number-sections: true
+css: ../styles.css
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+
+```{webr}
+#| label: theme
+#| include: false
+#| edit: false
+library(ggplot2)
+theme_set(theme_light())
+options(ggplot2.continuous.color = scale_color_viridis_c, 
+        ggplot2.continuous.fill = scale_fill_viridis_c,
+        ggplot2.discrete.color = scale_color_viridis_d,
+        ggplot2.discrete.fill = scale_fill_viridis_d)
+```
+
+
+```{r}
+#| label: setup-checkdown
+#| include: false
+library(checkdown)
+library(ggformula)
+library(mosaic)
+library(tidyverse)
+```
+
+
+::: {.callout-note collapse="true"}
+## Digital Accessibility
+
+Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
+:::
+
+
+## Getting Started
+
+Be sure to load the packages `ggformula` and `mosaic`, using the `library()` function. Remember, you need to do this with each new Quarto document or R Session. Add the package names in each of the blanks below to load in the indicated packages. 
+
+```{webr}
+#| exercise: ex_1
+#| caption: Loading Packages
+library(_________) #for graphs
+library(_________) #for statistics
+library(tidyverse) #for data management
+```
+
+
+::: {.solution exercise="ex_1"}
+
+#### Solution
+
+`library()` loads in packages. You need to supply the package name you need to load inside the parentheses.
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+library(ggformula) #for graphs
+library(mosaic) #for statistics
+library(tidyverse) #for data management
+```
+
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+git reset HEAD~1 --soft   
+
+## Sex Bias
+
+Sex bias stems from a perceived mismatch from an expected role or characteristics based on sex. Studies have shown that men and women have unconscious sex biases against women in traditionally male-dominated fields (such as the sciences) or characteristics (such as leadership qualities). These biases often cause equally qualified women to be seen as [less likable](https://www.youtube.com/watch?v=hK0Q8b6QhDo) or [less qualified](https://blogs.scientificamerican.com/unofficial-prognosis/study-shows-gender-bias-in-science-is-real-heres-why-it-matters/) than the men. (These links are to descriptions of two well-known studies, but there are plenty of other good resources).
+
+Researchers are interested if this sex bias exists in traditionally female-dominated jobs as well, such as teaching. Students are asked to watch a video of an animated classroom and rate the professor. Each student is randomly assigned to either of two animations; the videos are exactly the same except for the sex of the professor drawn. You have been asked to analyze the data for the researchers to determine if the female-identifying professor is rated more poorly, on a 1 to 7 scale (with 7 being the best), than the male-identifying professor. 
+
+
+Run the following code chunk to read in the data and view the variable names.
+
+```{webr}
+bias<-read.csv("prof_ratings.csv", header=TRUE) #reads in the csv file 
+names(bias)
+```
+
+
+
+1. For each variable, identify whether it is the explanatory or response variable in our analysis, and the type of variable.
+
+<!-- Identify the explanatory and response variables in our analysis and the type of variable for each by replacing the [placeholders] below. -->
+
+<!-- Variable        | Explanatory or Response Variable?  | Numeric or Categorical? -->
+<!-- ----------------|------------------------------------|------------------------- -->
+<!-- Sex             | Explanatory                        | Categorical          -->
+<!-- Rating          | Response                           | Numeric      -->
+
+Sex:
+
+```{r echo=FALSE}
+check_question(c("Explanatory","Categorical"), options = c("Explanatory", "Response", "Categorical", "Numeric"), type = "checkbox")
+```
+<br>
+
+Rating:
+
+```{r echo=FALSE}
+check_question(c("Response","Numeric"), options = c("Explanatory", "Response", "Categorical", "Numeric"), type = "checkbox")
+```
+<br>
+
+
+<!-- 2. State the parameter(s) of interest in the study. -->
+
+<!-- > $\mu_f$ = the true mean rating by students of female-identifying professors   -->
+<!-- > $\mu_m$ = the true mean rating by students of male-identifying professors -->
+
+
+2. Identify the *study design* of this study. Be sure you are able to provide a full justification.  
+
+<!-- State the study design of this study (two independent samples or one matched-pair sample?). Justify your response. -->
+<!-- > Independent two-sample   -->
+<!-- > The rating of one professor by a student does not influence the rating of the other professor by a different student. -->
+
+```{r echo=FALSE}
+check_question("Independent Two Sample", options = c("Independent Two Sample", "Matched Pair Sample"), type = "radio")
+```
+<br>
+
+
+3. Identify the *study type* of this study. Be sure you are able to provide a full justification.  
+
+<!-- State the study type of this study (observational or experiment?). Justify your response.  -->
+<!-- > Experiment. -->
+<!-- > Students are randomly assigned to one of two videos/professors/animations/sexes -->
+
+```{r echo=FALSE}
+check_question("Experiment", options = c("Experiment", "Observational"), type = "radio")
+```
+<br>
+
+
+4. Calculate the summary statistics for each sample. Modify the code below to calculate the summary statistics for each group. 
+
+<!-- Place your resulting values in the table below, rounding to four decimal places as needed. Depending on how you choose to calculate your values, you may need additional code/arguments than what has been supplied. -->
+
+```{webr}
+#| label: summary stats
+df_stats(________ ~ ________, data = ________)
+mean(________ ~ ________, data = ________)
+var(________ ~ ________, data = ________)
+sd(________ ~ ________, data = ________)
+```
+
+<!-- Population | $n$     | $\bar{x}$  | $s^2$      | $s$ -->
+<!-- -----------|---------|------------|------------|--------- -->
+<!-- **Male**   |   34    |   4.7647   |   1.0339   | 1.0168  -->
+<!-- **Female** |   34    |   3.6470   |   2.4171   | 1.5547     -->
+
+
+5. Create a boxplot of the data by modifying the code below. Recall that `~`, which translates as "by" or "as a function of," lets us graph one variable split by another. (For a boxplot, a numeric variable split by a categorical variable). Be sure to add fully descriptive axis labels.    
+
+```{webr}
+#| label: boxplot
+gf_boxplot(________ ~ ________, data = ________, 
+        ylab="____________________", 
+        xlab="____________________") + coord_flip()
+```
+
+
+6. Based on your boxplot, 
+
+(a) what is the approximate median rating for females?  
+
+```{r echo=FALSE}
+check_question(answer = 4, right = "correct", wrong = "not correct")
+```
+<br>
+
+(b) what is the approximate median rating for males?  
+
+```{r echo=FALSE}
+check_question(answer = 5, right = "correct", wrong = "not correct")
+```
+<br>
+
+(c) Which of the following is an appropriate statistic to describe the variability (i.e. dispersion, spread) in rating of male-identifying versus female-identifying professors?  
+
+```{r echo=FALSE}
+check_question(c("IQR","sd"), options = c("mean", "median", "IQR", "sd"), type = "checkbox", random_answer_order = TRUE)
+```
+
+<!-- > $M_f = 4$   -->
+<!-- > $M_m = 5$ -->
+<!-- > More variability in female-identifying professor ratings (IQR=2.75) compared to male-identifying professor ratings (IQR=1.75)   -->
+
+<br>
+
+<!-- 8. Based on your *boxplot*, assess whether samples are from normal distributions. Justify your responses. (There is no right or wrong answer here. Address the key points about normal distributions.) -->
+
+<!-- > The males distribution is Not skewed; could be normally distributed but the female distribution is left-skewed since left whisker is longer, could not be normally distributed. -->
+
+
+
+
+## Parents Age Gap  
+
+A recent study found the average Homo sapiens father has always been older than the average Homo sapiens mother for 250,000 years. However, the age gap has dwindled in the last 5,000 years, largely due to mothers having children at older ages. With declining teen birth rate, rising birth rates among older women, and women pursuing higher education and careers before starting families, the average age of all mothers giving birth in the United States increased to nearly 30 in 2023. While the age gap between parents can vary greatly, it's common for fathers to be just a few years older than mothers.
+
+The National Vital Statistics System (NVSS) is a collaborative effort between state and local governments to compile and publish reports on all vital events - births, deaths, marriages, and divorces. A random sample of 50 births in 2022 was extracted from NVSS. The data for mother's age and father's age can be found in `nvss_births_2022.csv`.
+
+```{webr}
+parents <- read.csv("nvss_births_2022.csv", header=TRUE) #reads in the csv file 
+names(parents)
+```
+
+1. For each variable, identify whether it is the explanatory or response variable in our analysis, and the type of variable.
+
+Sex:
+
+```{r echo=FALSE}
+check_question(c("Explanatory","Categorical"), options = c("Explanatory", "Response", "Categorical", "Numeric"), type = "checkbox")
+```
+<br>
+
+Age:
+
+```{r echo=FALSE}
+check_question(c("Response","Numeric"), options = c("Explanatory", "Response", "Categorical", "Numeric"), type = "checkbox")
+```
+<br>
+
+
+3. Identify the *study design* of this study. Be sure you are able to provide a full justification.  
+
+```{r echo=FALSE}
+check_question("Matched Pair Sample", options = c("Independent Two Sample", "Matched Pair Sample"), type = "radio")
+```
+<br>
+
+
+4. Identify the *study type* of this study. Be sure you are able to provide a full justification.  
+
+<!-- State the study type of this study (observational or experiment?). Justify your response.  -->
+<!-- > Experiment. -->
+<!-- > Students are randomly assigned to one of two videos/professors/animations/sexes -->
+
+```{r echo=FALSE}
+check_question("Observational", options = c("Experiment", "Observational"), type = "radio")
+```
+<br>
+
+
+5. Calculate the summary statistics for the differences. Modify the code below to calculate the summary statistics. 
+
+```{webr}
+#| label: summary stats matched
+df_stats(~(________ - ________), data = ________)
+mean~(________ - ________), data = ________)
+var(~(________ - ________), data = ________)
+sd(~(________ - ________), data = ________)
+```
+
+
+6. Create a boxplot of the differences by modifying the code below. Be sure to add fully descriptive axis labels.    
+
+```{webr}
+#| label: boxplot matched
+gf_boxplot(~(________ - ________), data = ________, 
+        ylab="____________________", 
+        xlab="____________________") 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
