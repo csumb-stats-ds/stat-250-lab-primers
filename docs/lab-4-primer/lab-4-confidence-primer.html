@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -64,15 +65,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../lab-3-primer/lab-3-intro-inference-primer.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-904f6bc251cc93da2c442e90d5cfb068.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a00848ed57fe9097555b5bd7c001b509.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -138,7 +140,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -435,23 +437,23 @@ Hint for Importing Data
 <p>Here are a few rows of the data:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="ywrlibqvtk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ywrlibqvtk table {
+<div id="dxaxgwtudz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dxaxgwtudz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ywrlibqvtk thead, #ywrlibqvtk tbody, #ywrlibqvtk tfoot, #ywrlibqvtk tr, #ywrlibqvtk td, #ywrlibqvtk th {
+#dxaxgwtudz thead, #dxaxgwtudz tbody, #dxaxgwtudz tfoot, #dxaxgwtudz tr, #dxaxgwtudz td, #dxaxgwtudz th {
   border-style: none;
 }
 
-#ywrlibqvtk p {
+#dxaxgwtudz p {
   margin: 0;
   padding: 0;
 }
 
-#ywrlibqvtk .gt_table {
+#dxaxgwtudz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -477,12 +479,12 @@ Hint for Importing Data
   border-left-color: #D3D3D3;
 }
 
-#ywrlibqvtk .gt_caption {
+#dxaxgwtudz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ywrlibqvtk .gt_title {
+#dxaxgwtudz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -494,7 +496,7 @@ Hint for Importing Data
   border-bottom-width: 0;
 }
 
-#ywrlibqvtk .gt_subtitle {
+#dxaxgwtudz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -506,7 +508,7 @@ Hint for Importing Data
   border-top-width: 0;
 }
 
-#ywrlibqvtk .gt_heading {
+#dxaxgwtudz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -518,13 +520,13 @@ Hint for Importing Data
   border-right-color: #D3D3D3;
 }
 
-#ywrlibqvtk .gt_bottom_border {
+#dxaxgwtudz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ywrlibqvtk .gt_col_headings {
+#dxaxgwtudz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -539,7 +541,7 @@ Hint for Importing Data
   border-right-color: #D3D3D3;
 }
 
-#ywrlibqvtk .gt_col_heading {
+#dxaxgwtudz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -559,7 +561,7 @@ Hint for Importing Data
   overflow-x: hidden;
 }
 
-#ywrlibqvtk .gt_column_spanner_outer {
+#dxaxgwtudz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -571,15 +573,15 @@ Hint for Importing Data
   padding-right: 4px;
 }
 
-#ywrlibqvtk .gt_column_spanner_outer:first-child {
+#dxaxgwtudz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ywrlibqvtk .gt_column_spanner_outer:last-child {
+#dxaxgwtudz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ywrlibqvtk .gt_column_spanner {
+#dxaxgwtudz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -591,11 +593,11 @@ Hint for Importing Data
   width: 100%;
 }
 
-#ywrlibqvtk .gt_spanner_row {
+#dxaxgwtudz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ywrlibqvtk .gt_group_heading {
+#dxaxgwtudz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -621,7 +623,7 @@ Hint for Importing Data
   text-align: left;
 }
 
-#ywrlibqvtk .gt_empty_group_heading {
+#dxaxgwtudz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -636,15 +638,15 @@ Hint for Importing Data
   vertical-align: middle;
 }
 
-#ywrlibqvtk .gt_from_md > :first-child {
+#dxaxgwtudz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ywrlibqvtk .gt_from_md > :last-child {
+#dxaxgwtudz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ywrlibqvtk .gt_row {
+#dxaxgwtudz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -663,7 +665,7 @@ Hint for Importing Data
   overflow-x: hidden;
 }
 
-#ywrlibqvtk .gt_stub {
+#dxaxgwtudz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -676,7 +678,7 @@ Hint for Importing Data
   padding-right: 5px;
 }
 
-#ywrlibqvtk .gt_stub_row_group {
+#dxaxgwtudz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -690,15 +692,15 @@ Hint for Importing Data
   vertical-align: top;
 }
 
-#ywrlibqvtk .gt_row_group_first td {
+#dxaxgwtudz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ywrlibqvtk .gt_row_group_first th {
+#dxaxgwtudz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ywrlibqvtk .gt_summary_row {
+#dxaxgwtudz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -708,16 +710,16 @@ Hint for Importing Data
   padding-right: 5px;
 }
 
-#ywrlibqvtk .gt_first_summary_row {
+#dxaxgwtudz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ywrlibqvtk .gt_first_summary_row.thick {
+#dxaxgwtudz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ywrlibqvtk .gt_last_summary_row {
+#dxaxgwtudz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -727,7 +729,7 @@ Hint for Importing Data
   border-bottom-color: #D3D3D3;
 }
 
-#ywrlibqvtk .gt_grand_summary_row {
+#dxaxgwtudz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -737,7 +739,7 @@ Hint for Importing Data
   padding-right: 5px;
 }
 
-#ywrlibqvtk .gt_first_grand_summary_row {
+#dxaxgwtudz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -747,7 +749,7 @@ Hint for Importing Data
   border-top-color: #D3D3D3;
 }
 
-#ywrlibqvtk .gt_last_grand_summary_row_top {
+#dxaxgwtudz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -757,11 +759,11 @@ Hint for Importing Data
   border-bottom-color: #D3D3D3;
 }
 
-#ywrlibqvtk .gt_striped {
+#dxaxgwtudz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ywrlibqvtk .gt_table_body {
+#dxaxgwtudz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -770,7 +772,7 @@ Hint for Importing Data
   border-bottom-color: #D3D3D3;
 }
 
-#ywrlibqvtk .gt_footnotes {
+#dxaxgwtudz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -784,7 +786,7 @@ Hint for Importing Data
   border-right-color: #D3D3D3;
 }
 
-#ywrlibqvtk .gt_footnote {
+#dxaxgwtudz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -793,7 +795,7 @@ Hint for Importing Data
   padding-right: 5px;
 }
 
-#ywrlibqvtk .gt_sourcenotes {
+#dxaxgwtudz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -807,7 +809,7 @@ Hint for Importing Data
   border-right-color: #D3D3D3;
 }
 
-#ywrlibqvtk .gt_sourcenote {
+#dxaxgwtudz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -815,72 +817,72 @@ Hint for Importing Data
   padding-right: 5px;
 }
 
-#ywrlibqvtk .gt_left {
+#dxaxgwtudz .gt_left {
   text-align: left;
 }
 
-#ywrlibqvtk .gt_center {
+#dxaxgwtudz .gt_center {
   text-align: center;
 }
 
-#ywrlibqvtk .gt_right {
+#dxaxgwtudz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ywrlibqvtk .gt_font_normal {
+#dxaxgwtudz .gt_font_normal {
   font-weight: normal;
 }
 
-#ywrlibqvtk .gt_font_bold {
+#dxaxgwtudz .gt_font_bold {
   font-weight: bold;
 }
 
-#ywrlibqvtk .gt_font_italic {
+#dxaxgwtudz .gt_font_italic {
   font-style: italic;
 }
 
-#ywrlibqvtk .gt_super {
+#dxaxgwtudz .gt_super {
   font-size: 65%;
 }
 
-#ywrlibqvtk .gt_footnote_marks {
+#dxaxgwtudz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ywrlibqvtk .gt_asterisk {
+#dxaxgwtudz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ywrlibqvtk .gt_indent_1 {
+#dxaxgwtudz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ywrlibqvtk .gt_indent_2 {
+#dxaxgwtudz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ywrlibqvtk .gt_indent_3 {
+#dxaxgwtudz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ywrlibqvtk .gt_indent_4 {
+#dxaxgwtudz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ywrlibqvtk .gt_indent_5 {
+#dxaxgwtudz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ywrlibqvtk .katex-display {
+#dxaxgwtudz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ywrlibqvtk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dxaxgwtudz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -897,44 +899,44 @@ Hint for Importing Data
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_right" headers="Year">2007</td>
-<td class="gt_row gt_right" headers="Colonies">2443</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="Year">2016</td>
-<td class="gt_row gt_right" headers="Colonies">2775</td>
-</tr>
-<tr class="odd">
 <td class="gt_row gt_right" headers="Year">2010</td>
 <td class="gt_row gt_right" headers="Colonies">2684</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Year">2003</td>
+<td class="gt_row gt_right" headers="Colonies">2599</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Year">2016</td>
+<td class="gt_row gt_right" headers="Colonies">2775</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Year">2013</td>
 <td class="gt_row gt_right" headers="Colonies">2640</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="Year">2001</td>
-<td class="gt_row gt_right" headers="Colonies">2506</td>
+<td class="gt_row gt_right" headers="Year">2009</td>
+<td class="gt_row gt_right" headers="Colonies">2498</td>
 </tr>
 <tr class="even">
+<td class="gt_row gt_right" headers="Year">2005</td>
+<td class="gt_row gt_right" headers="Colonies">2410</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Year">2004</td>
+<td class="gt_row gt_right" headers="Colonies">2556</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Year">2002</td>
+<td class="gt_row gt_right" headers="Colonies">2524</td>
+</tr>
+<tr class="odd">
 <td class="gt_row gt_right" headers="Year">2018</td>
 <td class="gt_row gt_right" headers="Colonies">2803</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="Year">2003</td>
-<td class="gt_row gt_right" headers="Colonies">2599</td>
-</tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="Year">2008</td>
-<td class="gt_row gt_right" headers="Colonies">2301</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="Year">2011</td>
-<td class="gt_row gt_right" headers="Colonies">2640</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="Year">2009</td>
-<td class="gt_row gt_right" headers="Colonies">2498</td>
+<td class="gt_row gt_right" headers="Year">2007</td>
+<td class="gt_row gt_right" headers="Colonies">2443</td>
 </tr>
 </tbody>
 </table>
@@ -957,56 +959,56 @@ Hint for Importing Data
 <h4 data-number="3.0.1" class="anchored" data-anchor-id="which-of-the-following-is-the-variable-of-interest-and-its-type-in-this-research-question"><span class="header-section-number">3.0.1</span> Which of the following is the variable of interest and its type in this research question?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_6407" onsubmit="return validate_form_6407()" method="post">
-<input type="checkbox" id="answer_6407_1" value="size of honeybee colony">
+<form name="form_32073" onsubmit="return validate_form_32073()" method="post">
+<input type="checkbox" id="answer_32073_1" value="size of honeybee colony">
 <label>size of honeybee colony</label>
 <br>
-<input type="checkbox" id="answer_6407_2" value="number of honeybee colonies">
+<input type="checkbox" id="answer_32073_2" value="number of honeybee colonies">
 <label>number of honeybee colonies</label>
 <br>
-<input type="checkbox" id="answer_6407_3" value="number of bees in a colony">
+<input type="checkbox" id="answer_32073_3" value="number of bees in a colony">
 <label>number of bees in a colony</label>
 <br>
-<input type="checkbox" id="answer_6407_4" value="average number of colonies per keeper">
+<input type="checkbox" id="answer_32073_4" value="average number of colonies per keeper">
 <label>average number of colonies per keeper</label>
 <br>
-<input type="checkbox" id="answer_6407_5" value="average number of honeybee colonies in the U.S.">
+<input type="checkbox" id="answer_32073_5" value="average number of honeybee colonies in the U.S.">
 <label>average number of honeybee colonies in the U.S.</label>
 <br>
-<input type="checkbox" id="answer_6407_6" value="categorical nominal">
+<input type="checkbox" id="answer_32073_6" value="categorical nominal">
 <label>categorical nominal</label>
 <br>
-<input type="checkbox" id="answer_6407_7" value="categorical ordinal">
+<input type="checkbox" id="answer_32073_7" value="categorical ordinal">
 <label>categorical ordinal</label>
 <br>
-<input type="checkbox" id="answer_6407_8" value="numeric discrete">
+<input type="checkbox" id="answer_32073_8" value="numeric discrete">
 <label>numeric discrete</label>
 <br>
-<input type="checkbox" id="answer_6407_9" value="numeric continuous">
+<input type="checkbox" id="answer_32073_9" value="numeric continuous">
 <label>numeric continuous</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_6407"></div>
+<div id="result_32073"></div>
 </form>
-<script>function validate_form_6407() {var text; var x1 = document.getElementById('answer_6407_1'); var x2 = document.getElementById('answer_6407_2'); var x3 = document.getElementById('answer_6407_3'); var x4 = document.getElementById('answer_6407_4'); var x5 = document.getElementById('answer_6407_5'); var x6 = document.getElementById('answer_6407_6'); var x7 = document.getElementById('answer_6407_7'); var x8 = document.getElementById('answer_6407_8'); var x9 = document.getElementById('answer_6407_9'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == false&x5.checked == false&x6.checked == false&x7.checked == false&x8.checked == true&x9.checked == false){text = 'Great job!';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_6407').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_32073() {var text; var x1 = document.getElementById('answer_32073_1'); var x2 = document.getElementById('answer_32073_2'); var x3 = document.getElementById('answer_32073_3'); var x4 = document.getElementById('answer_32073_4'); var x5 = document.getElementById('answer_32073_5'); var x6 = document.getElementById('answer_32073_6'); var x7 = document.getElementById('answer_32073_7'); var x8 = document.getElementById('answer_32073_8'); var x9 = document.getElementById('answer_32073_9'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == false&x5.checked == false&x6.checked == false&x7.checked == false&x8.checked == true&x9.checked == false){text = 'Great job!';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_32073').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_6407').innerText == 'Great job!';text = res1;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_32073').innerText == 'Great job!';text = res1;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_80917" onclick="return show_hint_80917()">Click Here for Hint about Variable</div>
-<div id="result_80917" onclick="return show_hint_80917()"></div>
-<script>function show_hint_80917(){var x = document.getElementById('result_80917').innerHTML; if(!x){document.getElementById('result_80917').innerHTML = 'The variable(s) of interest is the variable the research question is interested in. Other variables can be measured but not included in a given research question.';} else {document.getElementById('result_80917').innerHTML = '';}}</script>
+<div id="hint_55020" onclick="return show_hint_55020()">Click Here for Hint about Variable</div>
+<div id="result_55020" onclick="return show_hint_55020()"></div>
+<script>function show_hint_55020(){var x = document.getElementById('result_55020').innerHTML; if(!x){document.getElementById('result_55020').innerHTML = 'The variable(s) of interest is the variable the research question is interested in. Other variables can be measured but not included in a given research question.';} else {document.getElementById('result_55020').innerHTML = '';}}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_42312" onclick="return show_hint_42312()">Click Here for Hint about Variable Type</div>
-<div id="result_42312" onclick="return show_hint_42312()"></div>
-<script>function show_hint_42312(){var x = document.getElementById('result_42312').innerHTML; if(!x){document.getElementById('result_42312').innerHTML = 'Once you have identified the variable, is it recording a quantity of something or not? If not, is there a heirarchy/order to the levels? If it is, are the values able to take any quantity (given the precision of the measuring tool)?';} else {document.getElementById('result_42312').innerHTML = '';}}</script>
+<div id="hint_57584" onclick="return show_hint_57584()">Click Here for Hint about Variable Type</div>
+<div id="result_57584" onclick="return show_hint_57584()"></div>
+<script>function show_hint_57584(){var x = document.getElementById('result_57584').innerHTML; if(!x){document.getElementById('result_57584').innerHTML = 'Once you have identified the variable, is it recording a quantity of something or not? If not, is there a heirarchy/order to the levels? If it is, are the values able to take any quantity (given the precision of the measuring tool)?';} else {document.getElementById('result_57584').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1014,49 +1016,49 @@ Hint for Importing Data
 <h4 data-number="3.0.2" class="anchored" data-anchor-id="which-of-the-following-is-the-case-in-this-dataset"><span class="header-section-number">3.0.2</span> Which of the following is the case in this dataset?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_19784" onsubmit="return validate_form_19784()" method="post">
-<input type="radio" name="answer_19784" id="answer_19784_1" value="a honeybee">
+<form name="form_95966" onsubmit="return validate_form_95966()" method="post">
+<input type="radio" name="answer_95966" id="answer_95966_1" value="a honeybee">
 <label>a honeybee</label>
 <br>
-<input type="radio" name="answer_19784" id="answer_19784_2" value="all honeybees">
+<input type="radio" name="answer_95966" id="answer_95966_2" value="all honeybees">
 <label>all honeybees</label>
 <br>
-<input type="radio" name="answer_19784" id="answer_19784_3" value="all honeybee colonies">
+<input type="radio" name="answer_95966" id="answer_95966_3" value="all honeybee colonies">
 <label>all honeybee colonies</label>
 <br>
-<input type="radio" name="answer_19784" id="answer_19784_4" value="a honeybee colony">
+<input type="radio" name="answer_95966" id="answer_95966_4" value="a honeybee colony">
 <label>a honeybee colony</label>
 <br>
-<input type="radio" name="answer_19784" id="answer_19784_5" value="all honeybee colonies in the U.S.">
+<input type="radio" name="answer_95966" id="answer_95966_5" value="all honeybee colonies in the U.S.">
 <label>all honeybee colonies in the U.S.</label>
 <br>
-<input type="radio" name="answer_19784" id="answer_19784_6" value="a honeybee colony in the U.S.">
+<input type="radio" name="answer_95966" id="answer_95966_6" value="a honeybee colony in the U.S.">
 <label>a honeybee colony in the U.S.</label>
 <br>
-<input type="radio" name="answer_19784" id="answer_19784_7" value="a year">
+<input type="radio" name="answer_95966" id="answer_95966_7" value="a year">
 <label>a year</label>
 <br>
-<input type="radio" name="answer_19784" id="answer_19784_8" value="a week">
+<input type="radio" name="answer_95966" id="answer_95966_8" value="a week">
 <label>a week</label>
 <br>
-<input type="radio" name="answer_19784" id="answer_19784_9" value="all weeks since 2000">
+<input type="radio" name="answer_95966" id="answer_95966_9" value="all weeks since 2000">
 <label>all weeks since 2000</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_19784"></div>
+<div id="result_95966"></div>
 </form>
-<script>function validate_form_19784() {var x, text; var x = document.forms['form_19784']['answer_19784'].value;if (x == 'a week'){text = 'Great job! You recognized the unit that was being selected.';} else {text = 'Look at the scenario again – what is the unit that is being selected or the unit on which the variable is being measured?';} document.getElementById('result_19784').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_95966() {var x, text; var x = document.forms['form_95966']['answer_95966'].value;if (x == 'a week'){text = 'Great job! You recognized the unit that was being selected.';} else {text = 'Look at the scenario again – what is the unit that is being selected or the unit on which the variable is being measured?';} document.getElementById('result_95966').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.';text = res1 + res2;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.';text = res1 + res2;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_21266" onclick="return show_hint_21266()">Click Here for Hint</div>
-<div id="result_21266" onclick="return show_hint_21266()"></div>
-<script>function show_hint_21266(){var x = document.getElementById('result_21266').innerHTML; if(!x){document.getElementById('result_21266').innerHTML = 'A case is the single unit on which the variable is measured.';} else {document.getElementById('result_21266').innerHTML = '';}}</script>
+<div id="hint_15477" onclick="return show_hint_15477()">Click Here for Hint</div>
+<div id="result_15477" onclick="return show_hint_15477()"></div>
+<script>function show_hint_15477(){var x = document.getElementById('result_15477').innerHTML; if(!x){document.getElementById('result_15477').innerHTML = 'A case is the single unit on which the variable is measured.';} else {document.getElementById('result_15477').innerHTML = '';}}</script>
 </div>
 </div>
 <p><br></p>
@@ -1065,49 +1067,49 @@ Hint for Importing Data
 <h4 data-number="3.0.3" class="anchored" data-anchor-id="which-of-the-following-is-the-population-of-interest-for-this-research-question"><span class="header-section-number">3.0.3</span> Which of the following is the population of interest for this research question?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_15719" onsubmit="return validate_form_15719()" method="post">
-<input type="radio" name="answer_15719" id="answer_15719_1" value="a honeybee">
+<form name="form_69805" onsubmit="return validate_form_69805()" method="post">
+<input type="radio" name="answer_69805" id="answer_69805_1" value="a honeybee">
 <label>a honeybee</label>
 <br>
-<input type="radio" name="answer_15719" id="answer_15719_2" value="all honeybees">
+<input type="radio" name="answer_69805" id="answer_69805_2" value="all honeybees">
 <label>all honeybees</label>
 <br>
-<input type="radio" name="answer_15719" id="answer_15719_3" value="all honeybee colonies">
+<input type="radio" name="answer_69805" id="answer_69805_3" value="all honeybee colonies">
 <label>all honeybee colonies</label>
 <br>
-<input type="radio" name="answer_15719" id="answer_15719_4" value="a honeybee colony">
+<input type="radio" name="answer_69805" id="answer_69805_4" value="a honeybee colony">
 <label>a honeybee colony</label>
 <br>
-<input type="radio" name="answer_15719" id="answer_15719_5" value="all honeybee colonies in the U.S.">
+<input type="radio" name="answer_69805" id="answer_69805_5" value="all honeybee colonies in the U.S.">
 <label>all honeybee colonies in the U.S.</label>
 <br>
-<input type="radio" name="answer_15719" id="answer_15719_6" value="a honeybee colony in the U.S.">
+<input type="radio" name="answer_69805" id="answer_69805_6" value="a honeybee colony in the U.S.">
 <label>a honeybee colony in the U.S.</label>
 <br>
-<input type="radio" name="answer_15719" id="answer_15719_7" value="a year">
+<input type="radio" name="answer_69805" id="answer_69805_7" value="a year">
 <label>a year</label>
 <br>
-<input type="radio" name="answer_15719" id="answer_15719_8" value="a week">
+<input type="radio" name="answer_69805" id="answer_69805_8" value="a week">
 <label>a week</label>
 <br>
-<input type="radio" name="answer_15719" id="answer_15719_9" value="all weeks since 2000">
+<input type="radio" name="answer_69805" id="answer_69805_9" value="all weeks since 2000">
 <label>all weeks since 2000</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_15719"></div>
+<div id="result_69805"></div>
 </form>
-<script>function validate_form_15719() {var x, text; var x = document.forms['form_15719']['answer_15719'].value;if (x == 'all weeks since 2000'){text = 'Great job!';} else {text = 'Recall that a population can have any variable measured on the cases within it – did you pick an option that has part of the variable included?';} document.getElementById('result_15719').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_69805() {var x, text; var x = document.forms['form_69805']['answer_69805'].value;if (x == 'all weeks since 2000'){text = 'Great job!';} else {text = 'Recall that a population can have any variable measured on the cases within it – did you pick an option that has part of the variable included?';} document.getElementById('result_69805').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!';text = res1 + res2 + res3;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!';text = res1 + res2 + res3;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_37186" onclick="return show_hint_37186()">Click Here for Hint</div>
-<div id="result_37186" onclick="return show_hint_37186()"></div>
-<script>function show_hint_37186(){var x = document.getElementById('result_37186').innerHTML; if(!x){document.getElementById('result_37186').innerHTML = 'A population of interest is a collection of all possible cases that the researcher wants to know about.';} else {document.getElementById('result_37186').innerHTML = '';}}</script>
+<div id="hint_5395" onclick="return show_hint_5395()">Click Here for Hint</div>
+<div id="result_5395" onclick="return show_hint_5395()"></div>
+<script>function show_hint_5395(){var x = document.getElementById('result_5395').innerHTML; if(!x){document.getElementById('result_5395').innerHTML = 'A population of interest is a collection of all possible cases that the researcher wants to know about.';} else {document.getElementById('result_5395').innerHTML = '';}}</script>
 </div>
 </div>
 <p><br></p>
@@ -1116,49 +1118,49 @@ Hint for Importing Data
 <h4 data-number="3.0.4" class="anchored" data-anchor-id="which-of-the-following-could-be-the-sample-for-this-study"><span class="header-section-number">3.0.4</span> Which of the following could be the sample for this study?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_95185" onsubmit="return validate_form_95185()" method="post">
-<input type="radio" name="answer_95185" id="answer_95185_1" value="all honeybee colonies">
+<form name="form_92049" onsubmit="return validate_form_92049()" method="post">
+<input type="radio" name="answer_92049" id="answer_92049_1" value="all honeybee colonies">
 <label>all honeybee colonies</label>
 <br>
-<input type="radio" name="answer_95185" id="answer_95185_2" value="20 honeybee colonies">
+<input type="radio" name="answer_92049" id="answer_92049_2" value="20 honeybee colonies">
 <label>20 honeybee colonies</label>
 <br>
-<input type="radio" name="answer_95185" id="answer_95185_3" value="all honeybee colonies in the U.S.">
+<input type="radio" name="answer_92049" id="answer_92049_3" value="all honeybee colonies in the U.S.">
 <label>all honeybee colonies in the U.S.</label>
 <br>
-<input type="radio" name="answer_95185" id="answer_95185_4" value="20 honeybee colonies in the U.S.">
+<input type="radio" name="answer_92049" id="answer_92049_4" value="20 honeybee colonies in the U.S.">
 <label>20 honeybee colonies in the U.S.</label>
 <br>
-<input type="radio" name="answer_95185" id="answer_95185_5" value="20 weeks since 2000">
+<input type="radio" name="answer_92049" id="answer_92049_5" value="20 weeks since 2000">
 <label>20 weeks since 2000</label>
 <br>
-<input type="radio" name="answer_95185" id="answer_95185_6" value="mean number of honeybee colonies in the US">
+<input type="radio" name="answer_92049" id="answer_92049_6" value="mean number of honeybee colonies in the US">
 <label>mean number of honeybee colonies in the US</label>
 <br>
-<input type="radio" name="answer_95185" id="answer_95185_7" value="a week">
+<input type="radio" name="answer_92049" id="answer_92049_7" value="a week">
 <label>a week</label>
 <br>
-<input type="radio" name="answer_95185" id="answer_95185_8" value="all weeks since 2000">
+<input type="radio" name="answer_92049" id="answer_92049_8" value="all weeks since 2000">
 <label>all weeks since 2000</label>
 <br>
-<input type="radio" name="answer_95185" id="answer_95185_9" value="mean number of weeks since 2000">
+<input type="radio" name="answer_92049" id="answer_92049_9" value="mean number of weeks since 2000">
 <label>mean number of weeks since 2000</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_95185"></div>
+<div id="result_92049"></div>
 </form>
-<script>function validate_form_95185() {var x, text; var x = document.forms['form_95185']['answer_95185'].value;if (x == '20 weeks since 2000'){text = 'Great job!';} else {text = 'A sample is just the selected cases from the population. Review your answers above';} document.getElementById('result_95185').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_92049() {var x, text; var x = document.forms['form_92049']['answer_92049'].value;if (x == '20 weeks since 2000'){text = 'Great job!';} else {text = 'A sample is just the selected cases from the population. Review your answers above';} document.getElementById('result_92049').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!';text = res1 + res2 + res3 + res4;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!';text = res1 + res2 + res3 + res4;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_83222" onclick="return show_hint_83222()">Click Here for Hint</div>
-<div id="result_83222" onclick="return show_hint_83222()"></div>
-<script>function show_hint_83222(){var x = document.getElementById('result_83222').innerHTML; if(!x){document.getElementById('result_83222').innerHTML = 'A sample is collection of the selected cases from the population.';} else {document.getElementById('result_83222').innerHTML = '';}}</script>
+<div id="hint_29405" onclick="return show_hint_29405()">Click Here for Hint</div>
+<div id="result_29405" onclick="return show_hint_29405()"></div>
+<script>function show_hint_29405(){var x = document.getElementById('result_29405').innerHTML; if(!x){document.getElementById('result_29405').innerHTML = 'A sample is collection of the selected cases from the population.';} else {document.getElementById('result_29405').innerHTML = '';}}</script>
 </div>
 </div>
 <p><br></p>
@@ -1167,34 +1169,34 @@ Hint for Importing Data
 <h4 data-number="3.0.5" class="anchored" data-anchor-id="what-is-the-sampling-method-used-by-the-researchers"><span class="header-section-number">3.0.5</span> What is the sampling method used by the researchers?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_78534" onsubmit="return validate_form_78534()" method="post">
-<input type="radio" name="answer_78534" id="answer_78534_1" value="Convenience Sample">
-<label>Convenience Sample</label>
-<br>
-<input type="radio" name="answer_78534" id="answer_78534_2" value="Simple Random Sample">
-<label>Simple Random Sample</label>
-<br>
-<input type="radio" name="answer_78534" id="answer_78534_3" value="Stratified Random Sample">
-<label>Stratified Random Sample</label>
-<br>
-<input type="radio" name="answer_78534" id="answer_78534_4" value="Volunteer Sample">
+<form name="form_88986" onsubmit="return validate_form_88986()" method="post">
+<input type="radio" name="answer_88986" id="answer_88986_1" value="Volunteer Sample">
 <label>Volunteer Sample</label>
 <br>
+<input type="radio" name="answer_88986" id="answer_88986_2" value="Convenience Sample">
+<label>Convenience Sample</label>
+<br>
+<input type="radio" name="answer_88986" id="answer_88986_3" value="Stratified Random Sample">
+<label>Stratified Random Sample</label>
+<br>
+<input type="radio" name="answer_88986" id="answer_88986_4" value="Simple Random Sample">
+<label>Simple Random Sample</label>
+<br>
 <input type="submit" value="Check Your Answer">
-<div id="result_78534"></div>
+<div id="result_88986"></div>
 </form>
-<script>function validate_form_78534() {var x, text; var x = document.forms['form_78534']['answer_78534'].value;if (x == 'Simple Random Sample'){text = 'Great job!';} else {text = 'Check the hint, read the scenario and try again.';} document.getElementById('result_78534').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_88986() {var x, text; var x = document.forms['form_88986']['answer_88986'].value;if (x == 'Simple Random Sample'){text = 'Great job!';} else {text = 'Check the hint, read the scenario and try again.';} document.getElementById('result_88986').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_9732" onclick="return show_hint_9732()">Click Here for Hint</div>
-<div id="result_9732" onclick="return show_hint_9732()"></div>
-<script>function show_hint_9732(){var x = document.getElementById('result_9732').innerHTML; if(!x){document.getElementById('result_9732').innerHTML = 'Focus on how the case is being chosen - by what method is the case selected from the population?';} else {document.getElementById('result_9732').innerHTML = '';}}</script>
+<div id="hint_21087" onclick="return show_hint_21087()">Click Here for Hint</div>
+<div id="result_21087" onclick="return show_hint_21087()"></div>
+<script>function show_hint_21087(){var x = document.getElementById('result_21087').innerHTML; if(!x){document.getElementById('result_21087').innerHTML = 'Focus on how the case is being chosen - by what method is the case selected from the population?';} else {document.getElementById('result_21087').innerHTML = '';}}</script>
 </div>
 </div>
 <p><br></p>
@@ -1203,35 +1205,35 @@ Hint for Importing Data
 <h4 data-number="3.0.6" class="anchored" data-anchor-id="if-we-were-to-calculate-the-average-size-of-a-honeybee-colony-in-the-u.s.-from-50-selected-colonies-that-would-be-an-example-of-a"><span class="header-section-number">3.0.6</span> If we were to calculate the average size of a honeybee colony in the U.S. from 50 selected colonies, that would be an example of a…</h4>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_12345" onsubmit="return validate_form_12345()" method="post">
-<select name="answer_12345">
-<option>sample</option>
+<form name="form_59584" onsubmit="return validate_form_59584()" method="post">
+<select name="answer_59584">
 <option>population</option>
-<option>statistic</option>
+<option>sample</option>
 <option>parameter</option>
+<option>statistic</option>
 </select>
 <input type="submit" value="Check Your Answer">
-<div id="result_12345"></div>
+<div id="result_59584"></div>
 </form>
-<script>function validate_form_12345() {var x, text; var x = document.forms['form_12345']['answer_12345'].value;if (x == 'statistic'){text = 'Great job!';} else {text = 'Check the hint, read the scenario and try again.';} document.getElementById('result_12345').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_59584() {var x, text; var x = document.forms['form_59584']['answer_59584'].value;if (x == 'statistic'){text = 'Great job!';} else {text = 'Check the hint, read the scenario and try again.';} document.getElementById('result_59584').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_28715" onclick="return show_hint_28715()">Click Here for Hint 1</div>
-<div id="result_28715" onclick="return show_hint_28715()"></div>
-<script>function show_hint_28715(){var x = document.getElementById('result_28715').innerHTML; if(!x){document.getElementById('result_28715').innerHTML = 'Statisics and parameters are numerical summaries calculated on either samples or populations, respectively.';} else {document.getElementById('result_28715').innerHTML = '';}}</script>
+<div id="hint_46069" onclick="return show_hint_46069()">Click Here for Hint 1</div>
+<div id="result_46069" onclick="return show_hint_46069()"></div>
+<script>function show_hint_46069(){var x = document.getElementById('result_46069').innerHTML; if(!x){document.getElementById('result_46069').innerHTML = 'Statisics and parameters are numerical summaries calculated on either samples or populations, respectively.';} else {document.getElementById('result_46069').innerHTML = '';}}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_31874" onclick="return show_hint_31874()">Click Here for Hint 2</div>
-<div id="result_31874" onclick="return show_hint_31874()"></div>
-<script>function show_hint_31874(){var x = document.getElementById('result_31874').innerHTML; if(!x){document.getElementById('result_31874').innerHTML = 'Numerical summaries are values we can calculate that summarize across cases. For example, we can calculate the number of students in a classroom with blonde hair, rather than just scanning the raw data. That ‘count’ is a numerical summary, as it summarizes the data from each case into a a number for the group.';} else {document.getElementById('result_31874').innerHTML = '';}}</script>
+<div id="hint_99440" onclick="return show_hint_99440()">Click Here for Hint 2</div>
+<div id="result_99440" onclick="return show_hint_99440()"></div>
+<script>function show_hint_99440(){var x = document.getElementById('result_99440').innerHTML; if(!x){document.getElementById('result_99440').innerHTML = 'Numerical summaries are values we can calculate that summarize across cases. For example, we can calculate the number of students in a classroom with blonde hair, rather than just scanning the raw data. That ‘count’ is a numerical summary, as it summarizes the data from each case into a a number for the group.';} else {document.getElementById('result_99440').innerHTML = '';}}</script>
 </div>
 </div>
 <p><br></p>
@@ -1370,19 +1372,19 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="3.1.3" class="anchored" data-anchor-id="is-there-a-y-axis-in-a-single-numeric-variable-boxplot"><span class="header-section-number">3.1.3</span> Is there a y-axis in a single numeric variable boxplot?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_83767" onsubmit="return validate_form_83767()" method="post">
-<input type="checkbox" id="answer_83767_1" value="no">
+<form name="form_88846" onsubmit="return validate_form_88846()" method="post">
+<input type="checkbox" id="answer_88846_1" value="no">
 <label>no</label>
 <br>
-<input type="checkbox" id="answer_83767_2" value="yes">
+<input type="checkbox" id="answer_88846_2" value="yes">
 <label>yes</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_83767"></div>
+<div id="result_88846"></div>
 </form>
-<script>function validate_form_83767() {var text; var x1 = document.getElementById('answer_83767_1'); var x2 = document.getElementById('answer_83767_2'); if (x1.checked == true&x2.checked == false){text = 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.';} else {text = 'Check your notes and try again';} document.getElementById('result_83767').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_88846() {var text; var x1 = document.getElementById('answer_88846_1'); var x2 = document.getElementById('answer_88846_2'); if (x1.checked == true&x2.checked == false){text = 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.';} else {text = 'Check your notes and try again';} document.getElementById('result_88846').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!'; res7 = document.getElementById('result_83767').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!'; res7 = document.getElementById('result_88846').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1420,37 +1422,37 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <!--- Adjust answer? Thought roughly symmetric from histogram / stats (which they don't have yet), but boxplot looks slightly left-skewed? --->
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_21890" onsubmit="return validate_form_21890()" method="post">
-<input type="checkbox" id="answer_21890_1" value="symmetric">
+<form name="form_92941" onsubmit="return validate_form_92941()" method="post">
+<input type="checkbox" id="answer_92941_1" value="symmetric">
 <label>symmetric</label>
 <br>
-<input type="checkbox" id="answer_21890_2" value="right skewed">
+<input type="checkbox" id="answer_92941_2" value="right skewed">
 <label>right skewed</label>
 <br>
-<input type="checkbox" id="answer_21890_3" value="slightly left skewed">
+<input type="checkbox" id="answer_92941_3" value="slightly left skewed">
 <label>slightly left skewed</label>
 <br>
-<input type="checkbox" id="answer_21890_4" value="unimodal">
+<input type="checkbox" id="answer_92941_4" value="unimodal">
 <label>unimodal</label>
 <br>
-<input type="checkbox" id="answer_21890_5" value="bimodal">
+<input type="checkbox" id="answer_92941_5" value="bimodal">
 <label>bimodal</label>
 <br>
-<input type="checkbox" id="answer_21890_6" value="multimodal">
+<input type="checkbox" id="answer_92941_6" value="multimodal">
 <label>multimodal</label>
 <br>
-<input type="checkbox" id="answer_21890_7" value="unable to determine shape">
+<input type="checkbox" id="answer_92941_7" value="unable to determine shape">
 <label>unable to determine shape</label>
 <br>
-<input type="checkbox" id="answer_21890_8" value="unable to determine modality">
+<input type="checkbox" id="answer_92941_8" value="unable to determine modality">
 <label>unable to determine modality</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_21890"></div>
+<div id="result_92941"></div>
 </form>
-<script>function validate_form_21890() {var text; var x1 = document.getElementById('answer_21890_1'); var x2 = document.getElementById('answer_21890_2'); var x3 = document.getElementById('answer_21890_3'); var x4 = document.getElementById('answer_21890_4'); var x5 = document.getElementById('answer_21890_5'); var x6 = document.getElementById('answer_21890_6'); var x7 = document.getElementById('answer_21890_7'); var x8 = document.getElementById('answer_21890_8'); if (x1.checked == false&x2.checked == false&x3.checked == true&x4.checked == true&x5.checked == false&x6.checked == false&x7.checked == false&x8.checked == false){text = 'Great job!';} else {text = 'Not quite. Check hint below.';} document.getElementById('result_21890').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_92941() {var text; var x1 = document.getElementById('answer_92941_1'); var x2 = document.getElementById('answer_92941_2'); var x3 = document.getElementById('answer_92941_3'); var x4 = document.getElementById('answer_92941_4'); var x5 = document.getElementById('answer_92941_5'); var x6 = document.getElementById('answer_92941_6'); var x7 = document.getElementById('answer_92941_7'); var x8 = document.getElementById('answer_92941_8'); if (x1.checked == false&x2.checked == false&x3.checked == true&x4.checked == true&x5.checked == false&x6.checked == false&x7.checked == false&x8.checked == false){text = 'Great job!';} else {text = 'Not quite. Check hint below.';} document.getElementById('result_92941').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!'; res7 = document.getElementById('result_83767').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_21890').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!'; res7 = document.getElementById('result_88846').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_92941').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1458,9 +1460,9 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <!--- insert note here about symmetry vs. skewness if close call. (slighly left skewed vs. roughly symmetric). May also insert note about what can you determine from each of histogram or boxplot.  --->
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_5625" onclick="return show_hint_5625()">Click Here for Hint</div>
-<div id="result_5625" onclick="return show_hint_5625()"></div>
-<script>function show_hint_5625(){var x = document.getElementById('result_5625').innerHTML; if(!x){document.getElementById('result_5625').innerHTML = 'The skew is slight, but it is there, especially when you look at the boxplot.';} else {document.getElementById('result_5625').innerHTML = '';}}</script>
+<div id="hint_25317" onclick="return show_hint_25317()">Click Here for Hint</div>
+<div id="result_25317" onclick="return show_hint_25317()"></div>
+<script>function show_hint_25317(){var x = document.getElementById('result_25317').innerHTML; if(!x){document.getElementById('result_25317').innerHTML = 'The skew is slight, but it is there, especially when you look at the boxplot.';} else {document.getElementById('result_25317').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1469,18 +1471,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <!--- answer set for if consider symmetric; edit if think not --->
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_42448" onsubmit="return validate_form_42448()" method="post">
-<select name="answer_42448">
+<form name="form_77169" onsubmit="return validate_form_77169()" method="post">
+<select name="answer_77169">
 <option>greater than</option>
 <option>less than</option>
 <option>equivalent to</option>
 </select>
 <input type="submit" value="Check Your Answer">
-<div id="result_42448"></div>
+<div id="result_77169"></div>
 </form>
-<script>function validate_form_42448() {var x, text; var x = document.forms['form_42448']['answer_42448'].value;if (x == 'less than'){text = 'Great job!';} else {text = 'Not quite. Review in your notebook how means and medians are calculated.';} document.getElementById('result_42448').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_77169() {var x, text; var x = document.forms['form_77169']['answer_77169'].value;if (x == 'less than'){text = 'Great job!';} else {text = 'Not quite. Review in your notebook how means and medians are calculated.';} document.getElementById('result_77169').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!'; res7 = document.getElementById('result_83767').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_21890').innerText == 'Great job!'; res9 = document.getElementById('result_42448').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!'; res7 = document.getElementById('result_88846').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_92941').innerText == 'Great job!'; res9 = document.getElementById('result_77169').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1528,33 +1530,33 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.3.1" class="anchored" data-anchor-id="how-many-cases-have-between-2301-and-2504-thousand-colonies"><span class="header-section-number">3.3.1</span> How many cases have between 2301 and 2504 thousand colonies?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_78944" onsubmit="return validate_form_78944()" method="post">
+<form name="form_94951" onsubmit="return validate_form_94951()" method="post">
 <fieldset>
 <legend>Enter your answer below</legend>
-<input type="text" placeholder="" name="answer_78944">
+<input type="text" placeholder="" name="answer_94951">
 <input type="submit" value="check">
-<div id="result_78944"></div>
+<div id="result_94951"></div>
 </fieldset>
 </form>
-<script>function validate_form_78944() {var x, text; var x = document.forms['form_78944']['answer_78944'].value;if (x == '5'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_78944').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_94951() {var x, text; var x = document.forms['form_94951']['answer_94951'].value;if (x == '5'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_94951').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!'; res7 = document.getElementById('result_83767').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_21890').innerText == 'Great job!'; res9 = document.getElementById('result_42448').innerText == 'Great job!'; res10 = document.getElementById('result_78944').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!'; res7 = document.getElementById('result_88846').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_92941').innerText == 'Great job!'; res9 = document.getElementById('result_77169').innerText == 'Great job!'; res10 = document.getElementById('result_94951').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_60204" onclick="return show_hint_60204()">Click Here for Hint 1</div>
-<div id="result_60204" onclick="return show_hint_60204()"></div>
-<script>function show_hint_60204(){var x = document.getElementById('result_60204').innerHTML; if(!x){document.getElementById('result_60204').innerHTML = 'Use the code chunk below to calculate some statistics. What statistics do those numbers coresspond to?';} else {document.getElementById('result_60204').innerHTML = '';}}</script>
+<div id="hint_1891" onclick="return show_hint_1891()">Click Here for Hint 1</div>
+<div id="result_1891" onclick="return show_hint_1891()"></div>
+<script>function show_hint_1891(){var x = document.getElementById('result_1891').innerHTML; if(!x){document.getElementById('result_1891').innerHTML = 'Use the code chunk below to calculate some statistics. What statistics do those numbers coresspond to?';} else {document.getElementById('result_1891').innerHTML = '';}}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_96185" onclick="return show_hint_96185()">Click Here for Hint 2</div>
-<div id="result_96185" onclick="return show_hint_96185()"></div>
-<script>function show_hint_96185(){var x = document.getElementById('result_96185').innerHTML; if(!x){document.getElementById('result_96185').innerHTML = 'What percent of cases would you expect between those values? What is your sample size? Can you now calculate the number of cases that have values of the variable between those values?';} else {document.getElementById('result_96185').innerHTML = '';}}</script>
+<div id="hint_27358" onclick="return show_hint_27358()">Click Here for Hint 2</div>
+<div id="result_27358" onclick="return show_hint_27358()"></div>
+<script>function show_hint_27358(){var x = document.getElementById('result_27358').innerHTML; if(!x){document.getElementById('result_27358').innerHTML = 'What percent of cases would you expect between those values? What is your sample size? Can you now calculate the number of cases that have values of the variable between those values?';} else {document.getElementById('result_27358').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1562,23 +1564,23 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.3.2" class="anchored" data-anchor-id="what-is-the-name-for-the-distance-between-2504-and-2672.75-thousand-colonies-on-the-boxplot"><span class="header-section-number">3.3.2</span> What is the name for the distance between 2504 and 2672.75 thousand colonies on the boxplot?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_82052" onsubmit="return validate_form_82052()" method="post">
-<input type="text" placeholder="write answer in lower case" name="answer_82052">
+<form name="form_27618" onsubmit="return validate_form_27618()" method="post">
+<input type="text" placeholder="write answer in lower case" name="answer_27618">
 <input type="submit" value="Check Your Answer">
-<div id="result_82052"></div>
+<div id="result_27618"></div>
 </form>
-<script>function validate_form_82052() {var x, text; var x = document.forms['form_82052']['answer_82052'].value;if (x == 'inter-quartile range'|x == 'iqr'|x == 'interquartile range'){text = 'Great job!';} else {text = 'Not quite. Check your spelling or the hints below.';} document.getElementById('result_82052').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_27618() {var x, text; var x = document.forms['form_27618']['answer_27618'].value;if (x == 'inter-quartile range'|x == 'iqr'|x == 'interquartile range'){text = 'Great job!';} else {text = 'Not quite. Check your spelling or the hints below.';} document.getElementById('result_27618').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!'; res7 = document.getElementById('result_83767').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_21890').innerText == 'Great job!'; res9 = document.getElementById('result_42448').innerText == 'Great job!'; res10 = document.getElementById('result_78944').innerText == 'Correct'; res11 = document.getElementById('result_82052').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!'; res7 = document.getElementById('result_88846').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_92941').innerText == 'Great job!'; res9 = document.getElementById('result_77169').innerText == 'Great job!'; res10 = document.getElementById('result_94951').innerText == 'Correct'; res11 = document.getElementById('result_27618').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_50920" onclick="return show_hint_50920()">Click Here for Hint</div>
-<div id="result_50920" onclick="return show_hint_50920()"></div>
-<script>function show_hint_50920(){var x = document.getElementById('result_50920').innerHTML; if(!x){document.getElementById('result_50920').innerHTML = 'What statisitcs do those values correspond to? Is there a name for the spread between them?';} else {document.getElementById('result_50920').innerHTML = '';}}</script>
+<div id="hint_26225" onclick="return show_hint_26225()">Click Here for Hint</div>
+<div id="result_26225" onclick="return show_hint_26225()"></div>
+<script>function show_hint_26225(){var x = document.getElementById('result_26225').innerHTML; if(!x){document.getElementById('result_26225').innerHTML = 'What statisitcs do those values correspond to? Is there a name for the spread between them?';} else {document.getElementById('result_26225').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1586,28 +1588,28 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.3.3" class="anchored" data-anchor-id="there-are-more-cases-that-have-values-between-2301-and-2504-thousand-colonies-than-cases-that-have-values-between-2672.75-and-2812-thousand-colonies."><span class="header-section-number">3.3.3</span> There are more cases that have values between 2301 and 2504 thousand colonies than cases that have values between 2672.75 and 2812 thousand colonies.</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_44968" onsubmit="return validate_form_44968()" method="post">
-<input type="checkbox" id="answer_44968_1" value="true">
+<form name="form_14756" onsubmit="return validate_form_14756()" method="post">
+<input type="checkbox" id="answer_14756_1" value="true">
 <label>true</label>
 <br>
-<input type="checkbox" id="answer_44968_2" value="false">
+<input type="checkbox" id="answer_14756_2" value="false">
 <label>false</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_44968"></div>
+<div id="result_14756"></div>
 </form>
-<script>function validate_form_44968() {var text; var x1 = document.getElementById('answer_44968_1'); var x2 = document.getElementById('answer_44968_2'); if (x1.checked == false&x2.checked == true){text = 'Great job!';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_44968').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_14756() {var text; var x1 = document.getElementById('answer_14756_1'); var x2 = document.getElementById('answer_14756_2'); if (x1.checked == false&x2.checked == true){text = 'Great job!';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_14756').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!'; res7 = document.getElementById('result_83767').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_21890').innerText == 'Great job!'; res9 = document.getElementById('result_42448').innerText == 'Great job!'; res10 = document.getElementById('result_78944').innerText == 'Correct'; res11 = document.getElementById('result_82052').innerText == 'Great job!'; res12 = document.getElementById('result_44968').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!'; res7 = document.getElementById('result_88846').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_92941').innerText == 'Great job!'; res9 = document.getElementById('result_77169').innerText == 'Great job!'; res10 = document.getElementById('result_94951').innerText == 'Correct'; res11 = document.getElementById('result_27618').innerText == 'Great job!'; res12 = document.getElementById('result_14756').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_1176" onclick="return show_hint_1176()">Click Here for Hint</div>
-<div id="result_1176" onclick="return show_hint_1176()"></div>
-<script>function show_hint_1176(){var x = document.getElementById('result_1176').innerHTML; if(!x){document.getElementById('result_1176').innerHTML = 'What statisitcs do those values correspond to? What do you know about the percent of cases that occurs between each set of values?';} else {document.getElementById('result_1176').innerHTML = '';}}</script>
+<div id="hint_74612" onclick="return show_hint_74612()">Click Here for Hint</div>
+<div id="result_74612" onclick="return show_hint_74612()"></div>
+<script>function show_hint_74612(){var x = document.getElementById('result_74612').innerHTML; if(!x){document.getElementById('result_74612').innerHTML = 'What statisitcs do those values correspond to? What do you know about the percent of cases that occurs between each set of values?';} else {document.getElementById('result_74612').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1615,28 +1617,28 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.3.4" class="anchored" data-anchor-id="the-cases-that-have-values-between-2301-and-2504-thousand-colonies-are-more-dispersed-then-the-cases-that-have-values-between-2672.75-and-2812-thousand-colonies."><span class="header-section-number">3.3.4</span> The cases that have values between 2301 and 2504 thousand colonies are more dispersed then the cases that have values between 2672.75 and 2812 thousand colonies.</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_46343" onsubmit="return validate_form_46343()" method="post">
-<input type="checkbox" id="answer_46343_1" value="true">
+<form name="form_66402" onsubmit="return validate_form_66402()" method="post">
+<input type="checkbox" id="answer_66402_1" value="true">
 <label>true</label>
 <br>
-<input type="checkbox" id="answer_46343_2" value="false">
+<input type="checkbox" id="answer_66402_2" value="false">
 <label>false</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_46343"></div>
+<div id="result_66402"></div>
 </form>
-<script>function validate_form_46343() {var text; var x1 = document.getElementById('answer_46343_1'); var x2 = document.getElementById('answer_46343_2'); if (x1.checked == true&x2.checked == false){text = 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_46343').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_66402() {var text; var x1 = document.getElementById('answer_66402_1'); var x2 = document.getElementById('answer_66402_2'); if (x1.checked == true&x2.checked == false){text = 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_66402').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!'; res7 = document.getElementById('result_83767').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_21890').innerText == 'Great job!'; res9 = document.getElementById('result_42448').innerText == 'Great job!'; res10 = document.getElementById('result_78944').innerText == 'Correct'; res11 = document.getElementById('result_82052').innerText == 'Great job!'; res12 = document.getElementById('result_44968').innerText == 'Great job!'; res13 = document.getElementById('result_46343').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!'; res7 = document.getElementById('result_88846').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_92941').innerText == 'Great job!'; res9 = document.getElementById('result_77169').innerText == 'Great job!'; res10 = document.getElementById('result_94951').innerText == 'Correct'; res11 = document.getElementById('result_27618').innerText == 'Great job!'; res12 = document.getElementById('result_14756').innerText == 'Great job!'; res13 = document.getElementById('result_66402').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_80876" onclick="return show_hint_80876()">Click Here for Hint</div>
-<div id="result_80876" onclick="return show_hint_80876()"></div>
-<script>function show_hint_80876(){var x = document.getElementById('result_80876').innerHTML; if(!x){document.getElementById('result_80876').innerHTML = 'Try looking at the boxplot and identifying the statistics on it.';} else {document.getElementById('result_80876').innerHTML = '';}}</script>
+<div id="hint_82093" onclick="return show_hint_82093()">Click Here for Hint</div>
+<div id="result_82093" onclick="return show_hint_82093()"></div>
+<script>function show_hint_82093(){var x = document.getElementById('result_82093').innerHTML; if(!x){document.getElementById('result_82093').innerHTML = 'Try looking at the boxplot and identifying the statistics on it.';} else {document.getElementById('result_82093').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1644,28 +1646,28 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.3.5" class="anchored" data-anchor-id="we-could-have-determined-the-modality-of-the-distribution-without-making-a-histogram-i.e.-with-just-statistics-or-the-boxplot."><span class="header-section-number">3.3.5</span> We could have determined the modality of the distribution without making a histogram (i.e.&nbsp;with just statistics or the boxplot).</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_79685" onsubmit="return validate_form_79685()" method="post">
-<input type="checkbox" id="answer_79685_1" value="true">
+<form name="form_34126" onsubmit="return validate_form_34126()" method="post">
+<input type="checkbox" id="answer_34126_1" value="true">
 <label>true</label>
 <br>
-<input type="checkbox" id="answer_79685_2" value="false">
+<input type="checkbox" id="answer_34126_2" value="false">
 <label>false</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_79685"></div>
+<div id="result_34126"></div>
 </form>
-<script>function validate_form_79685() {var text; var x1 = document.getElementById('answer_79685_1'); var x2 = document.getElementById('answer_79685_2'); if (x1.checked == false&x2.checked == true){text = 'Great job! Modality can only be seen on a histogram.';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_79685').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_34126() {var text; var x1 = document.getElementById('answer_34126_1'); var x2 = document.getElementById('answer_34126_2'); if (x1.checked == false&x2.checked == true){text = 'Great job! Modality can only be seen on a histogram.';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_34126').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!'; res7 = document.getElementById('result_83767').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_21890').innerText == 'Great job!'; res9 = document.getElementById('result_42448').innerText == 'Great job!'; res10 = document.getElementById('result_78944').innerText == 'Correct'; res11 = document.getElementById('result_82052').innerText == 'Great job!'; res12 = document.getElementById('result_44968').innerText == 'Great job!'; res13 = document.getElementById('result_46343').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_79685').innerText == 'Great job! Modality can only be seen on a histogram.';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!'; res7 = document.getElementById('result_88846').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_92941').innerText == 'Great job!'; res9 = document.getElementById('result_77169').innerText == 'Great job!'; res10 = document.getElementById('result_94951').innerText == 'Correct'; res11 = document.getElementById('result_27618').innerText == 'Great job!'; res12 = document.getElementById('result_14756').innerText == 'Great job!'; res13 = document.getElementById('result_66402').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_34126').innerText == 'Great job! Modality can only be seen on a histogram.';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_88746" onclick="return show_hint_88746()">Click Here for Hint</div>
-<div id="result_88746" onclick="return show_hint_88746()"></div>
-<script>function show_hint_88746(){var x = document.getElementById('result_88746').innerHTML; if(!x){document.getElementById('result_88746').innerHTML = 'Review what modality measures. Can you see frequency in the statistics of a numeric variable or on a boxplot?';} else {document.getElementById('result_88746').innerHTML = '';}}</script>
+<div id="hint_1134" onclick="return show_hint_1134()">Click Here for Hint</div>
+<div id="result_1134" onclick="return show_hint_1134()"></div>
+<script>function show_hint_1134(){var x = document.getElementById('result_1134').innerHTML; if(!x){document.getElementById('result_1134').innerHTML = 'Review what modality measures. Can you see frequency in the statistics of a numeric variable or on a boxplot?';} else {document.getElementById('result_1134').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1688,51 +1690,51 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <!--- the expression() function isn't working to create an x-bar. Ideas? Tried expression (outside paste as well), bquote, and just latex as well as loading the grDevices packages the plotmath syntex is inside.--->
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_77447" onsubmit="return validate_form_77447()" method="post">
+<form name="form_19033" onsubmit="return validate_form_19033()" method="post">
 <fieldset>
 <legend>What is the value of x-bar?</legend>
-<input type="text" placeholder="" name="answer_77447">
+<input type="text" placeholder="" name="answer_19033">
 <input type="submit" value="Check Your Answer">
-<div id="result_77447"></div>
+<div id="result_19033"></div>
 </fieldset>
 </form>
-<script>function validate_form_77447() {var x, text; var x = document.forms['form_77447']['answer_77447'].value;if (x == '2591.3'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_77447').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_19033() {var x, text; var x = document.forms['form_19033']['answer_19033'].value;if (x == '2591.3'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_19033').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!'; res7 = document.getElementById('result_83767').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_21890').innerText == 'Great job!'; res9 = document.getElementById('result_42448').innerText == 'Great job!'; res10 = document.getElementById('result_78944').innerText == 'Correct'; res11 = document.getElementById('result_82052').innerText == 'Great job!'; res12 = document.getElementById('result_44968').innerText == 'Great job!'; res13 = document.getElementById('result_46343').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_79685').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_77447').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!'; res7 = document.getElementById('result_88846').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_92941').innerText == 'Great job!'; res9 = document.getElementById('result_77169').innerText == 'Great job!'; res10 = document.getElementById('result_94951').innerText == 'Correct'; res11 = document.getElementById('result_27618').innerText == 'Great job!'; res12 = document.getElementById('result_14756').innerText == 'Great job!'; res13 = document.getElementById('result_66402').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_34126').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_19033').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_53475" onsubmit="return validate_form_53475()" method="post">
+<form name="form_29959" onsubmit="return validate_form_29959()" method="post">
 <fieldset>
 <legend>What is the value of \(s\)?</legend>
-<input type="text" placeholder="" name="answer_53475">
+<input type="text" placeholder="" name="answer_29959">
 <input type="submit" value="Check Your Answer">
-<div id="result_53475"></div>
+<div id="result_29959"></div>
 </fieldset>
 </form>
-<script>function validate_form_53475() {var x, text; var x = document.forms['form_53475']['answer_53475'].value;if (x == '141.1066'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_53475').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_29959() {var x, text; var x = document.forms['form_29959']['answer_29959'].value;if (x == '141.1066'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_29959').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!'; res7 = document.getElementById('result_83767').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_21890').innerText == 'Great job!'; res9 = document.getElementById('result_42448').innerText == 'Great job!'; res10 = document.getElementById('result_78944').innerText == 'Correct'; res11 = document.getElementById('result_82052').innerText == 'Great job!'; res12 = document.getElementById('result_44968').innerText == 'Great job!'; res13 = document.getElementById('result_46343').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_79685').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_77447').innerText == 'Correct'; res16 = document.getElementById('result_53475').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!'; res7 = document.getElementById('result_88846').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_92941').innerText == 'Great job!'; res9 = document.getElementById('result_77169').innerText == 'Great job!'; res10 = document.getElementById('result_94951').innerText == 'Correct'; res11 = document.getElementById('result_27618').innerText == 'Great job!'; res12 = document.getElementById('result_14756').innerText == 'Great job!'; res13 = document.getElementById('result_66402').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_34126').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_19033').innerText == 'Correct'; res16 = document.getElementById('result_29959').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_16092" onsubmit="return validate_form_16092()" method="post">
+<form name="form_87551" onsubmit="return validate_form_87551()" method="post">
 <fieldset>
 <legend>What is the value of \(n\)?</legend>
-<input type="text" placeholder="" name="answer_16092">
+<input type="text" placeholder="" name="answer_87551">
 <input type="submit" value="Check Your Answer">
-<div id="result_16092"></div>
+<div id="result_87551"></div>
 </fieldset>
 </form>
-<script>function validate_form_16092() {var x, text; var x = document.forms['form_16092']['answer_16092'].value;if (x == '20'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_16092').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_87551() {var x, text; var x = document.forms['form_87551']['answer_87551'].value;if (x == '20'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_87551').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!'; res7 = document.getElementById('result_83767').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_21890').innerText == 'Great job!'; res9 = document.getElementById('result_42448').innerText == 'Great job!'; res10 = document.getElementById('result_78944').innerText == 'Correct'; res11 = document.getElementById('result_82052').innerText == 'Great job!'; res12 = document.getElementById('result_44968').innerText == 'Great job!'; res13 = document.getElementById('result_46343').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_79685').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_77447').innerText == 'Correct'; res16 = document.getElementById('result_53475').innerText == 'Correct'; res17 = document.getElementById('result_16092').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!'; res7 = document.getElementById('result_88846').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_92941').innerText == 'Great job!'; res9 = document.getElementById('result_77169').innerText == 'Great job!'; res10 = document.getElementById('result_94951').innerText == 'Correct'; res11 = document.getElementById('result_27618').innerText == 'Great job!'; res12 = document.getElementById('result_14756').innerText == 'Great job!'; res13 = document.getElementById('result_66402').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_34126').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_19033').innerText == 'Correct'; res16 = document.getElementById('result_29959').innerText == 'Correct'; res17 = document.getElementById('result_87551').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1877,11 +1879,11 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWNobyI6ZmFsc2UsImVkaXQi
 <!-- > Based on a sample, we are **[insert confidence level]** that the **[write parameter of interest]** is a single value between **[insert lower bound value]** and **[insert upper bound value]** **[insert units]**.     -->
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_79698" onsubmit="return validate_form_79698()" method="post">
+<form name="form_44149" onsubmit="return validate_form_44149()" method="post">
 <table data-quarto-disable-processing="true">
-<tbody id="task_79698">
+<tbody id="task_44149">
 <tr>
-<td id="answer_79698_1" style="padding:5px; border:1px solid #ccc;">Based on the sample</td>
+<td id="answer_44149_1" style="padding:5px; border:1px solid #ccc;">Based on the sample</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -1889,7 +1891,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWNobyI6ZmFsc2UsImVkaXQi
 </td>
 </tr>
 <tr>
-<td id="answer_79698_4" style="padding:5px; border:1px solid #ccc;">is a single value</td>
+<td id="answer_44149_2" style="padding:5px; border:1px solid #ccc;">we are 95% confident that</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -1897,7 +1899,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWNobyI6ZmFsc2UsImVkaXQi
 </td>
 </tr>
 <tr>
-<td id="answer_79698_2" style="padding:5px; border:1px solid #ccc;">we are 95% confident that</td>
+<td id="answer_44149_3" style="padding:5px; border:1px solid #ccc;">the true mean number of bee colonies across all weeks in the US since 2000</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -1905,7 +1907,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWNobyI6ZmFsc2UsImVkaXQi
 </td>
 </tr>
 <tr>
-<td id="answer_79698_5" style="padding:5px; border:1px solid #ccc;">between LB and UB</td>
+<td id="answer_44149_5" style="padding:5px; border:1px solid #ccc;">between LB and UB</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -1913,16 +1915,16 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWNobyI6ZmFsc2UsImVkaXQi
 </td>
 </tr>
 <tr>
-<td id="answer_79698_3" style="padding:5px; border:1px solid #ccc;">the true mean number of bee colonies across all weeks in the US since 2000</td>
+<td id="answer_44149_4" style="padding:5px; border:1px solid #ccc;">is a single value</td>
 </tr>
 </tbody>
 </table>
 <input type="submit" value="check">
-<div id="result_79698"></div>
+<div id="result_44149"></div>
 </form>
-<script>function validate_form_79698() {var text;var ch = document.getElementById('task_79698').children; if(ch[0].children[0].id == 'answer_79698_1'&ch[2].children[0].id == 'answer_79698_2'&ch[4].children[0].id == 'answer_79698_3'&ch[6].children[0].id == 'answer_79698_4'&ch[8].children[0].id == 'answer_79698_5'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_79698').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
+<script>function validate_form_44149() {var text;var ch = document.getElementById('task_44149').children; if(ch[0].children[0].id == 'answer_44149_1'&ch[2].children[0].id == 'answer_44149_2'&ch[4].children[0].id == 'answer_44149_3'&ch[6].children[0].id == 'answer_44149_4'&ch[8].children[0].id == 'answer_44149_5'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_44149').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18;res1 = document.getElementById('result_6407').innerText == 'Great job!'; res2 = document.getElementById('result_19784').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_15719').innerText == 'Great job!'; res4 = document.getElementById('result_95185').innerText == 'Great job!'; res5 = document.getElementById('result_78534').innerText == 'Great job!'; res6 = document.getElementById('result_12345').innerText == 'Great job!'; res7 = document.getElementById('result_83767').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_21890').innerText == 'Great job!'; res9 = document.getElementById('result_42448').innerText == 'Great job!'; res10 = document.getElementById('result_78944').innerText == 'Correct'; res11 = document.getElementById('result_82052').innerText == 'Great job!'; res12 = document.getElementById('result_44968').innerText == 'Great job!'; res13 = document.getElementById('result_46343').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_79685').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_77447').innerText == 'Correct'; res16 = document.getElementById('result_53475').innerText == 'Correct'; res17 = document.getElementById('result_16092').innerText == 'Correct'; res18 = document.getElementById('result_79698').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18;res1 = document.getElementById('result_32073').innerText == 'Great job!'; res2 = document.getElementById('result_95966').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_69805').innerText == 'Great job!'; res4 = document.getElementById('result_92049').innerText == 'Great job!'; res5 = document.getElementById('result_88986').innerText == 'Great job!'; res6 = document.getElementById('result_59584').innerText == 'Great job!'; res7 = document.getElementById('result_88846').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_92941').innerText == 'Great job!'; res9 = document.getElementById('result_77169').innerText == 'Great job!'; res10 = document.getElementById('result_94951').innerText == 'Correct'; res11 = document.getElementById('result_27618').innerText == 'Great job!'; res12 = document.getElementById('result_14756').innerText == 'Great job!'; res13 = document.getElementById('result_66402').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_34126').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_19033').innerText == 'Correct'; res16 = document.getElementById('result_29959').innerText == 'Correct'; res17 = document.getElementById('result_87551').innerText == 'Correct'; res18 = document.getElementById('result_44149').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1963,236 +1965,242 @@ window._ojs.selfContained = false;
 window._ojs.runtime.interpretFromScriptTags();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/csumb-stat-ds\.github\.io\/stat-250-lab-primers");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/csumb-stat-ds\.github\.io\/stat-250-lab-primers");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2200,185 +2208,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../lab-3-primer/lab-3-intro-inference-primer.html" class="pagination-link" aria-label="Lab 3 Primer">
