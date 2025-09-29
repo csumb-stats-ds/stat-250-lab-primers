@@ -95,7 +95,7 @@ gradethis::grade_this_code()
 
 
  
-## Sex Bias
+## Sex Bias in Professor Ratings
 
 Sex bias stems from a perceived mismatch from an expected role or characteristics based on sex. Studies have shown that men and women have unconscious sex biases against women in traditionally male-dominated fields (such as the sciences) or characteristics (such as leadership qualities). These biases often cause equally qualified women to be seen as [less likable](https://www.youtube.com/watch?v=hK0Q8b6QhDo) or [less qualified](https://blogs.scientificamerican.com/unofficial-prognosis/study-shows-gender-bias-in-science-is-real-heres-why-it-matters/) than the men. (These links are to descriptions of two well-known studies, but there are plenty of other good resources).
 
@@ -116,15 +116,7 @@ head(bias)
 
 #### For each variable, identify whether it is the explanatory or response variable in our analysis, and the type of variable.
 
-<!-- Identify the explanatory and response variables in our analysis and the type of variable for each by replacing the [placeholders] below. -->
-
-<!-- Variable        | Explanatory or Response Variable?  | Numeric or Categorical? -->
-<!-- ----------------|------------------------------------|------------------------- -->
-<!-- Sex             | Explanatory                        | Categorical          -->
-<!-- Rating          | Response                           | Numeric      -->
-
 Sex:
-
 ```{r}
 #| label: type-variable-sex
 #| echo: false
@@ -136,7 +128,6 @@ check_question(answer = c("Explanatory","Categorical"),
 <br>
 
 Rating:
-
 ```{r}
 #| label: type-variable
 #| echo: false
@@ -155,13 +146,7 @@ check_question(c("Response","Numeric"),
 
 
 #### Identify the *study design* of this study. 
-
 Be sure you are able to provide a full justification.
-
-<!-- State the study design of this study (two independent samples or one matched-pair sample?). Justify your response. -->
-<!-- > Independent two-sample   -->
-<!-- > The rating of one professor by a student does not influence the rating of the other professor by a different student. -->
-
 ```{r}
 #| label: type-sample
 #| echo: false
@@ -174,13 +159,7 @@ check_question(answer = "Independent Two Sample",
 
 
 #### Identify the *study type* of this study. 
-
 Be sure you are able to provide a full justification.
-
-<!-- State the study type of this study (observational or experiment?). Justify your response.  -->
-<!-- > Experiment. -->
-<!-- > Students are randomly assigned to one of two videos/professors/animations/sexes -->
-
 ```{r}
 #| label: type-study
 #| echo: false
@@ -193,11 +172,7 @@ check_question(answer = "Experiment",
 ### Exploratory Data Analysis
 
 #### Calculate the summary statistics for each sample. 
-
 Modify the code below to calculate the summary statistics for each group. 
-
-<!-- Place your resulting values in the table below, rounding to four decimal places as needed. Depending on how you choose to calculate your values, you may need additional code/arguments than what has been supplied. -->
-
 ```{webr}
 #| label: summary-stats
 #| exercise: ex_2
@@ -235,10 +210,7 @@ gradethis::grade_this_code()
 ```
 
 
-
-
 #### Create a boxplot of the data by modifying the code below. 
-
 Recall that `~`, which translates as "by" or "as a function of," lets us graph one variable split by another. (For a boxplot, a numeric variable split by a categorical variable). Be sure to add fully descriptive axis labels. Note the solution will provide its own labels, but as long as they contain similar information they are good labels!
 
 ```{webr}
@@ -271,12 +243,9 @@ gradethis::grade_this_code()
 ```
 
 
-
-
 #### Based on your boxplot, 
 
-##### (a) what is the approximate median rating for females?  
-
+##### what is the approximate median rating for females?  
 ```{r}
 #| label: median-female
 #| echo: false
@@ -284,8 +253,7 @@ check_question(answer = 4, right = "correct", wrong = "not correct")
 ```
 <br>
 
-##### (b) what is the approximate median rating for males?  
-
+##### what is the approximate median rating for males?  
 ```{r}
 #| label: median-male
 #| echo: false
@@ -293,32 +261,39 @@ check_question(answer = 5, right = "correct", wrong = "not correct")
 ```
 <br>
 
-##### (c) Which of the following is an appropriate statistic to describe the variability (i.e. dispersion, spread) in rating of male-identifying versus female-identifying professors?  
-
+##### Which of the following is an appropriate statistic to describe the variability (i.e. dispersion, spread) in rating of male-identifying professors?  
 ```{r}
-#| label: variability
+#| label: variability-male
 #| echo: false
-check_question(answer = c("IQR","sd"), 
+check_question(answer = c("sd"), 
                options = c("mean", "median", "IQR", "sd"), 
                type = "checkbox", 
                random_answer_order = TRUE)
 ```
 
+
+##### Which of the following is an appropriate statistic to describe the variability (i.e. dispersion, spread) in rating of female-identifying professors?  
+```{r}
+#| label: variability-female
+#| echo: false
+check_question(answer = c("IQR"), 
+               options = c("mean", "median", "IQR", "sd"), 
+               type = "checkbox", 
+               random_answer_order = TRUE)
+```
+<br>
 <!-- > $M_f = 4$   -->
 <!-- > $M_m = 5$ -->
 <!-- > More variability in female-identifying professor ratings (IQR=2.75) compared to male-identifying professor ratings (IQR=1.75)   -->
-
-<br>
 
 <!-- 8. Based on your *boxplot*, assess whether samples are from normal distributions. Justify your responses. (There is no right or wrong answer here. Address the key points about normal distributions.) -->
 
 <!-- > The males distribution is Not skewed; could be normally distributed but the female distribution is left-skewed since left whisker is longer, could not be normally distributed. -->
 
 
+### Assessing Normality of Rating
 
-### Assessing Normality  
-
-Create a Quantile-Quantile Plot (QQ Plot) to evaluate the normality of the data.  
+Construct a Quantile-Quantile Plot (QQ Plot) to evaluate the normality of the data. Remember for two independent groups, you must look at the QQ Plot split (|) by the group.  
 
 ```{webr}
 #| label: qqplot
@@ -352,12 +327,31 @@ gradethis::grade_this_code()
 ```
 
 
+##### Based on the QQ Plot for Male Professors, which of the following are true statements.
+```{r}
+#| label: qqplot-male
+#| echo: false
+check_question(answer = c("sd"), 
+               options = c("mean", "median", "IQR", "sd"), 
+               type = "checkbox", 
+               random_answer_order = TRUE)
+```
+<br>
 
+##### Based on the QQ Plot for Female Professors, which of the following are true statements.
+```{r}
+#| label: qqplot-male
+#| echo: false
+check_question(answer = c("sd"), 
+               options = c("mean", "median", "IQR", "sd"), 
+               type = "checkbox", 
+               random_answer_order = TRUE)
+```
+<br>
 
 
 
 ## Parents Age Gap  
-
 A recent study found the average Homo sapiens father has always been older than the average Homo sapiens mother for 250,000 years. However, the age gap has dwindled in the last 5,000 years, largely due to mothers having children at older ages. With declining teen birth rate, rising birth rates among older women, and women pursuing higher education and careers before starting families, the average age of all mothers giving birth in the United States increased to nearly 30 in 2023. While the age gap between parents can vary greatly, it's common for fathers to be just a few years older than mothers.
 
 The National Vital Statistics System (NVSS) is a collaborative effort between state and local governments to compile and publish reports on all vital events - births, deaths, marriages, and divorces. A random sample of 50 births in 2022 was extracted from NVSS. The data for mother's age and father's age can be found in `nvss-births-2022.csv`.
@@ -373,7 +367,6 @@ head(parents)
 #### For each variable, identify whether it is the explanatory or response variable in our analysis, and the type of variable.
 
 Sex:
-
 ```{r}
 #| label: var-type-sex-2
 #| echo: false
@@ -385,7 +378,6 @@ check_question(answer = c("Explanatory","Categorical"),
 <br>
 
 Age:
-
 ```{r}
 #| label: var-type-age
 #| echo: false
@@ -398,7 +390,6 @@ check_question(answer = c("Response","Numeric"),
 
 
 #### Identify the *study design* of this study. Be sure you are able to provide a full justification.  
-
 ```{r}
 #| label: var-type-matched
 #| echo: false
@@ -411,11 +402,6 @@ check_question(answer = "Matched Pair Sample",
 
 
 #### Identify the *study type* of this study. Be sure you are able to provide a full justification.  
-
-<!-- State the study type of this study (observational or experiment?). Justify your response.  -->
-<!-- > Experiment. -->
-<!-- > Students are randomly assigned to one of two videos/professors/animations/sexes -->
-
 ```{r}
 #| label: study-type-2
 #| echo: false
@@ -423,12 +409,10 @@ check_question(answer = "Observational",
                options = c("Experiment", "Observational"), 
                type = "radio")
 ```
-
 <br>
 
 
 #### Calculate the summary statistics for the differences. 
-
 Modify the code below to calculate the summary statistics. We will focus on the difference between the Father's age and the Mother's age.  
 
 ```{webr}
@@ -499,6 +483,7 @@ gradethis::grade_this_code()
 
 
 ### Assessing Normality
+Construct the
 
 ```{webr}
 #| label: qqplot-matched
