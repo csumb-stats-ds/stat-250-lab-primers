@@ -171,8 +171,7 @@ check_question(answer = "Experiment",
 
 ### Exploratory Data Analysis
 
-#### Calculate the summary statistics for each sample. 
-Modify the code below to calculate the summary statistics for each group. 
+#### Calculate the summary statistics for each sample. Modify the code below to calculate the summary statistics for each group. 
 ```{webr}
 #| label: summary-stats
 #| exercise: ex_2
@@ -253,7 +252,7 @@ check_question(answer = 4, right = "correct", wrong = "not correct")
 ```
 <br>
 
-##### what is the approximate median rating for males?  
+##### what is the approximate median rating for males?
 ```{r}
 #| label: median-male
 #| echo: false
@@ -270,7 +269,7 @@ check_question(answer = c("sd"),
                type = "checkbox", 
                random_answer_order = TRUE)
 ```
-
+<br>
 
 ##### Which of the following is an appropriate statistic to describe the variability (i.e. dispersion, spread) in rating of female-identifying professors?  
 ```{r}
@@ -335,16 +334,16 @@ Remember to
 
 
 
-##### Based on the QQ Plot for Male Professors, which of the following are true statements (select all that apply).
+##### Based on the QQ Plot for Male Professors, which of the following are true statements.
+
 
 
 ```{r}
-#| label: qqplot-male
+#| label: qqplot-male-1
 #| echo: false
-check_question(answer = c("sd"), 
-               options = c("The deviations from the 1:1 line are due to the discrete nature of", "median", "IQR", "sd"), 
-               type = "checkbox", 
-               random_answer_order = TRUE)
+check_question(answer = c("True"), 
+               options = c("True", "False"), 
+               type = "radio")
 ```
 <br>
 
