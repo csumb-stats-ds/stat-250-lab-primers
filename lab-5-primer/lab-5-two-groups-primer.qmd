@@ -291,9 +291,8 @@ check_question(answer = c("IQR"),
 <!-- > The males distribution is Not skewed; could be normally distributed but the female distribution is left-skewed since left whisker is longer, could not be normally distributed. -->
 
 
-### Assessing Normality of Rating
-
-Construct a Quantile-Quantile Plot (QQ Plot) to evaluate the normality of the data. Remember for two independent groups, you must look at the QQ Plot split (|) by the group.  
+### Assessing Normality of the Ratings by Group
+Construct a Quantile-Quantile Plot (QQ Plot) to evaluate the normality of the data. Remember for two independent groups, you must look at the QQ Plot split by the group (`~ y | x` ).  
 
 ```{webr}
 #| label: qqplot
@@ -327,12 +326,23 @@ gradethis::grade_this_code()
 ```
 
 
-##### Based on the QQ Plot for Male Professors, which of the following are true statements.
+Remember to
+- Discuss the pattern compared to the 1:1 line that represents perfect normality  
+- Describe specific details about the pattern such as if there are any deviations, where the deviations are located along the 1:1 line, and the magnitude of the deviations  
+- Evaluated the severity of the deviations from the 1:1 line relative to the sample size, which should be cited.  
+- Discuss the cumulative frequency rate of increase of the data points/residuals relative to the 1:1 line  
+
+
+
+
+##### Based on the QQ Plot for Male Professors, which of the following are true statements (select all that apply).
+
+
 ```{r}
 #| label: qqplot-male
 #| echo: false
 check_question(answer = c("sd"), 
-               options = c("mean", "median", "IQR", "sd"), 
+               options = c("The deviations from the 1:1 line are due to the discrete nature of", "median", "IQR", "sd"), 
                type = "checkbox", 
                random_answer_order = TRUE)
 ```
@@ -340,7 +350,7 @@ check_question(answer = c("sd"),
 
 ##### Based on the QQ Plot for Female Professors, which of the following are true statements.
 ```{r}
-#| label: qqplot-male
+#| label: qqplot-female
 #| echo: false
 check_question(answer = c("sd"), 
                options = c("mean", "median", "IQR", "sd"), 
@@ -482,8 +492,8 @@ gradethis::grade_this_code()
 
 
 
-### Assessing Normality
-Construct the
+### Assessing Normality of the Differences
+Construct a Quantile-Quantile Plot (QQ Plot) to evaluate the normality of the differences Remember for two dependent/matched groups, you must look at the QQ Plot of the differences (`~ (x1 - x2)`). 
 
 ```{webr}
 #| label: qqplot-matched
@@ -515,3 +525,5 @@ gf_qq(~(FatherAge - MotherAge), data = parents,
 #| check: true
 gradethis::grade_this_code()
 ```
+
+

@@ -251,15 +251,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started"><span class="header-section-number">1</span> Getting Started</a></li>
-  <li><a href="#sex-bias" id="toc-sex-bias" class="nav-link" data-scroll-target="#sex-bias"><span class="header-section-number">2</span> Sex Bias</a>
+  <li><a href="#sex-bias-in-professor-ratings" id="toc-sex-bias-in-professor-ratings" class="nav-link" data-scroll-target="#sex-bias-in-professor-ratings"><span class="header-section-number">2</span> Sex Bias in Professor Ratings</a>
   <ul class="collapse">
   <li><a href="#identify-key-components-of-the-scenario" id="toc-identify-key-components-of-the-scenario" class="nav-link" data-scroll-target="#identify-key-components-of-the-scenario"><span class="header-section-number">2.1</span> Identify Key Components of the Scenario</a></li>
   <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis"><span class="header-section-number">2.2</span> Exploratory Data Analysis</a></li>
-  <li><a href="#assessing-normality" id="toc-assessing-normality" class="nav-link" data-scroll-target="#assessing-normality"><span class="header-section-number">2.3</span> Assessing Normality</a></li>
+  <li><a href="#assessing-normality-of-the-ratings-by-group" id="toc-assessing-normality-of-the-ratings-by-group" class="nav-link" data-scroll-target="#assessing-normality-of-the-ratings-by-group"><span class="header-section-number">2.3</span> Assessing Normality of the Ratings by Group</a></li>
   </ul></li>
   <li><a href="#parents-age-gap" id="toc-parents-age-gap" class="nav-link" data-scroll-target="#parents-age-gap"><span class="header-section-number">3</span> Parents Age Gap</a>
   <ul class="collapse">
-  <li><a href="#assessing-normality-1" id="toc-assessing-normality-1" class="nav-link" data-scroll-target="#assessing-normality-1"><span class="header-section-number">3.1</span> Assessing Normality</a></li>
+  <li><a href="#assessing-normality-of-the-differences" id="toc-assessing-normality-of-the-differences" class="nav-link" data-scroll-target="#assessing-normality-of-the-differences"><span class="header-section-number">3.1</span> Assessing Normality of the Differences</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/csumb-stat-ds/stat-250-lab-primers/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -354,8 +354,8 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </script>
 </div>
 </section>
-<section id="sex-bias" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="sex-bias"><span class="header-section-number">2</span> Sex Bias</h2>
+<section id="sex-bias-in-professor-ratings" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="sex-bias-in-professor-ratings"><span class="header-section-number">2</span> Sex Bias in Professor Ratings</h2>
 <p>Sex bias stems from a perceived mismatch from an expected role or characteristics based on sex. Studies have shown that men and women have unconscious sex biases against women in traditionally male-dominated fields (such as the sciences) or characteristics (such as leadership qualities). These biases often cause equally qualified women to be seen as <a href="https://www.youtube.com/watch?v=hK0Q8b6QhDo">less likable</a> or <a href="https://blogs.scientificamerican.com/unofficial-prognosis/study-shows-gender-bias-in-science-is-real-heres-why-it-matters/">less qualified</a> than the men. (These links are to descriptions of two well-known studies, but there are plenty of other good resources).</p>
 <p>Researchers are interested if this sex bias exists in traditionally female-dominated jobs as well, such as teaching. Students are asked to watch a video of an animated classroom and rate the professor. Each student is randomly assigned to either of two animations; the videos are exactly the same except for the sex of the professor drawn. You have been asked to analyze the data for the researchers to determine if the female-identifying professor is rated more poorly, on a 1 to 7 scale (with 7 being the best), than the male-identifying professor.</p>
 <p>Run the following code chunk to read in the data and view the variable names and first 6 rows of the data.</p>
@@ -373,33 +373,28 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h3 data-number="2.1" class="anchored" data-anchor-id="identify-key-components-of-the-scenario"><span class="header-section-number">2.1</span> Identify Key Components of the Scenario</h3>
 <section id="for-each-variable-identify-whether-it-is-the-explanatory-or-response-variable-in-our-analysis-and-the-type-of-variable." class="level4" data-number="2.1.1">
 <h4 data-number="2.1.1" class="anchored" data-anchor-id="for-each-variable-identify-whether-it-is-the-explanatory-or-response-variable-in-our-analysis-and-the-type-of-variable."><span class="header-section-number">2.1.1</span> For each variable, identify whether it is the explanatory or response variable in our analysis, and the type of variable.</h4>
-<!-- Identify the explanatory and response variables in our analysis and the type of variable for each by replacing the [placeholders] below. -->
-<!-- Variable        | Explanatory or Response Variable?  | Numeric or Categorical? -->
-<!-- ----------------|------------------------------------|------------------------- -->
-<!-- Sex             | Explanatory                        | Categorical          -->
-<!-- Rating          | Response                           | Numeric      -->
 <p>Sex:</p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_71427" onsubmit="return validate_form_71427()" method="post">
-<input type="checkbox" id="answer_71427_1" value="Explanatory">
+<form name="form_6231" onsubmit="return validate_form_6231()" method="post">
+<input type="checkbox" id="answer_6231_1" value="Explanatory">
 <label>Explanatory</label>
 <br>
-<input type="checkbox" id="answer_71427_2" value="Response">
+<input type="checkbox" id="answer_6231_2" value="Response">
 <label>Response</label>
 <br>
-<input type="checkbox" id="answer_71427_3" value="Categorical">
+<input type="checkbox" id="answer_6231_3" value="Categorical">
 <label>Categorical</label>
 <br>
-<input type="checkbox" id="answer_71427_4" value="Numeric">
+<input type="checkbox" id="answer_6231_4" value="Numeric">
 <label>Numeric</label>
 <br>
 <input type="submit" value="check">
-<div id="result_71427"></div>
+<div id="result_6231"></div>
 </form>
-<script>function validate_form_71427() {var text; var x1 = document.getElementById('answer_71427_1'); var x2 = document.getElementById('answer_71427_2'); var x3 = document.getElementById('answer_71427_3'); var x4 = document.getElementById('answer_71427_4'); if (x1.checked == true&x2.checked == false&x3.checked == true&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_71427').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_6231() {var text; var x1 = document.getElementById('answer_6231_1'); var x2 = document.getElementById('answer_6231_2'); var x3 = document.getElementById('answer_6231_3'); var x4 = document.getElementById('answer_6231_4'); if (x1.checked == true&x2.checked == false&x3.checked == true&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_6231').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_71427').innerText == 'Correct';text = res1;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_6231').innerText == 'Correct';text = res1;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -408,25 +403,25 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>Rating:</p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_41364" onsubmit="return validate_form_41364()" method="post">
-<input type="checkbox" id="answer_41364_1" value="Explanatory">
+<form name="form_51182" onsubmit="return validate_form_51182()" method="post">
+<input type="checkbox" id="answer_51182_1" value="Explanatory">
 <label>Explanatory</label>
 <br>
-<input type="checkbox" id="answer_41364_2" value="Response">
+<input type="checkbox" id="answer_51182_2" value="Response">
 <label>Response</label>
 <br>
-<input type="checkbox" id="answer_41364_3" value="Categorical">
+<input type="checkbox" id="answer_51182_3" value="Categorical">
 <label>Categorical</label>
 <br>
-<input type="checkbox" id="answer_41364_4" value="Numeric">
+<input type="checkbox" id="answer_51182_4" value="Numeric">
 <label>Numeric</label>
 <br>
 <input type="submit" value="check">
-<div id="result_41364"></div>
+<div id="result_51182"></div>
 </form>
-<script>function validate_form_41364() {var text; var x1 = document.getElementById('answer_41364_1'); var x2 = document.getElementById('answer_41364_2'); var x3 = document.getElementById('answer_41364_3'); var x4 = document.getElementById('answer_41364_4'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_41364').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_51182() {var text; var x1 = document.getElementById('answer_51182_1'); var x2 = document.getElementById('answer_51182_2'); var x3 = document.getElementById('answer_51182_3'); var x4 = document.getElementById('answer_51182_4'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_51182').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_71427').innerText == 'Correct'; res2 = document.getElementById('result_41364').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -439,24 +434,21 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <section id="identify-the-study-design-of-this-study." class="level4" data-number="2.1.2">
 <h4 data-number="2.1.2" class="anchored" data-anchor-id="identify-the-study-design-of-this-study."><span class="header-section-number">2.1.2</span> Identify the <em>study design</em> of this study.</h4>
 <p>Be sure you are able to provide a full justification.</p>
-<!-- State the study design of this study (two independent samples or one matched-pair sample?). Justify your response. -->
-<!-- > Independent two-sample   -->
-<!-- > The rating of one professor by a student does not influence the rating of the other professor by a different student. -->
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_35931" onsubmit="return validate_form_35931()" method="post">
-<input type="radio" name="answer_35931" id="answer_35931_1" value="Independent Two Sample">
+<form name="form_76267" onsubmit="return validate_form_76267()" method="post">
+<input type="radio" name="answer_76267" id="answer_76267_1" value="Independent Two Sample">
 <label>Independent Two Sample</label>
 <br>
-<input type="radio" name="answer_35931" id="answer_35931_2" value="Matched Pair Sample">
+<input type="radio" name="answer_76267" id="answer_76267_2" value="Matched Pair Sample">
 <label>Matched Pair Sample</label>
 <br>
 <input type="submit" value="check">
-<div id="result_35931"></div>
+<div id="result_76267"></div>
 </form>
-<script>function validate_form_35931() {var x, text; var x = document.forms['form_35931']['answer_35931'].value;if (x == 'Independent Two Sample'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_35931').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_76267() {var x, text; var x = document.forms['form_76267']['answer_76267'].value;if (x == 'Independent Two Sample'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_76267').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_71427').innerText == 'Correct'; res2 = document.getElementById('result_41364').innerText == 'Correct'; res3 = document.getElementById('result_35931').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct'; res3 = document.getElementById('result_76267').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -466,24 +458,21 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <section id="identify-the-study-type-of-this-study." class="level4" data-number="2.1.3">
 <h4 data-number="2.1.3" class="anchored" data-anchor-id="identify-the-study-type-of-this-study."><span class="header-section-number">2.1.3</span> Identify the <em>study type</em> of this study.</h4>
 <p>Be sure you are able to provide a full justification.</p>
-<!-- State the study type of this study (observational or experiment?). Justify your response.  -->
-<!-- > Experiment. -->
-<!-- > Students are randomly assigned to one of two videos/professors/animations/sexes -->
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_60191" onsubmit="return validate_form_60191()" method="post">
-<input type="radio" name="answer_60191" id="answer_60191_1" value="Experiment">
+<form name="form_40629" onsubmit="return validate_form_40629()" method="post">
+<input type="radio" name="answer_40629" id="answer_40629_1" value="Experiment">
 <label>Experiment</label>
 <br>
-<input type="radio" name="answer_60191" id="answer_60191_2" value="Observational">
+<input type="radio" name="answer_40629" id="answer_40629_2" value="Observational">
 <label>Observational</label>
 <br>
 <input type="submit" value="check">
-<div id="result_60191"></div>
+<div id="result_40629"></div>
 </form>
-<script>function validate_form_60191() {var x, text; var x = document.forms['form_60191']['answer_60191'].value;if (x == 'Experiment'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_60191').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_40629() {var x, text; var x = document.forms['form_40629']['answer_40629'].value;if (x == 'Experiment'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_40629').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_71427').innerText == 'Correct'; res2 = document.getElementById('result_41364').innerText == 'Correct'; res3 = document.getElementById('result_35931').innerText == 'Correct'; res4 = document.getElementById('result_60191').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct'; res3 = document.getElementById('result_76267').innerText == 'Correct'; res4 = document.getElementById('result_40629').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -496,7 +485,6 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <section id="calculate-the-summary-statistics-for-each-sample." class="level4" data-number="2.2.1">
 <h4 data-number="2.2.1" class="anchored" data-anchor-id="calculate-the-summary-statistics-for-each-sample."><span class="header-section-number">2.2.1</span> Calculate the summary statistics for each sample.</h4>
 <p>Modify the code below to calculate the summary statistics for each group.</p>
-<!-- Place your resulting values in the table below, rounding to four decimal places as needed. Depending on how you choose to calculate your values, you may need additional code/arguments than what has been supplied. -->
 <div class="cell" data-exercise="ex_2">
 <div>
 <div id="webr-9" class="exercise-cell">
@@ -564,81 +552,106 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </section>
 <section id="based-on-your-boxplot" class="level4" data-number="2.2.3">
 <h4 data-number="2.2.3" class="anchored" data-anchor-id="based-on-your-boxplot"><span class="header-section-number">2.2.3</span> Based on your boxplot,</h4>
-<section id="a-what-is-the-approximate-median-rating-for-females" class="level5" data-number="2.2.3.1">
-<h5 data-number="2.2.3.1" class="anchored" data-anchor-id="a-what-is-the-approximate-median-rating-for-females"><span class="header-section-number">2.2.3.1</span> (a) what is the approximate median rating for females?</h5>
+<section id="what-is-the-approximate-median-rating-for-females" class="level5" data-number="2.2.3.1">
+<h5 data-number="2.2.3.1" class="anchored" data-anchor-id="what-is-the-approximate-median-rating-for-females"><span class="header-section-number">2.2.3.1</span> what is the approximate median rating for females?</h5>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_2331" onsubmit="return validate_form_2331()" method="post">
-<input type="text" placeholder="" name="answer_2331">
+<form name="form_52371" onsubmit="return validate_form_52371()" method="post">
+<input type="text" placeholder="" name="answer_52371">
 <input type="submit" value="check">
-<div id="result_2331"></div>
+<div id="result_52371"></div>
 </form>
-<script>function validate_form_2331() {var x, text; var x = document.forms['form_2331']['answer_2331'].value;if (x == '4'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_2331').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_52371() {var x, text; var x = document.forms['form_52371']['answer_52371'].value;if (x == '4'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_52371').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_71427').innerText == 'Correct'; res2 = document.getElementById('result_41364').innerText == 'Correct'; res3 = document.getElementById('result_35931').innerText == 'Correct'; res4 = document.getElementById('result_60191').innerText == 'Correct'; res5 = document.getElementById('result_2331').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct'; res3 = document.getElementById('result_76267').innerText == 'Correct'; res4 = document.getElementById('result_40629').innerText == 'Correct'; res5 = document.getElementById('result_52371').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <p><br></p>
 </section>
-<section id="b-what-is-the-approximate-median-rating-for-males" class="level5" data-number="2.2.3.2">
-<h5 data-number="2.2.3.2" class="anchored" data-anchor-id="b-what-is-the-approximate-median-rating-for-males"><span class="header-section-number">2.2.3.2</span> (b) what is the approximate median rating for males?</h5>
+<section id="what-is-the-approximate-median-rating-for-males" class="level5" data-number="2.2.3.2">
+<h5 data-number="2.2.3.2" class="anchored" data-anchor-id="what-is-the-approximate-median-rating-for-males"><span class="header-section-number">2.2.3.2</span> what is the approximate median rating for males?</h5>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_17157" onsubmit="return validate_form_17157()" method="post">
-<input type="text" placeholder="" name="answer_17157">
+<form name="form_21280" onsubmit="return validate_form_21280()" method="post">
+<input type="text" placeholder="" name="answer_21280">
 <input type="submit" value="check">
-<div id="result_17157"></div>
+<div id="result_21280"></div>
 </form>
-<script>function validate_form_17157() {var x, text; var x = document.forms['form_17157']['answer_17157'].value;if (x == '5'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_17157').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_21280() {var x, text; var x = document.forms['form_21280']['answer_21280'].value;if (x == '5'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_21280').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_71427').innerText == 'Correct'; res2 = document.getElementById('result_41364').innerText == 'Correct'; res3 = document.getElementById('result_35931').innerText == 'Correct'; res4 = document.getElementById('result_60191').innerText == 'Correct'; res5 = document.getElementById('result_2331').innerText == 'correct'; res6 = document.getElementById('result_17157').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct'; res3 = document.getElementById('result_76267').innerText == 'Correct'; res4 = document.getElementById('result_40629').innerText == 'Correct'; res5 = document.getElementById('result_52371').innerText == 'correct'; res6 = document.getElementById('result_21280').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <p><br></p>
 </section>
-<section id="c-which-of-the-following-is-an-appropriate-statistic-to-describe-the-variability-i.e.-dispersion-spread-in-rating-of-male-identifying-versus-female-identifying-professors" class="level5" data-number="2.2.3.3">
-<h5 data-number="2.2.3.3" class="anchored" data-anchor-id="c-which-of-the-following-is-an-appropriate-statistic-to-describe-the-variability-i.e.-dispersion-spread-in-rating-of-male-identifying-versus-female-identifying-professors"><span class="header-section-number">2.2.3.3</span> (c) Which of the following is an appropriate statistic to describe the variability (i.e.&nbsp;dispersion, spread) in rating of male-identifying versus female-identifying professors?</h5>
+<section id="which-of-the-following-is-an-appropriate-statistic-to-describe-the-variability-i.e.-dispersion-spread-in-rating-of-male-identifying-professors" class="level5" data-number="2.2.3.3">
+<h5 data-number="2.2.3.3" class="anchored" data-anchor-id="which-of-the-following-is-an-appropriate-statistic-to-describe-the-variability-i.e.-dispersion-spread-in-rating-of-male-identifying-professors"><span class="header-section-number">2.2.3.3</span> Which of the following is an appropriate statistic to describe the variability (i.e.&nbsp;dispersion, spread) in rating of male-identifying professors?</h5>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_14720" onsubmit="return validate_form_14720()" method="post">
-<input type="checkbox" id="answer_14720_1" value="sd">
-<label>sd</label>
-<br>
-<input type="checkbox" id="answer_14720_2" value="IQR">
-<label>IQR</label>
-<br>
-<input type="checkbox" id="answer_14720_3" value="median">
+<form name="form_70679" onsubmit="return validate_form_70679()" method="post">
+<input type="checkbox" id="answer_70679_1" value="median">
 <label>median</label>
 <br>
-<input type="checkbox" id="answer_14720_4" value="mean">
+<input type="checkbox" id="answer_70679_2" value="IQR">
+<label>IQR</label>
+<br>
+<input type="checkbox" id="answer_70679_3" value="sd">
+<label>sd</label>
+<br>
+<input type="checkbox" id="answer_70679_4" value="mean">
 <label>mean</label>
 <br>
 <input type="submit" value="check">
-<div id="result_14720"></div>
+<div id="result_70679"></div>
 </form>
-<script>function validate_form_14720() {var text; var x1 = document.getElementById('answer_14720_1'); var x2 = document.getElementById('answer_14720_2'); var x3 = document.getElementById('answer_14720_3'); var x4 = document.getElementById('answer_14720_4'); if (x1.checked == true&x2.checked == true&x3.checked == false&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_14720').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_70679() {var text; var x1 = document.getElementById('answer_70679_1'); var x2 = document.getElementById('answer_70679_2'); var x3 = document.getElementById('answer_70679_3'); var x4 = document.getElementById('answer_70679_4'); if (x1.checked == false&x2.checked == false&x3.checked == true&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_70679').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_71427').innerText == 'Correct'; res2 = document.getElementById('result_41364').innerText == 'Correct'; res3 = document.getElementById('result_35931').innerText == 'Correct'; res4 = document.getElementById('result_60191').innerText == 'Correct'; res5 = document.getElementById('result_2331').innerText == 'correct'; res6 = document.getElementById('result_17157').innerText == 'correct'; res7 = document.getElementById('result_14720').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct'; res3 = document.getElementById('result_76267').innerText == 'Correct'; res4 = document.getElementById('result_40629').innerText == 'Correct'; res5 = document.getElementById('result_52371').innerText == 'correct'; res6 = document.getElementById('result_21280').innerText == 'correct'; res7 = document.getElementById('result_70679').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
-<!-- > $M_f = 4$   -->
-<!-- > $M_m = 5$ -->
-<!-- > More variability in female-identifying professor ratings (IQR=2.75) compared to male-identifying professor ratings (IQR=1.75)   -->
-<p><br></p>
+</section>
+<section id="which-of-the-following-is-an-appropriate-statistic-to-describe-the-variability-i.e.-dispersion-spread-in-rating-of-female-identifying-professors" class="level5" data-number="2.2.3.4">
+<h5 data-number="2.2.3.4" class="anchored" data-anchor-id="which-of-the-following-is-an-appropriate-statistic-to-describe-the-variability-i.e.-dispersion-spread-in-rating-of-female-identifying-professors"><span class="header-section-number">2.2.3.4</span> Which of the following is an appropriate statistic to describe the variability (i.e.&nbsp;dispersion, spread) in rating of female-identifying professors?</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_64549" onsubmit="return validate_form_64549()" method="post">
+<input type="checkbox" id="answer_64549_1" value="IQR">
+<label>IQR</label>
+<br>
+<input type="checkbox" id="answer_64549_2" value="mean">
+<label>mean</label>
+<br>
+<input type="checkbox" id="answer_64549_3" value="median">
+<label>median</label>
+<br>
+<input type="checkbox" id="answer_64549_4" value="sd">
+<label>sd</label>
+<br>
+<input type="submit" value="check">
+<div id="result_64549"></div>
+</form>
+<script>function validate_form_64549() {var text; var x1 = document.getElementById('answer_64549_1'); var x2 = document.getElementById('answer_64549_2'); var x3 = document.getElementById('answer_64549_3'); var x4 = document.getElementById('answer_64549_4'); if (x1.checked == true&x2.checked == false&x3.checked == false&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_64549').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct'; res3 = document.getElementById('result_76267').innerText == 'Correct'; res4 = document.getElementById('result_40629').innerText == 'Correct'; res5 = document.getElementById('result_52371').innerText == 'correct'; res6 = document.getElementById('result_21280').innerText == 'correct'; res7 = document.getElementById('result_70679').innerText == 'Correct'; res8 = document.getElementById('result_64549').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br> <!-- > $M_f = 4$   --> <!-- > $M_m = 5$ --> <!-- > More variability in female-identifying professor ratings (IQR=2.75) compared to male-identifying professor ratings (IQR=1.75)   --></p>
 <!-- 8. Based on your *boxplot*, assess whether samples are from normal distributions. Justify your responses. (There is no right or wrong answer here. Address the key points about normal distributions.) -->
 <!-- > The males distribution is Not skewed; could be normally distributed but the female distribution is left-skewed since left whisker is longer, could not be normally distributed. -->
 </section>
 </section>
 </section>
-<section id="assessing-normality" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="assessing-normality"><span class="header-section-number">2.3</span> Assessing Normality</h3>
-<p>Create a Quantile-Quantile Plot (QQ Plot) to evaluate the normality of the data.</p>
+<section id="assessing-normality-of-the-ratings-by-group" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="assessing-normality-of-the-ratings-by-group"><span class="header-section-number">2.3</span> Assessing Normality of the Ratings by Group</h3>
+<p>Construct a Quantile-Quantile Plot (QQ Plot) to evaluate the normality of the data. Remember for two independent groups, you must look at the QQ Plot split by the group (<code>~ y | x</code> ).</p>
 <div class="cell" data-exercise="ex_4">
 <div>
 <div id="webr-19" class="exercise-cell">
@@ -668,6 +681,68 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJleF80Iiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJncmFkZXRoaXM6OmdyYWRlX3RoaXNfY29kZSgpIn0=
 </script>
 </div>
+<p>Remember to - Discuss the pattern compared to the 1:1 line that represents perfect normality<br>
+- Describe specific details about the pattern such as if there are any deviations, where the deviations are located along the 1:1 line, and the magnitude of the deviations<br>
+- Evaluated the severity of the deviations from the 1:1 line relative to the sample size, which should be cited.<br>
+- Discuss the cumulative frequency rate of increase of the data points/residuals relative to the 1:1 line</p>
+<section id="based-on-the-qq-plot-for-male-professors-which-of-the-following-are-true-statements-select-all-that-apply." class="level5" data-number="2.3.0.1">
+<h5 data-number="2.3.0.1" class="anchored" data-anchor-id="based-on-the-qq-plot-for-male-professors-which-of-the-following-are-true-statements-select-all-that-apply."><span class="header-section-number">2.3.0.1</span> Based on the QQ Plot for Male Professors, which of the following are true statements (select all that apply).</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_63319" onsubmit="return validate_form_63319()" method="post">
+<input type="checkbox" id="answer_63319_1" value="IQR">
+<label>IQR</label>
+<br>
+<input type="checkbox" id="answer_63319_2" value="sd">
+<label>sd</label>
+<br>
+<input type="checkbox" id="answer_63319_3" value="median">
+<label>median</label>
+<br>
+<input type="checkbox" id="answer_63319_4" value="The deviations from the 1:1 line are due to the discrete nature of">
+<label>The deviations from the 1:1 line are due to the discrete nature of</label>
+<br>
+<input type="submit" value="check">
+<div id="result_63319"></div>
+</form>
+<script>function validate_form_63319() {var text; var x1 = document.getElementById('answer_63319_1'); var x2 = document.getElementById('answer_63319_2'); var x3 = document.getElementById('answer_63319_3'); var x4 = document.getElementById('answer_63319_4'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_63319').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct'; res3 = document.getElementById('result_76267').innerText == 'Correct'; res4 = document.getElementById('result_40629').innerText == 'Correct'; res5 = document.getElementById('result_52371').innerText == 'correct'; res6 = document.getElementById('result_21280').innerText == 'correct'; res7 = document.getElementById('result_70679').innerText == 'Correct'; res8 = document.getElementById('result_64549').innerText == 'Correct'; res9 = document.getElementById('result_63319').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="based-on-the-qq-plot-for-female-professors-which-of-the-following-are-true-statements." class="level5" data-number="2.3.0.2">
+<h5 data-number="2.3.0.2" class="anchored" data-anchor-id="based-on-the-qq-plot-for-female-professors-which-of-the-following-are-true-statements."><span class="header-section-number">2.3.0.2</span> Based on the QQ Plot for Female Professors, which of the following are true statements.</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_18232" onsubmit="return validate_form_18232()" method="post">
+<input type="checkbox" id="answer_18232_1" value="median">
+<label>median</label>
+<br>
+<input type="checkbox" id="answer_18232_2" value="IQR">
+<label>IQR</label>
+<br>
+<input type="checkbox" id="answer_18232_3" value="mean">
+<label>mean</label>
+<br>
+<input type="checkbox" id="answer_18232_4" value="sd">
+<label>sd</label>
+<br>
+<input type="submit" value="check">
+<div id="result_18232"></div>
+</form>
+<script>function validate_form_18232() {var text; var x1 = document.getElementById('answer_18232_1'); var x2 = document.getElementById('answer_18232_2'); var x3 = document.getElementById('answer_18232_3'); var x4 = document.getElementById('answer_18232_4'); if (x1.checked == false&x2.checked == false&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_18232').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct'; res3 = document.getElementById('result_76267').innerText == 'Correct'; res4 = document.getElementById('result_40629').innerText == 'Correct'; res5 = document.getElementById('result_52371').innerText == 'correct'; res6 = document.getElementById('result_21280').innerText == 'correct'; res7 = document.getElementById('result_70679').innerText == 'Correct'; res8 = document.getElementById('result_64549').innerText == 'Correct'; res9 = document.getElementById('result_63319').innerText == 'Correct'; res10 = document.getElementById('result_18232').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
 </section>
 </section>
 <section id="parents-age-gap" class="level2" data-number="3">
@@ -689,25 +764,25 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>Sex:</p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_71193" onsubmit="return validate_form_71193()" method="post">
-<input type="checkbox" id="answer_71193_1" value="Explanatory">
+<form name="form_29879" onsubmit="return validate_form_29879()" method="post">
+<input type="checkbox" id="answer_29879_1" value="Explanatory">
 <label>Explanatory</label>
 <br>
-<input type="checkbox" id="answer_71193_2" value="Response">
+<input type="checkbox" id="answer_29879_2" value="Response">
 <label>Response</label>
 <br>
-<input type="checkbox" id="answer_71193_3" value="Categorical">
+<input type="checkbox" id="answer_29879_3" value="Categorical">
 <label>Categorical</label>
 <br>
-<input type="checkbox" id="answer_71193_4" value="Numeric">
+<input type="checkbox" id="answer_29879_4" value="Numeric">
 <label>Numeric</label>
 <br>
 <input type="submit" value="check">
-<div id="result_71193"></div>
+<div id="result_29879"></div>
 </form>
-<script>function validate_form_71193() {var text; var x1 = document.getElementById('answer_71193_1'); var x2 = document.getElementById('answer_71193_2'); var x3 = document.getElementById('answer_71193_3'); var x4 = document.getElementById('answer_71193_4'); if (x1.checked == true&x2.checked == false&x3.checked == true&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_71193').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_29879() {var text; var x1 = document.getElementById('answer_29879_1'); var x2 = document.getElementById('answer_29879_2'); var x3 = document.getElementById('answer_29879_3'); var x4 = document.getElementById('answer_29879_4'); if (x1.checked == true&x2.checked == false&x3.checked == true&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_29879').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_71427').innerText == 'Correct'; res2 = document.getElementById('result_41364').innerText == 'Correct'; res3 = document.getElementById('result_35931').innerText == 'Correct'; res4 = document.getElementById('result_60191').innerText == 'Correct'; res5 = document.getElementById('result_2331').innerText == 'correct'; res6 = document.getElementById('result_17157').innerText == 'correct'; res7 = document.getElementById('result_14720').innerText == 'Correct'; res8 = document.getElementById('result_71193').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct'; res3 = document.getElementById('result_76267').innerText == 'Correct'; res4 = document.getElementById('result_40629').innerText == 'Correct'; res5 = document.getElementById('result_52371').innerText == 'correct'; res6 = document.getElementById('result_21280').innerText == 'correct'; res7 = document.getElementById('result_70679').innerText == 'Correct'; res8 = document.getElementById('result_64549').innerText == 'Correct'; res9 = document.getElementById('result_63319').innerText == 'Correct'; res10 = document.getElementById('result_18232').innerText == 'Correct'; res11 = document.getElementById('result_29879').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -716,25 +791,25 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>Age:</p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_4636" onsubmit="return validate_form_4636()" method="post">
-<input type="checkbox" id="answer_4636_1" value="Explanatory">
+<form name="form_10263" onsubmit="return validate_form_10263()" method="post">
+<input type="checkbox" id="answer_10263_1" value="Explanatory">
 <label>Explanatory</label>
 <br>
-<input type="checkbox" id="answer_4636_2" value="Response">
+<input type="checkbox" id="answer_10263_2" value="Response">
 <label>Response</label>
 <br>
-<input type="checkbox" id="answer_4636_3" value="Categorical">
+<input type="checkbox" id="answer_10263_3" value="Categorical">
 <label>Categorical</label>
 <br>
-<input type="checkbox" id="answer_4636_4" value="Numeric">
+<input type="checkbox" id="answer_10263_4" value="Numeric">
 <label>Numeric</label>
 <br>
 <input type="submit" value="check">
-<div id="result_4636"></div>
+<div id="result_10263"></div>
 </form>
-<script>function validate_form_4636() {var text; var x1 = document.getElementById('answer_4636_1'); var x2 = document.getElementById('answer_4636_2'); var x3 = document.getElementById('answer_4636_3'); var x4 = document.getElementById('answer_4636_4'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_4636').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_10263() {var text; var x1 = document.getElementById('answer_10263_1'); var x2 = document.getElementById('answer_10263_2'); var x3 = document.getElementById('answer_10263_3'); var x4 = document.getElementById('answer_10263_4'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_10263').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9;res1 = document.getElementById('result_71427').innerText == 'Correct'; res2 = document.getElementById('result_41364').innerText == 'Correct'; res3 = document.getElementById('result_35931').innerText == 'Correct'; res4 = document.getElementById('result_60191').innerText == 'Correct'; res5 = document.getElementById('result_2331').innerText == 'correct'; res6 = document.getElementById('result_17157').innerText == 'correct'; res7 = document.getElementById('result_14720').innerText == 'Correct'; res8 = document.getElementById('result_71193').innerText == 'Correct'; res9 = document.getElementById('result_4636').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct'; res3 = document.getElementById('result_76267').innerText == 'Correct'; res4 = document.getElementById('result_40629').innerText == 'Correct'; res5 = document.getElementById('result_52371').innerText == 'correct'; res6 = document.getElementById('result_21280').innerText == 'correct'; res7 = document.getElementById('result_70679').innerText == 'Correct'; res8 = document.getElementById('result_64549').innerText == 'Correct'; res9 = document.getElementById('result_63319').innerText == 'Correct'; res10 = document.getElementById('result_18232').innerText == 'Correct'; res11 = document.getElementById('result_29879').innerText == 'Correct'; res12 = document.getElementById('result_10263').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -745,19 +820,19 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.0.2" class="anchored" data-anchor-id="identify-the-study-design-of-this-study.-be-sure-you-are-able-to-provide-a-full-justification."><span class="header-section-number">3.0.2</span> Identify the <em>study design</em> of this study. Be sure you are able to provide a full justification.</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_67237" onsubmit="return validate_form_67237()" method="post">
-<input type="radio" name="answer_67237" id="answer_67237_1" value="Independent Two Sample">
+<form name="form_19421" onsubmit="return validate_form_19421()" method="post">
+<input type="radio" name="answer_19421" id="answer_19421_1" value="Independent Two Sample">
 <label>Independent Two Sample</label>
 <br>
-<input type="radio" name="answer_67237" id="answer_67237_2" value="Matched Pair Sample">
+<input type="radio" name="answer_19421" id="answer_19421_2" value="Matched Pair Sample">
 <label>Matched Pair Sample</label>
 <br>
 <input type="submit" value="check">
-<div id="result_67237"></div>
+<div id="result_19421"></div>
 </form>
-<script>function validate_form_67237() {var x, text; var x = document.forms['form_67237']['answer_67237'].value;if (x == 'Matched Pair Sample'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_67237').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_19421() {var x, text; var x = document.forms['form_19421']['answer_19421'].value;if (x == 'Matched Pair Sample'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_19421').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10;res1 = document.getElementById('result_71427').innerText == 'Correct'; res2 = document.getElementById('result_41364').innerText == 'Correct'; res3 = document.getElementById('result_35931').innerText == 'Correct'; res4 = document.getElementById('result_60191').innerText == 'Correct'; res5 = document.getElementById('result_2331').innerText == 'correct'; res6 = document.getElementById('result_17157').innerText == 'correct'; res7 = document.getElementById('result_14720').innerText == 'Correct'; res8 = document.getElementById('result_71193').innerText == 'Correct'; res9 = document.getElementById('result_4636').innerText == 'Correct'; res10 = document.getElementById('result_67237').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct'; res3 = document.getElementById('result_76267').innerText == 'Correct'; res4 = document.getElementById('result_40629').innerText == 'Correct'; res5 = document.getElementById('result_52371').innerText == 'correct'; res6 = document.getElementById('result_21280').innerText == 'correct'; res7 = document.getElementById('result_70679').innerText == 'Correct'; res8 = document.getElementById('result_64549').innerText == 'Correct'; res9 = document.getElementById('result_63319').innerText == 'Correct'; res10 = document.getElementById('result_18232').innerText == 'Correct'; res11 = document.getElementById('result_29879').innerText == 'Correct'; res12 = document.getElementById('result_10263').innerText == 'Correct'; res13 = document.getElementById('result_19421').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -766,24 +841,21 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </section>
 <section id="identify-the-study-type-of-this-study.-be-sure-you-are-able-to-provide-a-full-justification." class="level4" data-number="3.0.3">
 <h4 data-number="3.0.3" class="anchored" data-anchor-id="identify-the-study-type-of-this-study.-be-sure-you-are-able-to-provide-a-full-justification."><span class="header-section-number">3.0.3</span> Identify the <em>study type</em> of this study. Be sure you are able to provide a full justification.</h4>
-<!-- State the study type of this study (observational or experiment?). Justify your response.  -->
-<!-- > Experiment. -->
-<!-- > Students are randomly assigned to one of two videos/professors/animations/sexes -->
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_91529" onsubmit="return validate_form_91529()" method="post">
-<input type="radio" name="answer_91529" id="answer_91529_1" value="Experiment">
+<form name="form_89370" onsubmit="return validate_form_89370()" method="post">
+<input type="radio" name="answer_89370" id="answer_89370_1" value="Experiment">
 <label>Experiment</label>
 <br>
-<input type="radio" name="answer_91529" id="answer_91529_2" value="Observational">
+<input type="radio" name="answer_89370" id="answer_89370_2" value="Observational">
 <label>Observational</label>
 <br>
 <input type="submit" value="check">
-<div id="result_91529"></div>
+<div id="result_89370"></div>
 </form>
-<script>function validate_form_91529() {var x, text; var x = document.forms['form_91529']['answer_91529'].value;if (x == 'Observational'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_91529').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_89370() {var x, text; var x = document.forms['form_89370']['answer_89370'].value;if (x == 'Observational'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_89370').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11;res1 = document.getElementById('result_71427').innerText == 'Correct'; res2 = document.getElementById('result_41364').innerText == 'Correct'; res3 = document.getElementById('result_35931').innerText == 'Correct'; res4 = document.getElementById('result_60191').innerText == 'Correct'; res5 = document.getElementById('result_2331').innerText == 'correct'; res6 = document.getElementById('result_17157').innerText == 'correct'; res7 = document.getElementById('result_14720').innerText == 'Correct'; res8 = document.getElementById('result_71193').innerText == 'Correct'; res9 = document.getElementById('result_4636').innerText == 'Correct'; res10 = document.getElementById('result_67237').innerText == 'Correct'; res11 = document.getElementById('result_91529').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14;res1 = document.getElementById('result_6231').innerText == 'Correct'; res2 = document.getElementById('result_51182').innerText == 'Correct'; res3 = document.getElementById('result_76267').innerText == 'Correct'; res4 = document.getElementById('result_40629').innerText == 'Correct'; res5 = document.getElementById('result_52371').innerText == 'correct'; res6 = document.getElementById('result_21280').innerText == 'correct'; res7 = document.getElementById('result_70679').innerText == 'Correct'; res8 = document.getElementById('result_64549').innerText == 'Correct'; res9 = document.getElementById('result_63319').innerText == 'Correct'; res10 = document.getElementById('result_18232').innerText == 'Correct'; res11 = document.getElementById('result_29879').innerText == 'Correct'; res12 = document.getElementById('result_10263').innerText == 'Correct'; res13 = document.getElementById('result_19421').innerText == 'Correct'; res14 = document.getElementById('result_89370').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -852,8 +924,9 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </script>
 </div>
 </section>
-<section id="assessing-normality-1" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="assessing-normality-1"><span class="header-section-number">3.1</span> Assessing Normality</h3>
+<section id="assessing-normality-of-the-differences" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="assessing-normality-of-the-differences"><span class="header-section-number">3.1</span> Assessing Normality of the Differences</h3>
+<p>Construct a Quantile-Quantile Plot (QQ Plot) to evaluate the normality of the differences Remember for two dependent/matched groups, you must look at the QQ Plot of the differences (<code>~ (x1 - x2)</code>).</p>
 <div class="cell" data-exercise="ex_7">
 <div>
 <div id="webr-35" class="exercise-cell">
