@@ -735,7 +735,7 @@ gf_qq(~(________ - ________), data = ________,
 #| solution: true
 gf_qq(~(FatherAge - MotherAge), data = parents,
       xlab = "Theoretical Z-Scores",
-      ylab = "Difference between Fahter's and Mother's Age") |> 
+      ylab = "Difference between Father's and Mother's Age") |> 
   gf_qqline()
 ```
 
