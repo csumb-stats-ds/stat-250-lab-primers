@@ -244,7 +244,7 @@ gradethis::grade_this_code()
 
 #### Based on your boxplot, 
 
-##### what is the approximate median rating for females?  
+##### What is the approximate median rating for females?  
 ```{r}
 #| label: median-female
 #| echo: false
@@ -252,7 +252,7 @@ check_question(answer = 4, right = "correct", wrong = "not correct")
 ```
 <br>
 
-##### what is the approximate median rating for males?
+##### What is the approximate median rating for males?
 ```{r}
 #| label: median-male
 #| echo: false
@@ -325,38 +325,255 @@ gradethis::grade_this_code()
 ```
 
 
-Remember to
-- Discuss the pattern compared to the 1:1 line that represents perfect normality  
-- Describe specific details about the pattern such as if there are any deviations, where the deviations are located along the 1:1 line, and the magnitude of the deviations  
-- Evaluated the severity of the deviations from the 1:1 line relative to the sample size, which should be cited.  
-- Discuss the cumulative frequency rate of increase of the data points/residuals relative to the 1:1 line  
+### Interpreting QQ Plots
+Remember to completely interpret the QQ Plot, 
+
+- **General Pattern:** Discuss the pattern compared to the 1:1 line that represents perfect normality.
+
+- **Specifics:** Describe specific details about the pattern such as if there are any deviations, where the deviations are located along the 1:1 line, and the magnitude of the deviations.   
+
+- **Consideration for n:** Evaluate the severity of the deviations from the 1:1 line relative to the sample size, which should be cited.  
+
+- **Cumulative Frequency:** Discuss the cumulative frequency rate of increase of the data points/residuals relative to the 1:1 line.   
 
 
+#### Based on the QQ Plot for Female Professors, evaluate the following statements and determine if the are Complete, Incomplete, or Missing.  
 
+##### The female-identifying scores seem normally distributed as they follow along the line with no apparent outliers. 
 
-##### Based on the QQ Plot for Male Professors, which of the following are true statements.
-
-
-
+General Pattern:
 ```{r}
-#| label: qqplot-male-1
+#| label: qqplot-female-1.1
 #| echo: false
-check_question(answer = c("True"), 
-               options = c("True", "False"), 
-               type = "radio")
+check_question(answer = c("Incomplete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
 ```
-<br>
 
-##### Based on the QQ Plot for Female Professors, which of the following are true statements.
+Specifics:
 ```{r}
-#| label: qqplot-female
+#| label: qqplot-female-1.2
 #| echo: false
-check_question(answer = c("sd"), 
-               options = c("mean", "median", "IQR", "sd"), 
-               type = "checkbox", 
-               random_answer_order = TRUE)
+check_question(answer = c("Missing"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
 ```
-<br>
+
+Consideration for n: 
+```{r}
+#| label: qqplot-female-1.3
+#| echo: false
+check_question(answer = c("Missing"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Cumulative frequency rate of increase:
+```{r}
+#| label: qqplot-female-1.4
+#| echo: false
+check_question(answer = c("Missing"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+##### The data does not follow the 1:1 line, points start above the line and then end below the line. That means there are more data points, especially on the left tail, than expected. The cumulative frequency increases too quickly.
+
+General Pattern:
+```{r}
+#| label: qqplot-female-2.1
+#| echo: false
+check_question(answer = c("Complete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Specifics:
+```{r}
+#| label: qqplot-female-2
+#| echo: false
+check_question(answer = c("Incomplete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Consideration for n: 
+```{r}
+#| label: qqplot-female-2.3
+#| echo: false
+check_question(answer = c("Missing"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Cumulative frequency rate of increase:
+```{r}
+#| label: qqplot-female-2.4
+#| echo: false
+check_question(answer = c("Incomplete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+
+
+##### The majority of data points in the center of the Female plot are close to the 1:1 line, but deviates at the tails. The sample size is $n=34$ so we can expect variability. This implies that the plot is mostly normally distributed. 
+
+General Pattern:
+```{r}
+#| label: qqplot-female-3.1
+#| echo: false
+check_question(answer = c("Complete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Specifics:
+```{r}
+#| label: qqplot-female-3.2
+#| echo: false
+check_question(answer = c("Incomplete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Consideration for n: 
+```{r}
+#| label: qqplot-female-3.3
+#| echo: false
+check_question(answer = c("Incomplete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Cumulative frequency rate of increase:
+```{r}
+#| label: qqplot-female-3.4
+#| echo: false
+check_question(answer = c("Missing"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+
+##### The female plot trends normally with most of the plot points trending relatively close to the 1:1 line. There is only one large deviation in the upper tail. This means the cumulative frequency rate increases.
+
+General Pattern:
+```{r}
+#| label: qqplot-female-4.1
+#| echo: false
+check_question(answer = c("Complete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Specifics:
+```{r}
+#| label: qqplot-female-4.2
+#| echo: false
+check_question(answer = c("Complete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Consideration for n: 
+```{r}
+#| label: qqplot-female-4.3
+#| echo: false
+check_question(answer = c("Missing"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Cumulative frequency rate of increase:
+```{r}
+#| label: qqplot-female-4.4
+#| echo: false
+check_question(answer = c("Incomplete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+
+
+##### The center of each data group is a little skewed and does not follow the 1:1 line. There are deviations apparent, given our sample size of 34. This means that the rate of cumulative frequency increase is not relatively normal.
+
+General Pattern:
+```{r}
+#| label: qqplot-female-5.1
+#| echo: false
+check_question(answer = c("Complete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Specifics:
+```{r}
+#| label: qqplot-female-5.2
+#| echo: false
+check_question(answer = c("Missing"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Consideration for n: 
+```{r}
+#| label: qqplot-female-5.3
+#| echo: false
+check_question(answer = c("Incomplete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
+Cumulative frequency rate of increase:
+```{r}
+#| label: qqplot-female-5.4
+#| echo: false
+check_question(answer = c("Incomplete"), 
+               options = c("Complete", 
+                           "Incomplete", 
+                           "Missing"), 
+               type = "select")
+```
+
 
 
 
