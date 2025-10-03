@@ -7,6 +7,8 @@ format:
         - ggformula
         - mosaic
         - tidyverse
+      repos:
+        - https://projectmosaic.r-universe.dev        
       resources: 
         - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-4-primer/honey-bee-colonies-2020.csv
       cell-options:

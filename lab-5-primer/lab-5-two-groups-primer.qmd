@@ -698,7 +698,7 @@ gf_boxplot(~(________ - ________), data = ________,
 #| exercise: ex_6
 #| solution: true
 gf_boxplot(~(FatherAge - MotherAge), data = parents,
-      xlab = "Difference between Fahter's and Mother's Age of Newborn Infants in 2023") 
+      xlab = "Difference between Father's and Mother's Age of Newborn Infants in 2023") 
 ```
 
 :::
