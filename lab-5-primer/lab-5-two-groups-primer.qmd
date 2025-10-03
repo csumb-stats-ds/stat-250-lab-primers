@@ -7,6 +7,8 @@ format:
         - ggformula
         - mosaic
         - tidyverse
+      repos:
+        - https://projectmosaic.r-universe.dev
       resources: 
         - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-5-primer/nvss-births-2022.csv
         - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-5-primer/prof-ratings.csv
