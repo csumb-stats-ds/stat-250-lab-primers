@@ -139,18 +139,20 @@ check_question(answer = "Independent Two Sample",
 
 
 
-##### Identify the parameter(s) (verbally) that would be of interest based on the study design.  
+##### Identify the parameter(s) that would be of interest based on the study design.  
 
 ```{r}
 #| label: parameter-two
 #| echo: false
-check_question(answer = c("true mean rating for female professor videos", 
-                           "true mean rating for male professor videos"), 
-               options = c("true mean rating for female professor videos", 
-                           "true mean rating for male professor videos",
-                           "true mean of the differences of the ratings between male and female professor videos",
-                           "average rating for our sample of female professor videos",
-                           "mean rating for our sample of male professor videos"), 
+check_question(answer = c("\u03BC\u2093\u2093 = true mean rating for female professor videos", 
+                           "\u03BC\u2093\u1D67 = true mean rating for male professor videos"), 
+               options = c("\u03BC\u2093\u2093 = true mean rating for female professor videos", 
+                           "\u03BC\u2093\u1D67 = true mean rating for male professor videos",
+                           "\u03BC\u1D48 = true mean of the differences of the ratings between male and female professor videos",
+                           "x\u0304\u2093\u2093
+ = mean rating for our sample of female professor videos",
+                           "x\u0304\u2093\u1D67
+ = mean rating for our sample of male professor videos"), 
                type = "checkbox")
 ```
 <br>
@@ -158,17 +160,41 @@ check_question(answer = c("true mean rating for female professor videos",
 
 
 ##### Identify the null hypothesis that would be of interest based on the study design.  
-The researchers to determine if the female-identifying professor is rated more poorly, on a 1 to 7 scale (with 7 being the best), than the male-identifying professor. 
+The researchers want to determine if the female-identifying professor is rated more poorly, on a 1 to 7 scale (with 7 being the best), than the male-identifying professor. 
 
 ```{r}
-#| label: hyp-two
+#| label: hyp-null
 #| echo: false
-check_question(answer = "\u03BC\u2091 - \u03BC\u2091", 
-               options = "\u03BC\u2091 - \u03BC\u2091", 
-               type = "checkbox")
+check_question(answer = "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 = 0", 
+               options = c("\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 < 0",
+                           "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 > 0",
+                           "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 \u2260 0",
+                           "\u03BC\u1D48 = 0",
+                           "\u03BC\u1D48 < 0",
+                           "\u03BC\u1D48 > 0",
+                           "\u03BC\u1D48 \u2260 0"), 
+               type = "radio")
 ```
 <br>
 
+
+##### Identify the alternative hypothesis that would be of interest based on the study design.  
+The researchers want to determine if the female-identifying professor is rated more poorly, on a 1 to 7 scale (with 7 being the best), than the male-identifying professor. 
+
+```{r}
+#| label: hyp-alt
+#| echo: false
+check_question(answer = "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 < 0", 
+               options = c("\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 < 0",
+                           "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 > 0",
+                           "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 \u2260 0",
+                           "\u03BC\u1D48 = 0",
+                           "\u03BC\u1D48 < 0",
+                           "\u03BC\u1D48 > 0",
+                           "\u03BC\u1D48 \u2260 0"), 
+               type = "radio")
+```
+<br>
 
 
 ### Exploratory Data Analysis 
