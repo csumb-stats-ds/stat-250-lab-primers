@@ -59,8 +59,8 @@ website:
         text: "Lab 4 Primer"
       - href: lab-5-primer/lab-5-two-groups-primer.qmd
         text: "Lab 5 Primer"
-      # - href: 
-      #   text: "Lab 6 Primer"      
+      - href: lab-6-primer/lab-6-two-groups-primer.qmd
+        text: "Lab 6 Primer"
       # - href: 
       #   text: "Lab 7 Primer"        
       # - href: 
