@@ -228,7 +228,7 @@ gf_qq(~Rating | Sex, data = bias,
 ```
 
 
-##### Based on the provided infromation, do we meet the necessary conditions to conduct inference using the t-distribution (e.g. confidence inteval, hypothesis test)?  
+##### Based on the provided information, do we meet the necessary conditions to conduct inference using the t-distribution (e.g. confidence interval, hypothesis test)?  
 
 - Remember to check the conditions of sufficient sample size and normality together.  
 - The sufficient sample size depends on whether our sample indicates the population may or may not be normality distributed (now evaluated using the QQ Plot).  
@@ -441,7 +441,7 @@ Using the calculate p-value from the `t.test()` function to answer the following
 #| echo: false
 check_question(c("There is a probability of", 
                  "0.0004447",
-                 "of observering our test statistic",
+                 "of observing our test statistic",
                  "of t = -3.5081",
                  "or less",
                  "assuming the null hypothesis is true",
@@ -484,7 +484,7 @@ check_question(answer = c("our data/test statistic is very unlikely to be observ
                options = c("there is a very small probability the null is true", 
                            "our data/test statistic is very unlikely to be observed if the null is true",
                            "there is a very small probability the alternative is true",
-                           "there is a very large probability the alernative is true",
+                           "there is a very large probability the alternative is true",
                            "there is a very small probability of finding evidence against the null"), 
                type = "checkbox")
 ```
@@ -567,7 +567,7 @@ check_question(c("Based on the sample",
 ```
 <br>
 
-##### Which of the following would be plausible esimtates for the difference between two true mean ratings?
+##### Which of the following would be plausible estimates for the difference between two true mean ratings?
 ```{r}
 #| label: ci-plausible
 #| echo: false
