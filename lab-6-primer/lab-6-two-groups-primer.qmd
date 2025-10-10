@@ -167,7 +167,8 @@ The researchers want to determine if the female-identifying professor is rated m
 #| label: hyp-null
 #| echo: false
 check_question(answer = "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 = 0", 
-               options = c("\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 < 0",
+               options = c("\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 = 0",
+                           "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 < 0",
                            "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 > 0",
                            "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 \u2260 0",
                            "\u03BC\u2093\u2093\u208B\u2093\u1D67 = 0",
@@ -186,7 +187,8 @@ The researchers want to determine if the female-identifying professor is rated m
 #| label: hyp-alt
 #| echo: false
 check_question(answer = "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 < 0", 
-               options = c("\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 < 0",
+               options = c("\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 = 0",
+                           "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 < 0",
                            "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 > 0",
                            "\u03BC\u2093\u2093 - \u03BC\u2093\u1D67 \u2260 0",
                            "\u03BC\u2093\u2093\u208B\u2093\u1D67 = 0",
@@ -226,7 +228,7 @@ gf_qq(~Rating | Sex, data = bias,
 ```
 
 
-##### Based on the provided infromation, do we meet the necessary conditions to conduct inference (e.g. confidence inteval, hypothesis test)?  
+##### Based on the provided infromation, do we meet the necessary conditions to conduct inference using the t-distribution (e.g. confidence inteval, hypothesis test)?  
 
 - Remember to check the conditions of sufficient sample size and normality together.  
 - The sufficient sample size depends on whether our sample indicates the population may or may not be normality distributed (now evaluated using the QQ Plot).  
