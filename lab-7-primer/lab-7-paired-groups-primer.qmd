@@ -171,7 +171,6 @@ check_question(answer = c("\u03BC\u2093\u1D67\u208B\u2093\u2093 = true mean of t
 
 ##### Identify the null hypothesis that would be of interest based on the study design.  
 The researchers want to determine if the fathers' ages are greater than the mothers' ages at birth.  
-
 ```{r}
 #| label: hyp-null
 #| echo: false
@@ -190,8 +189,7 @@ check_question(answer = "\u03BC\u2093\u1D67\u208B\u2093\u2093 = 0",
 
 
 ##### Identify the alternative hypothesis that would be of interest based on the study design.  
-The researchers want to determine if the female-identifying professor is rated more poorly, on a 1 to 7 scale (with 7 being the best), than the male-identifying professor. 
-
+The researchers want to determine if the fathers' ages are greater than the mothers' ages at birth.
 ```{r}
 #| label: hyp-alt
 #| echo: false
@@ -239,11 +237,7 @@ gf_qq(~(FatherAge - MotherAge), data = parents,
 
 
 ##### Based on the provided information, do we meet the necessary conditions to conduct inference using the t-distribution (e.g. confidence interval, hypothesis test)?  
-
-
-- Remember to check the conditions of sufficient sample size and normality together.  
-- The sufficient sample size depends on whether our sample indicates the population may or may not be normality distributed (now evaluated using the QQ Plot).  
-- Provide a statement, based on the condition check, to determine if we can or cannot use the t-distribution as a model for null distribution or sampling distribution of our test/sample statistic.  
+  
 ```{r}
 #| label: conditions
 #| echo: false
@@ -253,6 +247,11 @@ check_question(answer = "Yes, because our sample size is greater than 30",
                            "No, because our sample data is skewed"), 
                type = "checkbox")
 ```
+
+
+- Remember to check the conditions of sufficient sample size and normality together.  
+- The sufficient sample size depends on whether our sample indicates the population may or may not be normality distributed (now evaluated using the QQ Plot).  
+- Provide a statement, based on the condition check, to determine if we can or cannot use the t-distribution as a model for null distribution or sampling distribution of our test/sample statistic.
 
 
 ### Calculating the Test Statistic and P-Value
@@ -269,6 +268,7 @@ We will practice code for both a "by-hand" calculation and using `t.test()` (whi
 (mean_diff <- mean(~(FatherAge - MotherAge), data = parents))
 (sd_diff <- _________(~(_____ - ____), data = ________))
 (n_diff <- _______(_______$_____))
+(effect_diff <- mean_diff/sd_diff)
 ```
 
 
@@ -282,6 +282,7 @@ We will practice code for both a "by-hand" calculation and using `t.test()` (whi
 (mean_diff <- mean(~(FatherAge - MotherAge), data = parents))
 (sd_diff <- sd(~(FatherAge - MotherAge), data = parents))
 (n_diff <- length(parents$FatherAge))
+(effect_diff <- mean_diff/sd_diff)
 ```
 
 :::
@@ -634,12 +635,15 @@ check_question(answer = c("0.5", "1", "1.5", "2"),
 #| label: conclusions
 #| echo: false
 check_question(answer = c("there is evidence that fathers tend to be older than mothers in 2022",
-                          "we cannot infer that the age of the mother causes the age of the father to be higher"),
+                          "we cannot infer that the age of the mother causes the age of the father to be higher",
+                          "the effect size does not indicate a large difference between the ages of fathers and mothers"),
                options = c("we cannot infer that the age of the mother causes the age of the father to be higher", 
                         "we can infer that the age of the mother causes the age of the father to be higher", 
                         "there is evidence that fathers tend to be older than mothers in 2022",
                         
-                        "there is no that fathers tend to be older than mothers in 2022"),                        
+                        "there is no that fathers tend to be older than mothers in 2022",
+                        "the effect size indicates a large difference between the ages of fathers and mothers", 
+                "the effect size does not indicate a large difference between the ages of fathers and mothers"),
                type = "checkbox")
 ```
 <br>
