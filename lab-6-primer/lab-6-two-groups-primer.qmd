@@ -10,7 +10,6 @@ format:
       repos:
         - https://projectmosaic.r-universe.dev
       resources: 
-        - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-6-primer/nvss-births-2022.csv
         - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-6-primer/prof-ratings.csv
       cell-options:
         warning: true
@@ -504,7 +503,7 @@ We can find our $t^*$ critical value the same way we found it for previous confi
 
 ```{webr}
 #| label: cv
-(cv <- qt(1-0.05/2, n_f-1))
+(cv <- qt(1-0.05/2, df = n_f-1))
 ```
 
 Our point estimate is $\bar{x}_1 - \bar{x}_2$ 

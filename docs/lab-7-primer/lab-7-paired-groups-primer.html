@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 7: Hypothesis Testing - Paired Groups – STAT 250 Lab Primers</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a00848ed57fe9097555b5bd7c001b509.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      STAT 250 Lab Primers
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">STAT 250 Lab Primers</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/csumb-stat-ds/stat-250-lab-primers" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">General Lab Instructions</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instructions/importing-exporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab Workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">R Code Style Guide</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">Common Errors</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Getting Started with R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prep-materials/rstudio-orientation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RStudio Orientation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prep-materials/intro-to-quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prep-materials/install-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optional: Install R and RStudio</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lab Primers</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab-1-primer/lab-1-intro-r-primer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1 Primer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab-2-primer/lab-2-eda-primer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2 Primer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab-3-primer/lab-3-intro-inference-primer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3 Primer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab-4-primer/lab-4-confidence-primer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4 Primer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab-5-primer/lab-5-two-groups-primer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5 Primer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab-6-primer/lab-6-two-groups-primer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6 Primer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started"><span class="header-section-number">1</span> Getting Started</a></li>
+  <li><a href="#birth-parents-age-gap" id="toc-birth-parents-age-gap" class="nav-link" data-scroll-target="#birth-parents-age-gap"><span class="header-section-number">2</span> Birth Parents Age Gap</a>
+  <ul class="collapse">
+  <li><a href="#identify-the-parameters" id="toc-identify-the-parameters" class="nav-link" data-scroll-target="#identify-the-parameters"><span class="header-section-number">2.1</span> Identify the Parameters</a></li>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis"><span class="header-section-number">2.2</span> Exploratory Data Analysis</a></li>
+  <li><a href="#calculating-the-test-statistic-and-p-value" id="toc-calculating-the-test-statistic-and-p-value" class="nav-link" data-scroll-target="#calculating-the-test-statistic-and-p-value"><span class="header-section-number">2.3</span> Calculating the Test Statistic and P-Value</a></li>
+  <li><a href="#calculating-a-t-test-statistic-and-p-value-for-the-mean-of-the-differences" id="toc-calculating-a-t-test-statistic-and-p-value-for-the-mean-of-the-differences" class="nav-link" data-scroll-target="#calculating-a-t-test-statistic-and-p-value-for-the-mean-of-the-differences"><span class="header-section-number">2.4</span> Calculating a t-Test Statistic and p-Value for the Mean of the Differences</a></li>
+  <li><a href="#interpreting-and-evaluating-the-p-value" id="toc-interpreting-and-evaluating-the-p-value" class="nav-link" data-scroll-target="#interpreting-and-evaluating-the-p-value"><span class="header-section-number">2.5</span> Interpreting and Evaluating the p-Value</a></li>
+  <li><a href="#calculating-a-confidence-interval-for-the-mean-of-the-differences" id="toc-calculating-a-confidence-interval-for-the-mean-of-the-differences" class="nav-link" data-scroll-target="#calculating-a-confidence-interval-for-the-mean-of-the-differences"><span class="header-section-number">2.6</span> Calculating a Confidence Interval for the Mean of the Differences</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/csumb-stat-ds/stat-250-lab-primers/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 7: Hypothesis Testing - Paired Groups</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell" data-edit="false">
+<div>
+<div id="webr-1" class="exercise-cell">
+
+</div>
+<script type="webr-1-contents">
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZSwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJ3ZWJyOjppbnN0YWxsKFwiZ3JhZGV0aGlzXCIsIHF1aWV0ID0gVFJVRSlcbmxpYnJhcnkoZ3JhZGV0aGlzKVxub3B0aW9ucyh3ZWJyLmV4ZXJjaXNlLmNoZWNrZXIgPSBmdW5jdGlvbihcbiAgbGFiZWwsIHVzZXJfY29kZSwgc29sdXRpb25fY29kZSwgY2hlY2tfY29kZSwgZW52aXJfcmVzdWx0LCBldmFsdWF0ZV9yZXN1bHQsXG4gIGVudmlyX3ByZXAsIGxhc3RfdmFsdWUsIGVuZ2luZSwgc3RhZ2UsIC4uLlxuKSB7XG4gIGlmIChpcy5udWxsKGNoZWNrX2NvZGUpKSB7XG4gICAgIyBObyBncmFkaW5nIGNvZGUsIHNvIGp1c3Qgc2tpcCBncmFkaW5nXG4gICAgaW52aXNpYmxlKE5VTEwpXG4gIH0gZWxzZSBpZiAoaXMubnVsbChsYWJlbCkpIHtcbiAgICBsaXN0KFxuICAgICAgY29ycmVjdCA9IEZBTFNFLFxuICAgICAgdHlwZSA9IFwid2FybmluZ1wiLFxuICAgICAgbWVzc2FnZSA9IFwiQWxsIGV4ZXJjaXNlcyBtdXN0IGhhdmUgYSBsYWJlbC5cIlxuICAgIClcbiAgfSBlbHNlIGlmIChpcy5udWxsKHNvbHV0aW9uX2NvZGUpKSB7XG4gICAgbGlzdChcbiAgICAgIGNvcnJlY3QgPSBGQUxTRSxcbiAgICAgIHR5cGUgPSBcIndhcm5pbmdcIixcbiAgICAgIG1lc3NhZ2UgPSBodG1sdG9vbHM6OnRhZ3MkZGl2KFxuICAgICAgICBodG1sdG9vbHM6OnRhZ3MkcChcIkEgcHJvYmxlbSBvY2N1cnJlZCBncmFkaW5nIHRoaXMgZXhlcmNpc2UuXCIpLFxuICAgICAgICBodG1sdG9vbHM6OnRhZ3MkcChcbiAgICAgICAgICBcIk5vIHNvbHV0aW9uIGNvZGUgd2FzIGZvdW5kLiBOb3RlIHRoYXQgZ3JhZGluZyBleGVyY2lzZXMgdXNpbmcgdGhlIFwiLFxuICAgICAgICAgIGh0bWx0b29sczo6dGFncyRjb2RlKFwiZ3JhZGV0aGlzXCIpLFxuICAgICAgICAgIFwicGFja2FnZSByZXF1aXJlcyBhIG1vZGVsIHNvbHV0aW9uIHRvIGJlIGluY2x1ZGVkIGluIHRoZSBkb2N1bWVudC5cIlxuICAgICAgICApXG4gICAgICApXG4gICAgKVxuICB9IGVsc2Uge1xuICAgIGdyYWRldGhpczo6Z3JhZGV0aGlzX2V4ZXJjaXNlX2NoZWNrZXIoXG4gICAgICBsYWJlbCA9IGxhYmVsLCBzb2x1dGlvbl9jb2RlID0gc29sdXRpb25fY29kZSwgdXNlcl9jb2RlID0gdXNlcl9jb2RlLFxuICAgICAgY2hlY2tfY29kZSA9IGNoZWNrX2NvZGUsIGVudmlyX3Jlc3VsdCA9IGVudmlyX3Jlc3VsdCxcbiAgICAgIGV2YWx1YXRlX3Jlc3VsdCA9IGV2YWx1YXRlX3Jlc3VsdCwgZW52aXJfcHJlcCA9IGVudmlyX3ByZXAsXG4gICAgICBsYXN0X3ZhbHVlID0gbGFzdF92YWx1ZSwgc3RhZ2UgPSBzdGFnZSwgZW5naW5lID0gZW5naW5lKVxuICB9XG59KSJ9
+</script>
+</div>
+</div>
+<div class="cell" data-edit="false">
+<div>
+<div id="webr-2" class="exercise-cell">
+
+</div>
+<script type="webr-2-contents">
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlY2hvIjpmYWxzZSwiZWRpdCI6ZmFsc2UsImV2YWwiOnRydWUsImluY2x1ZGUiOmZhbHNlLCJsYWJlbCI6InRoZW1lIiwib3V0cHV0IjpmYWxzZSwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJsaWJyYXJ5KGdncGxvdDIpXG50aGVtZV9zZXQodGhlbWVfbGlnaHQoKSlcbm9wdGlvbnMoZ2dwbG90Mi5jb250aW51b3VzLmNvbG9yID0gc2NhbGVfY29sb3JfdmlyaWRpc19jLCBcbiAgICAgICAgZ2dwbG90Mi5jb250aW51b3VzLmZpbGwgPSBzY2FsZV9maWxsX3ZpcmlkaXNfYyxcbiAgICAgICAgZ2dwbG90Mi5kaXNjcmV0ZS5jb2xvciA9IHNjYWxlX2NvbG9yX3ZpcmlkaXNfZCxcbiAgICAgICAgZ2dwbG90Mi5kaXNjcmV0ZS5maWxsID0gc2NhbGVfZmlsbF92aXJpZGlzX2QpIn0=
+</script>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Digital Accessibility
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.</p>
+</div>
+</div>
+</div>
+<section id="getting-started" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">1</span> Getting Started</h2>
+<p>Be sure to load the packages <code>ggformula</code> and <code>mosaic</code>, using the <code>library()</code> function. Remember, you need to do this with each new Quarto document or R Session. Add the package names in each of the blanks below to load in the indicated packages.</p>
+<div class="cell" data-exercise="ex_1" data-caption="Loading Packages">
+<div>
+<div id="webr-3" class="exercise-cell">
+
+</div>
+<script type="webr-3-contents">
+eyJhdHRyIjp7ImNhcHRpb24iOiJMb2FkaW5nIFBhY2thZ2VzIiwiY29tcGxldGlvbiI6ZmFsc2UsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMSIsImxhYmVsIjoic2V0dXAtd2ViciIsIndhcm5pbmciOnRydWV9LCJjb2RlIjoibGlicmFyeShfX19fX19fX18pICNmb3IgZ3JhcGhzXG5saWJyYXJ5KF9fX19fX19fXykgI2ZvciBzdGF0aXN0aWNzXG5saWJyYXJ5KHRpZHl2ZXJzZSkgI2ZvciBkYXRhIG1hbmFnZW1lbnQifQ==
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_1">
+<p><code>library()</code> loads in packages. You need to supply the package name you need to load inside the parentheses.</p>
+<div class="cell" data-exercise="ex_1" data-solution="true">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_1">
+<code id="interpolate-5" class="solution-code d-none">library(ggformula) #for graphs
+library(mosaic) #for statistics
+library(tidyverse) #for data management</code>
+<div class="sourceCode cell-code" id="interpolate-6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-6-1"><a href="#interpolate-6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula) <span class="co">#for graphs</span></span>
+<span id="interpolate-6-2"><a href="#interpolate-6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mosaic) <span class="co">#for statistics</span></span>
+<span id="interpolate-6-3"><a href="#interpolate-6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#for data management</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="cell" data-exercise="ex_1" data-check="true">
+<script type="exercise-check-ex_1-contents">
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJleF8xIiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJncmFkZXRoaXM6OmdyYWRlX3RoaXNfY29kZSgpIn0=
+</script>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Revisit Lab 5 Primer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The examples used in the Lab 6 Primer are continuations from the <a href="../lab-5-primer/lab-5-two-groups-primer.html">Lab 5 Primer</a>. We encourage you to go back and review your previous answers and code to help you with your lab.</p>
+</div>
+</div>
+</section>
+<section id="birth-parents-age-gap" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="birth-parents-age-gap"><span class="header-section-number">2</span> Birth Parents Age Gap</h2>
+<p>A recent study found the average Homo sapiens father has always been older than the average Homo sapiens mother for 250,000 years. However, the age gap has dwindled in the last 5,000 years, largely due to mothers having children at older ages. With declining teen birth rate, rising birth rates among older women, and women pursuing higher education and careers before starting families, the average age of all mothers giving birth in the United States increased to nearly 30 in 2023. While the age gap between parents can vary greatly, it’s common for fathers to be just a few years older than mothers.</p>
+<p>The National Vital Statistics System (NVSS) is a collaborative effort between state and local governments in the US to compile and publish reports on all vital events - births, deaths, marriages, and divorces. A random sample of 50 births in 2022 was extracted from NVSS. The data for mother’s age and father’s age can be found in <code>nvss-births-2022.csv</code>.</p>
+<p><strong>The researchers want to determine if the age gap still exists and if fathers are still older than mothers.</strong></p>
+<p>Run the following code chunk to read in the data and view the variable names.</p>
+<div class="cell">
+<div>
+<div id="webr-8" class="exercise-cell">
+
+</div>
+<script type="webr-8-contents">
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJ3YXJuaW5nIjp0cnVlfSwiY29kZSI6InBhcmVudHMgPC0gcmVhZF9jc3YoXCJudnNzLWJpcnRocy0yMDIyLmNzdlwiLCBzaG93X2NvbF90eXBlcyA9IEZBTFNFKSAjcmVhZHMgaW4gdGhlIGNzdiBmaWxlIFxubmFtZXMocGFyZW50cykifQ==
+</script>
+</div>
+</div>
+<section id="identify-the-parameters" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="identify-the-parameters"><span class="header-section-number">2.1</span> Identify the Parameters</h3>
+<section id="identify-the-study-design-of-this-study." class="level5">
+<h5 class="anchored" data-anchor-id="identify-the-study-design-of-this-study.">Identify the <em>study design</em> of this study.</h5>
+<p>Be sure you are able to provide a full justification. This is review from the Lab 5 Primer.</p>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_77590" onsubmit="return validate_form_77590()" method="post">
+<input type="radio" name="answer_77590" id="answer_77590_1" value="Independent Two Sample">
+<label>Independent Two Sample</label>
+<br>
+<input type="radio" name="answer_77590" id="answer_77590_2" value="Matched Pair Sample">
+<label>Matched Pair Sample</label>
+<br>
+<input type="submit" value="check">
+<div id="result_77590"></div>
+</form>
+<script>function validate_form_77590() {var x, text; var x = document.forms['form_77590']['answer_77590'].value;if (x == 'Matched Pair Sample'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_77590').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_77590').innerText == 'Correct';text = res1;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="identify-the-correct-parameter-type-for-this-study.-be-sure-you-are-able-to-complete-the-full-parameter-in-context." class="level5">
+<h5 class="anchored" data-anchor-id="identify-the-correct-parameter-type-for-this-study.-be-sure-you-are-able-to-complete-the-full-parameter-in-context.">Identify the correct parameter type for this study. Be sure you are able to complete the full parameter in context.</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_22695" onsubmit="return validate_form_22695()" method="post">
+<input type="radio" name="answer_22695" id="answer_22695_1" value="True mean difference">
+<label>True mean difference</label>
+<br>
+<input type="radio" name="answer_22695" id="answer_22695_2" value="Difference in true means">
+<label>Difference in true means</label>
+<br>
+<input type="submit" value="check">
+<div id="result_22695"></div>
+</form>
+<script>function validate_form_22695() {var x, text; var x = document.forms['form_22695']['answer_22695'].value;if (x == 'True mean difference'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_22695').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="identify-the-parameters-that-would-be-of-interest-based-on-the-study-design." class="level5">
+<h5 class="anchored" data-anchor-id="identify-the-parameters-that-would-be-of-interest-based-on-the-study-design.">Identify the parameter(s) that would be of interest based on the study design.</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_17283" onsubmit="return validate_form_17283()" method="post">
+<input type="checkbox" id="answer_17283_1" value="μₓₓ = true mean age in years of mothers">
+<label>μₓₓ = true mean age in years of mothers</label>
+<br>
+<input type="checkbox" id="answer_17283_2" value="μₓᵧ = true mean age in years of fathers">
+<label>μₓᵧ = true mean age in years of fathers</label>
+<br>
+<input type="checkbox" id="answer_17283_3" value="μₓₓ₋ₓᵧ = true mean of the differences of the ages in years of fathers and mothers">
+<label>μₓₓ₋ₓᵧ = true mean of the differences of the ages in years of fathers and mothers</label>
+<br>
+<input type="checkbox" id="answer_17283_4" value="x̄ₓₓ
+ = mean age in years of mothers in our sample">
+<label>x̄ₓₓ
+ = mean age in years of mothers in our sample</label>
+<br>
+<input type="checkbox" id="answer_17283_5" value="x̄ₓᵧ
+ = mean age in years of fathers in our sample">
+<label>x̄ₓᵧ
+ = mean age in years of fathers in our sample</label>
+<br>
+<input type="checkbox" id="answer_17283_6" value="x̄ₓᵧ₋ₓₓ = mean of the differences of the ages in years of fathers and mothers in our sample">
+<label>x̄ₓᵧ₋ₓₓ = mean of the differences of the ages in years of fathers and mothers in our sample</label>
+<br>
+<input type="submit" value="check">
+<div id="result_17283"></div>
+</form>
+<script>function validate_form_17283() {var text; var x1 = document.getElementById('answer_17283_1'); var x2 = document.getElementById('answer_17283_2'); var x3 = document.getElementById('answer_17283_3'); var x4 = document.getElementById('answer_17283_4'); var x5 = document.getElementById('answer_17283_5'); var x6 = document.getElementById('answer_17283_6'); if (x1.checked == false&x2.checked == false&x3.checked == false&x4.checked == false&x5.checked == false&x6.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_17283').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="identify-the-null-hypothesis-that-would-be-of-interest-based-on-the-study-design." class="level5">
+<h5 class="anchored" data-anchor-id="identify-the-null-hypothesis-that-would-be-of-interest-based-on-the-study-design.">Identify the null hypothesis that would be of interest based on the study design.</h5>
+<p>The researchers want to determine if the fathers’ ages are greater than the mothers’ ages at birth.</p>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_17169" onsubmit="return validate_form_17169()" method="post">
+<input type="radio" name="answer_17169" id="answer_17169_1" value="μₓᵧ - μₓₓ = 0">
+<label>μₓᵧ - μₓₓ = 0</label>
+<br>
+<input type="radio" name="answer_17169" id="answer_17169_2" value="μₓᵧ - μₓₓ < 0">
+<label>μₓᵧ - μₓₓ &lt; 0</label>
+<br>
+<input type="radio" name="answer_17169" id="answer_17169_3" value="μₓᵧ - μₓₓ > 0">
+<label>μₓᵧ - μₓₓ &gt; 0</label>
+<br>
+<input type="radio" name="answer_17169" id="answer_17169_4" value="μₓᵧ - μₓₓ ≠ 0">
+<label>μₓᵧ - μₓₓ ≠ 0</label>
+<br>
+<input type="radio" name="answer_17169" id="answer_17169_5" value="μₓᵧ₋ₓₓ = 0">
+<label>μₓᵧ₋ₓₓ = 0</label>
+<br>
+<input type="radio" name="answer_17169" id="answer_17169_6" value="μₓᵧ₋ₓₓ < 0">
+<label>μₓᵧ₋ₓₓ &lt; 0</label>
+<br>
+<input type="radio" name="answer_17169" id="answer_17169_7" value="μₓᵧ₋ₓₓ > 0">
+<label>μₓᵧ₋ₓₓ &gt; 0</label>
+<br>
+<input type="radio" name="answer_17169" id="answer_17169_8" value="μₓᵧ₋ₓₓ ≠ 0">
+<label>μₓᵧ₋ₓₓ ≠ 0</label>
+<br>
+<input type="submit" value="check">
+<div id="result_17169"></div>
+</form>
+<script>function validate_form_17169() {var x, text; var x = document.forms['form_17169']['answer_17169'].value;if (x == 'μₓᵧ₋ₓₓ = 0'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_17169').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="identify-the-alternative-hypothesis-that-would-be-of-interest-based-on-the-study-design." class="level5">
+<h5 class="anchored" data-anchor-id="identify-the-alternative-hypothesis-that-would-be-of-interest-based-on-the-study-design.">Identify the alternative hypothesis that would be of interest based on the study design.</h5>
+<p>The researchers want to determine if the female-identifying professor is rated more poorly, on a 1 to 7 scale (with 7 being the best), than the male-identifying professor.</p>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_89059" onsubmit="return validate_form_89059()" method="post">
+<input type="radio" name="answer_89059" id="answer_89059_1" value="μₓᵧ - μₓₓ = 0">
+<label>μₓᵧ - μₓₓ = 0</label>
+<br>
+<input type="radio" name="answer_89059" id="answer_89059_2" value="μₓᵧ - μₓₓ < 0">
+<label>μₓᵧ - μₓₓ &lt; 0</label>
+<br>
+<input type="radio" name="answer_89059" id="answer_89059_3" value="μₓᵧ - μₓₓ > 0">
+<label>μₓᵧ - μₓₓ &gt; 0</label>
+<br>
+<input type="radio" name="answer_89059" id="answer_89059_4" value="μₓᵧ - μₓₓ ≠ 0">
+<label>μₓᵧ - μₓₓ ≠ 0</label>
+<br>
+<input type="radio" name="answer_89059" id="answer_89059_5" value="μₓᵧ₋ₓₓ = 0">
+<label>μₓᵧ₋ₓₓ = 0</label>
+<br>
+<input type="radio" name="answer_89059" id="answer_89059_6" value="μₓᵧ₋ₓₓ < 0">
+<label>μₓᵧ₋ₓₓ &lt; 0</label>
+<br>
+<input type="radio" name="answer_89059" id="answer_89059_7" value="μₓᵧ₋ₓₓ > 0">
+<label>μₓᵧ₋ₓₓ &gt; 0</label>
+<br>
+<input type="radio" name="answer_89059" id="answer_89059_8" value="μₓᵧ₋ₓₓ ≠ 0">
+<label>μₓᵧ₋ₓₓ ≠ 0</label>
+<br>
+<input type="submit" value="check">
+<div id="result_89059"></div>
+</form>
+<script>function validate_form_89059() {var x, text; var x = document.forms['form_89059']['answer_89059'].value;if (x == 'μₓᵧ₋ₓₓ > 0'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_89059').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="exploratory-data-analysis" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="exploratory-data-analysis"><span class="header-section-number">2.2</span> Exploratory Data Analysis</h3>
+<p>Recall from the Lab 5 Primer, we calculated the following summary statistics and data visualizations.</p>
+<section id="summary-statistics" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">2.2.1</span> Summary Statistics</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df_stats</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  response min Q1 median Q3 max mean       sd  n missing
+1 I(FatherAge - MotherAge) -13  0      1  4  17  1.8 4.952839 50       0</code></pre>
+</div>
+</div>
+</section>
+<section id="data-visualization" class="level4" data-number="2.2.2">
+<h4 data-number="2.2.2" class="anchored" data-anchor-id="data-visualization"><span class="header-section-number">2.2.2</span> Data Visualization</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Difference in Ages Between Fathers and Mothers"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gf_theme</span>(<span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),  <span class="co">#removes y-axis ticks</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>())   <span class="co">#removes y-axis labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab-7-paired-groups-primer_files/figure-html/boxplot-age-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="qq-plot" class="level4" data-number="2.2.3">
+<h4 data-number="2.2.3" class="anchored" data-anchor-id="qq-plot"><span class="header-section-number">2.2.3</span> QQ Plot</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_qq</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">ylab =</span> <span class="st">"Difference in Ages Between Fathers and Mothers"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">"Theoretical Z-Scores"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gf_qqline</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab-7-paired-groups-primer_files/figure-html/qqplot-bias-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="based-on-the-provided-information-do-we-meet-the-necessary-conditions-to-conduct-inference-using-the-t-distribution-e.g.-confidence-interval-hypothesis-test" class="level5">
+<h5 class="anchored" data-anchor-id="based-on-the-provided-information-do-we-meet-the-necessary-conditions-to-conduct-inference-using-the-t-distribution-e.g.-confidence-interval-hypothesis-test">Based on the provided information, do we meet the necessary conditions to conduct inference using the t-distribution (e.g.&nbsp;confidence interval, hypothesis test)?</h5>
+<ul>
+<li>Remember to check the conditions of sufficient sample size and normality together.<br>
+</li>
+<li>The sufficient sample size depends on whether our sample indicates the population may or may not be normality distributed (now evaluated using the QQ Plot).<br>
+</li>
+<li>Provide a statement, based on the condition check, to determine if we can or cannot use the t-distribution as a model for null distribution or sampling distribution of our test/sample statistic.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_32359" onsubmit="return validate_form_32359()" method="post">
+<input type="checkbox" id="answer_32359_1" value="Yes, because we have random sample">
+<label>Yes, because we have random sample</label>
+<br>
+<input type="checkbox" id="answer_32359_2" value="Yes, because our sample size is greater than 30">
+<label>Yes, because our sample size is greater than 30</label>
+<br>
+<input type="checkbox" id="answer_32359_3" value="No, because our sample data is skewed">
+<label>No, because our sample data is skewed</label>
+<br>
+<input type="submit" value="check">
+<div id="result_32359"></div>
+</form>
+<script>function validate_form_32359() {var text; var x1 = document.getElementById('answer_32359_1'); var x2 = document.getElementById('answer_32359_2'); var x3 = document.getElementById('answer_32359_3'); if (x1.checked == false&x2.checked == true&x3.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_32359').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="calculating-the-test-statistic-and-p-value" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="calculating-the-test-statistic-and-p-value"><span class="header-section-number">2.3</span> Calculating the Test Statistic and P-Value</h3>
+<p>We will practice code for both a “by-hand” calculation and using <code>t.test()</code> (which is what we will be using from in general).</p>
+<section id="calculate-the-summary-statistics-for-each-sample.-modify-the-code-below-to-calculate-the-summary-statistics-for-each-group." class="level5">
+<h5 class="anchored" data-anchor-id="calculate-the-summary-statistics-for-each-sample.-modify-the-code-below-to-calculate-the-summary-statistics-for-each-group.">Calculate the summary statistics for each sample. Modify the code below to calculate the summary statistics for each group.</h5>
+<div class="cell" data-exercise="ex_2">
+<div>
+<div id="webr-9" class="exercise-cell">
+
+</div>
+<script type="webr-9-contents">
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzIiLCJsYWJlbCI6InN1bW1hcnktc3RhdHMtZGlmZiIsIndhcm5pbmciOnRydWV9LCJjb2RlIjoiKG1lYW5fZGlmZiA8LSBtZWFuKH4oRmF0aGVyQWdlIC0gTW90aGVyQWdlKSwgZGF0YSA9IHBhcmVudHMpKVxuKHNkX2RpZmYgPC0gX19fX19fX19fKH4oX19fX18gLSBfX19fKSwgZGF0YSA9IF9fX19fX19fKSlcbihuX2RpZmYgPC0gX19fX19fXyhfX19fX19fJF9fX19fKSkifQ==
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2">
+<div class="cell" data-exercise="ex_2" data-solution="true">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2">
+<code id="interpolate-11" class="solution-code d-none">(mean_diff &lt;- mean(~(FatherAge - MotherAge), data = parents))
+(sd_diff &lt;- sd(~(FatherAge - MotherAge), data = parents))
+(n_diff &lt;- length(parents$FatherAge))</code>
+<div class="sourceCode cell-code" id="interpolate-12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-12-1"><a href="#interpolate-12-1" aria-hidden="true" tabindex="-1"></a>(mean_diff <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents))</span>
+<span id="interpolate-12-2"><a href="#interpolate-12-2" aria-hidden="true" tabindex="-1"></a>(sd_diff <span class="ot">&lt;-</span> <span class="fu">sd</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents))</span>
+<span id="interpolate-12-3"><a href="#interpolate-12-3" aria-hidden="true" tabindex="-1"></a>(n_diff <span class="ot">&lt;-</span> <span class="fu">length</span>(parents<span class="sc">$</span>FatherAge))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="cell" data-exercise="ex_2" data-check="true">
+<script type="exercise-check-ex_2-contents">
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJleF8yIiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJncmFkZXRoaXM6OmdyYWRlX3RoaXNfY29kZSgpIn0=
+</script>
+</div>
+</section>
+</section>
+<section id="calculating-a-t-test-statistic-and-p-value-for-the-mean-of-the-differences" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="calculating-a-t-test-statistic-and-p-value-for-the-mean-of-the-differences"><span class="header-section-number">2.4</span> Calculating a t-Test Statistic and p-Value for the Mean of the Differences</h3>
+<p>Now that we have the necessary summary statistics saved, we can calculate both our test statistic (t) and our p-value. Recall the t-statistic for an matched pairs test is</p>
+<p><span class="math display">\[t_0 = \frac{\bar{x}_{d} - d_0}{\frac{s_{d}}{\sqrt{n_{d}}}}\]</span></p>
+<p>Fill in the blanks below using the saved object names (e.g.&nbsp;<code>mean_diff</code>, <code>sd_diff</code>) from above.</p>
+<div class="cell" data-exercise="ex_3">
+<div>
+<div id="webr-14" class="exercise-cell">
+
+</div>
+<script type="webr-14-contents">
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzMiLCJsYWJlbCI6InRlc3Qtc3RhdCIsIndhcm5pbmciOnRydWV9LCJjb2RlIjoiKHNlIDwtIHNkX2RpZmYvc3FydChfX19fKSkgICNjYWxjdWxhdGUgdGhlIHN0YW5kYXJkIGVycm9yXG4odCA8LSAobWVhbl9kaWZmIC0gX19fX19fKS9fX19fXykgICNjYWxjdWxhdGUgdGhlIHRlc3Qgc3RhdGlzdGljIn0=
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_3">
+<div class="cell" data-exercise="ex_3" data-solution="true">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_3">
+<code id="interpolate-16" class="solution-code d-none">(se &lt;- sd_diff/sqrt(n_diff))  #calculate the standard error
+(t &lt;- (mean_diff - 0)/se)  #calculate the test statistic(t &lt;- (mean_f - mean_m)/se)</code>
+<div class="sourceCode cell-code" id="interpolate-17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-17-1"><a href="#interpolate-17-1" aria-hidden="true" tabindex="-1"></a>(se <span class="ot">&lt;-</span> sd_diff<span class="sc">/</span><span class="fu">sqrt</span>(n_diff))  <span class="co">#calculate the standard error</span></span>
+<span id="interpolate-17-2"><a href="#interpolate-17-2" aria-hidden="true" tabindex="-1"></a>(t <span class="ot">&lt;-</span> (mean_diff <span class="sc">-</span> <span class="dv">0</span>)<span class="sc">/</span>se)  <span class="co">#calculate the test statistic(t &lt;- (mean_f - mean_m)/se)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="cell" data-exercise="ex_3" data-check="true">
+<script type="exercise-check-ex_3-contents">
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJleF8zIiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJncmFkZXRoaXM6OmdyYWRlX3RoaXNfY29kZSgpIn0=
+</script>
+</div>
+<p>Now, calculate the p-value using the <code>pt()</code> function. Consider the direction of the alternative hypothesis.</p>
+<div class="cell" data-exercise="ex_4">
+<div>
+<div id="webr-19" class="exercise-cell">
+
+</div>
+<script type="webr-19-contents">
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzQiLCJsYWJlbCI6InAtdmFsdWUiLCJ3YXJuaW5nIjp0cnVlfSwiY29kZSI6InB0KF9fX19fX19fX19fLCBkZiA9IG5fZGlmZiAtIF9fXykgICNiZSBzdXJlIHRvIGFkanVzdCB0byAyKnB0KCkgLCAyKigxLXB0KCkpLCBvciAxLXB0KCkgaWYgbmVlZGVkIn0=
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_4">
+<div class="cell" data-exercise="ex_4" data-solution="true">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_4">
+<code id="interpolate-21" class="solution-code d-none">1-pt(t, df = n_diff - 1)</code>
+<div class="sourceCode cell-code" id="interpolate-22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-22-1"><a href="#interpolate-22-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t, <span class="at">df =</span> n_diff <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="cell" data-exercise="ex_4" data-check="true">
+<script type="exercise-check-ex_4-contents">
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJleF80Iiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJncmFkZXRoaXM6OmdyYWRlX3RoaXNfY29kZSgpIn0=
+</script>
+</div>
+<p><strong>Test statistic:</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_87204" onsubmit="return validate_form_87204()" method="post">
+<input type="text" placeholder="" name="answer_87204">
+<input type="submit" value="check">
+<div id="result_87204"></div>
+</form>
+<script>function validate_form_87204() {var x, text; var x = document.forms['form_87204']['answer_87204'].value;if (x == '2.5698'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_87204').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><strong>df:</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_65624" onsubmit="return validate_form_65624()" method="post">
+<input type="text" placeholder="" name="answer_65624">
+<input type="submit" value="check">
+<div id="result_65624"></div>
+</form>
+<script>function validate_form_65624() {var x, text; var x = document.forms['form_65624']['answer_65624'].value;if (x == '49'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_65624').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><strong>p-value:</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_86607" onsubmit="return validate_form_86607()" method="post">
+<input type="text" placeholder="" name="answer_86607">
+<input type="submit" value="check">
+<div id="result_86607"></div>
+</form>
+<script>function validate_form_86607() {var x, text; var x = document.forms['form_86607']['answer_86607'].value;if (x == '0.006634'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_86607').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct'; res9 = document.getElementById('result_86607').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+<p>Now, let’s calculate the test statistic and p-value using the <code>t.test()</code> function. Consider the direction of the alternative hypothesis. Recall you have three choices for the alternative.</p>
+<ul>
+<li><code>"two.sided"</code><br>
+</li>
+<li><code>"greater"</code><br>
+</li>
+<li><code>"less"</code></li>
+</ul>
+<div class="cell" data-exercise="ex_5">
+<div>
+<div id="webr-24" class="exercise-cell">
+
+</div>
+<script type="webr-24-contents">
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzUiLCJsYWJlbCI6InQtdGVzdC1mdWxsIiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJ0LnRlc3QofihfX19fX19fIC0gX19fX19fX19fKSwgZGF0YSA9IF9fX19fX19fLCBtdSA9IF9fX19fX19fX18sIGFsdGVybmF0aXZlID0gXCJfX19fX19fX1wiKSJ9
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_5">
+<div class="cell" data-exercise="ex_5" data-solution="true">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_5">
+<code id="interpolate-26" class="solution-code d-none">t.test(~(FatherAge - MotherAge), data = parents, mu = 0, alternative = "greater")</code>
+<div class="sourceCode cell-code" id="interpolate-27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-27-1"><a href="#interpolate-27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents, <span class="at">mu =</span> <span class="dv">0</span>, <span class="at">alternative =</span> <span class="st">"greater"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="cell" data-exercise="ex_5" data-check="true">
+<script type="exercise-check-ex_5-contents">
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJleF81Iiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJncmFkZXRoaXM6OmdyYWRlX3RoaXNfY29kZSgpIn0=
+</script>
+</div>
+<section id="switching-the-direction-of-the-difference" class="level4" data-number="2.4.1">
+<h4 data-number="2.4.1" class="anchored" data-anchor-id="switching-the-direction-of-the-difference"><span class="header-section-number">2.4.1</span> Switching the Direction of the Difference</h4>
+<p>Ultimately, it is up to the researcher to choose the direction of the calculated difference. If we wanted to switch our difference and have Mother’s Age - Father’s Age we would have to tell R to change the ordering of inside each of our functions.</p>
+<p>Rerun the <code>t.test()</code> code, but calcuate the differences between Mother’s Age and Father’s Age instead of the other way around. What do you have to change to make the test equivalent?</p>
+<div class="cell" data-exercise="ex_6">
+<div>
+<div id="webr-29" class="exercise-cell">
+
+</div>
+<script type="webr-29-contents">
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzYiLCJsYWJlbCI6InQtdGVzdC1mdWxsLXJlb3JkZXIiLCJ3YXJuaW5nIjp0cnVlfSwiY29kZSI6InQudGVzdCh+IChfX19fX19fIC0gX19fX19fX19fKSwgZGF0YSA9IF9fX19fX18sIG11ID0gX19fX19fX19fXywgYWx0ZXJuYXRpdmUgPSBcIl9fX19fX19fXCIpIn0=
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_6">
+<div class="cell" data-exercise="ex_6" data-solution="true">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_6">
+<code id="interpolate-31" class="solution-code d-none">t.test(~(MotherAge - FatherAge), data = parents, mu = 0, alternative = "less")</code>
+<div class="sourceCode cell-code" id="interpolate-32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-32-1"><a href="#interpolate-32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="sc">~</span>(MotherAge <span class="sc">-</span> FatherAge), <span class="at">data =</span> parents, <span class="at">mu =</span> <span class="dv">0</span>, <span class="at">alternative =</span> <span class="st">"less"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="cell" data-exercise="ex_6" data-check="true">
+<script type="exercise-check-ex_6-contents">
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJleF82Iiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJncmFkZXRoaXM6OmdyYWRlX3RoaXNfY29kZSgpIn0=
+</script>
+</div>
+</section>
+</section>
+<section id="interpreting-and-evaluating-the-p-value" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="interpreting-and-evaluating-the-p-value"><span class="header-section-number">2.5</span> Interpreting and Evaluating the p-Value</h3>
+<p>Using the calculate p-value from the <code>t.test()</code> function to answer the following questions. (Use the original ordering of Father’s Age - Mother’s Age).</p>
+<section id="which-of-the-following-are-correct-interpretations-of-a-p-value" class="level5">
+<h5 class="anchored" data-anchor-id="which-of-the-following-are-correct-interpretations-of-a-p-value">Which of the following are correct interpretations of a p-value?</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_4201" onsubmit="return validate_form_4201()" method="post">
+<input type="checkbox" id="answer_4201_1" value="The probability of observing our test statistic">
+<label>The probability of observing our test statistic</label>
+<br>
+<input type="checkbox" id="answer_4201_2" value="The probability of observing our test statistic or greater">
+<label>The probability of observing our test statistic or greater</label>
+<br>
+<input type="checkbox" id="answer_4201_3" value="The probability of observing our test statistic or greater, assuming the null hypothesis is true">
+<label>The probability of observing our test statistic or greater, assuming the null hypothesis is true</label>
+<br>
+<input type="checkbox" id="answer_4201_4" value="The probability of observing our test statistic or greater, assuming the alternative hypothesis is true">
+<label>The probability of observing our test statistic or greater, assuming the alternative hypothesis is true</label>
+<br>
+<input type="checkbox" id="answer_4201_5" value="The probability that the null hypothesis is true">
+<label>The probability that the null hypothesis is true</label>
+<br>
+<input type="checkbox" id="answer_4201_6" value="The probability that the alternative hypothesis is true">
+<label>The probability that the alternative hypothesis is true</label>
+<br>
+<input type="checkbox" id="answer_4201_7" value="The probability that we find evidence against the null hypothesis">
+<label>The probability that we find evidence against the null hypothesis</label>
+<br>
+<input type="submit" value="check">
+<div id="result_4201"></div>
+</form>
+<script>function validate_form_4201() {var text; var x1 = document.getElementById('answer_4201_1'); var x2 = document.getElementById('answer_4201_2'); var x3 = document.getElementById('answer_4201_3'); var x4 = document.getElementById('answer_4201_4'); var x5 = document.getElementById('answer_4201_5'); var x6 = document.getElementById('answer_4201_6'); var x7 = document.getElementById('answer_4201_7'); if (x1.checked == false&x2.checked == false&x3.checked == true&x4.checked == false&x5.checked == false&x6.checked == false&x7.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_4201').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct'; res9 = document.getElementById('result_86607').innerText == 'correct'; res10 = document.getElementById('result_4201').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="evaluate-the-strength-of-evidence-against-the-null-hypothesis-using-a-significance-level-of-alpha-0.05" class="level5">
+<h5 class="anchored" data-anchor-id="evaluate-the-strength-of-evidence-against-the-null-hypothesis-using-a-significance-level-of-alpha-0.05">Evaluate the strength of evidence against the null hypothesis, using a significance level of <span class="math inline">\(\alpha = 0.05\)</span></h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_91046" onsubmit="return validate_form_91046()" method="post">
+<input type="radio" name="answer_91046" id="answer_91046_1" value="no evidence">
+<label>no evidence</label>
+<br>
+<input type="radio" name="answer_91046" id="answer_91046_2" value="little evidence">
+<label>little evidence</label>
+<br>
+<input type="radio" name="answer_91046" id="answer_91046_3" value="some evidence">
+<label>some evidence</label>
+<br>
+<input type="radio" name="answer_91046" id="answer_91046_4" value="moderate evidence">
+<label>moderate evidence</label>
+<br>
+<input type="radio" name="answer_91046" id="answer_91046_5" value="strong evidence">
+<label>strong evidence</label>
+<br>
+<input type="radio" name="answer_91046" id="answer_91046_6" value="very strong evidence">
+<label>very strong evidence</label>
+<br>
+<input type="submit" value="check">
+<div id="result_91046"></div>
+</form>
+<script>function validate_form_91046() {var x, text; var x = document.forms['form_91046']['answer_91046'].value;if (x == 'very strong evidence'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_91046').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct'; res9 = document.getElementById('result_86607').innerText == 'correct'; res10 = document.getElementById('result_4201').innerText == 'Correct'; res11 = document.getElementById('result_91046').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Full Evaluation of Strength of Evidence
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Remember we have specific details to include in a full evaluation of the strength of evidence.</p>
+<p><em>We have {very strong/strong/moderate/some/little} evidence against the null hypothesis (in favor of the alternative hypothesis) that {context of indicated hypothesis} (t = {xxx}, df = {xxx}, p-value = {xxx})</em>.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="which-of-the-following-statements-are-true-based-on-the-p-value" class="level5">
+<h5 class="anchored" data-anchor-id="which-of-the-following-statements-are-true-based-on-the-p-value">Which of the following statements are true based on the p-value?</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_24702" onsubmit="return validate_form_24702()" method="post">
+<input type="checkbox" id="answer_24702_1" value="there is a very small probability the null is true">
+<label>there is a very small probability the null is true</label>
+<br>
+<input type="checkbox" id="answer_24702_2" value="our data/test statistic is very unlikely to be observed if the null is true">
+<label>our data/test statistic is very unlikely to be observed if the null is true</label>
+<br>
+<input type="checkbox" id="answer_24702_3" value="there is a very small probability the alternative is true">
+<label>there is a very small probability the alternative is true</label>
+<br>
+<input type="checkbox" id="answer_24702_4" value="there is a very large probability the alternative is true">
+<label>there is a very large probability the alternative is true</label>
+<br>
+<input type="checkbox" id="answer_24702_5" value="there is a very small probability of finding evidence against the null">
+<label>there is a very small probability of finding evidence against the null</label>
+<br>
+<input type="submit" value="check">
+<div id="result_24702"></div>
+</form>
+<script>function validate_form_24702() {var text; var x1 = document.getElementById('answer_24702_1'); var x2 = document.getElementById('answer_24702_2'); var x3 = document.getElementById('answer_24702_3'); var x4 = document.getElementById('answer_24702_4'); var x5 = document.getElementById('answer_24702_5'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == false&x5.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_24702').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct'; res9 = document.getElementById('result_86607').innerText == 'correct'; res10 = document.getElementById('result_4201').innerText == 'Correct'; res11 = document.getElementById('result_91046').innerText == 'Correct'; res12 = document.getElementById('result_24702').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="which-of-the-following-are-possible-given-the-results-of-the-hypothesis-test" class="level5">
+<h5 class="anchored" data-anchor-id="which-of-the-following-are-possible-given-the-results-of-the-hypothesis-test">Which of the following are possible, given the results of the hypothesis test?</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_65933" onsubmit="return validate_form_65933()" method="post">
+<input type="checkbox" id="answer_65933_1" value="Our result is a Type I Error">
+<label>Our result is a Type I Error</label>
+<br>
+<input type="checkbox" id="answer_65933_2" value="Our result is a Type II Error">
+<label>Our result is a Type II Error</label>
+<br>
+<input type="checkbox" id="answer_65933_3" value="Our result is Correct">
+<label>Our result is Correct</label>
+<br>
+<input type="submit" value="check">
+<div id="result_65933"></div>
+</form>
+<script>function validate_form_65933() {var text; var x1 = document.getElementById('answer_65933_1'); var x2 = document.getElementById('answer_65933_2'); var x3 = document.getElementById('answer_65933_3'); if (x1.checked == true&x2.checked == false&x3.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_65933').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct'; res9 = document.getElementById('result_86607').innerText == 'correct'; res10 = document.getElementById('result_4201').innerText == 'Correct'; res11 = document.getElementById('result_91046').innerText == 'Correct'; res12 = document.getElementById('result_24702').innerText == 'Correct'; res13 = document.getElementById('result_65933').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="which-is-the-best-definintion-of-power-in-the-context-of-the-study" class="level5">
+<h5 class="anchored" data-anchor-id="which-is-the-best-definintion-of-power-in-the-context-of-the-study">Which is the best definintion of <em>Power</em> in the context of the study?</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_18201" onsubmit="return validate_form_18201()" method="post">
+<input type="radio" name="answer_18201" id="answer_18201_1" value="The probability of finding no evidence of a difference in the age of parents, when there is a difference">
+<label>The probability of finding no evidence of a difference in the age of parents, when there is a difference</label>
+<br>
+<input type="radio" name="answer_18201" id="answer_18201_2" value="The probability of finding no evidence of a difference in the age of parents, when there is no difference">
+<label>The probability of finding no evidence of a difference in the age of parents, when there is no difference</label>
+<br>
+<input type="radio" name="answer_18201" id="answer_18201_3" value="The probability of finding evidence of a difference in the age of parents, when there is a difference">
+<label>The probability of finding evidence of a difference in the age of parents, when there is a difference</label>
+<br>
+<input type="radio" name="answer_18201" id="answer_18201_4" value="The probability of finding evidence of a difference in the age of parents, when there is no difference">
+<label>The probability of finding evidence of a difference in the age of parents, when there is no difference</label>
+<br>
+<input type="submit" value="check">
+<div id="result_18201"></div>
+</form>
+<script>function validate_form_18201() {var x, text; var x = document.forms['form_18201']['answer_18201'].value;if (x == 'The probability of finding evidence of a difference in the age of parents, when there is a difference'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_18201').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct'; res9 = document.getElementById('result_86607').innerText == 'correct'; res10 = document.getElementById('result_4201').innerText == 'Correct'; res11 = document.getElementById('result_91046').innerText == 'Correct'; res12 = document.getElementById('result_24702').innerText == 'Correct'; res13 = document.getElementById('result_65933').innerText == 'Correct'; res14 = document.getElementById('result_18201').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="calculating-a-confidence-interval-for-the-mean-of-the-differences" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="calculating-a-confidence-interval-for-the-mean-of-the-differences"><span class="header-section-number">2.6</span> Calculating a Confidence Interval for the Mean of the Differences</h3>
+<p>In order to calculate the confidence interval for the population mean of the differences, it takes on the same structure as a confidence interval for one population mean.</p>
+<p><span class="math display">\[point \ estimate \pm (critical \ value)*(standard\ error)\]</span></p>
+<p>or</p>
+<p><span class="math display">\[\bar{x}_d \ \pm \ t^*\frac{s_d}{\sqrt{n_d}}\]</span></p>
+<p>We can find our <span class="math inline">\(t^*\)</span> critical value the same way we found it for previous confidence intervals.</p>
+<div class="cell">
+<div>
+<div id="webr-34" class="exercise-cell">
+
+</div>
+<script type="webr-34-contents">
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6ImN2Iiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiIoY3YgPC0gcXQoMS0wLjA1LzIsIGRmID0gbl9kaWZmIC0gMSkpIn0=
+</script>
+</div>
+</div>
+<p>Our point estimate is <span class="math inline">\(\bar{x}_d\)</span></p>
+<div class="cell">
+<div>
+<div id="webr-35" class="exercise-cell">
+
+</div>
+<script type="webr-35-contents">
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6InBvaW50LWVzdGltYXRlIiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiIocG9pbnRfZXN0aW1hdGUgPC0gbWVhbl9kaWZmKSJ9
+</script>
+</div>
+</div>
+<p>and finally we can calculate the lower bound (<code>lb</code>) and upper bound (<code>ub</code>) for our confidence interval.</p>
+<div class="cell">
+<div>
+<div id="webr-36" class="exercise-cell">
+
+</div>
+<script type="webr-36-contents">
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6ImNvbmYtaW50ZXJ2YWwtaGFuZCIsIndhcm5pbmciOnRydWV9LCJjb2RlIjoiKGxiX3JhdGluZyA8LSBwb2ludF9lc3RpbWF0ZSAtIGN2KnNlKVxuKHViX3JhdGluZyA8LSBwb2ludF9lc3RpbWF0ZSArIGN2KnNlKSJ9
+</script>
+</div>
+</div>
+<p>Record the calculated confidence interval.</p>
+<p>Lower bound:</p>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_32450" onsubmit="return validate_form_32450()" method="post">
+<input type="text" placeholder="" name="answer_32450">
+<input type="submit" value="check">
+<div id="result_32450"></div>
+</form>
+<script>function validate_form_32450() {var x, text; var x = document.forms['form_32450']['answer_32450'].value;if (x == '0.3924188'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_32450').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct'; res9 = document.getElementById('result_86607').innerText == 'correct'; res10 = document.getElementById('result_4201').innerText == 'Correct'; res11 = document.getElementById('result_91046').innerText == 'Correct'; res12 = document.getElementById('result_24702').innerText == 'Correct'; res13 = document.getElementById('result_65933').innerText == 'Correct'; res14 = document.getElementById('result_18201').innerText == 'Correct'; res15 = document.getElementById('result_32450').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p>Upper bound:</p>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_68311" onsubmit="return validate_form_68311()" method="post">
+<input type="text" placeholder="" name="answer_68311">
+<input type="submit" value="check">
+<div id="result_68311"></div>
+</form>
+<script>function validate_form_68311() {var x, text; var x = document.forms['form_68311']['answer_68311'].value;if (x == '3.2075812'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_68311').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct'; res9 = document.getElementById('result_86607').innerText == 'correct'; res10 = document.getElementById('result_4201').innerText == 'Correct'; res11 = document.getElementById('result_91046').innerText == 'Correct'; res12 = document.getElementById('result_24702').innerText == 'Correct'; res13 = document.getElementById('result_65933').innerText == 'Correct'; res14 = document.getElementById('result_18201').innerText == 'Correct'; res15 = document.getElementById('result_32450').innerText == 'correct'; res16 = document.getElementById('result_68311').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+<p>Of course, the “by-hand” method is tedious when we can just use <code>t.test()</code> to calculate our confidence interval. Fill in the blanks below to calculate the 95% confidence interval for the difference between the two means.</p>
+<div class="cell" data-exercise="ex_7">
+<div>
+<div id="webr-37" class="exercise-cell">
+
+</div>
+<script type="webr-37-contents">
+eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzciLCJsYWJlbCI6ImNpLXR0ZXN0Iiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJ0LnRlc3QofihfX19fX19fIC0gX19fX19fX19fKSwgZGF0YSA9IF9fX19fLCBjb25mLmxldmVsID0gX19fX19fX19fKSRfX19fX19fX19fIn0=
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_7">
+<div class="cell" data-exercise="ex_7" data-solution="true">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_7">
+<code id="interpolate-39" class="solution-code d-none">t.test(~(FatherAge - MotherAge), data = parents, conf.level = 0.95)$conf.int</code>
+<div class="sourceCode cell-code" id="interpolate-40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-40-1"><a href="#interpolate-40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents, <span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="cell" data-exercise="ex_7" data-check="true">
+<script type="exercise-check-ex_7-contents">
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJleF83Iiwid2FybmluZyI6dHJ1ZX0sImNvZGUiOiJncmFkZXRoaXM6OmdyYWRlX3RoaXNfY29kZSgpIn0=
+</script>
+</div>
+<p><br></p>
+<section id="provide-an-interpretation-of-the-confidence-interval-by-reordering-the-phrases-below." class="level5">
+<h5 class="anchored" data-anchor-id="provide-an-interpretation-of-the-confidence-interval-by-reordering-the-phrases-below.">Provide an interpretation of the confidence interval by reordering the phrases below.</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_57683" onsubmit="return validate_form_57683()" method="post">
+<table data-quarto-disable-processing="true">
+<tbody id="task_57683">
+<tr>
+<td id="answer_57683_7" style="padding:5px; border:1px solid #ccc;">the age of mothers</td>
+</tr>
+<tr>
+<td style="padding:5px">
+<button type="button" onclick="swapElementsV(this);">⇅</button>
+</td>
+</tr>
+<tr>
+<td id="answer_57683_3" style="padding:5px; border:1px solid #ccc;">the true mean</td>
+</tr>
+<tr>
+<td style="padding:5px">
+<button type="button" onclick="swapElementsV(this);">⇅</button>
+</td>
+</tr>
+<tr>
+<td id="answer_57683_6" style="padding:5px; border:1px solid #ccc;">and</td>
+</tr>
+<tr>
+<td style="padding:5px">
+<button type="button" onclick="swapElementsV(this);">⇅</button>
+</td>
+</tr>
+<tr>
+<td id="answer_57683_1" style="padding:5px; border:1px solid #ccc;">Based on the sample</td>
+</tr>
+<tr>
+<td style="padding:5px">
+<button type="button" onclick="swapElementsV(this);">⇅</button>
+</td>
+</tr>
+<tr>
+<td id="answer_57683_9" style="padding:5px; border:1px solid #ccc;">within the interval</td>
+</tr>
+<tr>
+<td style="padding:5px">
+<button type="button" onclick="swapElementsV(this);">⇅</button>
+</td>
+</tr>
+<tr>
+<td id="answer_57683_2" style="padding:5px; border:1px solid #ccc;">we are 95% confident that</td>
+</tr>
+<tr>
+<td style="padding:5px">
+<button type="button" onclick="swapElementsV(this);">⇅</button>
+</td>
+</tr>
+<tr>
+<td id="answer_57683_5" style="padding:5px; border:1px solid #ccc;">the age of fathers</td>
+</tr>
+<tr>
+<td style="padding:5px">
+<button type="button" onclick="swapElementsV(this);">⇅</button>
+</td>
+</tr>
+<tr>
+<td id="answer_57683_8" style="padding:5px; border:1px solid #ccc;">is a single value</td>
+</tr>
+<tr>
+<td style="padding:5px">
+<button type="button" onclick="swapElementsV(this);">⇅</button>
+</td>
+</tr>
+<tr>
+<td id="answer_57683_4" style="padding:5px; border:1px solid #ccc;">of the differences between</td>
+</tr>
+<tr>
+<td style="padding:5px">
+<button type="button" onclick="swapElementsV(this);">⇅</button>
+</td>
+</tr>
+<tr>
+<td id="answer_57683_10" style="padding:5px; border:1px solid #ccc;">LB and UB</td>
+</tr>
+</tbody>
+</table>
+<input type="submit" value="check">
+<div id="result_57683"></div>
+</form>
+<script>function validate_form_57683() {var text;var ch = document.getElementById('task_57683').children; if(ch[0].children[0].id == 'answer_57683_1'&ch[2].children[0].id == 'answer_57683_2'&ch[4].children[0].id == 'answer_57683_3'&ch[6].children[0].id == 'answer_57683_4'&ch[8].children[0].id == 'answer_57683_5'&ch[10].children[0].id == 'answer_57683_6'&ch[12].children[0].id == 'answer_57683_7'&ch[14].children[0].id == 'answer_57683_8'&ch[16].children[0].id == 'answer_57683_9'&ch[18].children[0].id == 'answer_57683_10'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_57683').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct'; res9 = document.getElementById('result_86607').innerText == 'correct'; res10 = document.getElementById('result_4201').innerText == 'Correct'; res11 = document.getElementById('result_91046').innerText == 'Correct'; res12 = document.getElementById('result_24702').innerText == 'Correct'; res13 = document.getElementById('result_65933').innerText == 'Correct'; res14 = document.getElementById('result_18201').innerText == 'Correct'; res15 = document.getElementById('result_32450').innerText == 'correct'; res16 = document.getElementById('result_68311').innerText == 'correct'; res17 = document.getElementById('result_57683').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="which-of-the-following-would-be-plausible-estimates-for-the-true-mean-of-the-differences-between-fathers-and-mothers-ages" class="level5">
+<h5 class="anchored" data-anchor-id="which-of-the-following-would-be-plausible-estimates-for-the-true-mean-of-the-differences-between-fathers-and-mothers-ages">Which of the following would be plausible estimates for the true mean of the differences between fathers’ and mothers’ ages?</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_5596" onsubmit="return validate_form_5596()" method="post">
+<input type="checkbox" id="answer_5596_1" value="0">
+<label>0</label>
+<br>
+<input type="checkbox" id="answer_5596_2" value="-1">
+<label>-1</label>
+<br>
+<input type="checkbox" id="answer_5596_3" value="1">
+<label>1</label>
+<br>
+<input type="checkbox" id="answer_5596_4" value="-1.5">
+<label>-1.5</label>
+<br>
+<input type="checkbox" id="answer_5596_5" value="-0.5">
+<label>-0.5</label>
+<br>
+<input type="checkbox" id="answer_5596_6" value="0.5">
+<label>0.5</label>
+<br>
+<input type="checkbox" id="answer_5596_7" value="1.5">
+<label>1.5</label>
+<br>
+<input type="checkbox" id="answer_5596_8" value="-2">
+<label>-2</label>
+<br>
+<input type="checkbox" id="answer_5596_9" value="2">
+<label>2</label>
+<br>
+<input type="submit" value="check">
+<div id="result_5596"></div>
+</form>
+<script>function validate_form_5596() {var text; var x1 = document.getElementById('answer_5596_1'); var x2 = document.getElementById('answer_5596_2'); var x3 = document.getElementById('answer_5596_3'); var x4 = document.getElementById('answer_5596_4'); var x5 = document.getElementById('answer_5596_5'); var x6 = document.getElementById('answer_5596_6'); var x7 = document.getElementById('answer_5596_7'); var x8 = document.getElementById('answer_5596_8'); var x9 = document.getElementById('answer_5596_9'); if (x1.checked == false&x2.checked == false&x3.checked == true&x4.checked == false&x5.checked == false&x6.checked == true&x7.checked == true&x8.checked == false&x9.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_5596').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct'; res9 = document.getElementById('result_86607').innerText == 'correct'; res10 = document.getElementById('result_4201').innerText == 'Correct'; res11 = document.getElementById('result_91046').innerText == 'Correct'; res12 = document.getElementById('result_24702').innerText == 'Correct'; res13 = document.getElementById('result_65933').innerText == 'Correct'; res14 = document.getElementById('result_18201').innerText == 'Correct'; res15 = document.getElementById('result_32450').innerText == 'correct'; res16 = document.getElementById('result_68311').innerText == 'correct'; res17 = document.getElementById('result_57683').innerText == 'Correct'; res18 = document.getElementById('result_5596').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="what-can-we-conclude-about-the-study" class="level5">
+<h5 class="anchored" data-anchor-id="what-can-we-conclude-about-the-study">What can we conclude about the study?</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_44204" onsubmit="return validate_form_44204()" method="post">
+<input type="checkbox" id="answer_44204_1" value="we cannot infer that the age of the mother causes the age of the father to be higher">
+<label>we cannot infer that the age of the mother causes the age of the father to be higher</label>
+<br>
+<input type="checkbox" id="answer_44204_2" value="we can infer that the age of the mother causes the age of the father to be higher">
+<label>we can infer that the age of the mother causes the age of the father to be higher</label>
+<br>
+<input type="checkbox" id="answer_44204_3" value="there is evidence that fathers tend to be older than mothers in 2022">
+<label>there is evidence that fathers tend to be older than mothers in 2022</label>
+<br>
+<input type="checkbox" id="answer_44204_4" value="there is no that fathers tend to be older than mothers in 2022">
+<label>there is no that fathers tend to be older than mothers in 2022</label>
+<br>
+<input type="submit" value="check">
+<div id="result_44204"></div>
+</form>
+<script>function validate_form_44204() {var text; var x1 = document.getElementById('answer_44204_1'); var x2 = document.getElementById('answer_44204_2'); var x3 = document.getElementById('answer_44204_3'); var x4 = document.getElementById('answer_44204_4'); if (x1.checked == true&x2.checked == false&x3.checked == true&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_44204').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct'; res9 = document.getElementById('result_86607').innerText == 'correct'; res10 = document.getElementById('result_4201').innerText == 'Correct'; res11 = document.getElementById('result_91046').innerText == 'Correct'; res12 = document.getElementById('result_24702').innerText == 'Correct'; res13 = document.getElementById('result_65933').innerText == 'Correct'; res14 = document.getElementById('result_18201').innerText == 'Correct'; res15 = document.getElementById('result_32450').innerText == 'correct'; res16 = document.getElementById('result_68311').innerText == 'correct'; res17 = document.getElementById('result_57683').innerText == 'Correct'; res18 = document.getElementById('result_5596').innerText == 'Correct'; res19 = document.getElementById('result_44204').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="indentify-the-population-to-which-you-can-generalize." class="level5">
+<h5 class="anchored" data-anchor-id="indentify-the-population-to-which-you-can-generalize.">Indentify the population to which you can generalize.</h5>
+<div class="cell">
+<div class="cell-output-display">
+<form name="form_63745" onsubmit="return validate_form_63745()" method="post">
+<input type="radio" name="answer_63745" id="answer_63745_1" value="all Homo sapiens">
+<label>all Homo sapiens</label>
+<br>
+<input type="radio" name="answer_63745" id="answer_63745_2" value="all birth parents">
+<label>all birth parents</label>
+<br>
+<input type="radio" name="answer_63745" id="answer_63745_3" value="all US birth parents">
+<label>all US birth parents</label>
+<br>
+<input type="radio" name="answer_63745" id="answer_63745_4" value="all US birth parents in 2022">
+<label>all US birth parents in 2022</label>
+<br>
+<input type="radio" name="answer_63745" id="answer_63745_5" value="all parents with an age gap">
+<label>all parents with an age gap</label>
+<br>
+<input type="radio" name="answer_63745" id="answer_63745_6" value="none">
+<label>none</label>
+<br>
+<input type="submit" value="check">
+<div id="result_63745"></div>
+</form>
+<script>function validate_form_63745() {var x, text; var x = document.forms['form_63745']['answer_63745'].value;if (x == 'all US birth parents in 2022'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_63745').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+         element = document.getElementById('checkdown_final_score');
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20;res1 = document.getElementById('result_77590').innerText == 'Correct'; res2 = document.getElementById('result_22695').innerText == 'Correct'; res3 = document.getElementById('result_17283').innerText == 'Correct'; res4 = document.getElementById('result_17169').innerText == 'Correct'; res5 = document.getElementById('result_89059').innerText == 'Correct'; res6 = document.getElementById('result_32359').innerText == 'Correct'; res7 = document.getElementById('result_87204').innerText == 'correct'; res8 = document.getElementById('result_65624').innerText == 'correct'; res9 = document.getElementById('result_86607').innerText == 'correct'; res10 = document.getElementById('result_4201').innerText == 'Correct'; res11 = document.getElementById('result_91046').innerText == 'Correct'; res12 = document.getElementById('result_24702').innerText == 'Correct'; res13 = document.getElementById('result_65933').innerText == 'Correct'; res14 = document.getElementById('result_18201').innerText == 'Correct'; res15 = document.getElementById('result_32450').innerText == 'correct'; res16 = document.getElementById('result_68311').innerText == 'correct'; res17 = document.getElementById('result_57683').innerText == 'Correct'; res18 = document.getElementById('result_5596').innerText == 'Correct'; res19 = document.getElementById('result_44204').innerText == 'Correct'; res20 = document.getElementById('result_63745').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20;element.innerHTML = text;
+         return false;
+         }}</script>
+</div>
+</div>
+
+
+<script type="webr-data">
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC41LjQvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsImdnZm9ybXVsYSIsIm1vc2FpYyIsInRpZHl2ZXJzZSJdLCJyZXBvcyI6WyJodHRwczovL3Byb2plY3Rtb3NhaWMuci11bml2ZXJzZS5kZXYiXX0sInJlbmRlcl9kZiI6ImRlZmF1bHQifQ==
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zNyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMzc7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0zNyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzM3ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMzctY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici0zNy1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzM3ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8zNywge30pO1xuX3dlYnJfZmVlZGJhY2tfMzcgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzM3LmV2YWx1YXRvcik7XG4gIGNvbnN0IGZlZWRiYWNrID0gYXdhaXQgZ3JhZGVyLmdyYWRlRXhlcmNpc2UoKTtcbiAgaWYgKCFmZWVkYmFjaykgcmV0dXJuIGVtcHR5RmVlZGJhY2s7XG4gIHJldHVybiBmZWVkYmFjaztcbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zNiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMzY7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0zNiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzM2ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMzYtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0zNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8zNiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMzYsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zNSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMzU7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0zNSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzM1ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMzUtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0zNS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8zNSA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMzUsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zNCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMzQ7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0zNCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzM0ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMzQtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0zNC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8zNCA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMzQsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0yOSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMjk7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0yOSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzI5ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMjktY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici0yOS1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzI5ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8yOSwge30pO1xuX3dlYnJfZmVlZGJhY2tfMjkgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzI5LmV2YWx1YXRvcik7XG4gIGNvbnN0IGZlZWRiYWNrID0gYXdhaXQgZ3JhZGVyLmdyYWRlRXhlcmNpc2UoKTtcbiAgaWYgKCFmZWVkYmFjaykgcmV0dXJuIGVtcHR5RmVlZGJhY2s7XG4gIHJldHVybiBmZWVkYmFjaztcbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0yNCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMjQ7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0yNCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzI0ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMjQtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici0yNC1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzI0ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8yNCwge30pO1xuX3dlYnJfZmVlZGJhY2tfMjQgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzI0LmV2YWx1YXRvcik7XG4gIGNvbnN0IGZlZWRiYWNrID0gYXdhaXQgZ3JhZGVyLmdyYWRlRXhlcmNpc2UoKTtcbiAgaWYgKCFmZWVkYmFjaykgcmV0dXJuIGVtcHR5RmVlZGJhY2s7XG4gIHJldHVybiBmZWVkYmFjaztcbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xOSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTk7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0xOSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzE5ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTktY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici0xOS1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzE5ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8xOSwge30pO1xuX3dlYnJfZmVlZGJhY2tfMTkgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzE5LmV2YWx1YXRvcik7XG4gIGNvbnN0IGZlZWRiYWNrID0gYXdhaXQgZ3JhZGVyLmdyYWRlRXhlcmNpc2UoKTtcbiAgaWYgKCFmZWVkYmFjaykgcmV0dXJuIGVtcHR5RmVlZGJhY2s7XG4gIHJldHVybiBmZWVkYmFjaztcbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xNCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTQ7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0xNCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzE0ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTQtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici0xNC1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzE0ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8xNCwge30pO1xuX3dlYnJfZmVlZGJhY2tfMTQgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzE0LmV2YWx1YXRvcik7XG4gIGNvbnN0IGZlZWRiYWNrID0gYXdhaXQgZ3JhZGVyLmdyYWRlRXhlcmNpc2UoKTtcbiAgaWYgKCFmZWVkYmFjaykgcmV0dXJuIGVtcHR5RmVlZGJhY2s7XG4gIHJldHVybiBmZWVkYmFjaztcbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC05IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV85O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItOSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzkgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici05LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBleGVyY2lzZSBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKFxuICAgIHtcbiAgICAgIGlkOiBcIndlYnItOS1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzkgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzksIHt9KTtcbl93ZWJyX2ZlZWRiYWNrXzkgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzkuZXZhbHVhdG9yKTtcbiAgY29uc3QgZmVlZGJhY2sgPSBhd2FpdCBncmFkZXIuZ3JhZGVFeGVyY2lzZSgpO1xuICBpZiAoIWZlZWRiYWNrKSByZXR1cm4gZW1wdHlGZWVkYmFjaztcbiAgcmV0dXJuIGZlZWRiYWNrO1xufVxuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTgiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzg7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici04IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfOCA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTgtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici04LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzggPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzgsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItMyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBleGVyY2lzZSBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKFxuICAgIHtcbiAgICAgIGlkOiBcIndlYnItMy1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzMgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzMsIHt9KTtcbl93ZWJyX2ZlZWRiYWNrXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzMuZXZhbHVhdG9yKTtcbiAgY29uc3QgZmVlZGJhY2sgPSBhd2FpdCBncmFkZXIuZ3JhZGVFeGVyY2lzZSgpO1xuICBpZiAoIWZlZWRiYWNrKSByZXR1cm4gZW1wdHlGZWVkYmFjaztcbiAgcmV0dXJuIGZlZWRiYWNrO1xufVxuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzI7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0yIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6Il93ZWJyX3ZhbHVlXzIgPSB7XG4gIGNvbnN0IHsgaGlnaGxpZ2h0UiwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIC8vIERlZmF1bHQgZXZhbHVhdGlvbiBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHtcbiAgICBpZDogXCJ3ZWJyLTItY29udGVudHNcIixcbiAgICBlY2hvOiB0cnVlLFxuICAgIG91dHB1dDogdHJ1ZVxuICB9LCBibG9jay5hdHRyKTtcblxuICAvLyBFdmFsdWF0ZSB0aGUgcHJvdmlkZWQgUiBjb2RlXG4gIGNvbnN0IHJlc3VsdCA9IHdlYlJPanMucHJvY2Vzcyh7Y29kZTogYmxvY2suY29kZSwgb3B0aW9uc30sIHt9KTtcblxuICAvLyBFYXJseSB5aWVsZCB3aGlsZSB3ZSB3YWl0IGZvciB0aGUgZmlyc3QgZXZhbHVhdGlvbiBhbmQgcmVuZGVyXG4gIGlmIChvcHRpb25zLm91dHB1dCAmJiAhKFwiMlwiIGluIHdlYlJPanMucmVuZGVyZWRPanMpKSB7XG4gICAgY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcbiAgICBjb25zdCBzcGlubmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcblxuICAgIGlmIChvcHRpb25zLmVjaG8pIHtcbiAgICAgIC8vIFNob3cgb3V0cHV0IGFzIGhpZ2hsaWdodGVkIHNvdXJjZVxuICAgICAgY29uc3QgcHJlRWxlbSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJwcmVcIik7XG4gICAgICBjb250YWluZXIuY2xhc3NOYW1lID0gXCJzb3VyY2VDb2RlXCI7XG4gICAgICBwcmVFbGVtLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZSByXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKGhpZ2hsaWdodFIoYmxvY2suY29kZSkpO1xuICAgICAgc3Bpbm5lci5jbGFzc05hbWUgPSBcInNwaW5uZXItZ3JvdyBzcGlubmVyLWdyb3ctc20gbS0yIHBvc2l0aW9uLWFic29sdXRlIHRvcC0wIGVuZC0wXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKHNwaW5uZXIpO1xuICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKHByZUVsZW0pO1xuICAgIH0gZWxzZSB7XG4gICAgICBzcGlubmVyLmNsYXNzTmFtZSA9IFwic3Bpbm5lci1ib3JkZXIgc3Bpbm5lci1ib3JkZXItc21cIjtcbiAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChzcGlubmVyKTtcbiAgICB9XG5cbiAgICB5aWVsZCBjb250YWluZXI7XG4gIH1cblxuICB3ZWJST2pzLnJlbmRlcmVkT2pzW1wiMlwiXSA9IHRydWU7XG4gIHlpZWxkIGF3YWl0IHJlc3VsdDtcbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8xO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItMSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJfd2Vicl92YWx1ZV8xID0ge1xuICBjb25zdCB7IGhpZ2hsaWdodFIsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTEtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV2YWx1YXRpb24gY29uZmlndXJhdGlvblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7XG4gICAgaWQ6IFwid2Vici0xLWNvbnRlbnRzXCIsXG4gICAgZWNobzogdHJ1ZSxcbiAgICBvdXRwdXQ6IHRydWVcbiAgfSwgYmxvY2suYXR0cik7XG5cbiAgLy8gRXZhbHVhdGUgdGhlIHByb3ZpZGVkIFIgY29kZVxuICBjb25zdCByZXN1bHQgPSB3ZWJST2pzLnByb2Nlc3Moe2NvZGU6IGJsb2NrLmNvZGUsIG9wdGlvbnN9LCB7fSk7XG5cbiAgLy8gRWFybHkgeWllbGQgd2hpbGUgd2Ugd2FpdCBmb3IgdGhlIGZpcnN0IGV2YWx1YXRpb24gYW5kIHJlbmRlclxuICBpZiAob3B0aW9ucy5vdXRwdXQgJiYgIShcIjFcIiBpbiB3ZWJST2pzLnJlbmRlcmVkT2pzKSkge1xuICAgIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG4gICAgY29uc3Qgc3Bpbm5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG5cbiAgICBpZiAob3B0aW9ucy5lY2hvKSB7XG4gICAgICAvLyBTaG93IG91dHB1dCBhcyBoaWdobGlnaHRlZCBzb3VyY2VcbiAgICAgIGNvbnN0IHByZUVsZW0gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwicHJlXCIpO1xuICAgICAgY29udGFpbmVyLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZVwiO1xuICAgICAgcHJlRWxlbS5jbGFzc05hbWUgPSBcInNvdXJjZUNvZGUgclwiO1xuICAgICAgcHJlRWxlbS5hcHBlbmRDaGlsZChoaWdobGlnaHRSKGJsb2NrLmNvZGUpKTtcbiAgICAgIHNwaW5uZXIuY2xhc3NOYW1lID0gXCJzcGlubmVyLWdyb3cgc3Bpbm5lci1ncm93LXNtIG0tMiBwb3NpdGlvbi1hYnNvbHV0ZSB0b3AtMCBlbmQtMFwiO1xuICAgICAgcHJlRWxlbS5hcHBlbmRDaGlsZChzcGlubmVyKTtcbiAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChwcmVFbGVtKTtcbiAgICB9IGVsc2Uge1xuICAgICAgc3Bpbm5lci5jbGFzc05hbWUgPSBcInNwaW5uZXItYm9yZGVyIHNwaW5uZXItYm9yZGVyLXNtXCI7XG4gICAgICBjb250YWluZXIuYXBwZW5kQ2hpbGQoc3Bpbm5lcik7XG4gICAgfVxuXG4gICAgeWllbGQgY29udGFpbmVyO1xuICB9XG5cbiAgd2ViUk9qcy5yZW5kZXJlZE9qc1tcIjFcIl0gPSB0cnVlO1xuICB5aWVsZCBhd2FpdCByZXN1bHQ7XG59XG4ifSx7ImNlbGxOYW1lIjoiaW50ZXJwb2xhdGUtNSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgY29uc3QgeyBpbnRlcnBvbGF0ZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgYmxvY2tfaWQgPSBcIjVcIjtcbiAgY29uc3QgbGFuZ3VhZ2UgPSBcIm5vbmVcIjtcbiAgY29uc3QgZGVmX21hcCA9IHtcbn07XG4gIGNvbnN0IGVsZW0gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgaW50ZXJwb2xhdGUtJHtibG9ja19pZH1gKTtcblxuICAvLyBTdG9yZSBvcmlnaW5hbCB0ZW1wbGF0ZWQgSFRNTCBmb3IgcmVmZXJlbmNlIGluIGZ1dHVyZSByZWFjdGl2ZSB1cGRhdGVzXG4gIGlmICghZWxlbS5vcmlnSFRNTCkgZWxlbS5vcmlnSFRNTCA9IGVsZW0uaW5uZXJIVE1MO1xuXG4gIC8vIEludGVycG9sYXRlIHJlYWN0aXZlIE9KUyB2YXJpYWJsZXMgaW50byBlc3RhYmxpc2hlZCBIVE1MIGVsZW1lbnRcbiAgZWxlbS5pbm5lckhUTUwgPSBlbGVtLm9yaWdIVE1MO1xuICBPYmplY3Qua2V5cyhkZWZfbWFwKS5mb3JFYWNoKChkZWYpID0+XG4gICAgaW50ZXJwb2xhdGUoZWxlbSwgXCIke1wiICsgZGVmICsgXCJ9XCIsIGRlZl9tYXBbZGVmXSwgbGFuZ3VhZ2UpXG4gICk7XG59XG4ifSx7ImNlbGxOYW1lIjoiaW50ZXJwb2xhdGUtNiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgY29uc3QgeyBpbnRlcnBvbGF0ZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgYmxvY2tfaWQgPSBcIjZcIjtcbiAgY29uc3QgbGFuZ3VhZ2UgPSBcInJcIjtcbiAgY29uc3QgZGVmX21hcCA9IHtcbn07XG4gIGNvbnN0IGVsZW0gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgaW50ZXJwb2xhdGUtJHtibG9ja19pZH1gKTtcblxuICAvLyBTdG9yZSBvcmlnaW5hbCB0ZW1wbGF0ZWQgSFRNTCBmb3IgcmVmZXJlbmNlIGluIGZ1dHVyZSByZWFjdGl2ZSB1cGRhdGVzXG4gIGlmICghZWxlbS5vcmlnSFRNTCkgZWxlbS5vcmlnSFRNTCA9IGVsZW0uaW5uZXJIVE1MO1xuXG4gIC8vIEludGVycG9sYXRlIHJlYWN0aXZlIE9KUyB2YXJpYWJsZXMgaW50byBlc3RhYmxpc2hlZCBIVE1MIGVsZW1lbnRcbiAgZWxlbS5pbm5lckhUTUwgPSBlbGVtLm9yaWdIVE1MO1xuICBPYmplY3Qua2V5cyhkZWZfbWFwKS5mb3JFYWNoKChkZWYpID0+XG4gICAgaW50ZXJwb2xhdGUoZWxlbSwgXCIke1wiICsgZGVmICsgXCJ9XCIsIGRlZl9tYXBbZGVmXSwgbGFuZ3VhZ2UpXG4gICk7XG59XG4ifSx7ImNlbGxOYW1lIjoiaW50ZXJwb2xhdGUtMTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIGNvbnN0IHsgaW50ZXJwb2xhdGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IGJsb2NrX2lkID0gXCIxMVwiO1xuICBjb25zdCBsYW5ndWFnZSA9IFwibm9uZVwiO1xuICBjb25zdCBkZWZfbWFwID0ge1xufTtcbiAgY29uc3QgZWxlbSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBpbnRlcnBvbGF0ZS0ke2Jsb2NrX2lkfWApO1xuXG4gIC8vIFN0b3JlIG9yaWdpbmFsIHRlbXBsYXRlZCBIVE1MIGZvciByZWZlcmVuY2UgaW4gZnV0dXJlIHJlYWN0aXZlIHVwZGF0ZXNcbiAgaWYgKCFlbGVtLm9yaWdIVE1MKSBlbGVtLm9yaWdIVE1MID0gZWxlbS5pbm5lckhUTUw7XG5cbiAgLy8gSW50ZXJwb2xhdGUgcmVhY3RpdmUgT0pTIHZhcmlhYmxlcyBpbnRvIGVzdGFibGlzaGVkIEhUTUwgZWxlbWVudFxuICBlbGVtLmlubmVySFRNTCA9IGVsZW0ub3JpZ0hUTUw7XG4gIE9iamVjdC5rZXlzKGRlZl9tYXApLmZvckVhY2goKGRlZikgPT5cbiAgICBpbnRlcnBvbGF0ZShlbGVtLCBcIiR7XCIgKyBkZWYgKyBcIn1cIiwgZGVmX21hcFtkZWZdLCBsYW5ndWFnZSlcbiAgKTtcbn1cbiJ9LHsiY2VsbE5hbWUiOiJpbnRlcnBvbGF0ZS0xMiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgY29uc3QgeyBpbnRlcnBvbGF0ZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgYmxvY2tfaWQgPSBcIjEyXCI7XG4gIGNvbnN0IGxhbmd1YWdlID0gXCJyXCI7XG4gIGNvbnN0IGRlZl9tYXAgPSB7XG59O1xuICBjb25zdCBlbGVtID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGludGVycG9sYXRlLSR7YmxvY2tfaWR9YCk7XG5cbiAgLy8gU3RvcmUgb3JpZ2luYWwgdGVtcGxhdGVkIEhUTUwgZm9yIHJlZmVyZW5jZSBpbiBmdXR1cmUgcmVhY3RpdmUgdXBkYXRlc1xuICBpZiAoIWVsZW0ub3JpZ0hUTUwpIGVsZW0ub3JpZ0hUTUwgPSBlbGVtLmlubmVySFRNTDtcblxuICAvLyBJbnRlcnBvbGF0ZSByZWFjdGl2ZSBPSlMgdmFyaWFibGVzIGludG8gZXN0YWJsaXNoZWQgSFRNTCBlbGVtZW50XG4gIGVsZW0uaW5uZXJIVE1MID0gZWxlbS5vcmlnSFRNTDtcbiAgT2JqZWN0LmtleXMoZGVmX21hcCkuZm9yRWFjaCgoZGVmKSA9PlxuICAgIGludGVycG9sYXRlKGVsZW0sIFwiJHtcIiArIGRlZiArIFwifVwiLCBkZWZfbWFwW2RlZl0sIGxhbmd1YWdlKVxuICApO1xufVxuIn0seyJjZWxsTmFtZSI6ImludGVycG9sYXRlLTE2IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICBjb25zdCB7IGludGVycG9sYXRlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBibG9ja19pZCA9IFwiMTZcIjtcbiAgY29uc3QgbGFuZ3VhZ2UgPSBcIm5vbmVcIjtcbiAgY29uc3QgZGVmX21hcCA9IHtcbn07XG4gIGNvbnN0IGVsZW0gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgaW50ZXJwb2xhdGUtJHtibG9ja19pZH1gKTtcblxuICAvLyBTdG9yZSBvcmlnaW5hbCB0ZW1wbGF0ZWQgSFRNTCBmb3IgcmVmZXJlbmNlIGluIGZ1dHVyZSByZWFjdGl2ZSB1cGRhdGVzXG4gIGlmICghZWxlbS5vcmlnSFRNTCkgZWxlbS5vcmlnSFRNTCA9IGVsZW0uaW5uZXJIVE1MO1xuXG4gIC8vIEludGVycG9sYXRlIHJlYWN0aXZlIE9KUyB2YXJpYWJsZXMgaW50byBlc3RhYmxpc2hlZCBIVE1MIGVsZW1lbnRcbiAgZWxlbS5pbm5lckhUTUwgPSBlbGVtLm9yaWdIVE1MO1xuICBPYmplY3Qua2V5cyhkZWZfbWFwKS5mb3JFYWNoKChkZWYpID0+XG4gICAgaW50ZXJwb2xhdGUoZWxlbSwgXCIke1wiICsgZGVmICsgXCJ9XCIsIGRlZl9tYXBbZGVmXSwgbGFuZ3VhZ2UpXG4gICk7XG59XG4ifSx7ImNlbGxOYW1lIjoiaW50ZXJwb2xhdGUtMTciLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIGNvbnN0IHsgaW50ZXJwb2xhdGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IGJsb2NrX2lkID0gXCIxN1wiO1xuICBjb25zdCBsYW5ndWFnZSA9IFwiclwiO1xuICBjb25zdCBkZWZfbWFwID0ge1xufTtcbiAgY29uc3QgZWxlbSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBpbnRlcnBvbGF0ZS0ke2Jsb2NrX2lkfWApO1xuXG4gIC8vIFN0b3JlIG9yaWdpbmFsIHRlbXBsYXRlZCBIVE1MIGZvciByZWZlcmVuY2UgaW4gZnV0dXJlIHJlYWN0aXZlIHVwZGF0ZXNcbiAgaWYgKCFlbGVtLm9yaWdIVE1MKSBlbGVtLm9yaWdIVE1MID0gZWxlbS5pbm5lckhUTUw7XG5cbiAgLy8gSW50ZXJwb2xhdGUgcmVhY3RpdmUgT0pTIHZhcmlhYmxlcyBpbnRvIGVzdGFibGlzaGVkIEhUTUwgZWxlbWVudFxuICBlbGVtLmlubmVySFRNTCA9IGVsZW0ub3JpZ0hUTUw7XG4gIE9iamVjdC5rZXlzKGRlZl9tYXApLmZvckVhY2goKGRlZikgPT5cbiAgICBpbnRlcnBvbGF0ZShlbGVtLCBcIiR7XCIgKyBkZWYgKyBcIn1cIiwgZGVmX21hcFtkZWZdLCBsYW5ndWFnZSlcbiAgKTtcbn1cbiJ9LHsiY2VsbE5hbWUiOiJpbnRlcnBvbGF0ZS0yMSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgY29uc3QgeyBpbnRlcnBvbGF0ZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgYmxvY2tfaWQgPSBcIjIxXCI7XG4gIGNvbnN0IGxhbmd1YWdlID0gXCJub25lXCI7XG4gIGNvbnN0IGRlZl9tYXAgPSB7XG59O1xuICBjb25zdCBlbGVtID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGludGVycG9sYXRlLSR7YmxvY2tfaWR9YCk7XG5cbiAgLy8gU3RvcmUgb3JpZ2luYWwgdGVtcGxhdGVkIEhUTUwgZm9yIHJlZmVyZW5jZSBpbiBmdXR1cmUgcmVhY3RpdmUgdXBkYXRlc1xuICBpZiAoIWVsZW0ub3JpZ0hUTUwpIGVsZW0ub3JpZ0hUTUwgPSBlbGVtLmlubmVySFRNTDtcblxuICAvLyBJbnRlcnBvbGF0ZSByZWFjdGl2ZSBPSlMgdmFyaWFibGVzIGludG8gZXN0YWJsaXNoZWQgSFRNTCBlbGVtZW50XG4gIGVsZW0uaW5uZXJIVE1MID0gZWxlbS5vcmlnSFRNTDtcbiAgT2JqZWN0LmtleXMoZGVmX21hcCkuZm9yRWFjaCgoZGVmKSA9PlxuICAgIGludGVycG9sYXRlKGVsZW0sIFwiJHtcIiArIGRlZiArIFwifVwiLCBkZWZfbWFwW2RlZl0sIGxhbmd1YWdlKVxuICApO1xufVxuIn0seyJjZWxsTmFtZSI6ImludGVycG9sYXRlLTIyIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICBjb25zdCB7IGludGVycG9sYXRlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBibG9ja19pZCA9IFwiMjJcIjtcbiAgY29uc3QgbGFuZ3VhZ2UgPSBcInJcIjtcbiAgY29uc3QgZGVmX21hcCA9IHtcbn07XG4gIGNvbnN0IGVsZW0gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgaW50ZXJwb2xhdGUtJHtibG9ja19pZH1gKTtcblxuICAvLyBTdG9yZSBvcmlnaW5hbCB0ZW1wbGF0ZWQgSFRNTCBmb3IgcmVmZXJlbmNlIGluIGZ1dHVyZSByZWFjdGl2ZSB1cGRhdGVzXG4gIGlmICghZWxlbS5vcmlnSFRNTCkgZWxlbS5vcmlnSFRNTCA9IGVsZW0uaW5uZXJIVE1MO1xuXG4gIC8vIEludGVycG9sYXRlIHJlYWN0aXZlIE9KUyB2YXJpYWJsZXMgaW50byBlc3RhYmxpc2hlZCBIVE1MIGVsZW1lbnRcbiAgZWxlbS5pbm5lckhUTUwgPSBlbGVtLm9yaWdIVE1MO1xuICBPYmplY3Qua2V5cyhkZWZfbWFwKS5mb3JFYWNoKChkZWYpID0+XG4gICAgaW50ZXJwb2xhdGUoZWxlbSwgXCIke1wiICsgZGVmICsgXCJ9XCIsIGRlZl9tYXBbZGVmXSwgbGFuZ3VhZ2UpXG4gICk7XG59XG4ifSx7ImNlbGxOYW1lIjoiaW50ZXJwb2xhdGUtMjYiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIGNvbnN0IHsgaW50ZXJwb2xhdGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IGJsb2NrX2lkID0gXCIyNlwiO1xuICBjb25zdCBsYW5ndWFnZSA9IFwibm9uZVwiO1xuICBjb25zdCBkZWZfbWFwID0ge1xufTtcbiAgY29uc3QgZWxlbSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBpbnRlcnBvbGF0ZS0ke2Jsb2NrX2lkfWApO1xuXG4gIC8vIFN0b3JlIG9yaWdpbmFsIHRlbXBsYXRlZCBIVE1MIGZvciByZWZlcmVuY2UgaW4gZnV0dXJlIHJlYWN0aXZlIHVwZGF0ZXNcbiAgaWYgKCFlbGVtLm9yaWdIVE1MKSBlbGVtLm9yaWdIVE1MID0gZWxlbS5pbm5lckhUTUw7XG5cbiAgLy8gSW50ZXJwb2xhdGUgcmVhY3RpdmUgT0pTIHZhcmlhYmxlcyBpbnRvIGVzdGFibGlzaGVkIEhUTUwgZWxlbWVudFxuICBlbGVtLmlubmVySFRNTCA9IGVsZW0ub3JpZ0hUTUw7XG4gIE9iamVjdC5rZXlzKGRlZl9tYXApLmZvckVhY2goKGRlZikgPT5cbiAgICBpbnRlcnBvbGF0ZShlbGVtLCBcIiR7XCIgKyBkZWYgKyBcIn1cIiwgZGVmX21hcFtkZWZdLCBsYW5ndWFnZSlcbiAgKTtcbn1cbiJ9LHsiY2VsbE5hbWUiOiJpbnRlcnBvbGF0ZS0yNyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgY29uc3QgeyBpbnRlcnBvbGF0ZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgYmxvY2tfaWQgPSBcIjI3XCI7XG4gIGNvbnN0IGxhbmd1YWdlID0gXCJyXCI7XG4gIGNvbnN0IGRlZl9tYXAgPSB7XG59O1xuICBjb25zdCBlbGVtID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGludGVycG9sYXRlLSR7YmxvY2tfaWR9YCk7XG5cbiAgLy8gU3RvcmUgb3JpZ2luYWwgdGVtcGxhdGVkIEhUTUwgZm9yIHJlZmVyZW5jZSBpbiBmdXR1cmUgcmVhY3RpdmUgdXBkYXRlc1xuICBpZiAoIWVsZW0ub3JpZ0hUTUwpIGVsZW0ub3JpZ0hUTUwgPSBlbGVtLmlubmVySFRNTDtcblxuICAvLyBJbnRlcnBvbGF0ZSByZWFjdGl2ZSBPSlMgdmFyaWFibGVzIGludG8gZXN0YWJsaXNoZWQgSFRNTCBlbGVtZW50XG4gIGVsZW0uaW5uZXJIVE1MID0gZWxlbS5vcmlnSFRNTDtcbiAgT2JqZWN0LmtleXMoZGVmX21hcCkuZm9yRWFjaCgoZGVmKSA9PlxuICAgIGludGVycG9sYXRlKGVsZW0sIFwiJHtcIiArIGRlZiArIFwifVwiLCBkZWZfbWFwW2RlZl0sIGxhbmd1YWdlKVxuICApO1xufVxuIn0seyJjZWxsTmFtZSI6ImludGVycG9sYXRlLTMxIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICBjb25zdCB7IGludGVycG9sYXRlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBibG9ja19pZCA9IFwiMzFcIjtcbiAgY29uc3QgbGFuZ3VhZ2UgPSBcIm5vbmVcIjtcbiAgY29uc3QgZGVmX21hcCA9IHtcbn07XG4gIGNvbnN0IGVsZW0gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgaW50ZXJwb2xhdGUtJHtibG9ja19pZH1gKTtcblxuICAvLyBTdG9yZSBvcmlnaW5hbCB0ZW1wbGF0ZWQgSFRNTCBmb3IgcmVmZXJlbmNlIGluIGZ1dHVyZSByZWFjdGl2ZSB1cGRhdGVzXG4gIGlmICghZWxlbS5vcmlnSFRNTCkgZWxlbS5vcmlnSFRNTCA9IGVsZW0uaW5uZXJIVE1MO1xuXG4gIC8vIEludGVycG9sYXRlIHJlYWN0aXZlIE9KUyB2YXJpYWJsZXMgaW50byBlc3RhYmxpc2hlZCBIVE1MIGVsZW1lbnRcbiAgZWxlbS5pbm5lckhUTUwgPSBlbGVtLm9yaWdIVE1MO1xuICBPYmplY3Qua2V5cyhkZWZfbWFwKS5mb3JFYWNoKChkZWYpID0+XG4gICAgaW50ZXJwb2xhdGUoZWxlbSwgXCIke1wiICsgZGVmICsgXCJ9XCIsIGRlZl9tYXBbZGVmXSwgbGFuZ3VhZ2UpXG4gICk7XG59XG4ifSx7ImNlbGxOYW1lIjoiaW50ZXJwb2xhdGUtMzIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIGNvbnN0IHsgaW50ZXJwb2xhdGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IGJsb2NrX2lkID0gXCIzMlwiO1xuICBjb25zdCBsYW5ndWFnZSA9IFwiclwiO1xuICBjb25zdCBkZWZfbWFwID0ge1xufTtcbiAgY29uc3QgZWxlbSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBpbnRlcnBvbGF0ZS0ke2Jsb2NrX2lkfWApO1xuXG4gIC8vIFN0b3JlIG9yaWdpbmFsIHRlbXBsYXRlZCBIVE1MIGZvciByZWZlcmVuY2UgaW4gZnV0dXJlIHJlYWN0aXZlIHVwZGF0ZXNcbiAgaWYgKCFlbGVtLm9yaWdIVE1MKSBlbGVtLm9yaWdIVE1MID0gZWxlbS5pbm5lckhUTUw7XG5cbiAgLy8gSW50ZXJwb2xhdGUgcmVhY3RpdmUgT0pTIHZhcmlhYmxlcyBpbnRvIGVzdGFibGlzaGVkIEhUTUwgZWxlbWVudFxuICBlbGVtLmlubmVySFRNTCA9IGVsZW0ub3JpZ0hUTUw7XG4gIE9iamVjdC5rZXlzKGRlZl9tYXApLmZvckVhY2goKGRlZikgPT5cbiAgICBpbnRlcnBvbGF0ZShlbGVtLCBcIiR7XCIgKyBkZWYgKyBcIn1cIiwgZGVmX21hcFtkZWZdLCBsYW5ndWFnZSlcbiAgKTtcbn1cbiJ9LHsiY2VsbE5hbWUiOiJpbnRlcnBvbGF0ZS0zOSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgY29uc3QgeyBpbnRlcnBvbGF0ZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgYmxvY2tfaWQgPSBcIjM5XCI7XG4gIGNvbnN0IGxhbmd1YWdlID0gXCJub25lXCI7XG4gIGNvbnN0IGRlZl9tYXAgPSB7XG59O1xuICBjb25zdCBlbGVtID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGludGVycG9sYXRlLSR7YmxvY2tfaWR9YCk7XG5cbiAgLy8gU3RvcmUgb3JpZ2luYWwgdGVtcGxhdGVkIEhUTUwgZm9yIHJlZmVyZW5jZSBpbiBmdXR1cmUgcmVhY3RpdmUgdXBkYXRlc1xuICBpZiAoIWVsZW0ub3JpZ0hUTUwpIGVsZW0ub3JpZ0hUTUwgPSBlbGVtLmlubmVySFRNTDtcblxuICAvLyBJbnRlcnBvbGF0ZSByZWFjdGl2ZSBPSlMgdmFyaWFibGVzIGludG8gZXN0YWJsaXNoZWQgSFRNTCBlbGVtZW50XG4gIGVsZW0uaW5uZXJIVE1MID0gZWxlbS5vcmlnSFRNTDtcbiAgT2JqZWN0LmtleXMoZGVmX21hcCkuZm9yRWFjaCgoZGVmKSA9PlxuICAgIGludGVycG9sYXRlKGVsZW0sIFwiJHtcIiArIGRlZiArIFwifVwiLCBkZWZfbWFwW2RlZl0sIGxhbmd1YWdlKVxuICApO1xufVxuIn0seyJjZWxsTmFtZSI6ImludGVycG9sYXRlLTQwIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICBjb25zdCB7IGludGVycG9sYXRlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBibG9ja19pZCA9IFwiNDBcIjtcbiAgY29uc3QgbGFuZ3VhZ2UgPSBcInJcIjtcbiAgY29uc3QgZGVmX21hcCA9IHtcbn07XG4gIGNvbnN0IGVsZW0gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgaW50ZXJwb2xhdGUtJHtibG9ja19pZH1gKTtcblxuICAvLyBTdG9yZSBvcmlnaW5hbCB0ZW1wbGF0ZWQgSFRNTCBmb3IgcmVmZXJlbmNlIGluIGZ1dHVyZSByZWFjdGl2ZSB1cGRhdGVzXG4gIGlmICghZWxlbS5vcmlnSFRNTCkgZWxlbS5vcmlnSFRNTCA9IGVsZW0uaW5uZXJIVE1MO1xuXG4gIC8vIEludGVycG9sYXRlIHJlYWN0aXZlIE9KUyB2YXJpYWJsZXMgaW50byBlc3RhYmxpc2hlZCBIVE1MIGVsZW1lbnRcbiAgZWxlbS5pbm5lckhUTUwgPSBlbGVtLm9yaWdIVE1MO1xuICBPYmplY3Qua2V5cyhkZWZfbWFwKS5mb3JFYWNoKChkZWYpID0+XG4gICAgaW50ZXJwb2xhdGUoZWxlbSwgXCIke1wiICsgZGVmICsgXCJ9XCIsIGRlZl9tYXBbZGVmXSwgbGFuZ3VhZ2UpXG4gICk7XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici1wcmVsdWRlIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoid2ViUk9qcyA9IHtcbiAgY29uc3QgeyBXZWJSLCBDaGFubmVsVHlwZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZS5XZWJSO1xuICBjb25zdCB7XG4gICAgV2ViUkV2YWx1YXRvcixcbiAgICBXZWJSRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoXG4gIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHN0YXR1c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1zdGF0dXNcIik7XG4gIGNvbnN0IGluZGljYXRvckNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGluZGljYXRvckNvbnRhaW5lci5jbGFzc0xpc3QucmVtb3ZlKFwiZC1ub25lXCIpO1xuXG4gIGxldCBzdGF0dXNUZXh0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKVxuICBzdGF0dXNUZXh0LmNsYXNzTGlzdCA9IFwiZXhlcmNpc2UtbG9hZGluZy1kZXRhaWxzXCI7XG4gIHN0YXR1c1RleHQgPSBzdGF0dXNDb250YWluZXIuYXBwZW5kQ2hpbGQoc3RhdHVzVGV4dCk7XG4gIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5pdGlhbGlzZWA7XG5cbiAgLy8gSG9pc3QgaW5kaWNhdG9yIG91dCBmcm9tIGZpbmFsIHNsaWRlIHdoZW4gcnVubmluZyB1bmRlciByZXZlYWxcbiAgY29uc3QgcmV2ZWFsU3RhdHVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgLmV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpZiAocmV2ZWFsU3RhdHVzKSB7XG4gICAgcmV2ZWFsU3RhdHVzLnJlbW92ZSgpO1xuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsID4gLnNsaWRlc1wiKS5hcHBlbmRDaGlsZChyZXZlYWxTdGF0dXMpO1xuICB9XG5cbiAgLy8gTWFrZSBhbnkgcmV2ZWFsIHNsaWRlcyB3aXRoIGxpdmUgY2VsbHMgc2Nyb2xsYWJsZVxuICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnJldmVhbCAuZXhlcmNpc2UtY2VsbFwiKS5mb3JFYWNoKChlbCkgPT4ge1xuICAgIGVsLmNsb3Nlc3QoJ3NlY3Rpb24uc2xpZGUnKS5jbGFzc0xpc3QuYWRkKFwic2Nyb2xsYWJsZVwiKTtcbiAgfSlcblxuICAvLyB3ZWJSIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIC8vIFVzZSBQb3N0TWVzc2FnZSBjaGFubmVsIGZvciBhc3luYyBjb21tdW5pY2F0aW9uXG4gIC8vIFdlIGRvIG5vdCBleHBlY3QgdG8gdGFrZSBuZXN0ZWQgcHJvbXB0IGlucHV0IGluIFF1YXJ0byBMaXZlIGNlbGxzXG4gIGRhdGEub3B0aW9ucy5jaGFubmVsVHlwZSA9IENoYW5uZWxUeXBlLlBvc3RNZXNzYWdlO1xuXG4gIC8vIEluaXRpYWxpc2Ugd2ViUiBhbmQgc2V0dXAgZm9yIFIgY29kZSBldmFsdWF0aW9uXG4gIGxldCB3ZWJSUHJvbWlzZSA9IChhc3luYyAod2ViUikgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgd2ViUmA7XG4gICAgYXdhaXQgd2ViUi5pbml0KCk7XG5cbiAgICAvLyBJbnN0YWxsIHByb3ZpZGVkIGxpc3Qgb2YgcGFja2FnZXNcbiAgICAvLyBFbnN1cmUgd2ViUiBkZWZhdWx0IHJlcG8gaXMgaW5jbHVkZWRcbiAgICBkYXRhLnBhY2thZ2VzLnJlcG9zLnB1c2goXCJodHRwczovL3JlcG8uci13YXNtLm9yZ1wiKVxuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIHdlYlIuZXZhbFJWb2lkKGBcbiAgICAgICAgd2Vicjo6aW5zdGFsbChwa2csIHJlcG9zID0gcmVwb3MpXG4gICAgICAgIGxpYnJhcnkocGtnLCBjaGFyYWN0ZXIub25seSA9IFRSVUUpXG4gICAgICBgLCB7IGVudjoge1xuICAgICAgICBwa2c6IHBrZyxcbiAgICAgICAgcmVwb3M6IGRhdGEucGFja2FnZXMucmVwb3MsXG4gICAgICB9fSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgY29uc3QgYW5hbHlzaXMgPSBhd2FpdCB3ZWJSLkZTLmFuYWx5emVQYXRoKHBhdGgpO1xuICAgICAgICBpZiAoIWFuYWx5c2lzLmV4aXN0cykge1xuICAgICAgICAgIHRyeSB7XG4gICAgICAgICAgICBhd2FpdCB3ZWJSLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvcjogXCIke2UubWVzc2FnZX1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHJldHVybiBhd2FpdCB3ZWJSLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluc3RhbGxpbmcgd2ViUiBzaGltc2A7XG4gICAgYXdhaXQgd2ViUi5ldmFsUlZvaWQoYHdlYnI6OnNoaW1faW5zdGFsbCgpYCk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFdlYlIgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUih3ZWJSLCBkYXRhKTtcblxuICAgIHN0YXR1c1RleHQucmVtb3ZlKCk7XG4gICAgaWYgKHN0YXR1c0NvbnRhaW5lci5jaGlsZHJlbi5sZW5ndGggPT0gMCkge1xuICAgICAgc3RhdHVzQ29udGFpbmVyLnBhcmVudE5vZGUucmVtb3ZlKCk7XG4gICAgfVxuICAgIHJldHVybiB3ZWJSO1xuICB9KShuZXcgV2ViUihkYXRhLm9wdGlvbnMpKTtcblxuICAvLyBLZWVwIHRyYWNrIG9mIGluaXRpYWwgT0pTIGJsb2NrIHJlbmRlclxuICBjb25zdCByZW5kZXJlZE9qcyA9IHt9O1xuXG4gIGNvbnN0IHByb2Nlc3MgPSBhc3luYyAoY29udGV4dCwgaW5wdXRzKSA9PiB7XG4gICAgY29uc3Qgd2ViUiA9IGF3YWl0IHdlYlJQcm9taXNlO1xuICAgIGNvbnN0IGV2YWx1YXRvciA9IG5ldyBXZWJSRXZhbHVhdG9yKHdlYlIsIGNvbnRleHQpXG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHJvY2VzcyxcbiAgICB3ZWJSUHJvbWlzZSxcbiAgICByZW5kZXJlZE9qcyxcbiAgfTtcbn1cbiJ9XX0=
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+WyJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vY3N1bWItc3RhdHMtZHMvc3RhdC0yNTAtbGFiLXByaW1lcnMvcmVmcy9oZWFkcy9tYWluL2xhYi03LXByaW1lci9udnNzLWJpcnRocy0yMDIyLmNzdiJd
+</script>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../lab-7-primer";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/csumb-stat-ds\.github\.io\/stat-250-lab-primers");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2025, Judith Canner</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/csumb-stat-ds/stat-250-lab-primers/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
