@@ -51,6 +51,12 @@ library(mosaic)
 library(tidyverse)
 bias <- read_csv("prof-ratings.csv", 
                  show_col_types = FALSE) #reads in the csv file 
+library(ggplot2)
+theme_set(theme_light())
+options(ggplot2.continuous.color = scale_color_viridis_c, 
+        ggplot2.continuous.fill = scale_fill_viridis_c,
+        ggplot2.discrete.color = scale_color_viridis_d,
+        ggplot2.discrete.fill = scale_fill_viridis_d)
 ```
 
 
@@ -259,40 +265,13 @@ Here are the necessary summary statistics for the Female professor video Ratings
 (mean_f <- mean(~Rating, data = female))  #calculates sample mean for female ratings
 (var_f <- var(~Rating, data = female))   #calculates sample variance for female ratings
 (n_f <- length(female$Rating))           #calculates sample size for female ratings
-```
 
-
-
-Now repeat the process for the Male professor video Ratings.
-
-```{webr}
-#| label: summary-stats-male
-#| exercise: ex_2
+#note repeat the above process for the male ratings
 (mean_m <- _________(~________, data = ________))
 (var_m <- _________(~________, data = ________))
 (n_m <- _______(_______$_____))
 ```
 
-
-::: {.solution exercise="ex_2"}
-
-#### Solution
-
-```{webr}
-#| exercise: ex_2
-#| solution: true
-(mean_m <- mean(~Rating, data = male))
-(var_m <- var(~Rating, data = male))
-(n_m <- length(male$Rating))
-```
-
-:::
-
-```{webr}
-#| exercise: ex_2
-#| check: true
-gradethis::grade_this_code()
-```
 
 
 ### Calculating a t-Test Statistic and p-Value
@@ -305,30 +284,12 @@ Recall that we are looking at Female Ratings - Male Ratings.  Fill in the blanks
 
 ```{webr}
 #| label: test-stat
-#| exercise: ex_3
 (se <- sqrt(var_f/n_f + ____/____))  #calculate the standard error
 (t <- (mean_f - ______)/_____)  #calculate the test statistic
 ```
 
+You should get $se = 0.3185897$ and  $t = -3.508107$.  
 
-::: {.solution exercise="ex_3"}
-
-#### Solution
-
-```{webr}
-#| exercise: ex_3
-#| solution: true
-(se <- sqrt(var_f/n_f + var_m/n_m))
-(t <- (mean_f - mean_m)/se)
-```
-
-:::
-
-```{webr}
-#| exercise: ex_3
-#| check: true
-gradethis::grade_this_code()
-```
 
 
 Now, calculate the p-value using the `pt()` function. Consider the direction of the alternative hypothesis.  
@@ -336,7 +297,7 @@ Now, calculate the p-value using the `pt()` function. Consider the direction of 
 ```{webr}
 #| label: p-value
 #| exercise: ex_4
-pt(___________, df = n_f - ___)  #be sure to adjust to 2*pt() , 2*(1-pt()), or 1-pt() if needed
+pt(___________, df = ___ - ___)  #be sure to adjust to 2*pt() , 2*(1-pt()), or 1-pt() if needed
 ```
 
 

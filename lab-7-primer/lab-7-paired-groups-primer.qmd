@@ -50,6 +50,12 @@ library(ggformula)
 library(mosaic)
 library(tidyverse)
 parents <- read_csv("nvss-births-2022.csv", show_col_types = FALSE) #reads in the csv file 
+library(ggplot2)
+theme_set(theme_light())
+options(ggplot2.continuous.color = scale_color_viridis_c, 
+        ggplot2.continuous.fill = scale_fill_viridis_c,
+        ggplot2.discrete.color = scale_color_viridis_d,
+        ggplot2.discrete.fill = scale_fill_viridis_d)
 ```
 
 
@@ -157,7 +163,7 @@ check_question(answer = "True mean difference",
 check_question(answer = c("\u03BC\u2093\u1D67\u208B\u2093\u2093 = true mean of the differences of the ages in years of fathers and mothers"), 
                options = c("\u03BC\u2093\u2093 = true mean age in years of mothers", 
                            "\u03BC\u2093\u1D67 = true mean age in years of fathers",
-                           "\u03BC\u2093\u2093\u208B\u2093\u1D67 = true mean of the differences of the ages in years of fathers and mothers",
+                           "\u03BC\u2093\u1D67\u208B\u2093\u2093 = true mean of the differences of the ages in years of fathers and mothers",
                            "x\u0304\u2093\u2093
  = mean age in years of mothers in our sample",
                            "x\u0304\u2093\u1D67
@@ -264,34 +270,25 @@ We will practice code for both a "by-hand" calculation and using `t.test()` (whi
 
 ```{webr}
 #| label: summary-stats-diff
-#| exercise: ex_2
 (mean_diff <- mean(~(FatherAge - MotherAge), data = parents))
 (sd_diff <- _________(~(_____ - ____), data = ________))
 (n_diff <- _______(_______$_____))
 (effect_diff <- mean_diff/sd_diff)
 ```
 
+You should get the following values:  
 
-::: {.solution exercise="ex_2"}
-
-#### Solution
-
-```{webr}
-#| exercise: ex_2
-#| solution: true
-(mean_diff <- mean(~(FatherAge - MotherAge), data = parents))
-(sd_diff <- sd(~(FatherAge - MotherAge), data = parents))
-(n_diff <- length(parents$FatherAge))
-(effect_diff <- mean_diff/sd_diff)
+```{r}
+#| label: results
+#| echo: false
+parents |> 
+  summarize(mean_diff = mean(FatherAge - MotherAge),
+            sd_diff = sd(FatherAge - MotherAge),
+            n_diff = length(FatherAge),
+            effect_diff = mean_diff/sd_diff) |> 
+  gt::gt()
 ```
 
-:::
-
-```{webr}
-#| exercise: ex_2
-#| check: true
-gradethis::grade_this_code()
-```
 
 
 ### Calculating a t-Test Statistic and p-Value for the Mean of the Differences
@@ -317,7 +314,7 @@ Fill in the blanks below using the saved object names (e.g. `mean_diff`, `sd_dif
 #| exercise: ex_3
 #| solution: true
 (se <- sd_diff/sqrt(n_diff))  #calculate the standard error
-(t <- (mean_diff - 0)/se)  #calculate the test statistic(t <- (mean_f - mean_m)/se)
+(t <- (mean_diff - 0)/se)  #calculate the test statistic
 ```
 
 :::
