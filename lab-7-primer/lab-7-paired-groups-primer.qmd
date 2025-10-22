@@ -272,7 +272,7 @@ We will practice code for both a "by-hand" calculation and using `t.test()` (whi
 #| label: summary-stats-diff
 (mean_diff <- mean(~(FatherAge - MotherAge), data = parents))
 (sd_diff <- _________(~(_____ - ____), data = ________))
-(n_diff <- _______(_______$_____))
+(n_diff <- length(_______$_____))
 (effect_diff <- mean_diff/sd_diff)
 ```
 
@@ -300,30 +300,29 @@ Fill in the blanks below using the saved object names (e.g. `mean_diff`, `sd_dif
 
 ```{webr}
 #| label: test-stat
-#| exercise: ex_3
 (se <- sd_diff/sqrt(____))  #calculate the standard error
 (t <- (mean_diff - ______)/_____)  #calculate the test statistic
 ```
 
 
-::: {.solution exercise="ex_3"}
+<!-- ::: {.solution exercise="ex_3"} -->
 
-#### Solution
+<!-- #### Solution -->
 
-```{webr}
-#| exercise: ex_3
-#| solution: true
-(se <- sd_diff/sqrt(n_diff))  #calculate the standard error
-(t <- (mean_diff - 0)/se)  #calculate the test statistic
-```
+<!-- ```{webr} -->
+<!-- #| exercise: ex_3 -->
+<!-- #| solution: true -->
+<!-- (se <- sd_diff/sqrt(n_diff))  #calculate the standard error -->
+<!-- (t <- (mean_diff - 0)/se)  #calculate the test statistic -->
+<!-- ``` -->
 
-:::
+<!-- ::: -->
 
-```{webr}
-#| exercise: ex_3
-#| check: true
-gradethis::grade_this_code()
-```
+<!-- ```{webr} -->
+<!-- #| exercise: ex_3 -->
+<!-- #| check: true -->
+<!-- gradethis::grade_this_code() -->
+<!-- ``` -->
 
 
 Now, calculate the p-value using the `pt()` function. Consider the direction of the alternative hypothesis.  
@@ -354,7 +353,7 @@ gradethis::grade_this_code()
 ```
 
 
-**Test statistic:**
+**Test statistic:** Round to 4 decimal places.  
 ```{r echo=FALSE}
 check_question(answer = 2.5698, right = "correct", wrong = "not correct")
 ```
@@ -364,7 +363,7 @@ check_question(answer = 2.5698, right = "correct", wrong = "not correct")
 check_question(answer = 49, right = "correct", wrong = "not correct")
 ```
 
-**p-value:**
+**p-value:** Round to 6 decimal places.  
 ```{r echo=FALSE}
 check_question(answer = 0.006634, right = "correct", wrong = "not correct")
 ```
