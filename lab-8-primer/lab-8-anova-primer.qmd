@@ -1,0 +1,410 @@
+---
+title: "Lab 8: ANOVA"
+format: 
+  live-html:
+    webr:
+      packages: 
+        - ggformula
+        - mosaic
+        - tidyverse
+      repos:
+        - https://projectmosaic.r-universe.dev
+      resources: 
+        - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-8-primer/brain-size.csv
+      cell-options:
+        warning: true
+        completion: false
+execute: 
+  warning: false 
+  message: false
+  echo: true
+code-copy: true
+code-overflow: wrap
+toc: true
+number-sections: true
+number-depth: 4
+css: ../styles.css
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+
+```{webr}
+#| label: theme
+#| include: false
+#| edit: false
+library(ggplot2)
+theme_set(theme_light())
+options(ggplot2.continuous.color = scale_color_viridis_c, 
+        ggplot2.continuous.fill = scale_fill_viridis_c,
+        ggplot2.discrete.color = scale_color_viridis_d,
+        ggplot2.discrete.fill = scale_fill_viridis_d)
+```
+
+
+```{r}
+#| label: setup-checkdown
+#| include: false
+library(checkdown)
+library(ggformula)
+library(mosaic)
+library(tidyverse)
+library(ggplot2)
+theme_set(theme_light())
+options(ggplot2.continuous.color = scale_color_viridis_c, 
+        ggplot2.continuous.fill = scale_fill_viridis_c,
+        ggplot2.discrete.color = scale_color_viridis_d,
+        ggplot2.discrete.fill = scale_fill_viridis_d)
+```
+
+
+::: {.callout-note collapse="true"}
+## Digital Accessibility
+
+Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
+:::
+
+
+## Getting Started
+
+Be sure to load the packages `ggformula` and `mosaic`, using the `library()` function. Remember, you need to do this with each new Quarto document or R Session. Add the package names in each of the blanks below to load in the indicated packages. 
+
+```{webr}
+#| label: setup-webr
+#| exercise: ex_1
+#| caption: Loading Packages
+library(_________) #for graphs
+library(_________) #for statistics
+library(tidyverse) #for data management
+```
+
+
+::: {.solution exercise="ex_1"}
+
+#### Solution
+
+`library()` loads in packages. You need to supply the package name you need to load inside the parentheses.
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+library(ggformula) #for graphs
+library(mosaic) #for statistics
+library(tidyverse) #for data management
+```
+
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+
+## Exercise and Brain Size  
+
+In 2020, the Center for Disease Control (CDC) estimated that as many as 5.8 million Americans were living with Alzheimer’s. While there are several diseases that can cause dementia, Alzheimer’s disease is the most common type of dementia. There are many risk factors that contribute to dementia that can be controlled, like diet, exercise, smoking status & alcohol consumption. Yet other risk factors like genetics and aging can’t be controlled. Brain size typically starts to shrink in your 30s and 40s with an increase in shrinkage rate at age 60. Therefore, any intervention that can protect against brain shrinkage could help to protect the elderly against dementia and Alzheimer’s disease. Researchers in China recently investigated whether different kinds of exercise/activity might help to prevent brain shrinkage or perhaps even lead to an increase in brain volume (Mortimer et al., 2012).   
+
+The researchers randomly assigned elderly adult volunteers into four activity groups: tai chi, walking, social interaction, and no intervention. Except for the group with no intervention, each group met for about an hour three times a week for 40 weeks to participate in their assigned activity. Each participant had their brains imaged using magnetic resonance imaging (MRI) to determine brain volume before the study began and again at its end. The researchers measured the percentage change in brain volume in each participant’s brain during that time. If a person’s brain volume increased, then this percentage change was positive; if brain volume decreased, then this percentage change was negative.
+
+
+```{webr}
+#| label: load-data
+brain <- read_csv("brain-size.csv", show_col_type = FALSE) #reads in the csv file 
+names(brain)
+```
+
+
+### Identify Variables and Types  
+For each variable, identify whether it is the explanatory or response variable in our analysis, and the type of variable.
+
+**Activity:**
+```{r}
+#| label: explanatory
+#| echo: false
+check_question(answer = c("Explanatory","Categorical - Nominal"), 
+               options = c("Explanatory", "Response", 
+                           "Categorical - Ordinal", 
+                           "Categorical - Nominal",
+                           "Numeric - Discrete",
+                           "Numeric - Continuous"), 
+               type = "checkbox")
+```
+<br>
+
+**Change in brain volume (%)**
+```{r}
+#| label: response
+#| echo: false
+check_question(ac("Response","Numeric - Continuous"),                
+               options = c("Explanatory", "Response", 
+                           "Categorical - Ordinal", 
+                           "Categorical - Nominal",
+                           "Numeric - Discrete",
+                           "Numeric - Continuous"), 
+               type = "checkbox")
+```
+<br>
+
+
+### Identify the *study type* of this study. 
+Be sure you are able to provide a full justification.  
+
+```{r echo=FALSE}
+#| label: study-type
+#| echo: false
+check_question(answer = "Experiment", 
+               options = c("Experiment", "Observational"), 
+               type = "radio")
+```
+<br>
+
+
+### Exploratory Data Analysis
+Conduct Exploratory Data Analysis (EDA). Modify the code below to calculate any summary statistics and produce a graphic. 
+
+```{webr}
+#| label: summary-stats
+#| exercise: ex_2
+___stats___(________ ~ ________), data = ________)
+
+```
+
+
+::: {.solution exercise="ex_2"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+df_stats(brain_change ~ treatment, data = brain)
+```
+
+:::
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+
+
+
+```{webr}
+#| label: boxplot
+#| exercise: ex_3
+___graphic___(________ ~ ________, data = ________, 
+              ylab="____________________",
+              xlab="____________________") 
+```
+
+::: {.solution exercise="ex_3"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_3
+#| solution: true
+gf_boxplot(brain_change ~ treatment, data = brain,
+           ylab = "Percentage Change in Brain Volume",
+           xlab = "Activity Group for 40 Weeks")
+```
+
+:::
+
+```{webr}
+#| exercise: ex_3
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+
+
+### Identify the hypotheses for this study. 
+Be sure you are able to complete them in context.  
+
+```{r}
+#| label: 
+#| echo: false
+check_question(answer = c("All true means are equal", 
+                          "At least one true mean is different"), 
+               options = c("The difference of true means is 0",
+                           "All true means are equal", 
+                           "All true means are equal to 0",
+                           "All true means are different",
+                           "At least one true mean is different",
+                           "More than one true mean is different"),
+               type = "checkbox")
+```
+<br>
+
+
+### Modify the code below to create the ANOVA model
+
+```{webr}
+brain_aov <- aov(________ ~ ________, data = ________)
+```
+
+::: {.callout-note collapse="true"}
+## Solution
+```{r}
+#| label: aov-solution
+#| eval: false
+brain_aov <- aov(brain_change ~ factor(treatment), data = brain)
+```
+
+:::
+
+
+### Evaluate Conditions
+Conduct an appropriate testing of the conditions to trust an ANOVA analysis.  
+
+#### Normality of Residuals
+```{webr}
+#| label: qqplot
+#| exercise: ex_4
+plot(brain_aov, ___)
+```
+
+::: {.solution exercise="ex_4"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_4
+#| solution: true
+plot(brain_aov, 2)
+```
+
+:::
+
+```{webr}
+#| exercise: ex_4
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+
+#### Constant Variance (Homogeneity) of Variance
+```{webr}
+#| label: residual-plot
+#| exercise: ex_5
+
+plot(brain_aov, ___, add.smooth = FALSE)
+```
+
+::: {.solution exercise="ex_5"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_5
+#| solution: true
+plot(brain_aov, 1, add.smooth = FALSE)
+```
+
+:::
+
+```{webr}
+#| exercise: ex_5
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+
+
+
+### ANOVA Table
+Complete the code below to print out an anova table for your analysis. Fill in the values of the appropriate statistics.  
+
+```{webr}
+________(brain_aov)
+```
+
+
+$df_e$:
+```{r echo=FALSE}
+check_question(answer = 103, right = "correct", wrong = "not correct")
+```
+
+$df_t$: 
+```{r echo=FALSE}
+check_question(answer = 3, right = "correct", wrong = "not correct")
+```
+
+MSE:
+```{r echo=FALSE}
+check_question(answer = 1.1608, right = "correct", wrong = "not correct")
+```
+
+MST: 
+```{r echo=FALSE}
+check_question(answer = 3.6091, right = "correct", wrong = "not correct")
+```
+
+F: 
+```{r echo=FALSE}
+check_question(answer = 3.1091, right = "correct", wrong = "not correct")
+```
+
+p-value:
+```{r echo=FALSE}
+check_question(answer = 0.02967, right = "correct", wrong = "not correct")
+```
+<br>
+
+ 
+7. Evaluate the strength of your evidence from the hypothesis test, using a 0.05 significance level.  
+
+```{r echo=FALSE}
+check_question("strong", options = c("very strong", "strong", "moderate", "little", "very little"), type = "radio")
+```
+<br>
+  
+  
+8. Conduct a Tukey test by modifying the code below.  
+
+```{webr}
+________(brain_aov)
+```
+
+Identify which pairs are different (at least moderate evidence against the null).  
+```{r echo=FALSE}
+check_question("", options = c("Social-None", "TaiChi-None", "Walking-None", "TaiChi-Social", "Walking-Social", "Walking-TaiChi"), type = "checkbox")
+```
+<br>
+
+
+9. Which of the following conclusions about the study are true?  
+
+```{r echo=FALSE}
+check_question(c("We cannot generalize our results because we have a biased sample", 
+                 "We can determine causality because we eliminated confounding variables",
+                 "We can trust our results because we met the normality, equal variance, and independence conditions"), 
+               options = c(
+                 "We can generalize our results because our sample size is large",
+                 "We can generalize our results because we have representative sample",
+                 "We cannot generalize our results because we have a biased sample",
+                 "We can determine causality because we eliminated confounding variables",
+                 "We cannot determine causality because we didn't account for age, weight, etc.",
+                 "We cannot determine causality because we have a biased sample",
+                 "We can trust our results because our sample size is large",
+                 "We cannot trust our results because we do not have a random sample",
+                 "We can trust our results because we met the normality, equal variance, and independence conditions",
+                 "We cannot trust our results because we did not have significant results"
+                 ), type = "checkbox")
+```
+
+
+
+
+
+
