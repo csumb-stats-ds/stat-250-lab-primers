@@ -63,8 +63,8 @@ website:
         text: "Lab 6 Primer"
       - href: lab-7-primer/lab-7-paired-groups-primer.qmd
         text: "Lab 7 Primer"
-      # - href: 
-      #   text: "Lab 8 Primer"        
+      - href: lab-8-primer/lab-8-anova-primer.qmd
+        text: "Lab 8 Primer"
       # - href: 
       #   text: "Lab 9 Primer"        
       # - href: 
