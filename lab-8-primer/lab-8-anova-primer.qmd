@@ -292,6 +292,17 @@ gradethis::grade_this_code()
 ```
 
 
+##### Are the conditions for normality/sufficient sample size met in order to use the F distribution as a model for the null distribution of the F-ratio?
+```{r}
+#| label: normality
+#| echo: false
+check_question(answer = "Met", 
+               options = c("Met", "Not Met"), 
+               type = "radio")
+```
+<br>
+
+
 
 #### Constant Variance (Homogeneity) of Populations
 ```{webr}
@@ -319,6 +330,15 @@ plot(brain_aov, 1, add.smooth = FALSE)
 gradethis::grade_this_code()
 ```
 
+##### Are the conditions for constant variance across populations met in order to use the F distribution as a model for the null distribution of the F-ratio?
+```{r}
+#| label: constant-variance
+#| echo: false
+check_question(answer = "Met", 
+               options = c("Met", "Not Met"), 
+               type = "radio")
+```
+<br>
 
 
 
@@ -447,6 +467,20 @@ check_question("",
                type = "checkbox")
 ```
 <br>
+
+
+
+::: {.callout-note collapse="true"}
+## When Post-Hoc and ANOVA Test Disagree
+You might be wondering why we found evidence against the null for the ANOVA, but only "some" evidence against the null for one pairwise comparison from the Tukey Test. There are several possible reasons this could happen.  
+
+1. **Conditions are Not Met**: While not applicable to our situation, this could be a reason the ANOVA and Post-Hoc Tests do not match, especially if the constant variance condition is not met.  
+2. **Underpowered Study Design**: For all the comparisons we are doing we are actually using a 'smaller' significance level than the $\alpha = 0.05$ experimentwise error rate. Since decreasing the significance level also decreases the power, it is possible we do not have big enough group sizes to detect the effect size of interest in our study.  
+3. **Unbalanced Design**: Tukey Tests in particular are sensitive to unbalanced designs, i.e. each group has a different number of replicates, which could explain the weak evidence again the null for only one group for our study, which is unbalanced.  
+
+So what is a statistician to do? There are post-hoc comparisons that might be better suited for this study than the Tukey HSD Test. You can learn more about those methods in STAT 325: Experimental Design and Analysis.
+:::
+
 
 
 ### Which of the following conclusions about the study are true?  
