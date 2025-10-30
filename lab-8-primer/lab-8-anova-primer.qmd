@@ -471,11 +471,11 @@ check_question("",
 
 
 ::: {.callout-note collapse="true"}
-## When Post-Hoc and ANOVA Test Disagree
+## When Post-Hoc and ANOVA Tests "Disagree"
 You might be wondering why we found evidence against the null for the ANOVA, but only "some" evidence against the null for one pairwise comparison from the Tukey Test. There are several possible reasons this could happen.  
 
 1. **Conditions are Not Met**: While not applicable to our situation, this could be a reason the ANOVA and Post-Hoc Tests do not match, especially if the constant variance condition is not met.  
-2. **Underpowered Study Design**: For all the comparisons we are doing we are actually using a 'smaller' significance level than the $\alpha = 0.05$ experimentwise error rate. Since decreasing the significance level also decreases the power, it is possible we do not have big enough group sizes to detect the effect size of interest in our study.  
+2. **Under-powered Study Design**: For all the comparisons we are doing we are actually using a 'smaller' significance level than the $\alpha = 0.05$ experimentwise error rate. Since decreasing the significance level also decreases the power, it is possible we do not have big enough group sizes to detect the effect size of interest in our study.  
 3. **Unbalanced Design**: Tukey Tests in particular are sensitive to unbalanced designs, i.e. each group has a different number of replicates, which could explain the weak evidence again the null for only one group for our study, which is unbalanced.  
 
 So what is a statistician to do? There are post-hoc comparisons that might be better suited for this study than the Tukey HSD Test. You can learn more about those methods in STAT 325: Experimental Design and Analysis.
