@@ -138,7 +138,7 @@ check_question(answer = c("Explanatory","Categorical - Nominal"),
 ```{r}
 #| label: response
 #| echo: false
-check_question(ac("Response","Numeric - Continuous"),                
+check_question(answer = c("Response","Numeric - Continuous"),                
                options = c("Explanatory", "Response", 
                            "Categorical - Ordinal", 
                            "Categorical - Nominal",
@@ -152,7 +152,7 @@ check_question(ac("Response","Numeric - Continuous"),
 ### Identify the *study type* of this study. 
 Be sure you are able to provide a full justification.  
 
-```{r echo=FALSE}
+```{r}
 #| label: study-type
 #| echo: false
 check_question(answer = "Experiment", 
@@ -227,10 +227,10 @@ gradethis::grade_this_code()
 
 
 ### Identify the hypotheses for this study. 
-Be sure you are able to complete them in context.  
+Note, these options are generic and not complete.  Be sure you are able to complete them in context, symbolically and verbally for your labs.
 
 ```{r}
-#| label: 
+#| label: null-alt
 #| echo: false
 check_question(answer = c("All true means are equal", 
                           "At least one true mean is different"), 
@@ -248,7 +248,8 @@ check_question(answer = c("All true means are equal",
 ### Modify the code below to create the ANOVA model
 
 ```{webr}
-brain_aov <- aov(________ ~ ________, data = ________)
+#| label: aov-code
+brain_aov <- aov(________ ~ factor(________), data = ________)
 ```
 
 ::: {.callout-note collapse="true"}
@@ -292,7 +293,7 @@ gradethis::grade_this_code()
 
 
 
-#### Constant Variance (Homogeneity) of Variance
+#### Constant Variance (Homogeneity) of Populations
 ```{webr}
 #| label: residual-plot
 #| exercise: ex_5
@@ -323,69 +324,136 @@ gradethis::grade_this_code()
 
 
 ### ANOVA Table
-Complete the code below to print out an anova table for your analysis. Fill in the values of the appropriate statistics.  
+Complete the code below to print out an anova table for your analysis. Fill in the values of the appropriate statistics.  **Round to 4 decimal places**
 
 ```{webr}
+#| label: anova-table
+#| exercise: ex_6
 ________(brain_aov)
 ```
 
 
-$df_e$:
-```{r echo=FALSE}
+::: {.solution exercise="ex_6"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_6
+#| solution: true
+anova(brain_aov)
+```
+
+:::
+
+```{webr}
+#| exercise: ex_6
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+#### $df_e$:
+```{r}
+#| label: df-1
+#| echo: false
 check_question(answer = 103, right = "correct", wrong = "not correct")
 ```
 
-$df_t$: 
-```{r echo=FALSE}
+#### $df_t$: 
+```{r}
+#| label: df-2
+#| echo: false
 check_question(answer = 3, right = "correct", wrong = "not correct")
 ```
 
-MSE:
-```{r echo=FALSE}
+#### MSE:
+```{r}
+#| label: mse
+#| echo: false
 check_question(answer = 1.1608, right = "correct", wrong = "not correct")
 ```
 
-MST: 
-```{r echo=FALSE}
+#### MST: 
+```{r}
+#| label: mst
+#| echo: false
 check_question(answer = 3.6091, right = "correct", wrong = "not correct")
 ```
 
-F: 
-```{r echo=FALSE}
+#### F: 
+```{r}
+#| label: f-stat
+#| echo: false
 check_question(answer = 3.1091, right = "correct", wrong = "not correct")
 ```
 
-p-value:
-```{r echo=FALSE}
-check_question(answer = 0.02967, right = "correct", wrong = "not correct")
+#### p-value:
+```{r}
+#| label: p-value
+#| echo: false
+check_question(answer = 0.0297, right = "correct", wrong = "not correct")
 ```
 <br>
 
  
-7. Evaluate the strength of your evidence from the hypothesis test, using a 0.05 significance level.  
+### Evaluate the strength of your evidence from the hypothesis test, using a 0.05 significance level.  
 
-```{r echo=FALSE}
-check_question("strong", options = c("very strong", "strong", "moderate", "little", "very little"), type = "radio")
+```{r}
+#| label: strength
+#| echo: false
+check_question(answer = "strong", 
+               options = c("very strong", "strong", "moderate", "little", "very little"), 
+               type = "radio")
 ```
 <br>
   
   
-8. Conduct a Tukey test by modifying the code below.  
+### Conduct a Tukey test by modifying the code below.  
 
 ```{webr}
+#| label: tukey
+#| exercise: ex_7
 ________(brain_aov)
 ```
 
-Identify which pairs are different (at least moderate evidence against the null).  
-```{r echo=FALSE}
-check_question("", options = c("Social-None", "TaiChi-None", "Walking-None", "TaiChi-Social", "Walking-Social", "Walking-TaiChi"), type = "checkbox")
+::: {.solution exercise="ex_6"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_7
+#| solution: true
+TukeyHSD(brain_aov)
+```
+
+:::
+
+```{webr}
+#| exercise: ex_7
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+
+
+### Identify which pairs are different (at least moderate evidence against the null).  
+```{r}
+#| label: tukey-eval
+#| echo: false
+check_question("", 
+               options = c("Social-None", "TaiChi-None", "Walking-None", 
+                           "TaiChi-Social", "Walking-Social", "Walking-TaiChi"), 
+               type = "checkbox")
 ```
 <br>
 
 
-9. Which of the following conclusions about the study are true?  
+### Which of the following conclusions about the study are true?  
 
-```{r echo=FALSE}
+```{r}
+#| label: big-three
+#| echo: false
 check_question(c("We cannot generalize our results because we have a biased sample", 
                  "We can determine causality because we eliminated confounding variables",
                  "We can trust our results because we met the normality, equal variance, and independence conditions"), 
@@ -400,7 +468,8 @@ check_question(c("We cannot generalize our results because we have a biased samp
                  "We cannot trust our results because we do not have a random sample",
                  "We can trust our results because we met the normality, equal variance, and independence conditions",
                  "We cannot trust our results because we did not have significant results"
-                 ), type = "checkbox")
+                 ), 
+               type = "checkbox")
 ```
 
 
