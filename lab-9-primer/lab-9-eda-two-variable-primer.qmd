@@ -108,13 +108,13 @@ gradethis::grade_this_code()
 
 A person's muscle mass is expected to decrease with age. To explore this relationship in women, a nutritionist randomly selected 60 women between 40 and 79 years old. The research objective is to see if there is the expected muscle mass (in kilograms; kg) **linear decrease** with respect to age (in years) as an approximate trend. The data are found in the file `muscle-mass.csv`.   
 
-*Data from Applied Linear Statistical Models, Kutner et al 2004, 5th ed.* 
+*Data from Applied Linear Statistical Models, Kutner et al 2004, 5th ed.*   
 
 Let's analyze the data using a linear model. We use the following notation for a linear model: 
 
 $$Y_{muscle~mass} = \beta_0 + \beta_1 \cdot X_{age} + \epsilon$$
 
-First, read in the data and look at the variables
+First, read in the data and look at the variables.  
 
 ```{webr}
 #| label: load-data
@@ -123,9 +123,9 @@ names(muscle)
 ```
 
 
-### For each variable, identify whether it is the explanatory or response variable in our analysis, and the type of variable.
+#### For each variable, identify whether it is the explanatory or response variable in our analysis, and the type of variable.
 
-#### Age:
+##### Age:
 ```{r}
 #| label: explanatory
 #| echo: false
@@ -134,7 +134,7 @@ check_question(c("Explanatory","Numeric"), options = c("Explanatory", "Response"
 ```
 <br>
 
-#### Muscle Mass:
+##### Muscle Mass:
 ```{r}
 #| label: response
 #| echo: false
@@ -143,7 +143,7 @@ check_question(c("Response","Numeric"), options = c("Explanatory", "Response", "
 <br>
 
 
-### Identify the *study type* of this study. Be sure you are able to provide a full justification.  
+#### Identify the *study type* of this study. Be sure you are able to provide a full justification.  
 ```{r}
 #| label: study-type
 #| echo: false
@@ -153,8 +153,7 @@ check_question("Observational", options = c("Experiment", "Observational"), type
 
 
 
-
-### Exploratory Data Analysis
+## Exploratory Data Analysis
 Conduct Exploratory Data Analysis (EDA). Modify the code below to calculate any summary statistics and produce a graphic appropriate for assessing relationships between two variables.
 
 
@@ -182,9 +181,6 @@ cor(muscle_mass ~ age, data = muscle)
 #| check: true
 gradethis::grade_this_code()
 ```
-
-
-
 
 
 ```{webr}
@@ -229,7 +225,10 @@ check_question(c("Strong", "Linear", "Negative"),
 <br>
 
 
+## Constructing the Linear Model
+Now let's fit a least squares regression line to our data, using the form  
 
+$$\hat{y}_{muscle~mass} = b_0 + b_1x_{age}$$
 
 ### Modify your code above to add a linear model to the plot.  
 
@@ -265,23 +264,26 @@ gradethis::grade_this_code()
 
 
 
-### Modify the code below to estimate the population regression line using the data and find the slope and intercept.  Hint: use the functions `lm()` and `coef()`
+### Modify the code below to estimate the population regression line using the data and find the slope and intercept.  
+
+Hint: use the functions `lm()` and `coef()`
 
 ```{webr}
+#| label: model
 mm_age <- _____(________ ~ ________, data = ________) # create linear model
 ______(mm_age)
 ```
 
 
 #### Intercept:
-Round to **4 decimal places**
+Round to **2 decimal places**
 ```{r}
 #| label: intercept
 #| echo: false
-check_question(answer = 156.3466, right = "correct", wrong = "not correct")
+check_question(answer = 156.35, right = "correct", wrong = "not correct")
 ```
 
-**Choose the correct interpretation of the intercept from the options below.**
+#### Choose the correct interpretation of the intercept from the options below. 
 The `[intercept]` would be replaced with the value calculated above. 
 ```{r}
 #| label: intercept-interp
@@ -297,14 +299,16 @@ check_question("When age is 0 years, the muscle mass of women is expected to be 
 
 
 #### Slope: 
-Round to **4 decimal places**
+Round to **2 decimal places**
 ```{r}
 #| label: slope
 #| echo: false
-check_question(answer = -1.1900, right = "correct", wrong = "not correct")
+check_question(answer = -1.19, right = "correct", wrong = "not correct")
 ```
 
-**Choose the correct interpretation of the slope from the options below.**  
+
+
+#### Choose the correct interpretation of the slope from the options below. 
 The `[slope]` would be replaced with the value calculated above.  
 ```{r}
 #| label: slope-interp
@@ -345,6 +349,14 @@ gradethis::grade_this_code()
 ```
 
 
+#### $R^2$: 
+```{r}
+#| label: r-squard-value
+#| echo: false
+check_question(answer = 0.7501, right = "correct", wrong = "not correct")
+```
+<br>
+
 ::: {.callout-note collapse="true"}
 ## Extracting Just $R^2$
 If you wanted to just print out the $R^2$ value in R, you could use the following code:
@@ -353,15 +365,7 @@ If you wanted to just print out the $R^2$ value in R, you could use the followin
 #| label: just-r-squared
 summary(mm_age)$r.squared
 ```
-
 :::
-
-
-$R^2$: 
-```{r echo=FALSE}
-check_question(answer = 0.7501, right = "correct", wrong = "not correct")
-```
-<br>
 
 
 #### Arrange the words to interpret the coefficient of determination. $R^2$ is...  
@@ -387,9 +391,8 @@ Now that you have the linear model you can calculate the specific values to eith
 
 
 ### Calculate the average muscle mass of 60 year old women.  
-
 ```{webr}
-#| label: summary-table
+#| label: calculation
 #| exercise: ex_6
 
 ```
@@ -401,7 +404,7 @@ Now that you have the linear model you can calculate the specific values to eith
 ```{webr}
 #| exercise: ex_6
 #| solution: true
-156.346564 + -1.189996*60
+156.35 + -1.19*60
 ```
 
 :::
@@ -416,9 +419,10 @@ gradethis::grade_this_code()
 
 ::: {.callout-note collapse="true"}
 ## Using R to Make Predictions
-If you wanted to save yourself some hand calculations, you could use the `predict()` function in R.  
+If you wanted to save yourself some hand calculations, you could use the `predict()` function in R.  You just provide `newdata` and it will calculate a prediction for the provided value.  
 
 ```{webr}
-predict(mm_age, newdata = c(age = 60))
+#| label: predict-60
+predict(mm_age, newdata = data.frame(age = 60))
 ```
 :::
