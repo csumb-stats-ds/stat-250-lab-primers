@@ -1,0 +1,424 @@
+---
+title: "Lab 9: Correlation and Linear Models"
+format: 
+  live-html:
+    webr:
+      packages: 
+        - ggformula
+        - mosaic
+        - tidyverse
+      repos:
+        - https://projectmosaic.r-universe.dev
+      resources: 
+        - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-9-primer/muscle-mass.csv
+      cell-options:
+        warning: true
+        completion: false
+execute: 
+  warning: false 
+  message: false
+  echo: true
+code-copy: true
+code-overflow: wrap
+toc: true
+number-sections: true
+number-depth: 4
+css: ../styles.css
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+
+```{webr}
+#| label: theme
+#| include: false
+#| edit: false
+library(ggplot2)
+theme_set(theme_light())
+options(ggplot2.continuous.color = scale_color_viridis_c, 
+        ggplot2.continuous.fill = scale_fill_viridis_c,
+        ggplot2.discrete.color = scale_color_viridis_d,
+        ggplot2.discrete.fill = scale_fill_viridis_d)
+```
+
+
+```{r}
+#| label: setup-checkdown
+#| include: false
+library(checkdown)
+library(ggformula)
+library(mosaic)
+library(tidyverse)
+library(ggplot2)
+theme_set(theme_light())
+options(ggplot2.continuous.color = scale_color_viridis_c, 
+        ggplot2.continuous.fill = scale_fill_viridis_c,
+        ggplot2.discrete.color = scale_color_viridis_d,
+        ggplot2.discrete.fill = scale_fill_viridis_d)
+```
+
+
+::: {.callout-note collapse="true"}
+## Digital Accessibility
+
+Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
+:::
+
+
+## Getting Started
+
+Be sure to load the packages `ggformula` and `mosaic`, using the `library()` function. Remember, you need to do this with each new Quarto document or R Session. Add the package names in each of the blanks below to load in the indicated packages. 
+
+```{webr}
+#| label: setup-webr
+#| exercise: ex_1
+#| caption: Loading Packages
+library(_________) #for graphs
+library(_________) #for statistics
+library(tidyverse) #for data management
+```
+
+
+::: {.solution exercise="ex_1"}
+
+#### Solution
+
+`library()` loads in packages. You need to supply the package name you need to load inside the parentheses.
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+library(ggformula) #for graphs
+library(mosaic) #for statistics
+library(tidyverse) #for data management
+```
+
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+
+
+## Muscle Mass
+
+A person's muscle mass is expected to decrease with age. To explore this relationship in women, a nutritionist randomly selected 60 women between 40 and 79 years old. The research objective is to see if there is the expected muscle mass (in kilograms; kg) **linear decrease** with respect to age (in years) as an approximate trend. The data are found in the file `muscle-mass.csv`.   
+
+*Data from Applied Linear Statistical Models, Kutner et al 2004, 5th ed.* 
+
+Let's analyze the data using a linear model. We use the following notation for a linear model: 
+
+$$Y_{muscle~mass} = \beta_0 + \beta_1 \cdot X_{age} + \epsilon$$
+
+First, read in the data and look at the variables
+
+```{webr}
+#| label: load-data
+muscle <- read_csv("muscle-mass.csv", show_col_types = FALSE) #reads in the csv file 
+names(muscle)
+```
+
+
+### For each variable, identify whether it is the explanatory or response variable in our analysis, and the type of variable.
+
+#### Age:
+```{r}
+#| label: explanatory
+#| echo: false
+
+check_question(c("Explanatory","Numeric"), options = c("Explanatory", "Response", "Categorical", "Numeric"), type = "checkbox")
+```
+<br>
+
+#### Muscle Mass:
+```{r}
+#| label: response
+#| echo: false
+check_question(c("Response","Numeric"), options = c("Explanatory", "Response", "Categorical", "Numeric"), type = "checkbox")
+```
+<br>
+
+
+### Identify the *study type* of this study. Be sure you are able to provide a full justification.  
+```{r}
+#| label: study-type
+#| echo: false
+check_question("Observational", options = c("Experiment", "Observational"), type = "radio")
+```
+<br>
+
+
+
+
+### Exploratory Data Analysis
+Conduct Exploratory Data Analysis (EDA). Modify the code below to calculate any summary statistics and produce a graphic appropriate for assessing relationships between two variables.
+
+
+```{webr}
+#| label: correlation
+#| exercise: ex_2
+___stat___(________ ~ ________, data = ________)  #while order doesn't matter, use response ~ explanatory
+```
+
+
+::: {.solution exercise="ex_2"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+cor(muscle_mass ~ age, data = muscle)
+```
+
+:::
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+
+
+
+```{webr}
+#| label: scatterplot
+#| exercise: ex_3
+___graphic___(________ ~ ________, data = ________, 
+              ylab="____________________",
+              xlab="____________________") 
+```
+
+::: {.solution exercise="ex_3"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_3
+#| solution: true
+gf_point(muscle_mass ~ age, data = muscle,
+           ylab = "Muscle Mass (kg)",
+           xlab = "Age (in years) of Female Participants")
+```
+
+:::
+
+```{webr}
+#| exercise: ex_3
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+#### Based on the Correlation and Scatterplot, select the best descriptions of the relationship between age of females and muscle mass. 
+```{r}
+#| label: interpretation
+#| echo: false
+check_question(c("Strong", "Linear", "Negative"), 
+               options = c("Strong", "Weak", 
+                           "Linear", "Nonlinear", 
+                           "Negative", "Positive"), 
+               type = "checkbox")
+```
+<br>
+
+
+
+
+### Modify your code above to add a linear model to the plot.  
+
+```{webr}
+#| label: scatterplot-lines
+#| exercise: ex_4
+___graphic___(________ ~ ________, data = ________, 
+              ylab="____________________",
+              xlab="____________________") |> 
+  ___line___() # you can leave the inside blank if you want!
+```
+
+::: {.solution exercise="ex_4"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_4
+#| solution: true
+gf_point(muscle_mass ~ age, data = muscle,
+           ylab = "Muscle Mass (kg)",
+           xlab = "Age (in years) of Female Participants") |> 
+  gf_lm()
+```
+
+:::
+
+```{webr}
+#| exercise: ex_3
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+
+### Modify the code below to estimate the population regression line using the data and find the slope and intercept.  Hint: use the functions `lm()` and `coef()`
+
+```{webr}
+mm_age <- _____(________ ~ ________, data = ________) # create linear model
+______(mm_age)
+```
+
+
+#### Intercept:
+Round to **4 decimal places**
+```{r}
+#| label: intercept
+#| echo: false
+check_question(answer = 156.3466, right = "correct", wrong = "not correct")
+```
+
+**Choose the correct interpretation of the intercept from the options below.**
+The `[intercept]` would be replaced with the value calculated above. 
+```{r}
+#| label: intercept-interp
+#| echo: false
+check_question("When age is 0 years, the muscle mass of women is expected to be [intercept] kg.", 
+               options = c("When age is 0 years, the muscle mass of women is expected to be [intercept] kg.",
+                           "When age is 0 years, the muscle mass of women is [intercept] kg.",
+                           "When muscle mass is 0 kg, the age of women is expected to be [intercept] years.",
+                           "When muscle mass is 0 kg, the age of women is [intercept] years."), 
+               type = "radio")
+```
+<br>
+
+
+#### Slope: 
+Round to **4 decimal places**
+```{r}
+#| label: slope
+#| echo: false
+check_question(answer = -1.1900, right = "correct", wrong = "not correct")
+```
+
+**Choose the correct interpretation of the slope from the options below.**  
+The `[slope]` would be replaced with the value calculated above.  
+```{r}
+#| label: slope-interp
+#| echo: false
+check_question("As age increases by 1 year, the muscle mass of women between the ages of 40-79 years is expected to decrease by the [slope] kg.", 
+               options = c("As age increases by 1 year, the muscle mass of women between the ages of 40-79 years will decrease by the [slope] kg.", 
+                                            "As age increases by 1 year, the muscle mass of women between the ages of 40-79 years is expected to decrease by the [slope] kg.",
+                                            "As muscle mass increases by 1 kg, the age of women between the ages of 40-79 years is expected to decrease by [slope] years.",
+                                            "As age increases, the muscle mass of women between the ages of 40-79 years decreases."), 
+               type = "radio")
+```
+<br>
+
+### Modify the code below the create a summary table to assess whether there is a statistically meaningful relationship between the two variables. Then determine the following statistics for your linear model.  
+
+```{webr}
+#| label: summary-table
+#| exercise: ex_5
+________(mm_age)
+```
+
+::: {.solution exercise="ex_5"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_5
+#| solution: true
+summary(mm_age)
+```
+
+:::
+
+```{webr}
+#| exercise: ex_5
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+::: {.callout-note collapse="true"}
+## Extracting Just $R^2$
+If you wanted to just print out the $R^2$ value in R, you could use the following code:
+
+```{webr}
+#| label: just-r-squared
+summary(mm_age)$r.squared
+```
+
+:::
+
+
+$R^2$: 
+```{r echo=FALSE}
+check_question(answer = 0.7501, right = "correct", wrong = "not correct")
+```
+<br>
+
+
+#### Arrange the words to interpret the coefficient of determination. $R^2$ is...  
+```{r}
+#| label: interpretation-rsquared
+#| echo: false
+check_question(c("the proportion of variability", 
+                 "in muscle mass",
+                 "in women aged 40-79 years old",
+                 "that is explained",
+                 "by the linear model",
+                 "with age"), 
+               type = "in_order", alignment = "vertical")
+```
+<br>
+
+
+## Calculations using the Linear Model
+Now that you have the linear model you can calculate the specific values to either  
+
+1. Estimate the mean muscle mass for a particular age  
+2. Predict the muscle mass for an individual of a particular age
+
+
+### Calculate the average muscle mass of 60 year old women.  
+
+```{webr}
+#| label: summary-table
+#| exercise: ex_6
+
+```
+
+::: {.solution exercise="ex_6"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_6
+#| solution: true
+156.346564 + -1.189996*60
+```
+
+:::
+
+```{webr}
+#| exercise: ex_6
+#| check: true
+gradethis::grade_this_code()
+```
+
+
+
+::: {.callout-note collapse="true"}
+## Using R to Make Predictions
+If you wanted to save yourself some hand calculations, you could use the `predict()` function in R.  
+
+```{webr}
+predict(mm_age, newdata = c(age = 60))
+```
+:::

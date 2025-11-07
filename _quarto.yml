@@ -65,8 +65,8 @@ website:
         text: "Lab 7 Primer"
       - href: lab-8-primer/lab-8-anova-primer.qmd
         text: "Lab 8 Primer"
-      # - href: 
-      #   text: "Lab 9 Primer"        
+      - href: lab-9-primer/lab-9-eda-two-variable-primer.qmd
+        text: "Lab 9 Primer"        
       # - href: 
       #   text: "Lab 10 Primer"        
       # - href: 
