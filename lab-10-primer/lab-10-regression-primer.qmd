@@ -179,7 +179,40 @@ check_question(c("\U03B2\U2081 < 0"),
 
 
 ### Evaluate the Conditions of the Test
-Conduct the appropriate evaluations for the condtions of regression analysis. Modify the code below to create the additional plots needed.  
+Conduct the appropriate evaluations for the conditions of regression analysis. Modify the code below to create the additional plots needed.  
+
+
+#### Linearity
+
+```{webr}
+#| label: scatterplot
+#| exercise: ex_2a
+___graphic___(________ ~ ________, data = ________, 
+              ylab="____________________",
+              xlab="____________________") 
+```
+
+::: {.solution exercise="ex_2a"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_2a
+#| solution: true
+gf_point(muscle_mass ~ age, data = muscle,
+           ylab = "Muscle Mass (kg)",
+           xlab = "Age (in years) of Female Participants")
+```
+
+:::
+
+```{webr}
+#| exercise: ex_2a
+#| check: true
+gradethis::grade_this_code()
+```
+
+
 
 #### QQ Plot of the Residuals  
 

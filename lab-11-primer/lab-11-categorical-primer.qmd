@@ -1,0 +1,250 @@
+---
+title: "Lab 11: Categorical Data Analysis"
+format: 
+  live-html:
+    webr:
+      packages: 
+        - ggformula
+        - mosaic
+        - tidyverse
+      repos:
+        - https://projectmosaic.r-universe.dev
+      resources: 
+        - https://raw.githubusercontent.com/csumb-stats-ds/stat-250-lab-primers/refs/heads/main/lab-11-primer/cereal.csv
+      cell-options:
+        warning: true
+        completion: false
+execute: 
+  warning: false 
+  message: false
+  echo: true
+code-copy: true
+code-overflow: wrap
+toc: true
+number-sections: true
+number-depth: 4
+css: ../styles.css
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+
+```{webr}
+#| label: theme
+#| include: false
+#| edit: false
+library(ggplot2)
+theme_set(theme_light())
+options(ggplot2.continuous.color = scale_color_viridis_c, 
+        ggplot2.continuous.fill = scale_fill_viridis_c,
+        ggplot2.discrete.color = scale_color_viridis_d,
+        ggplot2.discrete.fill = scale_fill_viridis_d)
+```
+
+
+```{r}
+#| label: setup-checkdown
+#| include: false
+library(checkdown)
+library(ggformula)
+library(mosaic)
+library(tidyverse)
+library(ggplot2)
+theme_set(theme_light())
+options(ggplot2.continuous.color = scale_color_viridis_c, 
+        ggplot2.continuous.fill = scale_fill_viridis_c,
+        ggplot2.discrete.color = scale_color_viridis_d,
+        ggplot2.discrete.fill = scale_fill_viridis_d)
+```
+
+
+::: {.callout-note collapse="true"}
+## Digital Accessibility
+
+Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
+:::
+
+
+
+## Under Construction - Return 12/6 for an updated version
+
+
+<!-- ## Getting Started -->
+
+<!-- Be sure to load the packages `ggformula` and `mosaic`, using the `library()` function. Remember, you need to do this with each new Quarto document or R Session. Add the package names in each of the blanks below to load in the indicated packages.  -->
+
+<!-- ```{webr} -->
+<!-- #| label: setup-webr -->
+<!-- #| exercise: ex_1 -->
+<!-- #| caption: Loading Packages -->
+<!-- library(_________) #for graphs -->
+<!-- library(_________) #for statistics -->
+<!-- library(tidyverse) #for data management -->
+<!-- ``` -->
+
+
+<!-- ::: {.solution exercise="ex_1"} -->
+
+<!-- #### Solution -->
+
+<!-- `library()` loads in packages. You need to supply the package name you need to load inside the parentheses. -->
+
+<!-- ```{webr} -->
+<!-- #| exercise: ex_1 -->
+<!-- #| solution: true -->
+<!-- library(ggformula) #for graphs -->
+<!-- library(mosaic) #for statistics -->
+<!-- library(tidyverse) #for data management -->
+<!-- ``` -->
+
+<!-- ::: -->
+
+<!-- ```{webr} -->
+<!-- #| exercise: ex_1 -->
+<!-- #| check: true -->
+<!-- gradethis::grade_this_code() -->
+<!-- ``` -->
+
+
+
+
+
+
+<!-- ## Muscle Mass -->
+
+<!-- A person's muscle mass is expected to decrease with age. To explore this relationship in women, a nutritionist randomly selected 60 women between 40 and 79 years old. The research objective is to see if there is the expected muscle mass (in kilograms; kg) **linear decrease** with respect to age (in years) as an approximate trend. The data are found in the file `muscle-mass.csv`.    -->
+
+<!-- *Data from Applied Linear Statistical Models, Kutner et al 2004, 5th ed.*  -->
+
+<!-- Let's analyze the data using a linear model. We use the following notation for a linear model:  -->
+
+<!-- $$Y_{muscle~mass} = \beta_0 + \beta_1 \cdot X_{age} + \epsilon$$ -->
+
+<!-- First, read in the data and look at the variables -->
+
+<!-- ```{webr} -->
+<!-- #| label: load-data -->
+<!-- muscle <- read_csv("muscle-mass.csv", show_col_types = FALSE) #reads in the csv file  -->
+<!-- names(muscle) -->
+<!-- ``` -->
+
+
+
+<!-- ### Exploratory Data Analysis -->
+
+<!-- Summary stats -->
+
+<!-- Contingency Tables -->
+
+<!-- Bar Plots - Counts/Props -->
+
+<!-- Bar Plot - Conditional Props -->
+
+
+
+
+<!-- ### Identify the symbolic hypotheses for this study.    -->
+
+<!-- #### Null Hypothesis -->
+<!-- ```{r} -->
+<!-- #| label: null-hyp -->
+<!-- #| echo: false -->
+<!-- check_question(c("\U03B2\U2081 = 0"),  -->
+<!--                options = c("\U03B2\U2080 = 0", -->
+<!--                "\U03B2\U2081 = 0",  -->
+<!--                "\U03B2\U2081 = -1.19", -->
+<!--                "\U03B2\U2081 > 0", -->
+<!--                "\U03B2\U2081 < 0", -->
+<!--                "\U03B2\U2081 \U2260 0"), -->
+<!--                type = "radio") -->
+<!-- ``` -->
+
+<!-- #### Alternative Hypothesis   -->
+<!-- ```{r} -->
+<!-- #| label: alt -->
+<!-- #| echo: false -->
+<!-- check_question(c("\U03B2\U2081 < 0"),  -->
+<!--                options = c("\U03B2\U2080 = 0", -->
+<!--                "\U03B2\U2081 = 0",  -->
+<!--                "\U03B2\U2081 = -1.19", -->
+<!--                "\U03B2\U2081 > 0", -->
+<!--                "\U03B2\U2081 < 0", -->
+<!--                "\U03B2\U2081 \U2260 0"), -->
+<!--                type = "radio") -->
+<!-- ``` -->
+
+
+<!-- > Be sure you can also write the hypotheses verbally in context. Bring your answers to office hours or the CLC for review. -->
+
+
+<!-- ### Evaluate the Conditions of the Test -->
+
+<!-- > Write justifications for each condition. Bring your answers to office hours or the CLC for review. -->
+
+
+
+
+<!-- ### Calculate Binomial -->
+
+
+<!-- ### Calculate Chi-Square -->
+
+
+
+
+
+<!-- ### Estimate the True Slope -->
+
+<!-- Modify the code below to determine the 95% confidence interval for the slope of the regression line.   -->
+
+<!-- ```{webr} -->
+<!-- #| label: confint -->
+<!-- #| exercise: ex_6 -->
+<!-- _____(mm_age, parm = 2, level = ____) -->
+<!-- ``` -->
+
+
+<!-- ::: {.solution exercise="ex_6"} -->
+
+<!-- #### Solution -->
+
+<!-- ```{webr} -->
+<!-- #| exercise: ex_6 -->
+<!-- #| solution: true -->
+<!-- confint(mm_age, parm = 2, level = 0.95) -->
+<!-- ``` -->
+
+<!-- ::: -->
+
+<!-- ```{webr} -->
+<!-- #| exercise: ex_6 -->
+<!-- #| check: true -->
+<!-- gradethis::grade_this_code() -->
+<!-- ``` -->
+
+
+<!-- > Be sure you can interpret and evaluate the confidence interval. Bring your answers to office hours or the CLC for review.    -->
+
+
+
+<!-- ### Which of the following statements are true?   -->
+
+<!-- ```{r} -->
+<!-- #| label: generalize-causality -->
+<!-- #| echo: false -->
+<!-- check_question(c("The individuals were not randomly assigned to their value of the explanatory variable, so this is not an experiment but an observational study instead, so we can't determine causality", "The individuals were randomly selected, so we can generalize to the population"),  -->
+<!--                options = c( -->
+<!--                  "The individuals were sampled randomly, so it implies an observational study",  -->
+<!--                  "The individuals were not randomly assigned to their value of the explanatory variable, so this is not an experiment but an observational study instead, so we can't determine causality", -->
+<!--                  "The individuals were randomly assigned to the explanatory variable, so this is an experiment, so we can say any changes we observed is due to the explanatory variable", -->
+<!--                  "The individuals were randomly assigned to the explanatory variable, so this is an experiment, but we can only determine an association, not causality", -->
+<!--                  "The individuals were randomly assigned to their value of the explanatory variable, but we cannot generalize to all individuals in the population since there was not also a random selection", -->
+<!--                  "The individuals were randomly selected, so we can generalize to the population." -->
+<!--                  ), type = "checkbox") -->
+<!-- ``` -->
+
+
+
+
+
+
