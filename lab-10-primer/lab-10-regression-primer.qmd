@@ -150,13 +150,13 @@ Use the `lm()` function to create the model.
 ```{r}
 #| label: null-hyp
 #| echo: false
-check_question(c("\U03B2 1 = 0"), 
-               options = c("\U03B2 0 = 0",
-               "\U03B2 1 = 0", 
-               "\U03B2 1 = -1.19",
-               "\U03B2 1 > 0",
-               "\U03B2 1 < 0",
-               "\U03B2 1 \U2260 0"),
+check_question(c("\U03B2\U2081 = 0"), 
+               options = c("\U03B2\U2080 = 0",
+               "\U03B2\U2081 = 0", 
+               "\U03B2\U2081 = -1.19",
+               "\U03B2\U2081 > 0",
+               "\U03B2\U2081 < 0",
+               "\U03B2\U2081 \U2260 0"),
                type = "radio")
 ```
 
@@ -164,16 +164,17 @@ check_question(c("\U03B2 1 = 0"),
 ```{r}
 #| label: alt
 #| echo: false
-check_question(c("\U03B2 1 < 0"), 
-               options = c("\U03B2 0 = 0",
-               "\U03B2 1 = 0", 
-               "\U03B2 1 = -1.19",
-               "\U03B2 1 > 0",
-               "\U03B2 1 < 0",
-               "\U03B2 1 \U2260 0"),
+check_question(c("\U03B2\U2081 < 0"), 
+               options = c("\U03B2\U2080 = 0",
+               "\U03B2\U2081 = 0", 
+               "\U03B2\U2081 = -1.19",
+               "\U03B2\U2081 > 0",
+               "\U03B2\U2081 < 0",
+               "\U03B2\U2081 \U2260 0"),
                type = "radio")
 ```
-
+  
+  
 > Be sure you can also write the hypotheses verbally in context. Bring your answers to office hours or the CLC for review.
 
 
