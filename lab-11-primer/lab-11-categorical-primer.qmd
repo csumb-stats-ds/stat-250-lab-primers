@@ -61,7 +61,6 @@ options(ggplot2.continuous.color = scale_color_viridis_c,
 Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
 :::
 
-## Under Construction - Return 12/6 for an updated version
 
 ## Getting Started
 
@@ -98,22 +97,19 @@ gradethis::grade_this_code()
 
 ## Hair and Eye Color
 
-In 1974 a Statistics professor collected data on 592 students at the University of Delware to help the students learn about analysis of categorical data. Import the data `eye-hair-color.csv`.
+In 1974 a Statistics professor collected data on 592 randomly selected students at the University of Delaware to help the students learn about analysis of categorical data. Import the data `eye-hair-color.csv`.
 
 ```{webr}
 #| label: load-data
 eye_hair <- read_csv("eye-hair-color.csv", show_col_types = FALSE) #reads in the csv file
 names(eye_hair)
 ```
+<br>
 
 ### Exploratory Data Analysis
-
 Here are the summary statistics and data visualizations we can create for categorical data.  
 
-#### Basic Summary Statistics
-
-##### Calculate Frequency/Count
-
+#### Calculate Frequency/Count
 We can use the `tally()` function to find the counts/frequency of the hair and eye color of the individuals in the study. 
 
 ```{r}
@@ -155,7 +151,7 @@ gradethis::grade_this_code()
 
 
 
-##### Calculate Relative Frequency/Proportion
+#### Calculate Relative Frequency/Proportion
 
 We can adjust the arguments in the `tally()` function to find the proportion/relative frequency of the hair and eye color of the individuals in the study. 
 
@@ -168,7 +164,7 @@ tally(~x , data = mydata, format = "prop")
 
 Here is the relative frequency distribution for hair color in our sample.  
 ```{webr}
-#| label: count-hair
+#| label: prop-hair
 tally(~Hair, data = eye_hair, format = "prop")
 ```
 
@@ -197,7 +193,7 @@ gradethis::grade_this_code()
 ```
 
 
-##### Creating a Contingency Table
+#### Creating a Contingency Table
 
 Suppose we want to compare the distribution of eye color across different hair colors.  We can create a contingency table using the same `tally()` function.  
 
@@ -215,8 +211,7 @@ tally(Eye ~ Hair, data = eye_hair)
 ```
 
 
-##### Calculate Conditional Proportions
-
+#### Calculate Conditional Proportions
 In order to calculate the conditional proportions, we can adjust our code a little bit to make it clear which variable we are conditioning on.  
 
 ```{r}
@@ -228,14 +223,14 @@ tally(~y | x , data = mydata, format = "prop") # y conditioned on x
 
 Here are the conditional proportions of hair color given eye color in our sample.  
 ```{webr}
-#| label: count-hair
+#| label: cond-prop-hair-eye
 tally(~ Hair | Eye, data = eye_hair, format = "prop")
 ```
 
 
 Now calculate the conditional proportions of eye color given hair color:
 ```{webr}
-#| label: prop-eye
+#| label: cond-prop-eye-hair
 #| exercise: ex_4
 
 ```
@@ -257,12 +252,8 @@ gradethis::grade_this_code()
 ```
 
 
-#### Basic Bar Plots
-
-
-##### Bar Plots of Counts
-
-We can choose from several options for our bar plot for a single categorical variable.  
+#### Bar Plots of Counts
+We can choose from several options for our bar plot for a single categorical variable. 
 
 ```{r}
 #| label: example-bar
@@ -306,9 +297,8 @@ gradethis::grade_this_code()
 ```
 
 
-##### Bar Plots of Proportions
-
-We can choose from several options for our bar plot for a single categorical variable.  
+#### Bar Plots of Proportions
+We can choose from several options for our bar plot for a single categorical variable. 
 
 ```{r}
 #| label: example-prop-bar
@@ -353,7 +343,6 @@ gradethis::grade_this_code()
 
 
 #### Bar Plots of Conditional Proportions
-
 Here is an example of a plot where we look at the conditional proportion for eye color conditioned on hair color. 
 
 ```{webr}
@@ -362,7 +351,7 @@ gf_props(~Eye | Hair, data = eye_hair,
          fill = ~ Eye,
          xlab = "Color of Eyes",
          ylab = "Proportion of Statistics Students at Univ. of Del. in 1974") |> 
-  gf_refine(scale_fill_manual(values = c("blue", "brown", "green", "tan")))
+  gf_refine(scale_fill_manual(values = c("#1E90FF", "#8B4513", "#4B9B3A", "#8E6A4A")))
 ```
   
   
@@ -372,7 +361,6 @@ gf_props(~Eye | Hair, data = eye_hair,
 
 
 ## Comparing Eye Color Distribution from 1974 and 2025.
-
 In 2025 a study was published using all 50 states' Department of Motor Vehicles information to identify eye and hair color for all registered individuals. They found the following:
 
 | Eye Color | Percent |
@@ -384,55 +372,52 @@ In 2025 a study was published using all 50 states' Department of Motor Vehicles 
 
 
 We want to determine if the distribution of eye color of statistics students at the University of Delaware in 1974 is similar the distribution of eye color in the United States in 2025.  
-
+  
+  
 ### Distribution of Blue Eye Color
-
 Let's first practice with a simple hypothesis test to determine if the true proportion of blue eyes was  higher among statistics students at the University of Delaware in 1974 compare to the proportion of blue eyes in the US in 2025.  
 
 #### Null Hypothesis
-
 ```{r}
 #| label: null-hyp
 #| echo: false
-check_question(c("U03C0 = 0.237"),
+check_question(c("\U03C0 = 0.237"),
                options = c(
-                 "U03C0 = 0",
-                 "U03C0 > 0",
-                 "U03C0 < 0",
-                 "U03C0 \U2260 0",
-                 "U03C0 = 0.237",
-                 "U03C0 > 0.237",
-                 "U03C0 < 0.237",
-                 "U03C0 \U2260 0.237"),
+                 "\U03C0 = 0",
+                 "\U03C0 > 0",
+                 "\U03C0 < 0",
+                 "\U03C0 \U2260 0",
+                 "\U03C0 = 0.237",
+                 "\U03C0 > 0.237",
+                 "\U03C0 < 0.237",
+                 "\U03C0 \U2260 0.237"),
                type = "radio")
 ```
+<br>
 
 #### Alternative Hypothesis
-
 ```{r}
 #| label: alt
 #| echo: false
-check_question(c("U03C0 > 0.237"),
+check_question(c("\U03C0 > 0.237"),
                options = c(
-                 "U03C0 = 0",
-                 "U03C0 > 0",
-                 "U03C0 < 0",
-                 "U03C0 \U2260 0",
-                 "U03C0 = 0.237",
-                 "U03C0 > 0.237",
-                 "U03C0 < 0.237",
-                 "U03C0 \U2260 0.237"),
+                 "\U03C0 = 0",
+                 "\U03C0 > 0",
+                 "\U03C0 < 0",
+                 "\U03C0 \U2260 0",
+                 "\U03C0 = 0.237",
+                 "\U03C0 > 0.237",
+                 "\U03C0 < 0.237",
+                 "\U03C0 \U2260 0.237"),
                type = "radio")
 ```
+<br>
 
 > Be sure you can also write the hypotheses verbally in context. Bring your answers to office hours or the CLC for review.
 
 
 #### Calculate the p-value using the Binomial Distribution
-
-Adjust the code below to calculate the correct p-value for the test.  
-
-
+Adjust the code below to calculate the correct p-value for the test using the binomial distribution.  
 ```{webr}
 #| label: binomial
 #| exercise: ex_7
@@ -461,7 +446,6 @@ gradethis::grade_this_code()
 ### Evaluate the Chi-Square Goodness-of-Fit 
 
 #### Null Hypothesis
-
 Now we are going to test the full hypothesis that the true proportions for the eye color for statistics students at the University of Delaware in 1974 match the current distribution of eye colors in the United States in 2025, i.e.
 
 $$H_0: \pi_{blue} = 0.25,~\pi_{brown} = 0.55,~\pi_{green} = 0.09,~\pi_{hazel} = 0.11$$
@@ -480,10 +464,11 @@ check_question(answer = c("at least one of the",
                           "0.55 for brown eyes,",
                           "0.09 for green eyes,",
                           "and 0.11 for hazel eyes",
-                          "among statistics students at the University of Delaware in 1974"), 
+                          "among statistics students at the University of Delaware in 1974"),
+               alignment = "vertical",
                type = "in_order")
 ```
-
+<br>
 
 #### Calculate the p-value
 
@@ -513,7 +498,7 @@ gradethis::grade_this_code()
 
 #### What do we conclude from our test? 
 ```{r}
-#| label: evaluation of evidence
+#| label: evaluation-of-evidence
 #| echo: false
 check_question(answer = c("very strong evidence against the null"),
                options = c("no evidence against the null",
@@ -523,13 +508,12 @@ check_question(answer = c("very strong evidence against the null"),
                            "very strong evidence against the null"),
                type = "radio")
 ```
-
+<br>
 
 
 ### Checking Conditions for Goodness-of-Fit Test
 
 Check all the conditions we meet in our scenario to determine if we can use the Chi-Square Distribution as a model for the null distribution and trust our calculated p-value. 
-
 
 ```{r}
 #| label: conditions
@@ -544,7 +528,7 @@ check_question(answer = c("The measurements are categorical",
                            "No category has an expected frequency of less than 5"), 
                type = "checkbox")
 ```
-
+<br>
 
 
 

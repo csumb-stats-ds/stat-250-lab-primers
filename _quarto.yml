@@ -69,8 +69,8 @@ website:
         text: "Lab 9 Primer"        
       - href: lab-10-primer/lab-10-regression-primer.qmd
         text: "Lab 10 Primer"
-      # - href: 
-      #   text: "Lab 11 Primer"
+      - href: lab-11-primer/lab-11-categorical-primer.qmd
+        text: "Lab 11 Primer"
 
        
 format:

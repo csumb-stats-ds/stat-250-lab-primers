@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../lab-11-primer/lab-11-categorical-primer.html" rel="next">
 <link href="../lab-9-primer/lab-9-eda-two-variable-primer.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -304,6 +305,12 @@ window.Quarto = {
  <span class="menu-text">Lab 10 Primer</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab-11-primer/lab-11-categorical-primer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 11 Primer</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -474,31 +481,31 @@ Hint: Creating a Linear Model
 <h4 data-number="2.2.1" class="anchored" data-anchor-id="null-hypothesis"><span class="header-section-number">2.2.1</span> Null Hypothesis</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_99136" onsubmit="return validate_form_99136()" method="post">
-<input type="radio" name="answer_99136" id="answer_99136_1" value="β₀ = 0">
+<form name="form_71254" onsubmit="return validate_form_71254()" method="post">
+<input type="radio" name="answer_71254" id="answer_71254_1" value="β₀ = 0">
 <label>β₀ = 0</label>
 <br>
-<input type="radio" name="answer_99136" id="answer_99136_2" value="β₁ = 0">
+<input type="radio" name="answer_71254" id="answer_71254_2" value="β₁ = 0">
 <label>β₁ = 0</label>
 <br>
-<input type="radio" name="answer_99136" id="answer_99136_3" value="β₁ = -1.19">
+<input type="radio" name="answer_71254" id="answer_71254_3" value="β₁ = -1.19">
 <label>β₁ = -1.19</label>
 <br>
-<input type="radio" name="answer_99136" id="answer_99136_4" value="β₁ > 0">
+<input type="radio" name="answer_71254" id="answer_71254_4" value="β₁ > 0">
 <label>β₁ &gt; 0</label>
 <br>
-<input type="radio" name="answer_99136" id="answer_99136_5" value="β₁ < 0">
+<input type="radio" name="answer_71254" id="answer_71254_5" value="β₁ < 0">
 <label>β₁ &lt; 0</label>
 <br>
-<input type="radio" name="answer_99136" id="answer_99136_6" value="β₁ ≠ 0">
+<input type="radio" name="answer_71254" id="answer_71254_6" value="β₁ ≠ 0">
 <label>β₁ ≠ 0</label>
 <br>
 <input type="submit" value="check">
-<div id="result_99136"></div>
+<div id="result_71254"></div>
 </form>
-<script>function validate_form_99136() {var x, text; var x = document.forms['form_99136']['answer_99136'].value;if (x == 'β₁ = 0'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_99136').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_71254() {var x, text; var x = document.forms['form_71254']['answer_71254'].value;if (x == 'β₁ = 0'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_71254').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_99136').innerText == 'Correct';text = res1;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_71254').innerText == 'Correct';text = res1;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -508,31 +515,31 @@ Hint: Creating a Linear Model
 <h4 data-number="2.2.2" class="anchored" data-anchor-id="alternative-hypothesis"><span class="header-section-number">2.2.2</span> Alternative Hypothesis</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_94732" onsubmit="return validate_form_94732()" method="post">
-<input type="radio" name="answer_94732" id="answer_94732_1" value="β₀ = 0">
+<form name="form_86707" onsubmit="return validate_form_86707()" method="post">
+<input type="radio" name="answer_86707" id="answer_86707_1" value="β₀ = 0">
 <label>β₀ = 0</label>
 <br>
-<input type="radio" name="answer_94732" id="answer_94732_2" value="β₁ = 0">
+<input type="radio" name="answer_86707" id="answer_86707_2" value="β₁ = 0">
 <label>β₁ = 0</label>
 <br>
-<input type="radio" name="answer_94732" id="answer_94732_3" value="β₁ = -1.19">
+<input type="radio" name="answer_86707" id="answer_86707_3" value="β₁ = -1.19">
 <label>β₁ = -1.19</label>
 <br>
-<input type="radio" name="answer_94732" id="answer_94732_4" value="β₁ > 0">
+<input type="radio" name="answer_86707" id="answer_86707_4" value="β₁ > 0">
 <label>β₁ &gt; 0</label>
 <br>
-<input type="radio" name="answer_94732" id="answer_94732_5" value="β₁ < 0">
+<input type="radio" name="answer_86707" id="answer_86707_5" value="β₁ < 0">
 <label>β₁ &lt; 0</label>
 <br>
-<input type="radio" name="answer_94732" id="answer_94732_6" value="β₁ ≠ 0">
+<input type="radio" name="answer_86707" id="answer_86707_6" value="β₁ ≠ 0">
 <label>β₁ ≠ 0</label>
 <br>
 <input type="submit" value="check">
-<div id="result_94732"></div>
+<div id="result_86707"></div>
 </form>
-<script>function validate_form_94732() {var x, text; var x = document.forms['form_94732']['answer_94732'].value;if (x == 'β₁ < 0'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_94732').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_86707() {var x, text; var x = document.forms['form_86707']['answer_86707'].value;if (x == 'β₁ < 0'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_86707').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_99136').innerText == 'Correct'; res2 = document.getElementById('result_94732').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_71254').innerText == 'Correct'; res2 = document.getElementById('result_86707').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -658,28 +665,28 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h3 data-number="2.4" class="anchored" data-anchor-id="which-of-the-conditions-appear-to-be-reasonably-met"><span class="header-section-number">2.4</span> Which of the conditions appear to be reasonably met?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_32254" onsubmit="return validate_form_32254()" method="post">
-<input type="checkbox" id="answer_32254_1" value="Linearity">
+<form name="form_39032" onsubmit="return validate_form_39032()" method="post">
+<input type="checkbox" id="answer_39032_1" value="Linearity">
 <label>Linearity</label>
 <br>
-<input type="checkbox" id="answer_32254_2" value="Normality of residuals">
+<input type="checkbox" id="answer_39032_2" value="Normality of residuals">
 <label>Normality of residuals</label>
 <br>
-<input type="checkbox" id="answer_32254_3" value="Equal variance of residuals">
+<input type="checkbox" id="answer_39032_3" value="Equal variance of residuals">
 <label>Equal variance of residuals</label>
 <br>
-<input type="checkbox" id="answer_32254_4" value="Independence of Residuals">
+<input type="checkbox" id="answer_39032_4" value="Independence of Residuals">
 <label>Independence of Residuals</label>
 <br>
-<input type="checkbox" id="answer_32254_5" value="No influential points">
+<input type="checkbox" id="answer_39032_5" value="No influential points">
 <label>No influential points</label>
 <br>
 <input type="submit" value="check">
-<div id="result_32254"></div>
+<div id="result_39032"></div>
 </form>
-<script>function validate_form_32254() {var text; var x1 = document.getElementById('answer_32254_1'); var x2 = document.getElementById('answer_32254_2'); var x3 = document.getElementById('answer_32254_3'); var x4 = document.getElementById('answer_32254_4'); var x5 = document.getElementById('answer_32254_5'); if (x1.checked == true&x2.checked == true&x3.checked == true&x4.checked == true&x5.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_32254').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_39032() {var text; var x1 = document.getElementById('answer_39032_1'); var x2 = document.getElementById('answer_39032_2'); var x3 = document.getElementById('answer_39032_3'); var x4 = document.getElementById('answer_39032_4'); var x5 = document.getElementById('answer_39032_5'); if (x1.checked == true&x2.checked == true&x3.checked == true&x4.checked == true&x5.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_39032').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_99136').innerText == 'Correct'; res2 = document.getElementById('result_94732').innerText == 'Correct'; res3 = document.getElementById('result_32254').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_71254').innerText == 'Correct'; res2 = document.getElementById('result_86707').innerText == 'Correct'; res3 = document.getElementById('result_39032').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -749,31 +756,31 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h3 data-number="2.7" class="anchored" data-anchor-id="which-of-the-following-statements-are-true"><span class="header-section-number">2.7</span> Which of the following statements are true?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_98134" onsubmit="return validate_form_98134()" method="post">
-<input type="checkbox" id="answer_98134_1" value="The individuals were sampled randomly, so it implies an observational study">
+<form name="form_21439" onsubmit="return validate_form_21439()" method="post">
+<input type="checkbox" id="answer_21439_1" value="The individuals were sampled randomly, so it implies an observational study">
 <label>The individuals were sampled randomly, so it implies an observational study</label>
 <br>
-<input type="checkbox" id="answer_98134_2" value="The individuals were not randomly assigned to their value of the explanatory variable, so this is not an experiment but an observational study instead, so we can't determine causality">
+<input type="checkbox" id="answer_21439_2" value="The individuals were not randomly assigned to their value of the explanatory variable, so this is not an experiment but an observational study instead, so we can't determine causality">
 <label>The individuals were not randomly assigned to their value of the explanatory variable, so this is not an experiment but an observational study instead, so we can't determine causality</label>
 <br>
-<input type="checkbox" id="answer_98134_3" value="The individuals were randomly assigned to the explanatory variable, so this is an experiment, so we can say any changes we observed is due to the explanatory variable">
+<input type="checkbox" id="answer_21439_3" value="The individuals were randomly assigned to the explanatory variable, so this is an experiment, so we can say any changes we observed is due to the explanatory variable">
 <label>The individuals were randomly assigned to the explanatory variable, so this is an experiment, so we can say any changes we observed is due to the explanatory variable</label>
 <br>
-<input type="checkbox" id="answer_98134_4" value="The individuals were randomly assigned to the explanatory variable, so this is an experiment, but we can only determine an association, not causality">
+<input type="checkbox" id="answer_21439_4" value="The individuals were randomly assigned to the explanatory variable, so this is an experiment, but we can only determine an association, not causality">
 <label>The individuals were randomly assigned to the explanatory variable, so this is an experiment, but we can only determine an association, not causality</label>
 <br>
-<input type="checkbox" id="answer_98134_5" value="The individuals were randomly assigned to their value of the explanatory variable, but we cannot generalize to all individuals in the population since there was not also a random selection">
+<input type="checkbox" id="answer_21439_5" value="The individuals were randomly assigned to their value of the explanatory variable, but we cannot generalize to all individuals in the population since there was not also a random selection">
 <label>The individuals were randomly assigned to their value of the explanatory variable, but we cannot generalize to all individuals in the population since there was not also a random selection</label>
 <br>
-<input type="checkbox" id="answer_98134_6" value="The individuals were randomly selected, so we can generalize to the population.">
+<input type="checkbox" id="answer_21439_6" value="The individuals were randomly selected, so we can generalize to the population.">
 <label>The individuals were randomly selected, so we can generalize to the population.</label>
 <br>
 <input type="submit" value="check">
-<div id="result_98134"></div>
+<div id="result_21439"></div>
 </form>
-<script>function validate_form_98134() {var text; var x1 = document.getElementById('answer_98134_1'); var x2 = document.getElementById('answer_98134_2'); var x3 = document.getElementById('answer_98134_3'); var x4 = document.getElementById('answer_98134_4'); var x5 = document.getElementById('answer_98134_5'); var x6 = document.getElementById('answer_98134_6'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == false&x5.checked == false&x6.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_98134').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_21439() {var text; var x1 = document.getElementById('answer_21439_1'); var x2 = document.getElementById('answer_21439_2'); var x3 = document.getElementById('answer_21439_3'); var x4 = document.getElementById('answer_21439_4'); var x5 = document.getElementById('answer_21439_5'); var x6 = document.getElementById('answer_21439_6'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == false&x5.checked == false&x6.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_21439').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_99136').innerText == 'Correct'; res2 = document.getElementById('result_94732').innerText == 'Correct'; res3 = document.getElementById('result_32254').innerText == 'Correct'; res4 = document.getElementById('result_98134').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_71254').innerText == 'Correct'; res2 = document.getElementById('result_86707').innerText == 'Correct'; res3 = document.getElementById('result_39032').innerText == 'Correct'; res4 = document.getElementById('result_21439').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1218,6 +1225,9 @@ window._ojs.runtime.interpretFromScriptTags();
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../lab-11-primer/lab-11-categorical-primer.html" class="pagination-link" aria-label="Lab 11 Primer">
+        <span class="nav-page-text">Lab 11 Primer</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
