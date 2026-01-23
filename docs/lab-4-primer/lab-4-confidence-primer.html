@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,14 +68,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../lab-3-primer/lab-3-intro-inference-primer.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a00848ed57fe9097555b5bd7c001b509.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-142d9687c3f711bd3ef1b6bce998d27f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -122,7 +123,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -164,12 +165,11 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">STAT 250 Lab Primers</a> 
-        <div class="sidebar-tools-main">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
     <a href="https://github.com/csumb-stat-ds/stat-250-lab-primers" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
 </div>
-    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -379,12 +379,12 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlY2hvIjpmYWxzZSwiZWRpdCI6ZmFsc2UsImV2YWwi
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Digital Accessibility
+<span class="screen-reader-only">Note</span>Digital Accessibility
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -414,9 +414,9 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJMb2FkaW5nIFBhY2thZ2VzIiwiY29tcGxldGlvbiI6ZmFsc2UsImVk
 <code id="interpolate-5" class="solution-code d-none">library(ggformula) #for graphs
 library(mosaic) #for statistics
 library(tidyverse) #for data management</code>
-<div class="sourceCode cell-code" id="interpolate-6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-6-1"><a href="#interpolate-6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula) <span class="co">#for graphs</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-6-1"><a href="#interpolate-6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula) <span class="co">#for graphs</span></span>
 <span id="interpolate-6-2"><a href="#interpolate-6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mosaic) <span class="co">#for statistics</span></span>
-<span id="interpolate-6-3"><a href="#interpolate-6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#for data management</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-6-3"><a href="#interpolate-6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#for data management</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -443,12 +443,12 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint for Importing Data
+<span class="screen-reader-only">Tip</span>Hint for Importing Data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -480,23 +480,23 @@ Hint for Importing Data
 <p>Here are a few rows of the data:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="xenymyjszh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xenymyjszh table {
+<div id="iqtfdmavix" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iqtfdmavix table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xenymyjszh thead, #xenymyjszh tbody, #xenymyjszh tfoot, #xenymyjszh tr, #xenymyjszh td, #xenymyjszh th {
+#iqtfdmavix thead, #iqtfdmavix tbody, #iqtfdmavix tfoot, #iqtfdmavix tr, #iqtfdmavix td, #iqtfdmavix th {
   border-style: none;
 }
 
-#xenymyjszh p {
+#iqtfdmavix p {
   margin: 0;
   padding: 0;
 }
 
-#xenymyjszh .gt_table {
+#iqtfdmavix .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -522,12 +522,12 @@ Hint for Importing Data
   border-left-color: #D3D3D3;
 }
 
-#xenymyjszh .gt_caption {
+#iqtfdmavix .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xenymyjszh .gt_title {
+#iqtfdmavix .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -539,7 +539,7 @@ Hint for Importing Data
   border-bottom-width: 0;
 }
 
-#xenymyjszh .gt_subtitle {
+#iqtfdmavix .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -551,7 +551,7 @@ Hint for Importing Data
   border-top-width: 0;
 }
 
-#xenymyjszh .gt_heading {
+#iqtfdmavix .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -563,13 +563,13 @@ Hint for Importing Data
   border-right-color: #D3D3D3;
 }
 
-#xenymyjszh .gt_bottom_border {
+#iqtfdmavix .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xenymyjszh .gt_col_headings {
+#iqtfdmavix .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -584,7 +584,7 @@ Hint for Importing Data
   border-right-color: #D3D3D3;
 }
 
-#xenymyjszh .gt_col_heading {
+#iqtfdmavix .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -604,7 +604,7 @@ Hint for Importing Data
   overflow-x: hidden;
 }
 
-#xenymyjszh .gt_column_spanner_outer {
+#iqtfdmavix .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -616,15 +616,15 @@ Hint for Importing Data
   padding-right: 4px;
 }
 
-#xenymyjszh .gt_column_spanner_outer:first-child {
+#iqtfdmavix .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xenymyjszh .gt_column_spanner_outer:last-child {
+#iqtfdmavix .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xenymyjszh .gt_column_spanner {
+#iqtfdmavix .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -636,11 +636,11 @@ Hint for Importing Data
   width: 100%;
 }
 
-#xenymyjszh .gt_spanner_row {
+#iqtfdmavix .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xenymyjszh .gt_group_heading {
+#iqtfdmavix .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -666,7 +666,7 @@ Hint for Importing Data
   text-align: left;
 }
 
-#xenymyjszh .gt_empty_group_heading {
+#iqtfdmavix .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -681,15 +681,15 @@ Hint for Importing Data
   vertical-align: middle;
 }
 
-#xenymyjszh .gt_from_md > :first-child {
+#iqtfdmavix .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xenymyjszh .gt_from_md > :last-child {
+#iqtfdmavix .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xenymyjszh .gt_row {
+#iqtfdmavix .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -708,7 +708,7 @@ Hint for Importing Data
   overflow-x: hidden;
 }
 
-#xenymyjszh .gt_stub {
+#iqtfdmavix .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -721,7 +721,7 @@ Hint for Importing Data
   padding-right: 5px;
 }
 
-#xenymyjszh .gt_stub_row_group {
+#iqtfdmavix .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -735,15 +735,15 @@ Hint for Importing Data
   vertical-align: top;
 }
 
-#xenymyjszh .gt_row_group_first td {
+#iqtfdmavix .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xenymyjszh .gt_row_group_first th {
+#iqtfdmavix .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xenymyjszh .gt_summary_row {
+#iqtfdmavix .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -753,16 +753,16 @@ Hint for Importing Data
   padding-right: 5px;
 }
 
-#xenymyjszh .gt_first_summary_row {
+#iqtfdmavix .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xenymyjszh .gt_first_summary_row.thick {
+#iqtfdmavix .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xenymyjszh .gt_last_summary_row {
+#iqtfdmavix .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -772,7 +772,7 @@ Hint for Importing Data
   border-bottom-color: #D3D3D3;
 }
 
-#xenymyjszh .gt_grand_summary_row {
+#iqtfdmavix .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -782,7 +782,7 @@ Hint for Importing Data
   padding-right: 5px;
 }
 
-#xenymyjszh .gt_first_grand_summary_row {
+#iqtfdmavix .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -792,7 +792,7 @@ Hint for Importing Data
   border-top-color: #D3D3D3;
 }
 
-#xenymyjszh .gt_last_grand_summary_row_top {
+#iqtfdmavix .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -802,11 +802,11 @@ Hint for Importing Data
   border-bottom-color: #D3D3D3;
 }
 
-#xenymyjszh .gt_striped {
+#iqtfdmavix .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xenymyjszh .gt_table_body {
+#iqtfdmavix .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -815,7 +815,7 @@ Hint for Importing Data
   border-bottom-color: #D3D3D3;
 }
 
-#xenymyjszh .gt_footnotes {
+#iqtfdmavix .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -829,7 +829,7 @@ Hint for Importing Data
   border-right-color: #D3D3D3;
 }
 
-#xenymyjszh .gt_footnote {
+#iqtfdmavix .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -838,7 +838,7 @@ Hint for Importing Data
   padding-right: 5px;
 }
 
-#xenymyjszh .gt_sourcenotes {
+#iqtfdmavix .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -852,7 +852,7 @@ Hint for Importing Data
   border-right-color: #D3D3D3;
 }
 
-#xenymyjszh .gt_sourcenote {
+#iqtfdmavix .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -860,80 +860,80 @@ Hint for Importing Data
   padding-right: 5px;
 }
 
-#xenymyjszh .gt_left {
+#iqtfdmavix .gt_left {
   text-align: left;
 }
 
-#xenymyjszh .gt_center {
+#iqtfdmavix .gt_center {
   text-align: center;
 }
 
-#xenymyjszh .gt_right {
+#iqtfdmavix .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xenymyjszh .gt_font_normal {
+#iqtfdmavix .gt_font_normal {
   font-weight: normal;
 }
 
-#xenymyjszh .gt_font_bold {
+#iqtfdmavix .gt_font_bold {
   font-weight: bold;
 }
 
-#xenymyjszh .gt_font_italic {
+#iqtfdmavix .gt_font_italic {
   font-style: italic;
 }
 
-#xenymyjszh .gt_super {
+#iqtfdmavix .gt_super {
   font-size: 65%;
 }
 
-#xenymyjszh .gt_footnote_marks {
+#iqtfdmavix .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xenymyjszh .gt_asterisk {
+#iqtfdmavix .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xenymyjszh .gt_indent_1 {
+#iqtfdmavix .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xenymyjszh .gt_indent_2 {
+#iqtfdmavix .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xenymyjszh .gt_indent_3 {
+#iqtfdmavix .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xenymyjszh .gt_indent_4 {
+#iqtfdmavix .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xenymyjszh .gt_indent_5 {
+#iqtfdmavix .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xenymyjszh .katex-display {
+#iqtfdmavix .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xenymyjszh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#iqtfdmavix div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<th colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border">Honey Bee Colonies in the US</th>
+<td colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border">Honey Bee Colonies in the US</td>
 </tr>
 <tr class="gt_col_headings even">
 <th id="Year" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Year</th>
@@ -942,44 +942,44 @@ Hint for Importing Data
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_right" headers="Year">2004</td>
-<td class="gt_row gt_right" headers="Colonies">2556</td>
+<td class="gt_row gt_right" headers="Year">2008</td>
+<td class="gt_row gt_right" headers="Colonies">2301</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Year">2011</td>
+<td class="gt_row gt_right" headers="Colonies">2640</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Year">2017</td>
+<td class="gt_row gt_right" headers="Colonies">2669</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Year">2006</td>
 <td class="gt_row gt_right" headers="Colonies">2393</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="Year">2001</td>
-<td class="gt_row gt_right" headers="Colonies">2506</td>
+<td class="gt_row gt_right" headers="Year">2014</td>
+<td class="gt_row gt_right" headers="Colonies">2740</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="Year">2019</td>
-<td class="gt_row gt_right" headers="Colonies">2812</td>
+<td class="gt_row gt_right" headers="Year">2010</td>
+<td class="gt_row gt_right" headers="Colonies">2684</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Year">2002</td>
+<td class="gt_row gt_right" headers="Colonies">2524</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Year">2013</td>
+<td class="gt_row gt_right" headers="Colonies">2640</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Year">2005</td>
 <td class="gt_row gt_right" headers="Colonies">2410</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="Year">2008</td>
-<td class="gt_row gt_right" headers="Colonies">2301</td>
-</tr>
-<tr class="odd">
 <td class="gt_row gt_right" headers="Year">2000</td>
 <td class="gt_row gt_right" headers="Colonies">2634</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="Year">2012</td>
-<td class="gt_row gt_right" headers="Colonies">2539</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="Year">2014</td>
-<td class="gt_row gt_right" headers="Colonies">2740</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="Year">2016</td>
-<td class="gt_row gt_right" headers="Colonies">2775</td>
 </tr>
 </tbody>
 </table>
@@ -1002,56 +1002,74 @@ Hint for Importing Data
 <h4 data-number="3.0.1" class="anchored" data-anchor-id="which-of-the-following-is-the-variable-of-interest-and-its-type-in-this-research-question"><span class="header-section-number">3.0.1</span> Which of the following is the variable of interest and its type in this research question?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_69812" onsubmit="return validate_form_69812()" method="post">
-<input type="checkbox" id="answer_69812_1" value="size of honeybee colony">
-<label>size of honeybee colony</label>
+<form name="form_25857" onsubmit="return validate_form_25857()" method="post">
+<label>
+<input type="checkbox" id="answer_25857_1" value="size of honeybee colony">
+size of honeybee colony
+</label>
 <br>
-<input type="checkbox" id="answer_69812_2" value="number of honeybee colonies">
-<label>number of honeybee colonies</label>
+<label>
+<input type="checkbox" id="answer_25857_2" value="number of honeybee colonies">
+number of honeybee colonies
+</label>
 <br>
-<input type="checkbox" id="answer_69812_3" value="number of bees in a colony">
-<label>number of bees in a colony</label>
+<label>
+<input type="checkbox" id="answer_25857_3" value="number of bees in a colony">
+number of bees in a colony
+</label>
 <br>
-<input type="checkbox" id="answer_69812_4" value="average number of colonies per keeper">
-<label>average number of colonies per keeper</label>
+<label>
+<input type="checkbox" id="answer_25857_4" value="average number of colonies per keeper">
+average number of colonies per keeper
+</label>
 <br>
-<input type="checkbox" id="answer_69812_5" value="average number of honeybee colonies in the U.S.">
-<label>average number of honeybee colonies in the U.S.</label>
+<label>
+<input type="checkbox" id="answer_25857_5" value="average number of honeybee colonies in the U.S.">
+average number of honeybee colonies in the U.S.
+</label>
 <br>
-<input type="checkbox" id="answer_69812_6" value="categorical nominal">
-<label>categorical nominal</label>
+<label>
+<input type="checkbox" id="answer_25857_6" value="categorical nominal">
+categorical nominal
+</label>
 <br>
-<input type="checkbox" id="answer_69812_7" value="categorical ordinal">
-<label>categorical ordinal</label>
+<label>
+<input type="checkbox" id="answer_25857_7" value="categorical ordinal">
+categorical ordinal
+</label>
 <br>
-<input type="checkbox" id="answer_69812_8" value="numeric discrete">
-<label>numeric discrete</label>
+<label>
+<input type="checkbox" id="answer_25857_8" value="numeric discrete">
+numeric discrete
+</label>
 <br>
-<input type="checkbox" id="answer_69812_9" value="numeric continuous">
-<label>numeric continuous</label>
+<label>
+<input type="checkbox" id="answer_25857_9" value="numeric continuous">
+numeric continuous
+</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_69812"></div>
+<div id="result_25857"></div>
 </form>
-<script>function validate_form_69812() {var text; var x1 = document.getElementById('answer_69812_1'); var x2 = document.getElementById('answer_69812_2'); var x3 = document.getElementById('answer_69812_3'); var x4 = document.getElementById('answer_69812_4'); var x5 = document.getElementById('answer_69812_5'); var x6 = document.getElementById('answer_69812_6'); var x7 = document.getElementById('answer_69812_7'); var x8 = document.getElementById('answer_69812_8'); var x9 = document.getElementById('answer_69812_9'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == false&x5.checked == false&x6.checked == false&x7.checked == false&x8.checked == true&x9.checked == false){text = 'Great job!';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_69812').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_25857() {var text; var x1 = document.getElementById('answer_25857_1'); var x2 = document.getElementById('answer_25857_2'); var x3 = document.getElementById('answer_25857_3'); var x4 = document.getElementById('answer_25857_4'); var x5 = document.getElementById('answer_25857_5'); var x6 = document.getElementById('answer_25857_6'); var x7 = document.getElementById('answer_25857_7'); var x8 = document.getElementById('answer_25857_8'); var x9 = document.getElementById('answer_25857_9'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == false&x5.checked == false&x6.checked == false&x7.checked == false&x8.checked == true&x9.checked == false){text = 'Great job!';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_25857').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_69812').innerText == 'Great job!';text = res1;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_25857').innerText == 'Great job!';text = res1;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_40553" onclick="return show_hint_40553()">Click Here for Hint about Variable</div>
-<div id="result_40553" onclick="return show_hint_40553()"></div>
-<script>function show_hint_40553(){var x = document.getElementById('result_40553').innerHTML; if(!x){document.getElementById('result_40553').innerHTML = 'The variable(s) of interest is the variable the research question is interested in. Other variables can be measured but not included in a given research question.';} else {document.getElementById('result_40553').innerHTML = '';}}</script>
+<div id="hint_35558" onclick="return show_hint_35558()">Click Here for Hint about Variable</div>
+<div id="result_35558" onclick="return show_hint_35558()"></div>
+<script>function show_hint_35558(){var x = document.getElementById('result_35558').innerHTML; if(!x){document.getElementById('result_35558').innerHTML = 'The variable(s) of interest is the variable the research question is interested in. Other variables can be measured but not included in a given research question.';} else {document.getElementById('result_35558').innerHTML = '';}}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_12796" onclick="return show_hint_12796()">Click Here for Hint about Variable Type</div>
-<div id="result_12796" onclick="return show_hint_12796()"></div>
-<script>function show_hint_12796(){var x = document.getElementById('result_12796').innerHTML; if(!x){document.getElementById('result_12796').innerHTML = 'Once you have identified the variable, is it recording a quantity of something or not? If not, is there a heirarchy/order to the levels? If it is, are the values able to take any quantity (given the precision of the measuring tool)?';} else {document.getElementById('result_12796').innerHTML = '';}}</script>
+<div id="hint_91241" onclick="return show_hint_91241()">Click Here for Hint about Variable Type</div>
+<div id="result_91241" onclick="return show_hint_91241()"></div>
+<script>function show_hint_91241(){var x = document.getElementById('result_91241').innerHTML; if(!x){document.getElementById('result_91241').innerHTML = 'Once you have identified the variable, is it recording a quantity of something or not? If not, is there a heirarchy/order to the levels? If it is, are the values able to take any quantity (given the precision of the measuring tool)?';} else {document.getElementById('result_91241').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1059,49 +1077,67 @@ Hint for Importing Data
 <h4 data-number="3.0.2" class="anchored" data-anchor-id="which-of-the-following-is-the-case-in-this-dataset"><span class="header-section-number">3.0.2</span> Which of the following is the case in this dataset?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_34604" onsubmit="return validate_form_34604()" method="post">
-<input type="radio" name="answer_34604" id="answer_34604_1" value="a honeybee">
-<label>a honeybee</label>
+<form name="form_3340" onsubmit="return validate_form_3340()" method="post">
+<label>
+<input type="radio" name="answer_3340" id="answer_3340_1" value="a honeybee">
+a honeybee
+</label>
 <br>
-<input type="radio" name="answer_34604" id="answer_34604_2" value="all honeybees">
-<label>all honeybees</label>
+<label>
+<input type="radio" name="answer_3340" id="answer_3340_2" value="all honeybees">
+all honeybees
+</label>
 <br>
-<input type="radio" name="answer_34604" id="answer_34604_3" value="all honeybee colonies">
-<label>all honeybee colonies</label>
+<label>
+<input type="radio" name="answer_3340" id="answer_3340_3" value="all honeybee colonies">
+all honeybee colonies
+</label>
 <br>
-<input type="radio" name="answer_34604" id="answer_34604_4" value="a honeybee colony">
-<label>a honeybee colony</label>
+<label>
+<input type="radio" name="answer_3340" id="answer_3340_4" value="a honeybee colony">
+a honeybee colony
+</label>
 <br>
-<input type="radio" name="answer_34604" id="answer_34604_5" value="all honeybee colonies in the U.S.">
-<label>all honeybee colonies in the U.S.</label>
+<label>
+<input type="radio" name="answer_3340" id="answer_3340_5" value="all honeybee colonies in the U.S.">
+all honeybee colonies in the U.S.
+</label>
 <br>
-<input type="radio" name="answer_34604" id="answer_34604_6" value="a honeybee colony in the U.S.">
-<label>a honeybee colony in the U.S.</label>
+<label>
+<input type="radio" name="answer_3340" id="answer_3340_6" value="a honeybee colony in the U.S.">
+a honeybee colony in the U.S.
+</label>
 <br>
-<input type="radio" name="answer_34604" id="answer_34604_7" value="a year">
-<label>a year</label>
+<label>
+<input type="radio" name="answer_3340" id="answer_3340_7" value="a year">
+a year
+</label>
 <br>
-<input type="radio" name="answer_34604" id="answer_34604_8" value="a week">
-<label>a week</label>
+<label>
+<input type="radio" name="answer_3340" id="answer_3340_8" value="a week">
+a week
+</label>
 <br>
-<input type="radio" name="answer_34604" id="answer_34604_9" value="all weeks since 2000">
-<label>all weeks since 2000</label>
+<label>
+<input type="radio" name="answer_3340" id="answer_3340_9" value="all weeks since 2000">
+all weeks since 2000
+</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_34604"></div>
+<div id="result_3340"></div>
 </form>
-<script>function validate_form_34604() {var x, text; var x = document.forms['form_34604']['answer_34604'].value;if (x == 'a week'){text = 'Great job! You recognized the unit that was being selected.';} else {text = 'Look at the scenario again – what is the unit that is being selected or the unit on which the variable is being measured?';} document.getElementById('result_34604').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_3340() {var x, text; var x = document.forms['form_3340']['answer_3340'].value;if (x == 'a week'){text = 'Great job! You recognized the unit that was being selected.';} else {text = 'Look at the scenario again – what is the unit that is being selected or the unit on which the variable is being measured?';} document.getElementById('result_3340').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.';text = res1 + res2;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.';text = res1 + res2;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_13877" onclick="return show_hint_13877()">Click Here for Hint</div>
-<div id="result_13877" onclick="return show_hint_13877()"></div>
-<script>function show_hint_13877(){var x = document.getElementById('result_13877').innerHTML; if(!x){document.getElementById('result_13877').innerHTML = 'A case is the single unit on which the variable is measured.';} else {document.getElementById('result_13877').innerHTML = '';}}</script>
+<div id="hint_77912" onclick="return show_hint_77912()">Click Here for Hint</div>
+<div id="result_77912" onclick="return show_hint_77912()"></div>
+<script>function show_hint_77912(){var x = document.getElementById('result_77912').innerHTML; if(!x){document.getElementById('result_77912').innerHTML = 'A case is the single unit on which the variable is measured.';} else {document.getElementById('result_77912').innerHTML = '';}}</script>
 </div>
 </div>
 <p><br></p>
@@ -1110,49 +1146,67 @@ Hint for Importing Data
 <h4 data-number="3.0.3" class="anchored" data-anchor-id="which-of-the-following-is-the-population-of-interest-for-this-research-question"><span class="header-section-number">3.0.3</span> Which of the following is the population of interest for this research question?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_90179" onsubmit="return validate_form_90179()" method="post">
-<input type="radio" name="answer_90179" id="answer_90179_1" value="a honeybee">
-<label>a honeybee</label>
+<form name="form_85413" onsubmit="return validate_form_85413()" method="post">
+<label>
+<input type="radio" name="answer_85413" id="answer_85413_1" value="a honeybee">
+a honeybee
+</label>
 <br>
-<input type="radio" name="answer_90179" id="answer_90179_2" value="all honeybees">
-<label>all honeybees</label>
+<label>
+<input type="radio" name="answer_85413" id="answer_85413_2" value="all honeybees">
+all honeybees
+</label>
 <br>
-<input type="radio" name="answer_90179" id="answer_90179_3" value="all honeybee colonies">
-<label>all honeybee colonies</label>
+<label>
+<input type="radio" name="answer_85413" id="answer_85413_3" value="all honeybee colonies">
+all honeybee colonies
+</label>
 <br>
-<input type="radio" name="answer_90179" id="answer_90179_4" value="a honeybee colony">
-<label>a honeybee colony</label>
+<label>
+<input type="radio" name="answer_85413" id="answer_85413_4" value="a honeybee colony">
+a honeybee colony
+</label>
 <br>
-<input type="radio" name="answer_90179" id="answer_90179_5" value="all honeybee colonies in the U.S.">
-<label>all honeybee colonies in the U.S.</label>
+<label>
+<input type="radio" name="answer_85413" id="answer_85413_5" value="all honeybee colonies in the U.S.">
+all honeybee colonies in the U.S.
+</label>
 <br>
-<input type="radio" name="answer_90179" id="answer_90179_6" value="a honeybee colony in the U.S.">
-<label>a honeybee colony in the U.S.</label>
+<label>
+<input type="radio" name="answer_85413" id="answer_85413_6" value="a honeybee colony in the U.S.">
+a honeybee colony in the U.S.
+</label>
 <br>
-<input type="radio" name="answer_90179" id="answer_90179_7" value="a year">
-<label>a year</label>
+<label>
+<input type="radio" name="answer_85413" id="answer_85413_7" value="a year">
+a year
+</label>
 <br>
-<input type="radio" name="answer_90179" id="answer_90179_8" value="a week">
-<label>a week</label>
+<label>
+<input type="radio" name="answer_85413" id="answer_85413_8" value="a week">
+a week
+</label>
 <br>
-<input type="radio" name="answer_90179" id="answer_90179_9" value="all weeks since 2000">
-<label>all weeks since 2000</label>
+<label>
+<input type="radio" name="answer_85413" id="answer_85413_9" value="all weeks since 2000">
+all weeks since 2000
+</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_90179"></div>
+<div id="result_85413"></div>
 </form>
-<script>function validate_form_90179() {var x, text; var x = document.forms['form_90179']['answer_90179'].value;if (x == 'all weeks since 2000'){text = 'Great job!';} else {text = 'Recall that a population can have any variable measured on the cases within it – did you pick an option that has part of the variable included?';} document.getElementById('result_90179').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_85413() {var x, text; var x = document.forms['form_85413']['answer_85413'].value;if (x == 'all weeks since 2000'){text = 'Great job!';} else {text = 'Recall that a population can have any variable measured on the cases within it – did you pick an option that has part of the variable included?';} document.getElementById('result_85413').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!';text = res1 + res2 + res3;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!';text = res1 + res2 + res3;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_86062" onclick="return show_hint_86062()">Click Here for Hint</div>
-<div id="result_86062" onclick="return show_hint_86062()"></div>
-<script>function show_hint_86062(){var x = document.getElementById('result_86062').innerHTML; if(!x){document.getElementById('result_86062').innerHTML = 'A population of interest is a collection of all possible cases that the researcher wants to know about.';} else {document.getElementById('result_86062').innerHTML = '';}}</script>
+<div id="hint_28196" onclick="return show_hint_28196()">Click Here for Hint</div>
+<div id="result_28196" onclick="return show_hint_28196()"></div>
+<script>function show_hint_28196(){var x = document.getElementById('result_28196').innerHTML; if(!x){document.getElementById('result_28196').innerHTML = 'A population of interest is a collection of all possible cases that the researcher wants to know about.';} else {document.getElementById('result_28196').innerHTML = '';}}</script>
 </div>
 </div>
 <p><br></p>
@@ -1161,49 +1215,67 @@ Hint for Importing Data
 <h4 data-number="3.0.4" class="anchored" data-anchor-id="which-of-the-following-could-be-the-sample-for-this-study"><span class="header-section-number">3.0.4</span> Which of the following could be the sample for this study?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_95846" onsubmit="return validate_form_95846()" method="post">
-<input type="radio" name="answer_95846" id="answer_95846_1" value="all honeybee colonies">
-<label>all honeybee colonies</label>
+<form name="form_58181" onsubmit="return validate_form_58181()" method="post">
+<label>
+<input type="radio" name="answer_58181" id="answer_58181_1" value="all honeybee colonies">
+all honeybee colonies
+</label>
 <br>
-<input type="radio" name="answer_95846" id="answer_95846_2" value="20 honeybee colonies">
-<label>20 honeybee colonies</label>
+<label>
+<input type="radio" name="answer_58181" id="answer_58181_2" value="20 honeybee colonies">
+20 honeybee colonies
+</label>
 <br>
-<input type="radio" name="answer_95846" id="answer_95846_3" value="all honeybee colonies in the U.S.">
-<label>all honeybee colonies in the U.S.</label>
+<label>
+<input type="radio" name="answer_58181" id="answer_58181_3" value="all honeybee colonies in the U.S.">
+all honeybee colonies in the U.S.
+</label>
 <br>
-<input type="radio" name="answer_95846" id="answer_95846_4" value="20 honeybee colonies in the U.S.">
-<label>20 honeybee colonies in the U.S.</label>
+<label>
+<input type="radio" name="answer_58181" id="answer_58181_4" value="20 honeybee colonies in the U.S.">
+20 honeybee colonies in the U.S.
+</label>
 <br>
-<input type="radio" name="answer_95846" id="answer_95846_5" value="20 weeks since 2000">
-<label>20 weeks since 2000</label>
+<label>
+<input type="radio" name="answer_58181" id="answer_58181_5" value="20 weeks since 2000">
+20 weeks since 2000
+</label>
 <br>
-<input type="radio" name="answer_95846" id="answer_95846_6" value="mean number of honeybee colonies in the US">
-<label>mean number of honeybee colonies in the US</label>
+<label>
+<input type="radio" name="answer_58181" id="answer_58181_6" value="mean number of honeybee colonies in the US">
+mean number of honeybee colonies in the US
+</label>
 <br>
-<input type="radio" name="answer_95846" id="answer_95846_7" value="a week">
-<label>a week</label>
+<label>
+<input type="radio" name="answer_58181" id="answer_58181_7" value="a week">
+a week
+</label>
 <br>
-<input type="radio" name="answer_95846" id="answer_95846_8" value="all weeks since 2000">
-<label>all weeks since 2000</label>
+<label>
+<input type="radio" name="answer_58181" id="answer_58181_8" value="all weeks since 2000">
+all weeks since 2000
+</label>
 <br>
-<input type="radio" name="answer_95846" id="answer_95846_9" value="mean number of weeks since 2000">
-<label>mean number of weeks since 2000</label>
+<label>
+<input type="radio" name="answer_58181" id="answer_58181_9" value="mean number of weeks since 2000">
+mean number of weeks since 2000
+</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_95846"></div>
+<div id="result_58181"></div>
 </form>
-<script>function validate_form_95846() {var x, text; var x = document.forms['form_95846']['answer_95846'].value;if (x == '20 weeks since 2000'){text = 'Great job!';} else {text = 'A sample is just the selected cases from the population. Review your answers above';} document.getElementById('result_95846').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_58181() {var x, text; var x = document.forms['form_58181']['answer_58181'].value;if (x == '20 weeks since 2000'){text = 'Great job!';} else {text = 'A sample is just the selected cases from the population. Review your answers above';} document.getElementById('result_58181').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!';text = res1 + res2 + res3 + res4;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!';text = res1 + res2 + res3 + res4;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_67090" onclick="return show_hint_67090()">Click Here for Hint</div>
-<div id="result_67090" onclick="return show_hint_67090()"></div>
-<script>function show_hint_67090(){var x = document.getElementById('result_67090').innerHTML; if(!x){document.getElementById('result_67090').innerHTML = 'A sample is collection of the selected cases from the population.';} else {document.getElementById('result_67090').innerHTML = '';}}</script>
+<div id="hint_18686" onclick="return show_hint_18686()">Click Here for Hint</div>
+<div id="result_18686" onclick="return show_hint_18686()"></div>
+<script>function show_hint_18686(){var x = document.getElementById('result_18686').innerHTML; if(!x){document.getElementById('result_18686').innerHTML = 'A sample is collection of the selected cases from the population.';} else {document.getElementById('result_18686').innerHTML = '';}}</script>
 </div>
 </div>
 <p><br></p>
@@ -1212,34 +1284,42 @@ Hint for Importing Data
 <h4 data-number="3.0.5" class="anchored" data-anchor-id="what-is-the-sampling-method-used-by-the-researchers"><span class="header-section-number">3.0.5</span> What is the sampling method used by the researchers?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_40309" onsubmit="return validate_form_40309()" method="post">
-<input type="radio" name="answer_40309" id="answer_40309_1" value="Stratified Random Sample">
-<label>Stratified Random Sample</label>
+<form name="form_98170" onsubmit="return validate_form_98170()" method="post">
+<label>
+<input type="radio" name="answer_98170" id="answer_98170_1" value="Stratified Random Sample">
+Stratified Random Sample
+</label>
 <br>
-<input type="radio" name="answer_40309" id="answer_40309_2" value="Volunteer Sample">
-<label>Volunteer Sample</label>
+<label>
+<input type="radio" name="answer_98170" id="answer_98170_2" value="Simple Random Sample">
+Simple Random Sample
+</label>
 <br>
-<input type="radio" name="answer_40309" id="answer_40309_3" value="Simple Random Sample">
-<label>Simple Random Sample</label>
+<label>
+<input type="radio" name="answer_98170" id="answer_98170_3" value="Volunteer Sample">
+Volunteer Sample
+</label>
 <br>
-<input type="radio" name="answer_40309" id="answer_40309_4" value="Convenience Sample">
-<label>Convenience Sample</label>
+<label>
+<input type="radio" name="answer_98170" id="answer_98170_4" value="Convenience Sample">
+Convenience Sample
+</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_40309"></div>
+<div id="result_98170"></div>
 </form>
-<script>function validate_form_40309() {var x, text; var x = document.forms['form_40309']['answer_40309'].value;if (x == 'Simple Random Sample'){text = 'Great job!';} else {text = 'Check the hint, read the scenario and try again.';} document.getElementById('result_40309').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_98170() {var x, text; var x = document.forms['form_98170']['answer_98170'].value;if (x == 'Simple Random Sample'){text = 'Great job!';} else {text = 'Check the hint, read the scenario and try again.';} document.getElementById('result_98170').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_41643" onclick="return show_hint_41643()">Click Here for Hint</div>
-<div id="result_41643" onclick="return show_hint_41643()"></div>
-<script>function show_hint_41643(){var x = document.getElementById('result_41643').innerHTML; if(!x){document.getElementById('result_41643').innerHTML = 'Focus on how the case is being chosen - by what method is the case selected from the population?';} else {document.getElementById('result_41643').innerHTML = '';}}</script>
+<div id="hint_73180" onclick="return show_hint_73180()">Click Here for Hint</div>
+<div id="result_73180" onclick="return show_hint_73180()"></div>
+<script>function show_hint_73180(){var x = document.getElementById('result_73180').innerHTML; if(!x){document.getElementById('result_73180').innerHTML = 'Focus on how the case is being chosen - by what method is the case selected from the population?';} else {document.getElementById('result_73180').innerHTML = '';}}</script>
 </div>
 </div>
 <p><br></p>
@@ -1248,35 +1328,35 @@ Hint for Importing Data
 <h4 data-number="3.0.6" class="anchored" data-anchor-id="if-we-were-to-calculate-the-average-size-of-a-honeybee-colony-in-the-u.s.-from-50-selected-colonies-that-would-be-an-example-of-a"><span class="header-section-number">3.0.6</span> If we were to calculate the average size of a honeybee colony in the U.S. from 50 selected colonies, that would be an example of a…</h4>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_30805" onsubmit="return validate_form_30805()" method="post">
-<select name="answer_30805">
-<option>sample</option>
-<option>statistic</option>
-<option>parameter</option>
+<form name="form_76046" onsubmit="return validate_form_76046()" method="post">
+<select name="answer_76046">
 <option>population</option>
+<option>statistic</option>
+<option>sample</option>
+<option>parameter</option>
 </select>
 <input type="submit" value="Check Your Answer">
-<div id="result_30805"></div>
+<div id="result_76046"></div>
 </form>
-<script>function validate_form_30805() {var x, text; var x = document.forms['form_30805']['answer_30805'].value;if (x == 'statistic'){text = 'Great job!';} else {text = 'Check the hint, read the scenario and try again.';} document.getElementById('result_30805').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_76046() {var x, text; var x = document.forms['form_76046']['answer_76046'].value;if (x == 'statistic'){text = 'Great job!';} else {text = 'Check the hint, read the scenario and try again.';} document.getElementById('result_76046').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_98201" onclick="return show_hint_98201()">Click Here for Hint 1</div>
-<div id="result_98201" onclick="return show_hint_98201()"></div>
-<script>function show_hint_98201(){var x = document.getElementById('result_98201').innerHTML; if(!x){document.getElementById('result_98201').innerHTML = 'Statisics and parameters are numerical summaries calculated on either samples or populations, respectively.';} else {document.getElementById('result_98201').innerHTML = '';}}</script>
+<div id="hint_46986" onclick="return show_hint_46986()">Click Here for Hint 1</div>
+<div id="result_46986" onclick="return show_hint_46986()"></div>
+<script>function show_hint_46986(){var x = document.getElementById('result_46986').innerHTML; if(!x){document.getElementById('result_46986').innerHTML = 'Statisics and parameters are numerical summaries calculated on either samples or populations, respectively.';} else {document.getElementById('result_46986').innerHTML = '';}}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_34980" onclick="return show_hint_34980()">Click Here for Hint 2</div>
-<div id="result_34980" onclick="return show_hint_34980()"></div>
-<script>function show_hint_34980(){var x = document.getElementById('result_34980').innerHTML; if(!x){document.getElementById('result_34980').innerHTML = 'Numerical summaries are values we can calculate that summarize across cases. For example, we can calculate the number of students in a classroom with blonde hair, rather than just scanning the raw data. That ‘count’ is a numerical summary, as it summarizes the data from each case into a a number for the group.';} else {document.getElementById('result_34980').innerHTML = '';}}</script>
+<div id="hint_50462" onclick="return show_hint_50462()">Click Here for Hint 2</div>
+<div id="result_50462" onclick="return show_hint_50462()"></div>
+<script>function show_hint_50462(){var x = document.getElementById('result_50462').innerHTML; if(!x){document.getElementById('result_50462').innerHTML = 'Numerical summaries are values we can calculate that summarize across cases. For example, we can calculate the number of students in a classroom with blonde hair, rather than just scanning the raw data. That ‘count’ is a numerical summary, as it summarizes the data from each case into a a number for the group.';} else {document.getElementById('result_50462').innerHTML = '';}}</script>
 </div>
 </div>
 <p><br></p>
@@ -1287,7 +1367,7 @@ Hint for Importing Data
 <h4 data-number="3.1.1" class="anchored" data-anchor-id="histogram"><span class="header-section-number">3.1.1</span> Histogram</h4>
 <p>To create a histogram of a single numeric variable, we use the following structure:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span> x, <span class="at">data =</span> mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span> x, <span class="at">data =</span> mydata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>where <code>x</code> is the name of the variable you wish to graph that is stored in the dataset named <code>mydata</code>.</p>
 <p>Recall that we already loaded in our data on the prior page and named it <code>bee</code>. We want to graph the variable <code>Colonies</code> that occurs in the <code>bee</code> dataset.</p>
@@ -1306,7 +1386,7 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJDcmVhdGUgYSBiYXNpYyBoaXN0b2dyYW0iLCJjb21wbGV0aW9uIjpm
 <div class="cell" data-exercise="ex_3" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_3">
 <code id="interpolate-11" class="solution-code d-none">gf_histogram(~Colonies, data = bee)</code>
-<div class="sourceCode cell-code" id="interpolate-12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-12-1"><a href="#interpolate-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span>Colonies, <span class="at">data =</span> bee)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-12-1"><a href="#interpolate-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span>Colonies, <span class="at">data =</span> bee)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1357,12 +1437,12 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJBZGp1c3QgdGhlIGNvZGUgYmVsb3cgdG8gbWF0Y2ggdGhlIGltYWdl
              binwidth = 50, 
              boundary = 0, 
              color = "black")</code>
-<div class="sourceCode cell-code" id="interpolate-17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-17-1"><a href="#interpolate-17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span>Colonies, <span class="at">data =</span> bee,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-17-1"><a href="#interpolate-17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span>Colonies, <span class="at">data =</span> bee,</span>
 <span id="interpolate-17-2"><a href="#interpolate-17-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">xlab =</span> <span class="st">"Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 "</span>, </span>
 <span id="interpolate-17-3"><a href="#interpolate-17-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">ylab =</span> <span class="st">"Frequency"</span>,</span>
 <span id="interpolate-17-4"><a href="#interpolate-17-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">binwidth =</span> <span class="dv">50</span>, </span>
 <span id="interpolate-17-5"><a href="#interpolate-17-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">boundary =</span> <span class="dv">0</span>, </span>
-<span id="interpolate-17-6"><a href="#interpolate-17-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-17-6"><a href="#interpolate-17-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"black"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1376,7 +1456,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="3.1.2" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">3.1.2</span> Boxplot</h4>
 <p>To create a boxplot of a single numeric variable, we use the following structure:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span> x, <span class="at">data =</span> mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span> x, <span class="at">data =</span> mydata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>where <code>x</code> is the name of the variable you wish to graph that is stored in the dataset named <code>mydata</code>.</p>
 <p>Recall that we already loaded in our data on the prior page and named it <code>bee</code>. We want to graph the variable <code>Colonies</code> that occurs in the <code>bee</code> dataset.</p>
@@ -1395,7 +1475,7 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJDcmVhdGUgYSBiYXNpYyBib3hwbG90IiwiY29tcGxldGlvbiI6ZmFs
 <div class="cell" data-exercise="ex_5" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_5">
 <code id="interpolate-21" class="solution-code d-none">gf_boxplot(~Colonies, data = bee)</code>
-<div class="sourceCode cell-code" id="interpolate-22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-22-1"><a href="#interpolate-22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span>Colonies, <span class="at">data =</span> bee)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-22-1"><a href="#interpolate-22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span>Colonies, <span class="at">data =</span> bee)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1415,19 +1495,23 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="3.1.3" class="anchored" data-anchor-id="is-there-a-y-axis-in-a-single-numeric-variable-boxplot"><span class="header-section-number">3.1.3</span> Is there a y-axis in a single numeric variable boxplot?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_34973" onsubmit="return validate_form_34973()" method="post">
-<input type="checkbox" id="answer_34973_1" value="no">
-<label>no</label>
+<form name="form_42796" onsubmit="return validate_form_42796()" method="post">
+<label>
+<input type="checkbox" id="answer_42796_1" value="no">
+no
+</label>
 <br>
-<input type="checkbox" id="answer_34973_2" value="yes">
-<label>yes</label>
+<label>
+<input type="checkbox" id="answer_42796_2" value="yes">
+yes
+</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_34973"></div>
+<div id="result_42796"></div>
 </form>
-<script>function validate_form_34973() {var text; var x1 = document.getElementById('answer_34973_1'); var x2 = document.getElementById('answer_34973_2'); if (x1.checked == true&x2.checked == false){text = 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.';} else {text = 'Check your notes and try again';} document.getElementById('result_34973').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_42796() {var text; var x1 = document.getElementById('answer_42796_1'); var x2 = document.getElementById('answer_42796_2'); if (x1.checked == true&x2.checked == false){text = 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.';} else {text = 'Check your notes and try again';} document.getElementById('result_42796').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!'; res7 = document.getElementById('result_34973').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!'; res7 = document.getElementById('result_42796').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1449,8 +1533,8 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJDcmVhdGUgYSBib3hwbG90IHdpdGggdGhlIGNvcnJlY3QgYXhpcyBs
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_6">
 <code id="interpolate-26" class="solution-code d-none">gf_boxplot(~Colonies, data = bee,
            xlab = "Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 ")</code>
-<div class="sourceCode cell-code" id="interpolate-27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-27-1"><a href="#interpolate-27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span>Colonies, <span class="at">data =</span> bee,</span>
-<span id="interpolate-27-2"><a href="#interpolate-27-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-27-1"><a href="#interpolate-27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span>Colonies, <span class="at">data =</span> bee,</span>
+<span id="interpolate-27-2"><a href="#interpolate-27-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 "</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1465,37 +1549,53 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <!--- Adjust answer? Thought roughly symmetric from histogram / stats (which they don't have yet), but boxplot looks slightly left-skewed? --->
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_35463" onsubmit="return validate_form_35463()" method="post">
-<input type="checkbox" id="answer_35463_1" value="symmetric">
-<label>symmetric</label>
+<form name="form_89358" onsubmit="return validate_form_89358()" method="post">
+<label>
+<input type="checkbox" id="answer_89358_1" value="symmetric">
+symmetric
+</label>
 <br>
-<input type="checkbox" id="answer_35463_2" value="right skewed">
-<label>right skewed</label>
+<label>
+<input type="checkbox" id="answer_89358_2" value="right skewed">
+right skewed
+</label>
 <br>
-<input type="checkbox" id="answer_35463_3" value="slightly left skewed">
-<label>slightly left skewed</label>
+<label>
+<input type="checkbox" id="answer_89358_3" value="slightly left skewed">
+slightly left skewed
+</label>
 <br>
-<input type="checkbox" id="answer_35463_4" value="unimodal">
-<label>unimodal</label>
+<label>
+<input type="checkbox" id="answer_89358_4" value="unimodal">
+unimodal
+</label>
 <br>
-<input type="checkbox" id="answer_35463_5" value="bimodal">
-<label>bimodal</label>
+<label>
+<input type="checkbox" id="answer_89358_5" value="bimodal">
+bimodal
+</label>
 <br>
-<input type="checkbox" id="answer_35463_6" value="multimodal">
-<label>multimodal</label>
+<label>
+<input type="checkbox" id="answer_89358_6" value="multimodal">
+multimodal
+</label>
 <br>
-<input type="checkbox" id="answer_35463_7" value="unable to determine shape">
-<label>unable to determine shape</label>
+<label>
+<input type="checkbox" id="answer_89358_7" value="unable to determine shape">
+unable to determine shape
+</label>
 <br>
-<input type="checkbox" id="answer_35463_8" value="unable to determine modality">
-<label>unable to determine modality</label>
+<label>
+<input type="checkbox" id="answer_89358_8" value="unable to determine modality">
+unable to determine modality
+</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_35463"></div>
+<div id="result_89358"></div>
 </form>
-<script>function validate_form_35463() {var text; var x1 = document.getElementById('answer_35463_1'); var x2 = document.getElementById('answer_35463_2'); var x3 = document.getElementById('answer_35463_3'); var x4 = document.getElementById('answer_35463_4'); var x5 = document.getElementById('answer_35463_5'); var x6 = document.getElementById('answer_35463_6'); var x7 = document.getElementById('answer_35463_7'); var x8 = document.getElementById('answer_35463_8'); if (x1.checked == false&x2.checked == false&x3.checked == true&x4.checked == true&x5.checked == false&x6.checked == false&x7.checked == false&x8.checked == false){text = 'Great job!';} else {text = 'Not quite. Check hint below.';} document.getElementById('result_35463').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_89358() {var text; var x1 = document.getElementById('answer_89358_1'); var x2 = document.getElementById('answer_89358_2'); var x3 = document.getElementById('answer_89358_3'); var x4 = document.getElementById('answer_89358_4'); var x5 = document.getElementById('answer_89358_5'); var x6 = document.getElementById('answer_89358_6'); var x7 = document.getElementById('answer_89358_7'); var x8 = document.getElementById('answer_89358_8'); if (x1.checked == false&x2.checked == false&x3.checked == true&x4.checked == true&x5.checked == false&x6.checked == false&x7.checked == false&x8.checked == false){text = 'Great job!';} else {text = 'Not quite. Check hint below.';} document.getElementById('result_89358').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!'; res7 = document.getElementById('result_34973').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_35463').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!'; res7 = document.getElementById('result_42796').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_89358').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1503,9 +1603,9 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <!--- insert note here about symmetry vs. skewness if close call. (slighly left skewed vs. roughly symmetric). May also insert note about what can you determine from each of histogram or boxplot.  --->
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_77022" onclick="return show_hint_77022()">Click Here for Hint</div>
-<div id="result_77022" onclick="return show_hint_77022()"></div>
-<script>function show_hint_77022(){var x = document.getElementById('result_77022').innerHTML; if(!x){document.getElementById('result_77022').innerHTML = 'The skew is slight, but it is there, especially when you look at the boxplot.';} else {document.getElementById('result_77022').innerHTML = '';}}</script>
+<div id="hint_99352" onclick="return show_hint_99352()">Click Here for Hint</div>
+<div id="result_99352" onclick="return show_hint_99352()"></div>
+<script>function show_hint_99352(){var x = document.getElementById('result_99352').innerHTML; if(!x){document.getElementById('result_99352').innerHTML = 'The skew is slight, but it is there, especially when you look at the boxplot.';} else {document.getElementById('result_99352').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1514,18 +1614,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <!--- answer set for if consider symmetric; edit if think not --->
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_7412" onsubmit="return validate_form_7412()" method="post">
-<select name="answer_7412">
+<form name="form_14772" onsubmit="return validate_form_14772()" method="post">
+<select name="answer_14772">
 <option>greater than</option>
 <option>less than</option>
 <option>equivalent to</option>
 </select>
 <input type="submit" value="Check Your Answer">
-<div id="result_7412"></div>
+<div id="result_14772"></div>
 </form>
-<script>function validate_form_7412() {var x, text; var x = document.forms['form_7412']['answer_7412'].value;if (x == 'less than'){text = 'Great job!';} else {text = 'Not quite. Review in your notebook how means and medians are calculated.';} document.getElementById('result_7412').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_14772() {var x, text; var x = document.forms['form_14772']['answer_14772'].value;if (x == 'less than'){text = 'Great job!';} else {text = 'Not quite. Review in your notebook how means and medians are calculated.';} document.getElementById('result_14772').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!'; res7 = document.getElementById('result_34973').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_35463').innerText == 'Great job!'; res9 = document.getElementById('result_7412').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!'; res7 = document.getElementById('result_42796').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_89358').innerText == 'Great job!'; res9 = document.getElementById('result_14772').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1536,7 +1636,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h3 data-number="3.2" class="anchored" data-anchor-id="single-numeric-variable-summary-statistics"><span class="header-section-number">3.2</span> Single Numeric Variable Summary Statistics</h3>
 <p>We can calculate the single numeric variable summary statistics using the following structure:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">goal</span>(<span class="sc">~</span>x, <span class="at">data =</span> mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">goal</span>(<span class="sc">~</span>x, <span class="at">data =</span> mydata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>where <code>x</code> is the name of the numeric variable stored inside the dataframe object named <code>mydata</code>. <code>goal</code> stands in for any of the summary statistic functions we might use, such as:</p>
 <ul>
@@ -1573,33 +1673,33 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.3.1" class="anchored" data-anchor-id="how-many-cases-have-between-2301-and-2504-thousand-colonies"><span class="header-section-number">3.3.1</span> How many cases have between 2301 and 2504 thousand colonies?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_14445" onsubmit="return validate_form_14445()" method="post">
+<form name="form_47646" onsubmit="return validate_form_47646()" method="post">
 <fieldset>
 <legend>Enter your answer below</legend>
-<input type="text" placeholder="" name="answer_14445">
+<input type="text" placeholder="" name="answer_47646">
 <input type="submit" value="check">
-<div id="result_14445"></div>
+<div id="result_47646"></div>
 </fieldset>
 </form>
-<script>function validate_form_14445() {var x, text; var x = document.forms['form_14445']['answer_14445'].value;if (x == '5'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_14445').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_47646() {var x, text; var x = document.forms['form_47646']['answer_47646'].value;if (x == '5'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_47646').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!'; res7 = document.getElementById('result_34973').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_35463').innerText == 'Great job!'; res9 = document.getElementById('result_7412').innerText == 'Great job!'; res10 = document.getElementById('result_14445').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!'; res7 = document.getElementById('result_42796').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_89358').innerText == 'Great job!'; res9 = document.getElementById('result_14772').innerText == 'Great job!'; res10 = document.getElementById('result_47646').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_45713" onclick="return show_hint_45713()">Click Here for Hint 1</div>
-<div id="result_45713" onclick="return show_hint_45713()"></div>
-<script>function show_hint_45713(){var x = document.getElementById('result_45713').innerHTML; if(!x){document.getElementById('result_45713').innerHTML = 'Use the code chunk below to calculate some statistics. What statistics do those numbers coresspond to?';} else {document.getElementById('result_45713').innerHTML = '';}}</script>
+<div id="hint_15770" onclick="return show_hint_15770()">Click Here for Hint 1</div>
+<div id="result_15770" onclick="return show_hint_15770()"></div>
+<script>function show_hint_15770(){var x = document.getElementById('result_15770').innerHTML; if(!x){document.getElementById('result_15770').innerHTML = 'Use the code chunk below to calculate some statistics. What statistics do those numbers coresspond to?';} else {document.getElementById('result_15770').innerHTML = '';}}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_65020" onclick="return show_hint_65020()">Click Here for Hint 2</div>
-<div id="result_65020" onclick="return show_hint_65020()"></div>
-<script>function show_hint_65020(){var x = document.getElementById('result_65020').innerHTML; if(!x){document.getElementById('result_65020').innerHTML = 'What percent of cases would you expect between those values? What is your sample size? Can you now calculate the number of cases that have values of the variable between those values?';} else {document.getElementById('result_65020').innerHTML = '';}}</script>
+<div id="hint_39667" onclick="return show_hint_39667()">Click Here for Hint 2</div>
+<div id="result_39667" onclick="return show_hint_39667()"></div>
+<script>function show_hint_39667(){var x = document.getElementById('result_39667').innerHTML; if(!x){document.getElementById('result_39667').innerHTML = 'What percent of cases would you expect between those values? What is your sample size? Can you now calculate the number of cases that have values of the variable between those values?';} else {document.getElementById('result_39667').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1607,23 +1707,23 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.3.2" class="anchored" data-anchor-id="what-is-the-name-for-the-distance-between-2504-and-2672.75-thousand-colonies-on-the-boxplot"><span class="header-section-number">3.3.2</span> What is the name for the distance between 2504 and 2672.75 thousand colonies on the boxplot?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_26100" onsubmit="return validate_form_26100()" method="post">
-<input type="text" placeholder="write answer in lower case" name="answer_26100">
+<form name="form_96909" onsubmit="return validate_form_96909()" method="post">
+<input type="text" placeholder="write answer in lower case" name="answer_96909">
 <input type="submit" value="Check Your Answer">
-<div id="result_26100"></div>
+<div id="result_96909"></div>
 </form>
-<script>function validate_form_26100() {var x, text; var x = document.forms['form_26100']['answer_26100'].value;if (x == 'inter-quartile range'|x == 'iqr'|x == 'interquartile range'){text = 'Great job!';} else {text = 'Not quite. Check your spelling or the hints below.';} document.getElementById('result_26100').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_96909() {var x, text; var x = document.forms['form_96909']['answer_96909'].value;if (x == 'inter-quartile range'|x == 'iqr'|x == 'interquartile range'){text = 'Great job!';} else {text = 'Not quite. Check your spelling or the hints below.';} document.getElementById('result_96909').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!'; res7 = document.getElementById('result_34973').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_35463').innerText == 'Great job!'; res9 = document.getElementById('result_7412').innerText == 'Great job!'; res10 = document.getElementById('result_14445').innerText == 'Correct'; res11 = document.getElementById('result_26100').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!'; res7 = document.getElementById('result_42796').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_89358').innerText == 'Great job!'; res9 = document.getElementById('result_14772').innerText == 'Great job!'; res10 = document.getElementById('result_47646').innerText == 'Correct'; res11 = document.getElementById('result_96909').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_82589" onclick="return show_hint_82589()">Click Here for Hint</div>
-<div id="result_82589" onclick="return show_hint_82589()"></div>
-<script>function show_hint_82589(){var x = document.getElementById('result_82589').innerHTML; if(!x){document.getElementById('result_82589').innerHTML = 'What statisitcs do those values correspond to? Is there a name for the spread between them?';} else {document.getElementById('result_82589').innerHTML = '';}}</script>
+<div id="hint_25822" onclick="return show_hint_25822()">Click Here for Hint</div>
+<div id="result_25822" onclick="return show_hint_25822()"></div>
+<script>function show_hint_25822(){var x = document.getElementById('result_25822').innerHTML; if(!x){document.getElementById('result_25822').innerHTML = 'What statisitcs do those values correspond to? Is there a name for the spread between them?';} else {document.getElementById('result_25822').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1631,28 +1731,32 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.3.3" class="anchored" data-anchor-id="there-are-more-cases-that-have-values-between-2301-and-2504-thousand-colonies-than-cases-that-have-values-between-2672.75-and-2812-thousand-colonies."><span class="header-section-number">3.3.3</span> There are more cases that have values between 2301 and 2504 thousand colonies than cases that have values between 2672.75 and 2812 thousand colonies.</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_7172" onsubmit="return validate_form_7172()" method="post">
-<input type="checkbox" id="answer_7172_1" value="true">
-<label>true</label>
+<form name="form_15217" onsubmit="return validate_form_15217()" method="post">
+<label>
+<input type="checkbox" id="answer_15217_1" value="true">
+true
+</label>
 <br>
-<input type="checkbox" id="answer_7172_2" value="false">
-<label>false</label>
+<label>
+<input type="checkbox" id="answer_15217_2" value="false">
+false
+</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_7172"></div>
+<div id="result_15217"></div>
 </form>
-<script>function validate_form_7172() {var text; var x1 = document.getElementById('answer_7172_1'); var x2 = document.getElementById('answer_7172_2'); if (x1.checked == false&x2.checked == true){text = 'Great job!';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_7172').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_15217() {var text; var x1 = document.getElementById('answer_15217_1'); var x2 = document.getElementById('answer_15217_2'); if (x1.checked == false&x2.checked == true){text = 'Great job!';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_15217').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!'; res7 = document.getElementById('result_34973').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_35463').innerText == 'Great job!'; res9 = document.getElementById('result_7412').innerText == 'Great job!'; res10 = document.getElementById('result_14445').innerText == 'Correct'; res11 = document.getElementById('result_26100').innerText == 'Great job!'; res12 = document.getElementById('result_7172').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!'; res7 = document.getElementById('result_42796').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_89358').innerText == 'Great job!'; res9 = document.getElementById('result_14772').innerText == 'Great job!'; res10 = document.getElementById('result_47646').innerText == 'Correct'; res11 = document.getElementById('result_96909').innerText == 'Great job!'; res12 = document.getElementById('result_15217').innerText == 'Great job!';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_60461" onclick="return show_hint_60461()">Click Here for Hint</div>
-<div id="result_60461" onclick="return show_hint_60461()"></div>
-<script>function show_hint_60461(){var x = document.getElementById('result_60461').innerHTML; if(!x){document.getElementById('result_60461').innerHTML = 'What statisitcs do those values correspond to? What do you know about the percent of cases that occurs between each set of values?';} else {document.getElementById('result_60461').innerHTML = '';}}</script>
+<div id="hint_42774" onclick="return show_hint_42774()">Click Here for Hint</div>
+<div id="result_42774" onclick="return show_hint_42774()"></div>
+<script>function show_hint_42774(){var x = document.getElementById('result_42774').innerHTML; if(!x){document.getElementById('result_42774').innerHTML = 'What statisitcs do those values correspond to? What do you know about the percent of cases that occurs between each set of values?';} else {document.getElementById('result_42774').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1660,28 +1764,32 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.3.4" class="anchored" data-anchor-id="the-cases-that-have-values-between-2301-and-2504-thousand-colonies-are-more-dispersed-then-the-cases-that-have-values-between-2672.75-and-2812-thousand-colonies."><span class="header-section-number">3.3.4</span> The cases that have values between 2301 and 2504 thousand colonies are more dispersed then the cases that have values between 2672.75 and 2812 thousand colonies.</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_61086" onsubmit="return validate_form_61086()" method="post">
-<input type="checkbox" id="answer_61086_1" value="true">
-<label>true</label>
+<form name="form_69039" onsubmit="return validate_form_69039()" method="post">
+<label>
+<input type="checkbox" id="answer_69039_1" value="true">
+true
+</label>
 <br>
-<input type="checkbox" id="answer_61086_2" value="false">
-<label>false</label>
+<label>
+<input type="checkbox" id="answer_69039_2" value="false">
+false
+</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_61086"></div>
+<div id="result_69039"></div>
 </form>
-<script>function validate_form_61086() {var text; var x1 = document.getElementById('answer_61086_1'); var x2 = document.getElementById('answer_61086_2'); if (x1.checked == true&x2.checked == false){text = 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_61086').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_69039() {var text; var x1 = document.getElementById('answer_69039_1'); var x2 = document.getElementById('answer_69039_2'); if (x1.checked == true&x2.checked == false){text = 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_69039').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!'; res7 = document.getElementById('result_34973').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_35463').innerText == 'Great job!'; res9 = document.getElementById('result_7412').innerText == 'Great job!'; res10 = document.getElementById('result_14445').innerText == 'Correct'; res11 = document.getElementById('result_26100').innerText == 'Great job!'; res12 = document.getElementById('result_7172').innerText == 'Great job!'; res13 = document.getElementById('result_61086').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!'; res7 = document.getElementById('result_42796').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_89358').innerText == 'Great job!'; res9 = document.getElementById('result_14772').innerText == 'Great job!'; res10 = document.getElementById('result_47646').innerText == 'Correct'; res11 = document.getElementById('result_96909').innerText == 'Great job!'; res12 = document.getElementById('result_15217').innerText == 'Great job!'; res13 = document.getElementById('result_69039').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_69049" onclick="return show_hint_69049()">Click Here for Hint</div>
-<div id="result_69049" onclick="return show_hint_69049()"></div>
-<script>function show_hint_69049(){var x = document.getElementById('result_69049').innerHTML; if(!x){document.getElementById('result_69049').innerHTML = 'Try looking at the boxplot and identifying the statistics on it.';} else {document.getElementById('result_69049').innerHTML = '';}}</script>
+<div id="hint_58754" onclick="return show_hint_58754()">Click Here for Hint</div>
+<div id="result_58754" onclick="return show_hint_58754()"></div>
+<script>function show_hint_58754(){var x = document.getElementById('result_58754').innerHTML; if(!x){document.getElementById('result_58754').innerHTML = 'Try looking at the boxplot and identifying the statistics on it.';} else {document.getElementById('result_58754').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1689,28 +1797,32 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.3.5" class="anchored" data-anchor-id="we-could-have-determined-the-modality-of-the-distribution-without-making-a-histogram-i.e.-with-just-statistics-or-the-boxplot."><span class="header-section-number">3.3.5</span> We could have determined the modality of the distribution without making a histogram (i.e.&nbsp;with just statistics or the boxplot).</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_4330" onsubmit="return validate_form_4330()" method="post">
-<input type="checkbox" id="answer_4330_1" value="true">
-<label>true</label>
+<form name="form_28636" onsubmit="return validate_form_28636()" method="post">
+<label>
+<input type="checkbox" id="answer_28636_1" value="true">
+true
+</label>
 <br>
-<input type="checkbox" id="answer_4330_2" value="false">
-<label>false</label>
+<label>
+<input type="checkbox" id="answer_28636_2" value="false">
+false
+</label>
 <br>
 <input type="submit" value="Check Your Answer">
-<div id="result_4330"></div>
+<div id="result_28636"></div>
 </form>
-<script>function validate_form_4330() {var text; var x1 = document.getElementById('answer_4330_1'); var x2 = document.getElementById('answer_4330_2'); if (x1.checked == false&x2.checked == true){text = 'Great job! Modality can only be seen on a histogram.';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_4330').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_28636() {var text; var x1 = document.getElementById('answer_28636_1'); var x2 = document.getElementById('answer_28636_2'); if (x1.checked == false&x2.checked == true){text = 'Great job! Modality can only be seen on a histogram.';} else {text = 'Not quite. Check the hints below.';} document.getElementById('result_28636').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!'; res7 = document.getElementById('result_34973').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_35463').innerText == 'Great job!'; res9 = document.getElementById('result_7412').innerText == 'Great job!'; res10 = document.getElementById('result_14445').innerText == 'Correct'; res11 = document.getElementById('result_26100').innerText == 'Great job!'; res12 = document.getElementById('result_7172').innerText == 'Great job!'; res13 = document.getElementById('result_61086').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_4330').innerText == 'Great job! Modality can only be seen on a histogram.';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!'; res7 = document.getElementById('result_42796').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_89358').innerText == 'Great job!'; res9 = document.getElementById('result_14772').innerText == 'Great job!'; res10 = document.getElementById('result_47646').innerText == 'Correct'; res11 = document.getElementById('result_96909').innerText == 'Great job!'; res12 = document.getElementById('result_15217').innerText == 'Great job!'; res13 = document.getElementById('result_69039').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_28636').innerText == 'Great job! Modality can only be seen on a histogram.';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hint_74570" onclick="return show_hint_74570()">Click Here for Hint</div>
-<div id="result_74570" onclick="return show_hint_74570()"></div>
-<script>function show_hint_74570(){var x = document.getElementById('result_74570').innerHTML; if(!x){document.getElementById('result_74570').innerHTML = 'Review what modality measures. Can you see frequency in the statistics of a numeric variable or on a boxplot?';} else {document.getElementById('result_74570').innerHTML = '';}}</script>
+<div id="hint_10284" onclick="return show_hint_10284()">Click Here for Hint</div>
+<div id="result_10284" onclick="return show_hint_10284()"></div>
+<script>function show_hint_10284(){var x = document.getElementById('result_10284').innerHTML; if(!x){document.getElementById('result_10284').innerHTML = 'Review what modality measures. Can you see frequency in the statistics of a numeric variable or on a boxplot?';} else {document.getElementById('result_10284').innerHTML = '';}}</script>
 </div>
 </div>
 </section>
@@ -1733,58 +1845,58 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <!--- the expression() function isn't working to create an x-bar. Ideas? Tried expression (outside paste as well), bquote, and just latex as well as loading the grDevices packages the plotmath syntex is inside.--->
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_5279" onsubmit="return validate_form_5279()" method="post">
+<form name="form_79450" onsubmit="return validate_form_79450()" method="post">
 <fieldset>
 <legend>What is the value of x-bar?</legend>
-<input type="text" placeholder="" name="answer_5279">
+<input type="text" placeholder="" name="answer_79450">
 <input type="submit" value="Check Your Answer">
-<div id="result_5279"></div>
+<div id="result_79450"></div>
 </fieldset>
 </form>
-<script>function validate_form_5279() {var x, text; var x = document.forms['form_5279']['answer_5279'].value;if (x == '2591.3'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_5279').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_79450() {var x, text; var x = document.forms['form_79450']['answer_79450'].value;if (x == '2591.3'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_79450').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!'; res7 = document.getElementById('result_34973').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_35463').innerText == 'Great job!'; res9 = document.getElementById('result_7412').innerText == 'Great job!'; res10 = document.getElementById('result_14445').innerText == 'Correct'; res11 = document.getElementById('result_26100').innerText == 'Great job!'; res12 = document.getElementById('result_7172').innerText == 'Great job!'; res13 = document.getElementById('result_61086').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_4330').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_5279').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!'; res7 = document.getElementById('result_42796').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_89358').innerText == 'Great job!'; res9 = document.getElementById('result_14772').innerText == 'Great job!'; res10 = document.getElementById('result_47646').innerText == 'Correct'; res11 = document.getElementById('result_96909').innerText == 'Great job!'; res12 = document.getElementById('result_15217').innerText == 'Great job!'; res13 = document.getElementById('result_69039').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_28636').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_79450').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_72613" onsubmit="return validate_form_72613()" method="post">
+<form name="form_21291" onsubmit="return validate_form_21291()" method="post">
 <fieldset>
 <legend>What is the value of \(s\)?</legend>
-<input type="text" placeholder="" name="answer_72613">
+<input type="text" placeholder="" name="answer_21291">
 <input type="submit" value="Check Your Answer">
-<div id="result_72613"></div>
+<div id="result_21291"></div>
 </fieldset>
 </form>
-<script>function validate_form_72613() {var x, text; var x = document.forms['form_72613']['answer_72613'].value;if (x == '141.1066'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_72613').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_21291() {var x, text; var x = document.forms['form_21291']['answer_21291'].value;if (x == '141.1066'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_21291').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!'; res7 = document.getElementById('result_34973').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_35463').innerText == 'Great job!'; res9 = document.getElementById('result_7412').innerText == 'Great job!'; res10 = document.getElementById('result_14445').innerText == 'Correct'; res11 = document.getElementById('result_26100').innerText == 'Great job!'; res12 = document.getElementById('result_7172').innerText == 'Great job!'; res13 = document.getElementById('result_61086').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_4330').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_5279').innerText == 'Correct'; res16 = document.getElementById('result_72613').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!'; res7 = document.getElementById('result_42796').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_89358').innerText == 'Great job!'; res9 = document.getElementById('result_14772').innerText == 'Great job!'; res10 = document.getElementById('result_47646').innerText == 'Correct'; res11 = document.getElementById('result_96909').innerText == 'Great job!'; res12 = document.getElementById('result_15217').innerText == 'Great job!'; res13 = document.getElementById('result_69039').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_28636').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_79450').innerText == 'Correct'; res16 = document.getElementById('result_21291').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_89357" onsubmit="return validate_form_89357()" method="post">
+<form name="form_61602" onsubmit="return validate_form_61602()" method="post">
 <fieldset>
 <legend>What is the value of \(n\)?</legend>
-<input type="text" placeholder="" name="answer_89357">
+<input type="text" placeholder="" name="answer_61602">
 <input type="submit" value="Check Your Answer">
-<div id="result_89357"></div>
+<div id="result_61602"></div>
 </fieldset>
 </form>
-<script>function validate_form_89357() {var x, text; var x = document.forms['form_89357']['answer_89357'].value;if (x == '20'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_89357').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_61602() {var x, text; var x = document.forms['form_61602']['answer_61602'].value;if (x == '20'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_61602').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!'; res7 = document.getElementById('result_34973').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_35463').innerText == 'Great job!'; res9 = document.getElementById('result_7412').innerText == 'Great job!'; res10 = document.getElementById('result_14445').innerText == 'Correct'; res11 = document.getElementById('result_26100').innerText == 'Great job!'; res12 = document.getElementById('result_7172').innerText == 'Great job!'; res13 = document.getElementById('result_61086').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_4330').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_5279').innerText == 'Correct'; res16 = document.getElementById('result_72613').innerText == 'Correct'; res17 = document.getElementById('result_89357').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!'; res7 = document.getElementById('result_42796').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_89358').innerText == 'Great job!'; res9 = document.getElementById('result_14772').innerText == 'Great job!'; res10 = document.getElementById('result_47646').innerText == 'Correct'; res11 = document.getElementById('result_96909').innerText == 'Great job!'; res12 = document.getElementById('result_15217').innerText == 'Great job!'; res13 = document.getElementById('result_69039').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_28636').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_79450').innerText == 'Correct'; res16 = document.getElementById('result_21291').innerText == 'Correct'; res17 = document.getElementById('result_61602').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <p>Since we know those values, we only need to calculate <span class="math inline">\(t^*\)</span>. The t-critical value is calculated using the function <code>qt()</code> using this structure:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="dv">1</span> <span class="sc">-</span> alpha<span class="sc">/</span><span class="dv">2</span>, df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="dv">1</span> <span class="sc">-</span> alpha<span class="sc">/</span><span class="dv">2</span>, df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The first entry, is the area to the left of our critical value, if <span class="math inline">\(1-\alpha\)</span> is our confidence level. qt() will calculate the value of t (t-critical value) that binds that area to the left of it, given your degrees of freedom, <span class="math inline">\(df = n-1\)</span>.</p>
 <p>If we are calculating a 95% confidence interval, then:</p>
@@ -1809,11 +1921,11 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </div>
 <p>With this value, we can use R to calculate the confidence intervals:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fl">2591.3</span> <span class="sc">+</span> <span class="fl">2.093024</span><span class="sc">*</span>(<span class="fl">141.1066</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fl">2591.3</span> <span class="sc">+</span> <span class="fl">2.093024</span><span class="sc">*</span>(<span class="fl">141.1066</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">20</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2657.34</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fl">2591.3</span> <span class="sc">-</span> <span class="fl">2.093024</span><span class="sc">*</span>(<span class="fl">141.1066</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fl">2591.3</span> <span class="sc">-</span> <span class="fl">2.093024</span><span class="sc">*</span>(<span class="fl">141.1066</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">20</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2525.26</code></pre>
 </div>
@@ -1844,7 +1956,7 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJVc2UgdGhlIG9iamVjdCBuYW1lcyB0byBjYWxjdWxhdGUgdGhlIENJ
 <div class="cell" data-exercise="ex_8" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_8">
 <code id="interpolate-34" class="solution-code d-none">xbar + crit * (s / sqrt(n))</code>
-<div class="sourceCode cell-code" id="interpolate-35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-35-1"><a href="#interpolate-35-1" aria-hidden="true" tabindex="-1"></a>xbar <span class="sc">+</span> crit <span class="sc">*</span> (s <span class="sc">/</span> <span class="fu">sqrt</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-35-1"><a href="#interpolate-35-1" aria-hidden="true" tabindex="-1"></a>xbar <span class="sc">+</span> crit <span class="sc">*</span> (s <span class="sc">/</span> <span class="fu">sqrt</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1871,7 +1983,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>If we have raw data, then we can use the <code>t.test()</code> function to calculate a confidence interval.</p>
 <p>The structure of the function is as follows:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="sc">~</span>x, <span class="at">data =</span> mydata, <span class="at">conf.level =</span> <span class="dv">1</span> <span class="sc">-</span> alpha)<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="sc">~</span>x, <span class="at">data =</span> mydata, <span class="at">conf.level =</span> <span class="dv">1</span> <span class="sc">-</span> alpha)<span class="sc">$</span>conf.int</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>where</p>
 <ul>
@@ -1908,7 +2020,7 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJFZGl0IHRoZSBjb2RlIHRvIGNhbGN1bGF0ZSBhIDk5JSBDSSIsImNv
 <div class="cell" data-exercise="ex_9" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_9">
 <code id="interpolate-41" class="solution-code d-none">t.test(~Colonies, data = bee, conf.level = 0.99)$conf.int</code>
-<div class="sourceCode cell-code" id="interpolate-42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-42-1"><a href="#interpolate-42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="sc">~</span>Colonies, <span class="at">data =</span> bee, <span class="at">conf.level =</span> <span class="fl">0.99</span>)<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-42-1"><a href="#interpolate-42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="sc">~</span>Colonies, <span class="at">data =</span> bee, <span class="at">conf.level =</span> <span class="fl">0.99</span>)<span class="sc">$</span>conf.int</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1922,11 +2034,11 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWNobyI6ZmFsc2UsImVkaXQi
 <!-- > Based on a sample, we are **[insert confidence level]** that the **[write parameter of interest]** is a single value between **[insert lower bound value]** and **[insert upper bound value]** **[insert units]**.     -->
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_45626" onsubmit="return validate_form_45626()" method="post">
+<form name="form_28682" onsubmit="return validate_form_28682()" method="post">
 <table data-quarto-disable-processing="true">
-<tbody id="task_45626">
+<tbody id="task_28682">
 <tr>
-<td id="answer_45626_5" style="padding:5px; border:1px solid #ccc;">between LB and UB</td>
+<td id="answer_28682_3" style="padding:5px; border:1px solid #ccc;">the true mean number of bee colonies across all weeks in the US since 2000</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -1934,7 +2046,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWNobyI6ZmFsc2UsImVkaXQi
 </td>
 </tr>
 <tr>
-<td id="answer_45626_4" style="padding:5px; border:1px solid #ccc;">is a single value</td>
+<td id="answer_28682_4" style="padding:5px; border:1px solid #ccc;">is a single value</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -1942,7 +2054,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWNobyI6ZmFsc2UsImVkaXQi
 </td>
 </tr>
 <tr>
-<td id="answer_45626_1" style="padding:5px; border:1px solid #ccc;">Based on the sample</td>
+<td id="answer_28682_5" style="padding:5px; border:1px solid #ccc;">between LB and UB</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -1950,7 +2062,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWNobyI6ZmFsc2UsImVkaXQi
 </td>
 </tr>
 <tr>
-<td id="answer_45626_3" style="padding:5px; border:1px solid #ccc;">the true mean number of bee colonies across all weeks in the US since 2000</td>
+<td id="answer_28682_2" style="padding:5px; border:1px solid #ccc;">we are 95% confident that</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -1958,16 +2070,16 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWNobyI6ZmFsc2UsImVkaXQi
 </td>
 </tr>
 <tr>
-<td id="answer_45626_2" style="padding:5px; border:1px solid #ccc;">we are 95% confident that</td>
+<td id="answer_28682_1" style="padding:5px; border:1px solid #ccc;">Based on the sample</td>
 </tr>
 </tbody>
 </table>
 <input type="submit" value="check">
-<div id="result_45626"></div>
+<div id="result_28682"></div>
 </form>
-<script>function validate_form_45626() {var text;var ch = document.getElementById('task_45626').children; if(ch[0].children[0].id == 'answer_45626_1'&ch[2].children[0].id == 'answer_45626_2'&ch[4].children[0].id == 'answer_45626_3'&ch[6].children[0].id == 'answer_45626_4'&ch[8].children[0].id == 'answer_45626_5'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_45626').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
+<script>function validate_form_28682() {var text;var ch = document.getElementById('task_28682').children; if(ch[0].children[0].id == 'answer_28682_1'&ch[2].children[0].id == 'answer_28682_2'&ch[4].children[0].id == 'answer_28682_3'&ch[6].children[0].id == 'answer_28682_4'&ch[8].children[0].id == 'answer_28682_5'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_28682').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18;res1 = document.getElementById('result_69812').innerText == 'Great job!'; res2 = document.getElementById('result_34604').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_90179').innerText == 'Great job!'; res4 = document.getElementById('result_95846').innerText == 'Great job!'; res5 = document.getElementById('result_40309').innerText == 'Great job!'; res6 = document.getElementById('result_30805').innerText == 'Great job!'; res7 = document.getElementById('result_34973').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_35463').innerText == 'Great job!'; res9 = document.getElementById('result_7412').innerText == 'Great job!'; res10 = document.getElementById('result_14445').innerText == 'Correct'; res11 = document.getElementById('result_26100').innerText == 'Great job!'; res12 = document.getElementById('result_7172').innerText == 'Great job!'; res13 = document.getElementById('result_61086').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_4330').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_5279').innerText == 'Correct'; res16 = document.getElementById('result_72613').innerText == 'Correct'; res17 = document.getElementById('result_89357').innerText == 'Correct'; res18 = document.getElementById('result_45626').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18;res1 = document.getElementById('result_25857').innerText == 'Great job!'; res2 = document.getElementById('result_3340').innerText == 'Great job! You recognized the unit that was being selected.'; res3 = document.getElementById('result_85413').innerText == 'Great job!'; res4 = document.getElementById('result_58181').innerText == 'Great job!'; res5 = document.getElementById('result_98170').innerText == 'Great job!'; res6 = document.getElementById('result_76046').innerText == 'Great job!'; res7 = document.getElementById('result_42796').innerText == 'Correct. The variable is graphed along one axis; the width of the boxplot is meaningless. Therefore we should not label it with anything.'; res8 = document.getElementById('result_89358').innerText == 'Great job!'; res9 = document.getElementById('result_14772').innerText == 'Great job!'; res10 = document.getElementById('result_47646').innerText == 'Correct'; res11 = document.getElementById('result_96909').innerText == 'Great job!'; res12 = document.getElementById('result_15217').innerText == 'Great job!'; res13 = document.getElementById('result_69039').innerText == 'Great job! While the same number of cases occur between both sets, we can see on the boxplot the cases within the lower whisker are more spread out'; res14 = document.getElementById('result_28636').innerText == 'Great job! Modality can only be seen on a histogram.'; res15 = document.getElementById('result_79450').innerText == 'Correct'; res16 = document.getElementById('result_21291').innerText == 'Correct'; res17 = document.getElementById('result_61602').innerText == 'Correct'; res18 = document.getElementById('result_28682').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -2058,13 +2170,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

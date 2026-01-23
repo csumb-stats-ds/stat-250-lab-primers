@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>common-errors – STAT 250 Lab Primers</title>
+<title>CSUMB R Style Guide – STAT 250 Lab Primers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">common-errors</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">CSUMB R Style Guide</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -254,13 +254,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-4-r-grammer-errors" id="toc-part-4-r-grammer-errors" class="nav-link active" data-scroll-target="#part-4-r-grammer-errors">Part 4: R Grammer &amp; Errors</a>
+  <li><a href="#formatting" id="toc-formatting" class="nav-link active" data-scroll-target="#formatting">Formatting</a>
   <ul class="collapse">
-  <li><a href="#common-error-package-not-loaded" id="toc-common-error-package-not-loaded" class="nav-link" data-scroll-target="#common-error-package-not-loaded">4.1 Common Error: Package Not Loaded</a></li>
-  <li><a href="#common-error-data-not-imported-correctly" id="toc-common-error-data-not-imported-correctly" class="nav-link" data-scroll-target="#common-error-data-not-imported-correctly">4.2 Common Error: Data Not Imported Correctly</a></li>
-  <li><a href="#common-error-mispelled-object-name" id="toc-common-error-mispelled-object-name" class="nav-link" data-scroll-target="#common-error-mispelled-object-name">4.3 Common Error: Mispelled Object Name</a></li>
-  <li><a href="#common-error" id="toc-common-error" class="nav-link" data-scroll-target="#common-error">4.4 Common Error:</a></li>
+  <li><a href="#assignment-statements" id="toc-assignment-statements" class="nav-link" data-scroll-target="#assignment-statements">Assignment Statements</a></li>
+  <li><a href="#spacing" id="toc-spacing" class="nav-link" data-scroll-target="#spacing">Spacing</a></li>
+  <li><a href="#indentation" id="toc-indentation" class="nav-link" data-scroll-target="#indentation">Indentation</a></li>
+  <li><a href="#organization" id="toc-organization" class="nav-link" data-scroll-target="#organization">Organization</a></li>
   </ul></li>
+  <li><a href="#naming" id="toc-naming" class="nav-link" data-scroll-target="#naming">Naming</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments">Comments</a></li>
+  <li><a href="#readability" id="toc-readability" class="nav-link" data-scroll-target="#readability">Readability</a></li>
+  <li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency">Consistency</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/csumb-stat-ds/stat-250-lab-primers/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -269,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">common-errors</h1>
+<h1 class="title">CSUMB R Style Guide</h1>
 </div>
 
 
@@ -286,23 +290,69 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="part-4-r-grammer-errors" class="level2">
-<h2 class="anchored" data-anchor-id="part-4-r-grammer-errors">Part 4: R Grammer &amp; Errors</h2>
-<p>One of the most frustrating parts for people learning R is troubleshooting errors. R is incredibly powerful, but it is <em>dumb</em>. It can’t guess what you meant, nor add in a comma that you forgot to type. Read <a href="https://ismayc.github.io/rbasics-book/6-errors.html" target="_blank">Chapter 6: Deciphering Common R Errors (5 min)</a> which covers the most common errors in R and how to decipher them. R errors aren’t always clear to new users, but they almost always will direct you to where the problem occurs. Sometimes that is just telling you that it can’t find the file or object you are trying to point it to. Other times, it will repeat your code right up to the point where it didn’t understand. That helps focus your attention when searching for errors.</p>
-<section id="common-error-package-not-loaded" class="level3">
-<h3 class="anchored" data-anchor-id="common-error-package-not-loaded">4.1 Common Error: Package Not Loaded</h3>
+<section id="formatting" class="level2">
+<h2 class="anchored" data-anchor-id="formatting">Formatting</h2>
+<section id="assignment-statements" class="level3">
+<h3 class="anchored" data-anchor-id="assignment-statements">Assignment Statements</h3>
+<ul>
+<li>Use <code>&lt;-</code>, not <code>=</code>, for assignment for new data, variables, or objects</li>
+</ul>
+<pre><code>#| label: empty
+new_data &lt;- read_csv("a_data_set.csv", show_col_types = FALSE)</code></pre>
 </section>
-<section id="common-error-data-not-imported-correctly" class="level3">
-<h3 class="anchored" data-anchor-id="common-error-data-not-imported-correctly">4.2 Common Error: Data Not Imported Correctly</h3>
+<section id="spacing" class="level3">
+<h3 class="anchored" data-anchor-id="spacing">Spacing</h3>
+<ul>
+<li><p>Adding extra spaces is ok if it improves alignment of <code>=</code> within functions or <code>&lt;-</code> for assignments.</p></li>
+<li><p>Most infix operators (<code>==</code>, <code>+</code>, <code>-</code>, <code>&lt;-</code>, <code>=</code>, etc.) should always be surrounded by spaces.</p></li>
+<li><p>Make sure a function name stays attached to the subsequent parenthesis with no space in between</p></li>
+<li><p>Always put a space after a comma, never before, just like in regular English.</p></li>
+</ul>
 </section>
-<section id="common-error-mispelled-object-name" class="level3">
-<h3 class="anchored" data-anchor-id="common-error-mispelled-object-name">4.3 Common Error: Mispelled Object Name</h3>
+<section id="indentation" class="level3">
+<h3 class="anchored" data-anchor-id="indentation">Indentation</h3>
+<ul>
+<li><p>Indentation and spacing are used consistently to maximize readability and long lines are broken into appropriate pieces.</p></li>
+<li><p>Use proper indentation. Use one line each for the function name, each argument, and the closing ).</p></li>
+</ul>
 </section>
-<section id="common-error" class="level3">
-<h3 class="anchored" data-anchor-id="common-error">4.4 Common Error:</h3>
+<section id="organization" class="level3">
+<h3 class="anchored" data-anchor-id="organization">Organization</h3>
+<ul>
+<li>Code is separated into meaningful code chunks, such as Data Reading/Cleaning, Descriptive Statistics, Graphics/Visualizations, and Analysis</li>
+</ul>
+</section>
+</section>
+<section id="naming" class="level2">
+<h2 class="anchored" data-anchor-id="naming">Naming</h2>
+<ul>
+<li><p>Variables, files, code chunks, and other objects are named appropriately and add to the scripts readability.</p></li>
+<li><p>Variable, file, and function names should use only lowercase letters, numbers, and <em>. Use underscores (</em>) (so called snake_case) to separate words within a name.</p></li>
+</ul>
+</section>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<ul>
+<li><p>Comments are used appropriately throughout the script to organize the script and clarify what particular (sets of) commands are meant to accomplish. It is not necessary to comment each line, but, at minimum, each code chunk should have a comment of the objective of the code chunk.</p></li>
+<li><p>Documentation and comments that describe the purpose of the code and why it does things, rather than only stating obvious facts about what the code is doing.</p></li>
+</ul>
+</section>
+<section id="readability" class="level2">
+<h2 class="anchored" data-anchor-id="readability">Readability</h2>
+<ul>
+<li><p>Load packages all at once at the very beginning of the file in the <code>setup</code> code chunk.</p></li>
+<li><p>Quarto/RMarkdown is divided into sections using appropriate header sizes and titles.</p></li>
+<li><p>R Scripts and output are ordered and labeled as appropriate.</p></li>
+<li><p>There is no unused or unnecessary output or code in the knitted document (e.g.&nbsp;printed data)</p></li>
+</ul>
+</section>
+<section id="consistency" class="level2">
+<h2 class="anchored" data-anchor-id="consistency">Consistency</h2>
+<ul>
+<li>Stylistic choices are used consistently throughout each script and follow commonly used conventions or agreed upon norms.</li>
+</ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,14 +68,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../lab-1-primer/lab-1-intro-r-primer.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a00848ed57fe9097555b5bd7c001b509.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-142d9687c3f711bd3ef1b6bce998d27f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -122,7 +123,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -164,12 +165,11 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">STAT 250 Lab Primers</a> 
-        <div class="sidebar-tools-main">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
     <a href="https://github.com/csumb-stat-ds/stat-250-lab-primers" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
 </div>
-    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -323,26 +323,26 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#part-1-introduction-to-markdown" id="toc-part-1-introduction-to-markdown" class="nav-link" data-scroll-target="#part-1-introduction-to-markdown">Part 1: Introduction to Markdown</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">0.1</span> Introduction</a></li>
+  <li><a href="#introduction-to-markdown" id="toc-introduction-to-markdown" class="nav-link" data-scroll-target="#introduction-to-markdown"><span class="header-section-number">0.2</span> Introduction to Markdown</a>
   <ul class="collapse">
-  <li><a href="#overview-of-quarto" id="toc-overview-of-quarto" class="nav-link" data-scroll-target="#overview-of-quarto">1.0 Overview of Quarto</a></li>
-  <li><a href="#basic-markdown" id="toc-basic-markdown" class="nav-link" data-scroll-target="#basic-markdown">1.1. Basic Markdown</a></li>
-  <li><a href="#creating-tables" id="toc-creating-tables" class="nav-link" data-scroll-target="#creating-tables">1.2. Creating Tables</a></li>
-  <li><a href="#mathematics" id="toc-mathematics" class="nav-link" data-scroll-target="#mathematics">1.3. Mathematics</a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">1.4. Code Chunks</a></li>
-  <li><a href="#in-line-code" id="toc-in-line-code" class="nav-link" data-scroll-target="#in-line-code">1.5 In-line code</a></li>
-  <li><a href="#checking-code-rendering-your-document" id="toc-checking-code-rendering-your-document" class="nav-link" data-scroll-target="#checking-code-rendering-your-document">1.6. Checking code &amp; Rendering your Document</a></li>
+  <li><a href="#overview-of-quarto" id="toc-overview-of-quarto" class="nav-link" data-scroll-target="#overview-of-quarto"><span class="header-section-number">0.2.1</span> Overview of Quarto</a></li>
+  <li><a href="#basic-markdown" id="toc-basic-markdown" class="nav-link" data-scroll-target="#basic-markdown"><span class="header-section-number">0.2.2</span> Basic Markdown</a></li>
+  <li><a href="#creating-tables" id="toc-creating-tables" class="nav-link" data-scroll-target="#creating-tables"><span class="header-section-number">0.2.3</span> Creating Tables</a></li>
+  <li><a href="#mathematics" id="toc-mathematics" class="nav-link" data-scroll-target="#mathematics"><span class="header-section-number">0.2.4</span> Mathematics</a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks"><span class="header-section-number">0.2.5</span> Code Chunks</a></li>
+  <li><a href="#in-line-code" id="toc-in-line-code" class="nav-link" data-scroll-target="#in-line-code"><span class="header-section-number">0.2.6</span> In-line code</a></li>
+  <li><a href="#checking-code-rendering-your-document" id="toc-checking-code-rendering-your-document" class="nav-link" data-scroll-target="#checking-code-rendering-your-document"><span class="header-section-number">0.2.7</span> Checking code &amp; Rendering your Document</a></li>
   </ul></li>
-  <li><a href="#part-2-r-code-exploratory-data-analysis-for-single-numeric-variables" id="toc-part-2-r-code-exploratory-data-analysis-for-single-numeric-variables" class="nav-link" data-scroll-target="#part-2-r-code-exploratory-data-analysis-for-single-numeric-variables">Part 2: R Code: Exploratory Data Analysis for Single Numeric Variables</a>
+  <li><a href="#r-code-exploratory-data-analysis-for-single-numeric-variables" id="toc-r-code-exploratory-data-analysis-for-single-numeric-variables" class="nav-link" data-scroll-target="#r-code-exploratory-data-analysis-for-single-numeric-variables"><span class="header-section-number">0.3</span> R Code: Exploratory Data Analysis for Single Numeric Variables</a>
   <ul class="collapse">
-  <li><a href="#reading-in-data" id="toc-reading-in-data" class="nav-link" data-scroll-target="#reading-in-data">2.1 Reading in Data</a></li>
-  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">2.2 Histograms</a></li>
-  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots">2.3 Boxplots</a></li>
-  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics">2.4 Summary Statistics</a></li>
+  <li><a href="#reading-in-data" id="toc-reading-in-data" class="nav-link" data-scroll-target="#reading-in-data"><span class="header-section-number">0.3.1</span> Reading in Data</a></li>
+  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms"><span class="header-section-number">0.3.2</span> Histograms</a></li>
+  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots"><span class="header-section-number">0.3.3</span> Boxplots</a></li>
+  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">0.3.4</span> Summary Statistics</a></li>
   </ul></li>
-  <li><a href="#help-understanding-the-basal-metabolic-rate-for-bivalves" id="toc-help-understanding-the-basal-metabolic-rate-for-bivalves" class="nav-link" data-scroll-target="#help-understanding-the-basal-metabolic-rate-for-bivalves">Help Understanding the Basal Metabolic Rate for Bivalves</a></li>
-  <li><a href="#final-reminders" id="toc-final-reminders" class="nav-link" data-scroll-target="#final-reminders">Final Reminders</a></li>
+  <li><a href="#help-understanding-the-basal-metabolic-rate-for-bivalves" id="toc-help-understanding-the-basal-metabolic-rate-for-bivalves" class="nav-link" data-scroll-target="#help-understanding-the-basal-metabolic-rate-for-bivalves"><span class="header-section-number">0.4</span> Help Understanding the Basal Metabolic Rate for Bivalves</a></li>
+  <li><a href="#final-reminders" id="toc-final-reminders" class="nav-link" data-scroll-target="#final-reminders"><span class="header-section-number">0.5</span> Final Reminders</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/csumb-stat-ds/stat-250-lab-primers/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -389,12 +389,12 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlY2hvIjpmYWxzZSwiZWRpdCI6ZmFsc2UsImV2YWwi
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Digital Accessibility
+<span class="screen-reader-only">Note</span>Digital Accessibility
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -404,25 +404,25 @@ Digital Accessibility
 </div>
 </div>
 </div>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">0.1</span> Introduction</h2>
 <p>This Primer will introduce you to using Markdown to create documents. The good news is: you’ve already been doing this! The .qmd files you are using are <strong>Q</strong>uarto documents that are written with <strong>m</strong>ark<strong>d</strong>own and you’ve been editing them since week 1. We’re just going to make some of what you’ve already learned more explicit.</p>
 </section>
-<section id="part-1-introduction-to-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-introduction-to-markdown">Part 1: Introduction to Markdown</h2>
+<section id="introduction-to-markdown" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="introduction-to-markdown"><span class="header-section-number">0.2</span> Introduction to Markdown</h2>
 <p>Markdown is a way to encode formatting on text in an unobtrusive way (compared to, say, html). Quarto documents use the Markdown language to code the text in the document, and allow you to embed code chunks that execute R code. Your finished .qmd document can be ‘rendered’ to other document types, and the markdown language converts to specific formatting.</p>
 <p>Check out the markdown and rendered text side-by-side:</p>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>When you do so, you will see this Markdown document converted to an HTML document and **this phrase is now bold**, *this phrase is italicized*, and `this phrase is written to denote R code`. To do the same in your own documents, you can use the same asterisks (*) or back ticks (`) as shown in the unrendered document. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>When you do so, you will see this Markdown document converted to an HTML document and **this phrase is now bold**, *this phrase is italicized*, and `this phrase is written to denote R code`. To do the same in your own documents, you can use the same asterisks (*) or back ticks (`) as shown in the unrendered document. </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p>When you do so, you will see this Markdown document converted to an HTML document and <strong>this phrase is now bold</strong>, <em>this phrase is italicized</em>, and <code>this phrase is written to denote R code</code>. To do the same in your own documents, you can use the same asterisks (*) or back ticks (`) as shown in the unrendered document.</p>
 </div>
 </div>
 <p>We are going to learn some of the basic Quarto editing techniques.</p>
-<section id="overview-of-quarto" class="level3">
-<h3 class="anchored" data-anchor-id="overview-of-quarto">1.0 Overview of Quarto</h3>
+<section id="overview-of-quarto" class="level3" data-number="0.2.1">
+<h3 data-number="0.2.1" class="anchored" data-anchor-id="overview-of-quarto"><span class="header-section-number">0.2.1</span> Overview of Quarto</h3>
 <p>Before we continue, check out this Tutorial <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Hello Quarto (25 min)</a>. Remember, you will want to take notes as you move through the tutorials. You can also read more via this optional introduction to <a href="https://r4ds.hadley.nz/quarto.html">Quarto (30 min, all of Chapter 28)</a>.</p>
 <p>The biggest thing to realize is that a Quarto document contains three types of content:</p>
 <ol type="1">
@@ -432,8 +432,8 @@ Digital Accessibility
 </ol>
 <p>For our class (STAT 250), you will generally only be editing the <strong>Chunks</strong> and the Text.</p>
 </section>
-<section id="basic-markdown" class="level3">
-<h3 class="anchored">1.1. Basic Markdown</h3>
+<section id="basic-markdown" class="level3" data-number="0.2.2">
+<h3 data-number="0.2.2" class="anchored"><span class="header-section-number">0.2.2</span> Basic Markdown</h3>
 <p>Markdown can format a document just like you format your Word documents in other classes, but we’ll just cover some of the basics here. You’ve already learned <em>italics</em>, <strong>bold</strong> and <code>code</code> displays. Markdown can make lists as well, using a variety of encoding (see the online tutorial). You’ve probably also noticed that when you format your text, its color display changes, to help you see the formatting easier.</p>
 <div class="grid">
 <div class="g-col-6">
@@ -445,7 +445,7 @@ Digital Accessibility
 </div>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>*italics*  or _italics_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>*italics*  or _italics_</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p><em>italics</em> or <em>italics</em></p>
@@ -453,7 +453,7 @@ Digital Accessibility
 </div>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>**bold**</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>**bold**</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p><strong>bold</strong></p>
@@ -461,7 +461,7 @@ Digital Accessibility
 </div>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">`code`</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">`code`</span>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p><code>code</code></p>
@@ -469,7 +469,7 @@ Digital Accessibility
 </div>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>subscript~2~    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>subscript~2~    </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p>subscript<sub>2</sub></p>
@@ -477,7 +477,7 @@ Digital Accessibility
 </div>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>superscript^2^  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>superscript^2^  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p>superscript<sup>2</sup></p>
@@ -485,7 +485,7 @@ Digital Accessibility
 </div>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Text block for answers</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Text block for answers</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <blockquote class="blockquote">
@@ -495,33 +495,33 @@ Digital Accessibility
 </div>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu"># Header Size 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu"># Header Size 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="header-size-1" class="level1 unlisted g-col-6">
-<h1 class="unlisted">Header Size 1</h1>
+<section id="header-size-1" class="level1 unlisted unnumbered g-col-6">
+<h1 class="unlisted unnumbered">Header Size 1</h1>
 </section>
 </div>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Header Size 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Header Size 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="header-size-2" class="level2 unlisted g-col-6">
-<h2 class="unlisted anchored" data-anchor-id="header-size-2">Header Size 2</h2>
+<section id="header-size-2" class="level2 unlisted unnumbered g-col-6">
+<h2 class="unlisted unnumbered anchored" data-anchor-id="header-size-2">Header Size 2</h2>
 </section>
 </div>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">### Header Size 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">### Header Size 3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="header-size-3" class="level3 unlisted g-col-6">
-<h3 class="unlisted anchored" data-anchor-id="header-size-3">Header Size 3</h3>
+<section id="header-size-3" class="level3 unlisted unnumbered g-col-6">
+<h3 class="unlisted unnumbered anchored" data-anchor-id="header-size-3">Header Size 3</h3>
 </section>
 </div>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="an">Markdown Comments Will Not Render:</span><span class="co"> &lt;!--- this comment won't show up rendered ---&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="an">Markdown Comments Will Not Render:</span><span class="co"> &lt;!--- this comment won't show up rendered ---&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p>Markdown Comments Will Not Render: <!--- this comment won't show up rendered ---></p>
@@ -530,9 +530,9 @@ Digital Accessibility
 <p>One last thing of note - markdown works best with “space to breathe.” If you find that something isn’t rendering correctly, making sure there is a blank line between the text you are trying to format and the next helps.</p>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="an">For example:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="an">For example:</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Although this is green unrendered, it doesn't appear with the formatting we want. Try adding an "enter" between the "For example:" and the start of this line and render again. Did it fix it?</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="at">You'll also notice that if there are no line breaks, this formatting doesn't end, so you don't need to put a "&gt;" before each line answer. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="at">You'll also notice that if there are no line breaks, this formatting doesn't end, so you don't need to put a "&gt;" before each line answer. </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p>For example: &gt; Although this is green unrendered, it doesn’t appear with the formatting we want. Try adding an “enter” between the “For example:” and the start of this line and render again. Did it fix it? You’ll also notice that if there are no line breaks, this formatting doesn’t end, so you don’t need to put a “&gt;” before each line answer.</p>
@@ -541,10 +541,10 @@ Digital Accessibility
 <p>Notice what happens when we add spacing:</p>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="an">For example:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="an">For example:</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Although this is green unrendered, it doesn't appear with the formatting we want. Try adding an "enter" between the "For example:" and the start of this line and render again. Did it fix it?</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="at">You'll also notice that if there are no line breaks, this formatting doesn't end, so you don't need to put a "&gt;" before each line answer. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="at">You'll also notice that if there are no line breaks, this formatting doesn't end, so you don't need to put a "&gt;" before each line answer. </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p>For example:</p>
@@ -554,18 +554,18 @@ Digital Accessibility
 </div>
 </div>
 </section>
-<section id="creating-tables" class="level3">
-<h3 class="anchored" data-anchor-id="creating-tables">1.2. Creating Tables</h3>
+<section id="creating-tables" class="level3" data-number="0.2.3">
+<h3 data-number="0.2.3" class="anchored" data-anchor-id="creating-tables"><span class="header-section-number">0.2.3</span> Creating Tables</h3>
 <p>The easiest way to make a table in markdown is using this format:</p>
 <div class="grid">
 <div class="g-col-6">
 <p><strong>Unrendered</strong></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Right <span class="pp">|</span> Left <span class="pp">|</span> Default <span class="pp">|</span> Center <span class="pp">|</span> </span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|------:|:-----|---------|:------:|</span> </span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>   12  <span class="pp">|</span>  12  <span class="pp">|</span>    12   <span class="pp">|</span>    12  <span class="pp">|</span> </span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>  123  <span class="pp">|</span>  123 <span class="pp">|</span>   123   <span class="pp">|</span>   123  <span class="pp">|</span> </span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>    1  <span class="pp">|</span>    1 <span class="pp">|</span>     1   <span class="pp">|</span>     1  <span class="pp">|</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>    1  <span class="pp">|</span>    1 <span class="pp">|</span>     1   <span class="pp">|</span>     1  <span class="pp">|</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p><strong>Rendered</strong></p>
@@ -605,12 +605,12 @@ Digital Accessibility
 <div class="grid">
 <div class="g-col-6">
 <p><strong>Unrendered</strong></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Right <span class="pp">|</span> Left <span class="pp">|</span> Default <span class="pp">|</span> Center <span class="pp">|</span> </span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|------:|:-----|---------|:------:|</span> </span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>   12  <span class="pp">|</span>  124 <span class="pp">|</span>    12<span class="pp">|</span>    12  <span class="pp">|</span> </span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>  123  <span class="pp">|</span>     123 <span class="pp">|</span>   123 <span class="pp">|</span>   123  <span class="pp">|</span> </span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>    1  <span class="pp">|</span>  176 <span class="pp">|</span>     1   <span class="pp">|</span>     1  <span class="pp">|</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>    1  <span class="pp">|</span>  176 <span class="pp">|</span>     1   <span class="pp">|</span>     1  <span class="pp">|</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p><strong>Rendered</strong></p>
@@ -648,20 +648,20 @@ Digital Accessibility
 </div>
 <p>That said, it is easier to read in the .qmd file if you add spaces and dashes as needed so that they all do line up.</p>
 </section>
-<section id="mathematics" class="level3">
-<h3 class="anchored" data-anchor-id="mathematics">1.3. Mathematics</h3>
+<section id="mathematics" class="level3" data-number="0.2.4">
+<h3 data-number="0.2.4" class="anchored" data-anchor-id="mathematics"><span class="header-section-number">0.2.4</span> Mathematics</h3>
 <p>We often want to write small mathematics equations or write mathematical symbols. This is actually much easier in .qmd than in Word.</p>
 <p>We surround an equation with <code>$</code> signs: <code>$e=mc^2$</code> which will appear as <span class="math inline">\(e=mc^2\)</span> in the rendered document.</p>
 <p>Here are some examples of the type of mathematics you will use within your Quarto documents.</p>
-<section id="greek-letters" class="level4">
-<h4 class="anchored" data-anchor-id="greek-letters">Greek Letters</h4>
+<section id="greek-letters" class="level4" data-number="0.2.4.1">
+<h4 data-number="0.2.4.1" class="anchored" data-anchor-id="greek-letters"><span class="header-section-number">0.2.4.1</span> Greek Letters</h4>
 <p>We often want to use statistical symbols within markdown to denote parameters with Greek letters. They are called by using a backslash (<code>\</code>) and then the full name of the Greek letter, such as <code>\alpha</code>, and surrounded by <code>$</code> to be called within the equation-mode:</p>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>$\sigma$</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>$\sigma$</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>$\alpha$</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>$\mu$</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>$\beta$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>$\beta$</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p><span class="math inline">\(\sigma\)</span><br>
@@ -671,14 +671,14 @@ Digital Accessibility
 </div>
 </div>
 </section>
-<section id="superscripts-and-subscripts" class="level4">
-<h4 class="anchored" data-anchor-id="superscripts-and-subscripts">Superscripts and Subscripts</h4>
+<section id="superscripts-and-subscripts" class="level4" data-number="0.2.4.2">
+<h4 data-number="0.2.4.2" class="anchored" data-anchor-id="superscripts-and-subscripts"><span class="header-section-number">0.2.4.2</span> Superscripts and Subscripts</h4>
 <p>We can include sub- and superscripts to make our parameters and statistics specific. Note: once the equation is surrounded by <code>$</code>’s we don’t need the markdown edit for superscript like above. In math mode, you might see:</p>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>$x^2$  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>$x^2$  </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>$H_0$  </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>$\mu_1$  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>$\mu_1$  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p><span class="math inline">\(x^2\)</span><br>
@@ -689,8 +689,8 @@ Digital Accessibility
 <p>We might want to make our subscript a longer phrase in statistics, to help denote our population of interest when we have more than one. We surround whatever we want to stay in a subscript with <code>{}</code>, such as:</p>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>$\mu_{female}$  </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>$\mu_{male}$ </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>$\mu_{female}$  </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>$\mu_{male}$ </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p><span class="math inline">\(\mu_{female}\)</span><br>
@@ -698,14 +698,14 @@ Digital Accessibility
 </div>
 </div>
 </section>
-<section id="symbols-over-letters" class="level4">
-<h4 class="anchored" data-anchor-id="symbols-over-letters">Symbols over Letters</h4>
+<section id="symbols-over-letters" class="level4" data-number="0.2.4.3">
+<h4 data-number="0.2.4.3" class="anchored" data-anchor-id="symbols-over-letters"><span class="header-section-number">0.2.4.3</span> Symbols over Letters</h4>
 <p>We can call our special statistical symbols in a similar way, such as <code>\bar{x}</code>. In this case, the <code>bar</code> symbol will be applied over the <code>x</code>, to make our statistical symbol for sample mean: <span class="math inline">\(\bar{x}\)</span>.</p>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>$\bar{x}$  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>$\bar{x}$  </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>$\hat{p}$  </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>$\hat{\beta}_1$  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>$\hat{\beta}_1$  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p><span class="math inline">\(\bar{x}\)</span><br>
@@ -714,13 +714,13 @@ Digital Accessibility
 </div>
 </div>
 </section>
-<section id="equations" class="level4">
-<h4 class="anchored" data-anchor-id="equations">Equations</h4>
+<section id="equations" class="level4" data-number="0.2.4.4">
+<h4 data-number="0.2.4.4" class="anchored" data-anchor-id="equations"><span class="header-section-number">0.2.4.4</span> Equations</h4>
 <p>Finally, we can write little equations for our outputs:, like <span class="math inline">\(\bar{x} = 3.54\)</span>.</p>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb20"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>$\bar{x} = 3.54$  </span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>$\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>$\bar{x} = 3.54$  </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>$\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p><span class="math inline">\(\bar{x} = 3.54\)</span><br>
@@ -729,66 +729,66 @@ Digital Accessibility
 </div>
 </section>
 </section>
-<section id="code-chunks" class="level3">
-<h3 class="anchored" data-anchor-id="code-chunks">1.4. Code Chunks</h3>
+<section id="code-chunks" class="level3" data-number="0.2.5">
+<h3 data-number="0.2.5" class="anchored" data-anchor-id="code-chunks"><span class="header-section-number">0.2.5</span> Code Chunks</h3>
 <p>You’ve learned how to insert code chunks using the shortcuts Ctrl-Alt-I (or Cmd-Alt-I), by clicking the green Insert +C button above, but you can also just type the two sets of code that surround code chunks, <code>```{r}</code> and the ending <code>```</code> . <em>Note, those are back-ticks, found above the tab key, not single quotation marks.</em></p>
 <p>We can add labels <code>#| label:</code> to support easy navigation as well, but be careful, <strong>DO NOT REPEAT LABELS</strong> or this will cause an error when you render the .qmd file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: simple-addition</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
 <p>At the beginning of each Quarto document there should be a special code chunk called the <strong>setup</strong> chunk. This is where we read the packages used in the rest of the document. We often use <code>#| include: false</code> to as an option in the <strong>setup</strong> code chunk to hide the output in the rendered document.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mosaic)</span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can also comment your code, which is a way of annotating it without affecting the code, using a <code>#</code> followed by text.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: print-answer</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="dv">42</span><span class="sc">*</span><span class="dv">42</span>  <span class="co">#the Answer to the Ultimate Question of Life, the Universe, and Everything, Squared</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1764</code></pre>
 </div>
 </div>
 </section>
-<section id="in-line-code" class="level3">
-<h3 class="anchored" data-anchor-id="in-line-code">1.5 In-line code</h3>
+<section id="in-line-code" class="level3" data-number="0.2.6">
+<h3 data-number="0.2.6" class="anchored" data-anchor-id="in-line-code"><span class="header-section-number">0.2.6</span> In-line code</h3>
 <p>One of the neat features in Quarto files is the ability to combine code chunks, text, and automatically include (or not– but we always will in this class) code and outputs in the finished document. We’ve been writing code in the code chunks, but you can also write it directly in line with the text using some specific formatting.</p>
 <p>Let’s demonstrate with our small <code>study</code> dataset. First, we need to read in the data as an <code>object</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: read-study-data</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>study <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"study.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="co">#stops some extra output</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Then we could calculate the mean:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: mean-wk1</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="sc">~</span>wk1, <span class="at">data =</span> study)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.142857</code></pre>
 </div>
 </div>
 <p>By running the code as above, we calculated the mean, but didn’t save it as an <code>object</code> – it just prints to screen and is forgotten by R. If we save the output as an <code>object</code>, we can use it within the Quarto file. When you save an output to an <code>object</code> name, it will not print the value to the screen unless you tell R to provide the value.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: mean-wk1-assigned</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>mwk1 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="sc">~</span>wk1, <span class="at">data =</span> study) <span class="co"># calculates mean and saves it as mwk1</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>mwk1 <span class="co"># prints to screen the value saved to the object name</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.142857</code></pre>
 </div>
@@ -797,7 +797,7 @@ Digital Accessibility
 <p>For example:</p>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb31"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>The mean number of hours studied in week 1 is <span class="in">`r mwk1`</span> hours.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>The mean number of hours studied in week 1 is <span class="in">`r mwk1`</span> hours.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p>The mean number of hours studied in week 1 is 1.1428571 hours.</p>
@@ -806,7 +806,7 @@ Digital Accessibility
 <p>Using a stored object name is useful if you are going to use the value often (to cut down on typing), but if you only need to use the value small number of times, you can also write the code directly in line. For example:</p>
 <div class="grid">
 <div class="g-col-6">
-<div class="sourceCode" id="cb32"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>The maximum number of hours studied in week two is <span class="in">`r max(~wk2, data = study)`</span> hours</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>The maximum number of hours studied in week two is <span class="in">`r max(~wk2, data = study)`</span> hours</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="g-col-6">
 <p>the maximum number of hours studied in week two is 5 hours</p>
@@ -814,45 +814,45 @@ Digital Accessibility
 </div>
 <p>Notice that we never ran that code in any code chunk. It was run and displayed completely in-line.</p>
 </section>
-<section id="checking-code-rendering-your-document" class="level3">
-<h3 class="anchored" data-anchor-id="checking-code-rendering-your-document">1.6. Checking code &amp; Rendering your Document</h3>
+<section id="checking-code-rendering-your-document" class="level3" data-number="0.2.7">
+<h3 data-number="0.2.7" class="anchored" data-anchor-id="checking-code-rendering-your-document"><span class="header-section-number">0.2.7</span> Checking code &amp; Rendering your Document</h3>
 <p>You can run specific code chunks to check their output by pressing the green play button to run the specific code chunk, or the icon next to it to run all code chunks prior to that code chunk.</p>
-<section id="viewing-your-rendered-document" class="level4">
-<h4 class="anchored" data-anchor-id="viewing-your-rendered-document">Viewing Your Rendered Document</h4>
+<section id="viewing-your-rendered-document" class="level4" data-number="0.2.7.1">
+<h4 data-number="0.2.7.1" class="anchored" data-anchor-id="viewing-your-rendered-document"><span class="header-section-number">0.2.7.1</span> Viewing Your Rendered Document</h4>
 <p>If you want to check your Markdown editing, you can render the document and view it in the ‘Viewer’ Pane by pressing the ‘Render’ button at the top of the Quarto document pane. Make sure the setting (gear icon above) is set to ‘Preview in Viewer pane’.</p>
 </section>
-<section id="changing-the-document-type" class="level4">
-<h4 class="anchored" data-anchor-id="changing-the-document-type">Changing the Document Type</h4>
+<section id="changing-the-document-type" class="level4" data-number="0.2.7.2">
+<h4 data-number="0.2.7.2" class="anchored" data-anchor-id="changing-the-document-type"><span class="header-section-number">0.2.7.2</span> Changing the Document Type</h4>
 <p>You can change the document type you knit to automatically by changing the output type in the YAML header from <code>format: html</code> to <code>format: docx</code> and press the ‘Render’ button. Your word document will be created in the project folder! (In this class, we will always use html documents; please don’t edit the YAML header of your labs; we showed you this simply for future information.)</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My report"</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
 <span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">error</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---  </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="errors-in-your-code" class="level4">
-<h4 class="anchored" data-anchor-id="errors-in-your-code">Errors in your Code</h4>
+<section id="errors-in-your-code" class="level4" data-number="0.2.7.3">
+<h4 data-number="0.2.7.3" class="anchored" data-anchor-id="errors-in-your-code"><span class="header-section-number">0.2.7.3</span> Errors in your Code</h4>
 <p>If there is an error in your file, it will not render. When .qmd files render, they run on a completely clean environment. So if you somehow loaded data or something else not with code in your .qmd file, the rendering process will create an error.</p>
 <p>If you cannot figure out the error, you can generally still get your document to render by changing <code>error: false</code> to <code>error: true</code> in the YAML code at the top.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My report"</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
 <span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">error</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---  </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This will print out any errors in your code chunks, but still render the document.</p>
 </section>
-<section id="errors-in-your-markdown" class="level4">
-<h4 class="anchored" data-anchor-id="errors-in-your-markdown">Errors in your Markdown</h4>
+<section id="errors-in-your-markdown" class="level4" data-number="0.2.7.4">
+<h4 data-number="0.2.7.4" class="anchored" data-anchor-id="errors-in-your-markdown"><span class="header-section-number">0.2.7.4</span> Errors in your Markdown</h4>
 <p>The most common errors in your markdown that can cause issues are deleting back ticks (`) around your code chunks or dashes (-) from around the YAML code, so always check that first.</p>
 </section>
 </section>
 </section>
-<section id="part-2-r-code-exploratory-data-analysis-for-single-numeric-variables" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-r-code-exploratory-data-analysis-for-single-numeric-variables">Part 2: R Code: Exploratory Data Analysis for Single Numeric Variables</h2>
+<section id="r-code-exploratory-data-analysis-for-single-numeric-variables" class="level2" data-number="0.3">
+<h2 data-number="0.3" class="anchored" data-anchor-id="r-code-exploratory-data-analysis-for-single-numeric-variables"><span class="header-section-number">0.3</span> R Code: Exploratory Data Analysis for Single Numeric Variables</h2>
 <p>Here is a review of some of the code you will use in the rest of Lab 2.</p>
 <p>Remember to first run the set up chunks first and check that all necessary packages are loaded.</p>
 <div class="cell">
@@ -865,8 +865,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </script>
 </div>
 </div>
-<section id="reading-in-data" class="level3">
-<h3 class="anchored" data-anchor-id="reading-in-data">2.1 Reading in Data</h3>
+<section id="reading-in-data" class="level3" data-number="0.3.1">
+<h3 data-number="0.3.1" class="anchored" data-anchor-id="reading-in-data"><span class="header-section-number">0.3.1</span> Reading in Data</h3>
 <p>Next, we must be sure to read in the data AND assign it to an <code>object</code> name so that we can call it later in other functions.</p>
 <div class="cell">
 <div>
@@ -880,8 +880,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </div>
 <p>Read the output and add the argument to the function above to “quiet this message”.</p>
 </section>
-<section id="histograms" class="level3">
-<h3 class="anchored" data-anchor-id="histograms">2.2 Histograms</h3>
+<section id="histograms" class="level3" data-number="0.3.2">
+<h3 data-number="0.3.2" class="anchored" data-anchor-id="histograms"><span class="header-section-number">0.3.2</span> Histograms</h3>
 <p>Histograms are a great way to explore the distribution (shape, center, spread, outliers) of a variable. Here is the basic structure for a histogram of body mass of the penguins. Add the following arguments.</p>
 <ul>
 <li>a x-axis label that says <code>"Body Mass (g) of Three Penguin Species in the Palmer Archipelago"</code><br>
@@ -909,12 +909,12 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
              ylab = "Number of Penguins",
              binwidth = 200,
              color = "black")</code>
-<div class="sourceCode cell-code" id="interpolate-8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-8-1"><a href="#interpolate-8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span> body_mass_g, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-8-1"><a href="#interpolate-8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span> body_mass_g, </span>
 <span id="interpolate-8-2"><a href="#interpolate-8-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> penguins,</span>
 <span id="interpolate-8-3"><a href="#interpolate-8-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">xlab =</span> <span class="st">"Body Mass (g) of Three Penguin Species in the Palmer Archipelago"</span>,</span>
 <span id="interpolate-8-4"><a href="#interpolate-8-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">ylab =</span> <span class="st">"Number of Penguins"</span>,</span>
 <span id="interpolate-8-5"><a href="#interpolate-8-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">binwidth =</span> <span class="dv">200</span>,</span>
-<span id="interpolate-8-6"><a href="#interpolate-8-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-8-6"><a href="#interpolate-8-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"black"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -924,8 +924,8 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </script>
 </div>
 </section>
-<section id="boxplots" class="level3">
-<h3 class="anchored" data-anchor-id="boxplots">2.3 Boxplots</h3>
+<section id="boxplots" class="level3" data-number="0.3.3">
+<h3 data-number="0.3.3" class="anchored" data-anchor-id="boxplots"><span class="header-section-number">0.3.3</span> Boxplots</h3>
 <p>Boxplots are a great way to explore the distribution (shape, center, spread, outliers) of a variable, though they do not give us information about modality. Here is the basic structure for a boxplot of body mass of the penguins. Add the following arguments.</p>
 <ul>
 <li>a x-axis label that says <code>"Body Mass (g) of Three Penguin Species in the Palmer Archipelago"</code></li>
@@ -946,9 +946,9 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <code id="interpolate-12" class="solution-code d-none">gf_boxplot(~ body_mass_g, 
            data = penguins,
            xlab = "Body Mass (g) of Three Penguin Species in the Palmer Archipelago")</code>
-<div class="sourceCode cell-code" id="interpolate-13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-13-1"><a href="#interpolate-13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span> body_mass_g, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-13-1"><a href="#interpolate-13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span> body_mass_g, </span>
 <span id="interpolate-13-2"><a href="#interpolate-13-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> penguins,</span>
-<span id="interpolate-13-3"><a href="#interpolate-13-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Body Mass (g) of Three Penguin Species in the Palmer Archipelago"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-13-3"><a href="#interpolate-13-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Body Mass (g) of Three Penguin Species in the Palmer Archipelago"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -974,8 +974,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </div>
 </div>
 </section>
-<section id="summary-statistics" class="level3">
-<h3 class="anchored" data-anchor-id="summary-statistics">2.4 Summary Statistics</h3>
+<section id="summary-statistics" class="level3" data-number="0.3.4">
+<h3 data-number="0.3.4" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">0.3.4</span> Summary Statistics</h3>
 <p>There are a lot of functions we learned for summary statistics, including:</p>
 <ul>
 <li><code>mean()</code></li>
@@ -1002,7 +1002,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex-mean" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex-mean">
 <code id="interpolate-18" class="solution-code d-none">mean(~ body_mass_g, data = penguins, na.rm = TRUE)</code>
-<div class="sourceCode cell-code" id="interpolate-19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-19-1"><a href="#interpolate-19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="sc">~</span> body_mass_g, <span class="at">data =</span> penguins, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-19-1"><a href="#interpolate-19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="sc">~</span> body_mass_g, <span class="at">data =</span> penguins, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1048,8 +1048,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </div>
 </section>
 </section>
-<section id="help-understanding-the-basal-metabolic-rate-for-bivalves" class="level2">
-<h2 class="anchored" data-anchor-id="help-understanding-the-basal-metabolic-rate-for-bivalves">Help Understanding the Basal Metabolic Rate for Bivalves</h2>
+<section id="help-understanding-the-basal-metabolic-rate-for-bivalves" class="level2" data-number="0.4">
+<h2 data-number="0.4" class="anchored" data-anchor-id="help-understanding-the-basal-metabolic-rate-for-bivalves"><span class="header-section-number">0.4</span> Help Understanding the Basal Metabolic Rate for Bivalves</h2>
 <p>In the first question you are given the abstract from the following paper:</p>
 <p><a href="https://royalsocietypublishing.org/doi/10.1098/rspb.2018.1292">Metabolic rates, climate and macroevolution: a case study using Neogene molluscs</a></p>
 <p>Here are some tips for critically reading the abstract:</p>
@@ -1074,8 +1074,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <li>Should I go back and reread any part of this material so I can better understand it?</li>
 </ul>
 </section>
-<section id="final-reminders" class="level2">
-<h2 class="anchored" data-anchor-id="final-reminders">Final Reminders</h2>
+<section id="final-reminders" class="level2" data-number="0.5">
+<h2 data-number="0.5" class="anchored" data-anchor-id="final-reminders"><span class="header-section-number">0.5</span> Final Reminders</h2>
 <p>Remember, all the code needed for the labs can be found in your course notebook, through the chapter, in the “How to do it in R” section at the end of each chapter, or in the appendix of the notebook.</p>
 <p>Please see Canvas for information on the Math/Stat Cafe, the CLC Supplemental Instruction and Drop-in Hours, and your Instructor’s Student Hours (Office Hours) if you need any additional help.</p>
 
@@ -1162,13 +1162,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

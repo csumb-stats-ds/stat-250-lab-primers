@@ -2,70 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/prep-materials/rstudio-orientation.html</loc>
-    <lastmod>2025-08-24T04:55:37.027Z</lastmod>
+    <lastmod>2026-01-17T00:29:46.290Z</lastmod>
   </url>
   <url>
     <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/prep-materials/install-r.html</loc>
-    <lastmod>2025-08-24T05:08:40.246Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-8-primer/lab-8-anova-primer.html</loc>
-    <lastmod>2025-11-03T04:30:10.484Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-6-primer/lab-6-two-groups-primer.html</loc>
-    <lastmod>2025-11-03T04:30:10.453Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-4-primer/lab-4-confidence-primer.html</loc>
-    <lastmod>2025-10-14T02:01:37.120Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-2-primer/lab-2-eda-primer.html</loc>
-    <lastmod>2025-10-14T02:01:37.109Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-10-primer/lab-10-regression-primer.html</loc>
-    <lastmod>2025-12-07T02:16:29.236Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/instructions/importing-exporting.html</loc>
-    <lastmod>2025-08-25T05:09:11.440Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/index.html</loc>
-    <lastmod>2025-08-23T21:13:41.319Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/instructions/common-errors.html</loc>
-    <lastmod>2025-08-25T04:45:48.157Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-1-primer/lab-1-intro-r-primer.html</loc>
-    <lastmod>2025-10-14T02:01:37.109Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-11-primer/lab-11-categorical-primer.html</loc>
-    <lastmod>2025-12-07T07:18:32.441Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-3-primer/lab-3-intro-inference-primer.html</loc>
-    <lastmod>2025-10-14T02:01:37.109Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-5-primer/lab-5-two-groups-primer.html</loc>
-    <lastmod>2025-10-14T02:01:37.123Z</lastmod>
-  </url>
-  <url>
-    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-7-primer/lab-7-paired-groups-primer.html</loc>
-    <lastmod>2025-11-03T04:30:10.456Z</lastmod>
+    <lastmod>2026-01-17T00:29:41.800Z</lastmod>
   </url>
   <url>
     <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-9-primer/lab-9-eda-two-variable-primer.html</loc>
-    <lastmod>2025-11-07T03:12:52.765Z</lastmod>
+    <lastmod>2025-12-05T19:38:07.985Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-7-primer/lab-7-paired-groups-primer.html</loc>
+    <lastmod>2025-10-30T16:17:42.289Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-5-primer/lab-5-two-groups-primer.html</loc>
+    <lastmod>2025-10-08T21:28:32.063Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-3-primer/lab-3-intro-inference-primer.html</loc>
+    <lastmod>2026-01-22T23:28:00.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-11-primer/lab-11-categorical-primer.html</loc>
+    <lastmod>2026-01-17T00:35:22.965Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-1-primer/lab-1-intro-r-primer.html</loc>
+    <lastmod>2026-01-23T18:35:08.824Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/instructions/common-errors.html</loc>
+    <lastmod>2025-08-25T15:38:17.055Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/index.html</loc>
+    <lastmod>2025-08-25T15:38:17.054Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/instructions/importing-exporting.html</loc>
+    <lastmod>2026-01-17T00:29:28.299Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-10-primer/lab-10-regression-primer.html</loc>
+    <lastmod>2025-12-05T19:38:07.714Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-2-primer/lab-2-eda-primer.html</loc>
+    <lastmod>2026-01-23T17:51:25.242Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-4-primer/lab-4-confidence-primer.html</loc>
+    <lastmod>2026-01-23T17:42:12.711Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-6-primer/lab-6-two-groups-primer.html</loc>
+    <lastmod>2025-11-21T01:36:14.374Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/lab-8-primer/lab-8-anova-primer.html</loc>
+    <lastmod>2025-11-06T17:16:50.021Z</lastmod>
+  </url>
+  <url>
+    <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/prep-materials/code-style-guide.html</loc>
+    <lastmod>2026-01-23T17:56:58.050Z</lastmod>
   </url>
   <url>
     <loc>https://csumb-stat-ds.github.io/stat-250-lab-primers/prep-materials/intro-to-quarto.html</loc>
-    <lastmod>2025-08-25T05:30:12.320Z</lastmod>
+    <lastmod>2026-01-17T00:29:50.218Z</lastmod>
   </url>
 </urlset>

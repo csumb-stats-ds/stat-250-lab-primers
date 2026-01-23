@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,14 +68,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../prep-materials/install-r.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a00848ed57fe9097555b5bd7c001b509.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-142d9687c3f711bd3ef1b6bce998d27f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -135,12 +136,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">STAT 250 Lab Primers</a> 
-        <div class="sidebar-tools-main">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
     <a href="https://github.com/csumb-stat-ds/stat-250-lab-primers" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
 </div>
-    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -294,16 +294,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#part-1-r-orientation" id="toc-part-1-r-orientation" class="nav-link" data-scroll-target="#part-1-r-orientation">Part 1: R Orientation</a></li>
-  <li><a href="#part-2-data-organization" id="toc-part-2-data-organization" class="nav-link" data-scroll-target="#part-2-data-organization">Part 2: Data Organization</a></li>
-  <li><a href="#part-3-r-coding" id="toc-part-3-r-coding" class="nav-link" data-scroll-target="#part-3-r-coding">Part 3: R Coding</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#r-orientation" id="toc-r-orientation" class="nav-link" data-scroll-target="#r-orientation"><span class="header-section-number">2</span> R Orientation</a></li>
+  <li><a href="#data-organization" id="toc-data-organization" class="nav-link" data-scroll-target="#data-organization"><span class="header-section-number">3</span> Data Organization</a></li>
+  <li><a href="#r-coding" id="toc-r-coding" class="nav-link" data-scroll-target="#r-coding"><span class="header-section-number">4</span> R Coding</a>
   <ul class="collapse">
-  <li><a href="#loading-packages" id="toc-loading-packages" class="nav-link" data-scroll-target="#loading-packages">3.1 Loading Packages</a></li>
-  <li><a href="#r-syntax" id="toc-r-syntax" class="nav-link" data-scroll-target="#r-syntax">3.2: R Syntax</a></li>
-  <li><a href="#vectors-objects-dataframes" id="toc-vectors-objects-dataframes" class="nav-link" data-scroll-target="#vectors-objects-dataframes">3.3: Vectors, Objects, &amp; Dataframes</a></li>
+  <li><a href="#sec-loading-packages" id="toc-sec-loading-packages" class="nav-link" data-scroll-target="#sec-loading-packages"><span class="header-section-number">4.1</span> Loading Packages</a></li>
+  <li><a href="#r-syntax" id="toc-r-syntax" class="nav-link" data-scroll-target="#r-syntax"><span class="header-section-number">4.2</span> R Syntax</a></li>
+  <li><a href="#vectors-objects-dataframes" id="toc-vectors-objects-dataframes" class="nav-link" data-scroll-target="#vectors-objects-dataframes"><span class="header-section-number">4.3</span> Vectors, Objects, &amp; Dataframes</a></li>
   </ul></li>
-  <li><a href="#part-4-r-grammer-errors" id="toc-part-4-r-grammer-errors" class="nav-link" data-scroll-target="#part-4-r-grammer-errors">Part 4: R Grammer &amp; Errors</a></li>
+  <li><a href="#r-grammer-errors" id="toc-r-grammer-errors" class="nav-link" data-scroll-target="#r-grammer-errors"><span class="header-section-number">5</span> R Grammer &amp; Errors</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/csumb-stat-ds/stat-250-lab-primers/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -340,12 +340,12 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlY2hvIjpmYWxzZSwiZWRpdCI6ZmFsc2UsImV2YWwi
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Digital Accessibility
+<span class="screen-reader-only">Note</span>Digital Accessibility
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -355,35 +355,35 @@ Digital Accessibility
 </div>
 </div>
 </div>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p><em>Did it increase? Did it decrease? Is it different? Was it successful? Did it achieve the goal? Are these things related? What might we expect?</em></p>
 <p>These are common questions for which you could imagine wanting an answer. The ‘it’ might change, depending on any particular job, but the ultimate questions remain the same, and they all are answered with statistics. While statistics used to be done by hand using long and sometimes complicated formulas, statistics are largely (and thankfully!) calculated by computers now and, more and more often, in fields in research, non-profits, government and industry, they are calculated using the program R.</p>
 <p>Recall your earlier reading “Why R?” to remember all the reasons we will be learning R in this course. You might feel intimidated at first using a program that takes code, rather than a series of drop-down menus, but we’ll walk through learning the basics of R so that when you leave the class you have a good grasp of R on which to continue building.</p>
 <hr>
 </section>
-<section id="part-1-r-orientation" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-r-orientation">Part 1: R Orientation</h2>
+<section id="r-orientation" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="r-orientation"><span class="header-section-number">2</span> R Orientation</h2>
 <p>You have gotten a quick orientation to R in class. If you need a refresher, read, watch and follow along with <a href="https://ismayc.github.io/rbasics-book/3-rstudiobasics.html#rstudio-layout" target="_blank">Chapter 3.4: RStudio Layout (12 min)</a> in your own RStudio window to understand the use of different panes. You only need to read the entirety (including subsections) of Chapter 3.4, not the entire chapter 3. Don’t feel like you need to understand all of the coding at this point, just get a sense of what each pane does.</p>
 <p>Now that we have an overview of R, lets get started using R! Don’t forget to start by first opening the lab project!</p>
 <hr>
 </section>
-<section id="part-2-data-organization" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-data-organization">Part 2: Data Organization</h2>
+<section id="data-organization" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="data-organization"><span class="header-section-number">3</span> Data Organization</h2>
 <p>One of the key parts of statistical analyses is good organization of your data itself and your files.</p>
 <p>You should always work in a project in R to help organize all the files associated with that particular project.</p>
 <p>R expects data to be organized in a particular way to calculate and manipulate your raw data into statistics. Read <a href="https://dtkaplan.github.io/statPREP/Notes/Data_and_presentations.html" target="_blank">Data and Presentations (5 min)</a> regarding how data tables need to be arranged for statistical analyses (Tabular and Tidy).</p>
 <hr>
 </section>
-<section id="part-3-r-coding" class="level2">
-<h2 class="anchored" data-anchor-id="part-3-r-coding">Part 3: R Coding</h2>
+<section id="r-coding" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="r-coding"><span class="header-section-number">4</span> R Coding</h2>
 <p>R, at its most basic, can be thought of as the most powerful calculator you’ve ever had. R isn’t powerful just from its calculation ability, but its ability to utilize <strong><em>functions</em></strong> to apply complex mathematical operations to whole sets of data, which is what we’re going to learn.</p>
 <p>Let’s take a closer look at R commands. Complete the following primer: <a href="https://r-primers.andrewheiss.com/basics/02-programming-basics/" target="_blank">RStudio Primer: Programming Basics (25 min)</a>. (One additional note: the chapter gives some indication of the rules around object names, but doesn’t include one last rule: object names can’t have spaces!</p>
-<section id="loading-packages" class="level3">
-<h3 class="anchored" data-anchor-id="loading-packages">3.1 Loading Packages</h3>
+<section id="sec-loading-packages" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="sec-loading-packages"><span class="header-section-number">4.1</span> Loading Packages</h3>
 <p>R comes with what is called a “Base” <strong>package</strong>, which contains numerous functions. There are tens of thousands of additional packages that contain even more packages for everything from 3-D visualizations to machine learning algorithms. To use functions from other packages you must first install the package</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"ggformula"</span>, <span class="st">"mosaic"</span>, <span class="st">"tidyverse"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"ggformula"</span>, <span class="st">"mosaic"</span>, <span class="st">"tidyverse"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Installation only needs to happen once</strong>. If you are using the <a href="https://csumb.jupyter.cal-icor.org" target="_blank">CSUMB Cal ICOR Server</a> then the above packages are already installed and do not need to be installed again.</p>
 <p><strong>Loading packages must happen each session</strong>. We should always load our packages first thing. Go ahead and run the following code to load our needed packages.</p>
@@ -398,8 +398,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </div>
 </div>
 </section>
-<section id="r-syntax" class="level3">
-<h3 class="anchored" data-anchor-id="r-syntax">3.2: R Syntax</h3>
+<section id="r-syntax" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="r-syntax"><span class="header-section-number">4.2</span> R Syntax</h3>
 <p>As you covered in class, the R language has its own set of grammatical rules. The good news is that once you’ve learned the basic R structure, it is easy to apply to new commands.</p>
 <p>To get R (or any software) to do anything, there are two important questions you must be able to answer: 1) What do you want R to do, and 2) What must R know to do that?</p>
 <p>The answers to those questions can help us fill in the boxes of our generic formula template:</p>
@@ -439,8 +439,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <figcaption>Figure 3: Adding Arguments into Functions Syntax</figcaption>
 </figure>
 </div>
-<section id="formula-template" class="level4">
-<h4 class="anchored" data-anchor-id="formula-template">Formula Template</h4>
+<section id="formula-template" class="level4" data-number="4.2.1">
+<h4 data-number="4.2.1" class="anchored" data-anchor-id="formula-template"><span class="header-section-number">4.2.1</span> Formula Template</h4>
 <p>The <code>formula</code> argument in our template is where we define the variable of data to which we want to apply our goal. There are actually a few options for what that variable can look like, depending on the variables we wish to use. We use <code>y</code> to designate our y-axis variable, <code>x</code> to designate our x-axis variable (or in the second case, one single variable), and <code>z</code> to designate a conditioning variable that lets us create separate panels when we group data. The <code>|z</code> can also be applied to the single variable <code>~x</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -449,8 +449,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </figure>
 </div>
 </section>
-<section id="assembling-the-pieces" class="level4">
-<h4 class="anchored" data-anchor-id="assembling-the-pieces">Assembling the pieces</h4>
+<section id="assembling-the-pieces" class="level4" data-number="4.2.2">
+<h4 data-number="4.2.2" class="anchored" data-anchor-id="assembling-the-pieces"><span class="header-section-number">4.2.2</span> Assembling the pieces</h4>
 <p>Now we need to put together the pieces we’ve learned with our actual scenario. For example, we might keep a record of the number of hours spent studying on each day of the week during week 1 and during week 2 of the semester. We want to make a graphic of the hours spent studying on each day of the week. In this case, we have two variables: <code>hours</code> and <code>day</code>, so we’ll use the template:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -492,13 +492,13 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </table>
 <p>We need to fill in each piece into our template. So our code <code>goal (y ~ x , data = mydata)</code> becomes <code>gf_col(hours ~ day, data = study2)</code> and creates the following plot:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_col</span>(hours <span class="sc">~</span> day, <span class="at">data =</span> study2, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_col</span>(hours <span class="sc">~</span> day, <span class="at">data =</span> study2, </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">ylab =</span> <span class="st">"Hours spent studying in week 1 and week 2"</span>, </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Day of the week"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Day of the week"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lab-1-intro-r-primer_files/figure-html/barplot-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="lab-1-intro-r-primer_files/figure-html/barplot-1.png" class="img-fluid figure-img" alt="Bar plot of hours spend studying across each day of the week. Monday was 3 hours, Tuesday 5 hours, Wednesday 7 hours, Thursday 6 hours, Friday 0 hours, Saturday and Sunday 4 hours each." width="672"></p>
 </figure>
 </div>
 </div>
@@ -506,8 +506,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>Learning any new software can feel daunting, but referring back to this template and asking yourself the two questions – what do I want R to do? what must R know to do that? – will help you throughout your time working with R.</p>
 </section>
 </section>
-<section id="vectors-objects-dataframes" class="level3">
-<h3 class="anchored" data-anchor-id="vectors-objects-dataframes">3.3: Vectors, Objects, &amp; Dataframes</h3>
+<section id="vectors-objects-dataframes" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="vectors-objects-dataframes"><span class="header-section-number">4.3</span> Vectors, Objects, &amp; Dataframes</h3>
 <p>The real power of R comes not from calculating values like a calculator, but in manipulating sets of data. <strong><em>Vectors</em></strong> are sets of data that are organized together. Groups of vectors that are associated are <strong><em>dataframes</em></strong>.</p>
 <p>For example, we could load version of our data on hours spent studying in week 1 and week 2 that has three columns, one for day and one for each week.</p>
 <div class="cell">
@@ -536,18 +536,18 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Error: <code>could not find function "read_csv"</code>
+<span class="screen-reader-only">Warning</span>Error: <code>could not find function "read_csv"</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>If you get the error <code>could not find function "read_csv"</code> be sure you ran the code in Section 3.1.</p>
+<p>If you get the error <code>could not find function "read_csv"</code> be sure you ran the code in <a href="#sec-loading-packages" class="quarto-xref">Section&nbsp;4.1</a>.</p>
 </div>
 </div>
 </div>
@@ -660,8 +660,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>A few other useful functions can help us understand the dataset we loaded into R. <code>ncol()</code> lets us determine the number of variables in the dataset. <code>nrow()</code> lets us determine the number of rows (sometimes the same as cases) in the dataset.</p>
 </section>
 </section>
-<section id="part-4-r-grammer-errors" class="level2">
-<h2 class="anchored" data-anchor-id="part-4-r-grammer-errors">Part 4: R Grammer &amp; Errors</h2>
+<section id="r-grammer-errors" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="r-grammer-errors"><span class="header-section-number">5</span> R Grammer &amp; Errors</h2>
 <p>One of the most frustrating parts for people learning R is troubleshooting errors. R is incredibly powerful, but it is <em>dumb</em>. It can’t guess what you meant, nor add in a comma that you forgot to type. Read <a href="https://ismayc.github.io/rbasics-book/6-errors.html" target="_blank">Chapter 6: Deciphering Common R Errors (5 min)</a> which covers the most common errors in R and how to decipher them. R errors aren’t always clear to new users, but they almost always will direct you to where the problem occurs. Sometimes that is just telling you that it can’t find the file or object you are trying to point it to. Other times, it will repeat your code right up to the point where it didn’t understand. That helps focus your attention when searching for errors.</p>
 
 
@@ -747,13 +747,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

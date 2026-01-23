@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,14 +68,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../lab-8-primer/lab-8-anova-primer.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a00848ed57fe9097555b5bd7c001b509.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-142d9687c3f711bd3ef1b6bce998d27f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -122,7 +123,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -164,12 +165,11 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">STAT 250 Lab Primers</a> 
-        <div class="sidebar-tools-main">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
     <a href="https://github.com/csumb-stat-ds/stat-250-lab-primers" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
 </div>
-    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -382,12 +382,12 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlY2hvIjpmYWxzZSwiZWRpdCI6ZmFsc2UsImV2YWwi
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Digital Accessibility
+<span class="screen-reader-only">Note</span>Digital Accessibility
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -417,9 +417,9 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJMb2FkaW5nIFBhY2thZ2VzIiwiY29tcGxldGlvbiI6ZmFsc2UsImVk
 <code id="interpolate-5" class="solution-code d-none">library(ggformula) #for graphs
 library(mosaic) #for statistics
 library(tidyverse) #for data management</code>
-<div class="sourceCode cell-code" id="interpolate-6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-6-1"><a href="#interpolate-6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula) <span class="co">#for graphs</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-6-1"><a href="#interpolate-6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula) <span class="co">#for graphs</span></span>
 <span id="interpolate-6-2"><a href="#interpolate-6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mosaic) <span class="co">#for statistics</span></span>
-<span id="interpolate-6-3"><a href="#interpolate-6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#for data management</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-6-3"><a href="#interpolate-6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#for data management</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -452,25 +452,33 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h5 class="anchored" data-anchor-id="age">Age:</h5>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_34914" onsubmit="return validate_form_34914()" method="post">
-<input type="checkbox" id="answer_34914_1" value="Explanatory">
-<label>Explanatory</label>
+<form name="form_31305" onsubmit="return validate_form_31305()" method="post">
+<label>
+<input type="checkbox" id="answer_31305_1" value="Explanatory">
+Explanatory
+</label>
 <br>
-<input type="checkbox" id="answer_34914_2" value="Response">
-<label>Response</label>
+<label>
+<input type="checkbox" id="answer_31305_2" value="Response">
+Response
+</label>
 <br>
-<input type="checkbox" id="answer_34914_3" value="Categorical">
-<label>Categorical</label>
+<label>
+<input type="checkbox" id="answer_31305_3" value="Categorical">
+Categorical
+</label>
 <br>
-<input type="checkbox" id="answer_34914_4" value="Numeric">
-<label>Numeric</label>
+<label>
+<input type="checkbox" id="answer_31305_4" value="Numeric">
+Numeric
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_34914"></div>
+<div id="result_31305"></div>
 </form>
-<script>function validate_form_34914() {var text; var x1 = document.getElementById('answer_34914_1'); var x2 = document.getElementById('answer_34914_2'); var x3 = document.getElementById('answer_34914_3'); var x4 = document.getElementById('answer_34914_4'); if (x1.checked == true&x2.checked == false&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_34914').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_31305() {var text; var x1 = document.getElementById('answer_31305_1'); var x2 = document.getElementById('answer_31305_2'); var x3 = document.getElementById('answer_31305_3'); var x4 = document.getElementById('answer_31305_4'); if (x1.checked == true&x2.checked == false&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_31305').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_34914').innerText == 'Correct';text = res1;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_31305').innerText == 'Correct';text = res1;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -481,25 +489,33 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h5 class="anchored" data-anchor-id="muscle-mass-1">Muscle Mass:</h5>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_19074" onsubmit="return validate_form_19074()" method="post">
-<input type="checkbox" id="answer_19074_1" value="Explanatory">
-<label>Explanatory</label>
+<form name="form_56522" onsubmit="return validate_form_56522()" method="post">
+<label>
+<input type="checkbox" id="answer_56522_1" value="Explanatory">
+Explanatory
+</label>
 <br>
-<input type="checkbox" id="answer_19074_2" value="Response">
-<label>Response</label>
+<label>
+<input type="checkbox" id="answer_56522_2" value="Response">
+Response
+</label>
 <br>
-<input type="checkbox" id="answer_19074_3" value="Categorical">
-<label>Categorical</label>
+<label>
+<input type="checkbox" id="answer_56522_3" value="Categorical">
+Categorical
+</label>
 <br>
-<input type="checkbox" id="answer_19074_4" value="Numeric">
-<label>Numeric</label>
+<label>
+<input type="checkbox" id="answer_56522_4" value="Numeric">
+Numeric
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_19074"></div>
+<div id="result_56522"></div>
 </form>
-<script>function validate_form_19074() {var text; var x1 = document.getElementById('answer_19074_1'); var x2 = document.getElementById('answer_19074_2'); var x3 = document.getElementById('answer_19074_3'); var x4 = document.getElementById('answer_19074_4'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_19074').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_56522() {var text; var x1 = document.getElementById('answer_56522_1'); var x2 = document.getElementById('answer_56522_2'); var x3 = document.getElementById('answer_56522_3'); var x4 = document.getElementById('answer_56522_4'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_56522').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_34914').innerText == 'Correct'; res2 = document.getElementById('result_19074').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_31305').innerText == 'Correct'; res2 = document.getElementById('result_56522').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -511,19 +527,23 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="2.0.2" class="anchored" data-anchor-id="identify-the-study-type-of-this-study.-be-sure-you-are-able-to-provide-a-full-justification."><span class="header-section-number">2.0.2</span> Identify the <em>study type</em> of this study. Be sure you are able to provide a full justification.</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_20076" onsubmit="return validate_form_20076()" method="post">
-<input type="radio" name="answer_20076" id="answer_20076_1" value="Experiment">
-<label>Experiment</label>
+<form name="form_61534" onsubmit="return validate_form_61534()" method="post">
+<label>
+<input type="radio" name="answer_61534" id="answer_61534_1" value="Experiment">
+Experiment
+</label>
 <br>
-<input type="radio" name="answer_20076" id="answer_20076_2" value="Observational">
-<label>Observational</label>
+<label>
+<input type="radio" name="answer_61534" id="answer_61534_2" value="Observational">
+Observational
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_20076"></div>
+<div id="result_61534"></div>
 </form>
-<script>function validate_form_20076() {var x, text; var x = document.forms['form_20076']['answer_20076'].value;if (x == 'Observational'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_20076').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_61534() {var x, text; var x = document.forms['form_61534']['answer_61534'].value;if (x == 'Observational'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_61534').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_34914').innerText == 'Correct'; res2 = document.getElementById('result_19074').innerText == 'Correct'; res3 = document.getElementById('result_20076').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_31305').innerText == 'Correct'; res2 = document.getElementById('result_56522').innerText == 'Correct'; res3 = document.getElementById('result_61534').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -548,7 +568,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_2" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2">
 <code id="interpolate-11" class="solution-code d-none">cor(muscle_mass ~ age, data = muscle)</code>
-<div class="sourceCode cell-code" id="interpolate-12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-12-1"><a href="#interpolate-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(muscle_mass <span class="sc">~</span> age, <span class="at">data =</span> muscle)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-12-1"><a href="#interpolate-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(muscle_mass <span class="sc">~</span> age, <span class="at">data =</span> muscle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -573,9 +593,9 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <code id="interpolate-16" class="solution-code d-none">gf_point(muscle_mass ~ age, data = muscle,
            ylab = "Muscle Mass (kg)",
            xlab = "Age (in years) of Female Participants")</code>
-<div class="sourceCode cell-code" id="interpolate-17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-17-1"><a href="#interpolate-17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_point</span>(muscle_mass <span class="sc">~</span> age, <span class="at">data =</span> muscle,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-17-1"><a href="#interpolate-17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_point</span>(muscle_mass <span class="sc">~</span> age, <span class="at">data =</span> muscle,</span>
 <span id="interpolate-17-2"><a href="#interpolate-17-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"Muscle Mass (kg)"</span>,</span>
-<span id="interpolate-17-3"><a href="#interpolate-17-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Age (in years) of Female Participants"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-17-3"><a href="#interpolate-17-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Age (in years) of Female Participants"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -588,31 +608,43 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="3.0.1" class="anchored" data-anchor-id="based-on-the-correlation-and-scatterplot-select-the-best-descriptions-of-the-relationship-between-age-of-females-and-muscle-mass."><span class="header-section-number">3.0.1</span> Based on the Correlation and Scatterplot, select the best descriptions of the relationship between age of females and muscle mass.</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_17770" onsubmit="return validate_form_17770()" method="post">
-<input type="checkbox" id="answer_17770_1" value="Strong">
-<label>Strong</label>
+<form name="form_4793" onsubmit="return validate_form_4793()" method="post">
+<label>
+<input type="checkbox" id="answer_4793_1" value="Strong">
+Strong
+</label>
 <br>
-<input type="checkbox" id="answer_17770_2" value="Weak">
-<label>Weak</label>
+<label>
+<input type="checkbox" id="answer_4793_2" value="Weak">
+Weak
+</label>
 <br>
-<input type="checkbox" id="answer_17770_3" value="Linear">
-<label>Linear</label>
+<label>
+<input type="checkbox" id="answer_4793_3" value="Linear">
+Linear
+</label>
 <br>
-<input type="checkbox" id="answer_17770_4" value="Nonlinear">
-<label>Nonlinear</label>
+<label>
+<input type="checkbox" id="answer_4793_4" value="Nonlinear">
+Nonlinear
+</label>
 <br>
-<input type="checkbox" id="answer_17770_5" value="Negative">
-<label>Negative</label>
+<label>
+<input type="checkbox" id="answer_4793_5" value="Negative">
+Negative
+</label>
 <br>
-<input type="checkbox" id="answer_17770_6" value="Positive">
-<label>Positive</label>
+<label>
+<input type="checkbox" id="answer_4793_6" value="Positive">
+Positive
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_17770"></div>
+<div id="result_4793"></div>
 </form>
-<script>function validate_form_17770() {var text; var x1 = document.getElementById('answer_17770_1'); var x2 = document.getElementById('answer_17770_2'); var x3 = document.getElementById('answer_17770_3'); var x4 = document.getElementById('answer_17770_4'); var x5 = document.getElementById('answer_17770_5'); var x6 = document.getElementById('answer_17770_6'); if (x1.checked == true&x2.checked == false&x3.checked == true&x4.checked == false&x5.checked == true&x6.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_17770').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_4793() {var text; var x1 = document.getElementById('answer_4793_1'); var x2 = document.getElementById('answer_4793_2'); var x3 = document.getElementById('answer_4793_3'); var x4 = document.getElementById('answer_4793_4'); var x5 = document.getElementById('answer_4793_5'); var x6 = document.getElementById('answer_4793_6'); if (x1.checked == true&x2.checked == false&x3.checked == true&x4.checked == false&x5.checked == true&x6.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_4793').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_34914').innerText == 'Correct'; res2 = document.getElementById('result_19074').innerText == 'Correct'; res3 = document.getElementById('result_20076').innerText == 'Correct'; res4 = document.getElementById('result_17770').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_31305').innerText == 'Correct'; res2 = document.getElementById('result_56522').innerText == 'Correct'; res3 = document.getElementById('result_61534').innerText == 'Correct'; res4 = document.getElementById('result_4793').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -643,10 +675,10 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
            ylab = "Muscle Mass (kg)",
            xlab = "Age (in years) of Female Participants") |&gt; 
   gf_lm()</code>
-<div class="sourceCode cell-code" id="interpolate-22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-22-1"><a href="#interpolate-22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_point</span>(muscle_mass <span class="sc">~</span> age, <span class="at">data =</span> muscle,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-22-1"><a href="#interpolate-22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_point</span>(muscle_mass <span class="sc">~</span> age, <span class="at">data =</span> muscle,</span>
 <span id="interpolate-22-2"><a href="#interpolate-22-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"Muscle Mass (kg)"</span>,</span>
 <span id="interpolate-22-3"><a href="#interpolate-22-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Age (in years) of Female Participants"</span>) <span class="sc">|&gt;</span> </span>
-<span id="interpolate-22-4"><a href="#interpolate-22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gf_lm</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-22-4"><a href="#interpolate-22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gf_lm</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -674,14 +706,14 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>Round to <strong>2 decimal places</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_94807" onsubmit="return validate_form_94807()" method="post">
-<input type="text" placeholder="" name="answer_94807">
+<form name="form_30080" onsubmit="return validate_form_30080()" method="post">
+<input type="text" placeholder="" name="answer_30080">
 <input type="submit" value="check">
-<div id="result_94807"></div>
+<div id="result_30080"></div>
 </form>
-<script>function validate_form_94807() {var x, text; var x = document.forms['form_94807']['answer_94807'].value;if (x == '156.35'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_94807').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_30080() {var x, text; var x = document.forms['form_30080']['answer_30080'].value;if (x == '156.35'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_30080').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_34914').innerText == 'Correct'; res2 = document.getElementById('result_19074').innerText == 'Correct'; res3 = document.getElementById('result_20076').innerText == 'Correct'; res4 = document.getElementById('result_17770').innerText == 'Correct'; res5 = document.getElementById('result_94807').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_31305').innerText == 'Correct'; res2 = document.getElementById('result_56522').innerText == 'Correct'; res3 = document.getElementById('result_61534').innerText == 'Correct'; res4 = document.getElementById('result_4793').innerText == 'Correct'; res5 = document.getElementById('result_30080').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -692,25 +724,33 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>The <code>[intercept]</code> would be replaced with the value calculated above.</p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_13565" onsubmit="return validate_form_13565()" method="post">
-<input type="radio" name="answer_13565" id="answer_13565_1" value="When age is 0 years, the muscle mass of women is expected to be [intercept] kg.">
-<label>When age is 0 years, the muscle mass of women is expected to be [intercept] kg.</label>
+<form name="form_91602" onsubmit="return validate_form_91602()" method="post">
+<label>
+<input type="radio" name="answer_91602" id="answer_91602_1" value="When age is 0 years, the muscle mass of women is expected to be [intercept] kg.">
+When age is 0 years, the muscle mass of women is expected to be [intercept] kg.
+</label>
 <br>
-<input type="radio" name="answer_13565" id="answer_13565_2" value="When age is 0 years, the muscle mass of women is [intercept] kg.">
-<label>When age is 0 years, the muscle mass of women is [intercept] kg.</label>
+<label>
+<input type="radio" name="answer_91602" id="answer_91602_2" value="When age is 0 years, the muscle mass of women is [intercept] kg.">
+When age is 0 years, the muscle mass of women is [intercept] kg.
+</label>
 <br>
-<input type="radio" name="answer_13565" id="answer_13565_3" value="When muscle mass is 0 kg, the age of women is expected to be [intercept] years.">
-<label>When muscle mass is 0 kg, the age of women is expected to be [intercept] years.</label>
+<label>
+<input type="radio" name="answer_91602" id="answer_91602_3" value="When muscle mass is 0 kg, the age of women is expected to be [intercept] years.">
+When muscle mass is 0 kg, the age of women is expected to be [intercept] years.
+</label>
 <br>
-<input type="radio" name="answer_13565" id="answer_13565_4" value="When muscle mass is 0 kg, the age of women is [intercept] years.">
-<label>When muscle mass is 0 kg, the age of women is [intercept] years.</label>
+<label>
+<input type="radio" name="answer_91602" id="answer_91602_4" value="When muscle mass is 0 kg, the age of women is [intercept] years.">
+When muscle mass is 0 kg, the age of women is [intercept] years.
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_13565"></div>
+<div id="result_91602"></div>
 </form>
-<script>function validate_form_13565() {var x, text; var x = document.forms['form_13565']['answer_13565'].value;if (x == 'When age is 0 years, the muscle mass of women is expected to be [intercept] kg.'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_13565').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_91602() {var x, text; var x = document.forms['form_91602']['answer_91602'].value;if (x == 'When age is 0 years, the muscle mass of women is expected to be [intercept] kg.'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_91602').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_34914').innerText == 'Correct'; res2 = document.getElementById('result_19074').innerText == 'Correct'; res3 = document.getElementById('result_20076').innerText == 'Correct'; res4 = document.getElementById('result_17770').innerText == 'Correct'; res5 = document.getElementById('result_94807').innerText == 'correct'; res6 = document.getElementById('result_13565').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_31305').innerText == 'Correct'; res2 = document.getElementById('result_56522').innerText == 'Correct'; res3 = document.getElementById('result_61534').innerText == 'Correct'; res4 = document.getElementById('result_4793').innerText == 'Correct'; res5 = document.getElementById('result_30080').innerText == 'correct'; res6 = document.getElementById('result_91602').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -722,14 +762,14 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>Round to <strong>2 decimal places</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_8179" onsubmit="return validate_form_8179()" method="post">
-<input type="text" placeholder="" name="answer_8179">
+<form name="form_96420" onsubmit="return validate_form_96420()" method="post">
+<input type="text" placeholder="" name="answer_96420">
 <input type="submit" value="check">
-<div id="result_8179"></div>
+<div id="result_96420"></div>
 </form>
-<script>function validate_form_8179() {var x, text; var x = document.forms['form_8179']['answer_8179'].value;if (x == '-1.19'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_8179').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_96420() {var x, text; var x = document.forms['form_96420']['answer_96420'].value;if (x == '-1.19'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_96420').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_34914').innerText == 'Correct'; res2 = document.getElementById('result_19074').innerText == 'Correct'; res3 = document.getElementById('result_20076').innerText == 'Correct'; res4 = document.getElementById('result_17770').innerText == 'Correct'; res5 = document.getElementById('result_94807').innerText == 'correct'; res6 = document.getElementById('result_13565').innerText == 'Correct'; res7 = document.getElementById('result_8179').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_31305').innerText == 'Correct'; res2 = document.getElementById('result_56522').innerText == 'Correct'; res3 = document.getElementById('result_61534').innerText == 'Correct'; res4 = document.getElementById('result_4793').innerText == 'Correct'; res5 = document.getElementById('result_30080').innerText == 'correct'; res6 = document.getElementById('result_91602').innerText == 'Correct'; res7 = document.getElementById('result_96420').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -740,25 +780,33 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>The <code>[slope]</code> would be replaced with the value calculated above.</p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_96660" onsubmit="return validate_form_96660()" method="post">
-<input type="radio" name="answer_96660" id="answer_96660_1" value="As age increases by 1 year, the muscle mass of women between the ages of 40-79 years will decrease by the [slope] kg.">
-<label>As age increases by 1 year, the muscle mass of women between the ages of 40-79 years will decrease by the [slope] kg.</label>
+<form name="form_41989" onsubmit="return validate_form_41989()" method="post">
+<label>
+<input type="radio" name="answer_41989" id="answer_41989_1" value="As age increases by 1 year, the muscle mass of women between the ages of 40-79 years will decrease by the [slope] kg.">
+As age increases by 1 year, the muscle mass of women between the ages of 40-79 years will decrease by the [slope] kg.
+</label>
 <br>
-<input type="radio" name="answer_96660" id="answer_96660_2" value="As age increases by 1 year, the muscle mass of women between the ages of 40-79 years is expected to decrease by the [slope] kg.">
-<label>As age increases by 1 year, the muscle mass of women between the ages of 40-79 years is expected to decrease by the [slope] kg.</label>
+<label>
+<input type="radio" name="answer_41989" id="answer_41989_2" value="As age increases by 1 year, the muscle mass of women between the ages of 40-79 years is expected to decrease by the [slope] kg.">
+As age increases by 1 year, the muscle mass of women between the ages of 40-79 years is expected to decrease by the [slope] kg.
+</label>
 <br>
-<input type="radio" name="answer_96660" id="answer_96660_3" value="As muscle mass increases by 1 kg, the age of women between the ages of 40-79 years is expected to decrease by [slope] years.">
-<label>As muscle mass increases by 1 kg, the age of women between the ages of 40-79 years is expected to decrease by [slope] years.</label>
+<label>
+<input type="radio" name="answer_41989" id="answer_41989_3" value="As muscle mass increases by 1 kg, the age of women between the ages of 40-79 years is expected to decrease by [slope] years.">
+As muscle mass increases by 1 kg, the age of women between the ages of 40-79 years is expected to decrease by [slope] years.
+</label>
 <br>
-<input type="radio" name="answer_96660" id="answer_96660_4" value="As age increases, the muscle mass of women between the ages of 40-79 years decreases.">
-<label>As age increases, the muscle mass of women between the ages of 40-79 years decreases.</label>
+<label>
+<input type="radio" name="answer_41989" id="answer_41989_4" value="As age increases, the muscle mass of women between the ages of 40-79 years decreases.">
+As age increases, the muscle mass of women between the ages of 40-79 years decreases.
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_96660"></div>
+<div id="result_41989"></div>
 </form>
-<script>function validate_form_96660() {var x, text; var x = document.forms['form_96660']['answer_96660'].value;if (x == 'As age increases by 1 year, the muscle mass of women between the ages of 40-79 years is expected to decrease by the [slope] kg.'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_96660').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_41989() {var x, text; var x = document.forms['form_41989']['answer_41989'].value;if (x == 'As age increases by 1 year, the muscle mass of women between the ages of 40-79 years is expected to decrease by the [slope] kg.'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_41989').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_34914').innerText == 'Correct'; res2 = document.getElementById('result_19074').innerText == 'Correct'; res3 = document.getElementById('result_20076').innerText == 'Correct'; res4 = document.getElementById('result_17770').innerText == 'Correct'; res5 = document.getElementById('result_94807').innerText == 'correct'; res6 = document.getElementById('result_13565').innerText == 'Correct'; res7 = document.getElementById('result_8179').innerText == 'correct'; res8 = document.getElementById('result_96660').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_31305').innerText == 'Correct'; res2 = document.getElementById('result_56522').innerText == 'Correct'; res3 = document.getElementById('result_61534').innerText == 'Correct'; res4 = document.getElementById('result_4793').innerText == 'Correct'; res5 = document.getElementById('result_30080').innerText == 'correct'; res6 = document.getElementById('result_91602').innerText == 'Correct'; res7 = document.getElementById('result_96420').innerText == 'correct'; res8 = document.getElementById('result_41989').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -782,7 +830,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_5" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_5">
 <code id="interpolate-27" class="solution-code d-none">summary(mm_age)</code>
-<div class="sourceCode cell-code" id="interpolate-28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-28-1"><a href="#interpolate-28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mm_age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-28-1"><a href="#interpolate-28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mm_age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -795,26 +843,26 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="4.3.1" class="anchored" data-anchor-id="r2"><span class="header-section-number">4.3.1</span> <span class="math inline">\(R^2\)</span>:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_93536" onsubmit="return validate_form_93536()" method="post">
-<input type="text" placeholder="" name="answer_93536">
+<form name="form_38154" onsubmit="return validate_form_38154()" method="post">
+<input type="text" placeholder="" name="answer_38154">
 <input type="submit" value="check">
-<div id="result_93536"></div>
+<div id="result_38154"></div>
 </form>
-<script>function validate_form_93536() {var x, text; var x = document.forms['form_93536']['answer_93536'].value;if (x == '0.7501'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_93536').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_38154() {var x, text; var x = document.forms['form_38154']['answer_38154'].value;if (x == '0.7501'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_38154').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9;res1 = document.getElementById('result_34914').innerText == 'Correct'; res2 = document.getElementById('result_19074').innerText == 'Correct'; res3 = document.getElementById('result_20076').innerText == 'Correct'; res4 = document.getElementById('result_17770').innerText == 'Correct'; res5 = document.getElementById('result_94807').innerText == 'correct'; res6 = document.getElementById('result_13565').innerText == 'Correct'; res7 = document.getElementById('result_8179').innerText == 'correct'; res8 = document.getElementById('result_96660').innerText == 'Correct'; res9 = document.getElementById('result_93536').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9;res1 = document.getElementById('result_31305').innerText == 'Correct'; res2 = document.getElementById('result_56522').innerText == 'Correct'; res3 = document.getElementById('result_61534').innerText == 'Correct'; res4 = document.getElementById('result_4793').innerText == 'Correct'; res5 = document.getElementById('result_30080').innerText == 'correct'; res6 = document.getElementById('result_91602').innerText == 'Correct'; res7 = document.getElementById('result_96420').innerText == 'correct'; res8 = document.getElementById('result_41989').innerText == 'Correct'; res9 = document.getElementById('result_38154').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9;element.innerHTML = text;
          return false;
          }}</script>
 </div>
 </div>
 <p><br></p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Extracting Just <span class="math inline">\(R^2\)</span>
+<span class="screen-reader-only">Note</span>Extracting Just <span class="math inline">\(R^2\)</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -839,11 +887,11 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="4.3.2" class="anchored" data-anchor-id="arrange-the-words-to-interpret-the-coefficient-of-determination.-r2-is"><span class="header-section-number">4.3.2</span> Arrange the words to interpret the coefficient of determination. <span class="math inline">\(R^2\)</span> is…</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_94489" onsubmit="return validate_form_94489()" method="post">
+<form name="form_45974" onsubmit="return validate_form_45974()" method="post">
 <table data-quarto-disable-processing="true">
-<tbody id="task_94489">
+<tbody id="task_45974">
 <tr>
-<td id="answer_94489_5" style="padding:5px; border:1px solid #ccc;">by the linear model</td>
+<td id="answer_45974_5" style="padding:5px; border:1px solid #ccc;">by the linear model</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -851,7 +899,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_94489_6" style="padding:5px; border:1px solid #ccc;">with age</td>
+<td id="answer_45974_1" style="padding:5px; border:1px solid #ccc;">the proportion of variability</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -859,7 +907,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_94489_3" style="padding:5px; border:1px solid #ccc;">in women aged 40-79 years old</td>
+<td id="answer_45974_4" style="padding:5px; border:1px solid #ccc;">that is explained</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -867,7 +915,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_94489_4" style="padding:5px; border:1px solid #ccc;">that is explained</td>
+<td id="answer_45974_3" style="padding:5px; border:1px solid #ccc;">in women aged 40-79 years old</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -875,7 +923,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_94489_1" style="padding:5px; border:1px solid #ccc;">the proportion of variability</td>
+<td id="answer_45974_6" style="padding:5px; border:1px solid #ccc;">with age</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -883,16 +931,16 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_94489_2" style="padding:5px; border:1px solid #ccc;">in muscle mass</td>
+<td id="answer_45974_2" style="padding:5px; border:1px solid #ccc;">in muscle mass</td>
 </tr>
 </tbody>
 </table>
 <input type="submit" value="check">
-<div id="result_94489"></div>
+<div id="result_45974"></div>
 </form>
-<script>function validate_form_94489() {var text;var ch = document.getElementById('task_94489').children; if(ch[0].children[0].id == 'answer_94489_1'&ch[2].children[0].id == 'answer_94489_2'&ch[4].children[0].id == 'answer_94489_3'&ch[6].children[0].id == 'answer_94489_4'&ch[8].children[0].id == 'answer_94489_5'&ch[10].children[0].id == 'answer_94489_6'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_94489').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
+<script>function validate_form_45974() {var text;var ch = document.getElementById('task_45974').children; if(ch[0].children[0].id == 'answer_45974_1'&ch[2].children[0].id == 'answer_45974_2'&ch[4].children[0].id == 'answer_45974_3'&ch[6].children[0].id == 'answer_45974_4'&ch[8].children[0].id == 'answer_45974_5'&ch[10].children[0].id == 'answer_45974_6'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_45974').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10;res1 = document.getElementById('result_34914').innerText == 'Correct'; res2 = document.getElementById('result_19074').innerText == 'Correct'; res3 = document.getElementById('result_20076').innerText == 'Correct'; res4 = document.getElementById('result_17770').innerText == 'Correct'; res5 = document.getElementById('result_94807').innerText == 'correct'; res6 = document.getElementById('result_13565').innerText == 'Correct'; res7 = document.getElementById('result_8179').innerText == 'correct'; res8 = document.getElementById('result_96660').innerText == 'Correct'; res9 = document.getElementById('result_93536').innerText == 'correct'; res10 = document.getElementById('result_94489').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10;res1 = document.getElementById('result_31305').innerText == 'Correct'; res2 = document.getElementById('result_56522').innerText == 'Correct'; res3 = document.getElementById('result_61534').innerText == 'Correct'; res4 = document.getElementById('result_4793').innerText == 'Correct'; res5 = document.getElementById('result_30080').innerText == 'correct'; res6 = document.getElementById('result_91602').innerText == 'Correct'; res7 = document.getElementById('result_96420').innerText == 'correct'; res8 = document.getElementById('result_41989').innerText == 'Correct'; res9 = document.getElementById('result_38154').innerText == 'correct'; res10 = document.getElementById('result_45974').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -925,7 +973,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_6" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_6">
 <code id="interpolate-33" class="solution-code d-none">156.35 + -1.19*60</code>
-<div class="sourceCode cell-code" id="interpolate-34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-34-1"><a href="#interpolate-34-1" aria-hidden="true" tabindex="-1"></a><span class="fl">156.35</span> <span class="sc">+</span> <span class="sc">-</span><span class="fl">1.19</span><span class="sc">*</span><span class="dv">60</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-34-1"><a href="#interpolate-34-1" aria-hidden="true" tabindex="-1"></a><span class="fl">156.35</span> <span class="sc">+</span> <span class="sc">-</span><span class="fl">1.19</span><span class="sc">*</span><span class="dv">60</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -935,12 +983,12 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </script>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Using R to Make Predictions
+<span class="screen-reader-only">Note</span>Using R to Make Predictions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1045,13 +1093,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

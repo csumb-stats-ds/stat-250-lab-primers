@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../lab-10-primer/lab-10-regression-primer.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a00848ed57fe9097555b5bd7c001b509.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-142d9687c3f711bd3ef1b6bce998d27f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -121,7 +122,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -163,12 +164,11 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">STAT 250 Lab Primers</a> 
-        <div class="sidebar-tools-main">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
     <a href="https://github.com/csumb-stat-ds/stat-250-lab-primers" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
 </div>
-    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -369,12 +369,12 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlY2hvIjpmYWxzZSwiZWRpdCI6ZmFsc2UsImV2YWwi
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Digital Accessibility
+<span class="screen-reader-only">Note</span>Digital Accessibility
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -404,9 +404,9 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJMb2FkaW5nIFBhY2thZ2VzIiwiY29tcGxldGlvbiI6ZmFsc2UsImVk
 <code id="interpolate-4" class="solution-code d-none">library(ggformula) #for graphs
 library(mosaic) #for statistics
 library(tidyverse) #for data management</code>
-<div class="sourceCode cell-code" id="interpolate-5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-5-1"><a href="#interpolate-5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula) <span class="co">#for graphs</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-5-1"><a href="#interpolate-5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula) <span class="co">#for graphs</span></span>
 <span id="interpolate-5-2"><a href="#interpolate-5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mosaic) <span class="co">#for statistics</span></span>
-<span id="interpolate-5-3"><a href="#interpolate-5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#for data management</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-5-3"><a href="#interpolate-5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#for data management</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -437,7 +437,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="2.1.1" class="anchored" data-anchor-id="calculate-frequencycount"><span class="header-section-number">2.1.1</span> Calculate Frequency/Count</h4>
 <p>We can use the <code>tally()</code> function to find the counts/frequency of the hair and eye color of the individuals in the study.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>x , <span class="at">data =</span> mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>x , <span class="at">data =</span> mydata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Here is the frequency distribution for hair color in our sample.</p>
 <div class="cell">
@@ -465,7 +465,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_2" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2">
 <code id="interpolate-11" class="solution-code d-none">tally(~Eye, data = eye_hair)</code>
-<div class="sourceCode cell-code" id="interpolate-12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-12-1"><a href="#interpolate-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>Eye, <span class="at">data =</span> eye_hair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-12-1"><a href="#interpolate-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>Eye, <span class="at">data =</span> eye_hair)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -479,7 +479,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="2.1.2" class="anchored" data-anchor-id="calculate-relative-frequencyproportion"><span class="header-section-number">2.1.2</span> Calculate Relative Frequency/Proportion</h4>
 <p>We can adjust the arguments in the <code>tally()</code> function to find the proportion/relative frequency of the hair and eye color of the individuals in the study.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>x , <span class="at">data =</span> mydata, <span class="at">format =</span> <span class="st">"prop"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>x , <span class="at">data =</span> mydata, <span class="at">format =</span> <span class="st">"prop"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Here is the relative frequency distribution for hair color in our sample.</p>
 <div class="cell">
@@ -507,7 +507,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_3" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_3">
 <code id="interpolate-17" class="solution-code d-none">tally(~Eye, data = eye_hair, format = "prop")</code>
-<div class="sourceCode cell-code" id="interpolate-18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-18-1"><a href="#interpolate-18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>Eye, <span class="at">data =</span> eye_hair, <span class="at">format =</span> <span class="st">"prop"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-18-1"><a href="#interpolate-18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>Eye, <span class="at">data =</span> eye_hair, <span class="at">format =</span> <span class="st">"prop"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -521,7 +521,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="2.1.3" class="anchored" data-anchor-id="creating-a-contingency-table"><span class="header-section-number">2.1.3</span> Creating a Contingency Table</h4>
 <p>Suppose we want to compare the distribution of eye color across different hair colors. We can create a contingency table using the same <code>tally()</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(y <span class="sc">~</span> x , <span class="at">data =</span> mydata) <span class="co">#y position are rows, x position are columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(y <span class="sc">~</span> x , <span class="at">data =</span> mydata) <span class="co">#y position are rows, x position are columns</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Here is the frequency distribution for hair and eye color in our sample.</p>
 <div class="cell">
@@ -539,7 +539,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="2.1.4" class="anchored" data-anchor-id="calculate-conditional-proportions"><span class="header-section-number">2.1.4</span> Calculate Conditional Proportions</h4>
 <p>In order to calculate the conditional proportions, we can adjust our code a little bit to make it clear which variable we are conditioning on.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>y <span class="sc">|</span> x , <span class="at">data =</span> mydata, <span class="at">format =</span> <span class="st">"prop"</span>) <span class="co"># y conditioned on x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>y <span class="sc">|</span> x , <span class="at">data =</span> mydata, <span class="at">format =</span> <span class="st">"prop"</span>) <span class="co"># y conditioned on x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Here are the conditional proportions of hair color given eye color in our sample.</p>
 <div class="cell">
@@ -567,7 +567,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_4" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_4">
 <code id="interpolate-24" class="solution-code d-none">tally(~ Eye | Hair, data = eye_hair, format = "prop")</code>
-<div class="sourceCode cell-code" id="interpolate-25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-25-1"><a href="#interpolate-25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span> Eye <span class="sc">|</span> Hair, <span class="at">data =</span> eye_hair, <span class="at">format =</span> <span class="st">"prop"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-25-1"><a href="#interpolate-25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span> Eye <span class="sc">|</span> Hair, <span class="at">data =</span> eye_hair, <span class="at">format =</span> <span class="st">"prop"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -581,7 +581,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="2.1.5" class="anchored" data-anchor-id="bar-plots-of-counts"><span class="header-section-number">2.1.5</span> Bar Plots of Counts</h4>
 <p>We can choose from several options for our bar plot for a single categorical variable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_bar</span>(<span class="sc">~</span>x , <span class="at">data =</span> mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_bar</span>(<span class="sc">~</span>x , <span class="at">data =</span> mydata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Here is the bar plot for hair color counts in our sample.</p>
 <div class="cell">
@@ -611,9 +611,9 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <code id="interpolate-30" class="solution-code d-none">gf_bar(~Eye, data = eye_hair, 
        xlab = "Color of Eye",
        ylab = "Number of Statistics Students at Univ. of Del. in 1974")</code>
-<div class="sourceCode cell-code" id="interpolate-31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-31-1"><a href="#interpolate-31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_bar</span>(<span class="sc">~</span>Eye, <span class="at">data =</span> eye_hair, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-31-1"><a href="#interpolate-31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_bar</span>(<span class="sc">~</span>Eye, <span class="at">data =</span> eye_hair, </span>
 <span id="interpolate-31-2"><a href="#interpolate-31-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Color of Eye"</span>,</span>
-<span id="interpolate-31-3"><a href="#interpolate-31-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">ylab =</span> <span class="st">"Number of Statistics Students at Univ. of Del. in 1974"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-31-3"><a href="#interpolate-31-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">ylab =</span> <span class="st">"Number of Statistics Students at Univ. of Del. in 1974"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -627,7 +627,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="2.1.6" class="anchored" data-anchor-id="bar-plots-of-proportions"><span class="header-section-number">2.1.6</span> Bar Plots of Proportions</h4>
 <p>We can choose from several options for our bar plot for a single categorical variable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_props</span>(<span class="sc">~</span>x , <span class="at">data =</span> mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_props</span>(<span class="sc">~</span>x , <span class="at">data =</span> mydata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Here is the bar plot for hair color proportions in our sample.</p>
 <div class="cell">
@@ -657,9 +657,9 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <code id="interpolate-36" class="solution-code d-none">gf_props(~Eye, data = eye_hair, 
        xlab = "Color of Eye",
        ylab = "Proportion of Statistics Students at Univ. of Del. in 1974")</code>
-<div class="sourceCode cell-code" id="interpolate-37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-37-1"><a href="#interpolate-37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_props</span>(<span class="sc">~</span>Eye, <span class="at">data =</span> eye_hair, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-37-1"><a href="#interpolate-37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_props</span>(<span class="sc">~</span>Eye, <span class="at">data =</span> eye_hair, </span>
 <span id="interpolate-37-2"><a href="#interpolate-37-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Color of Eye"</span>,</span>
-<span id="interpolate-37-3"><a href="#interpolate-37-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">ylab =</span> <span class="st">"Proportion of Statistics Students at Univ. of Del. in 1974"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-37-3"><a href="#interpolate-37-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">ylab =</span> <span class="st">"Proportion of Statistics Students at Univ. of Del. in 1974"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -725,37 +725,53 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.1.1" class="anchored" data-anchor-id="null-hypothesis"><span class="header-section-number">3.1.1</span> Null Hypothesis</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_37080" onsubmit="return validate_form_37080()" method="post">
-<input type="radio" name="answer_37080" id="answer_37080_1" value="π = 0">
-<label>π = 0</label>
+<form name="form_92894" onsubmit="return validate_form_92894()" method="post">
+<label>
+<input type="radio" name="answer_92894" id="answer_92894_1" value="π = 0">
+π = 0
+</label>
 <br>
-<input type="radio" name="answer_37080" id="answer_37080_2" value="π > 0">
-<label>π &gt; 0</label>
+<label>
+<input type="radio" name="answer_92894" id="answer_92894_2" value="π > 0">
+π &gt; 0
+</label>
 <br>
-<input type="radio" name="answer_37080" id="answer_37080_3" value="π < 0">
-<label>π &lt; 0</label>
+<label>
+<input type="radio" name="answer_92894" id="answer_92894_3" value="π < 0">
+π &lt; 0
+</label>
 <br>
-<input type="radio" name="answer_37080" id="answer_37080_4" value="π ≠ 0">
-<label>π ≠ 0</label>
+<label>
+<input type="radio" name="answer_92894" id="answer_92894_4" value="π ≠ 0">
+π ≠ 0
+</label>
 <br>
-<input type="radio" name="answer_37080" id="answer_37080_5" value="π = 0.237">
-<label>π = 0.237</label>
+<label>
+<input type="radio" name="answer_92894" id="answer_92894_5" value="π = 0.237">
+π = 0.237
+</label>
 <br>
-<input type="radio" name="answer_37080" id="answer_37080_6" value="π > 0.237">
-<label>π &gt; 0.237</label>
+<label>
+<input type="radio" name="answer_92894" id="answer_92894_6" value="π > 0.237">
+π &gt; 0.237
+</label>
 <br>
-<input type="radio" name="answer_37080" id="answer_37080_7" value="π < 0.237">
-<label>π &lt; 0.237</label>
+<label>
+<input type="radio" name="answer_92894" id="answer_92894_7" value="π < 0.237">
+π &lt; 0.237
+</label>
 <br>
-<input type="radio" name="answer_37080" id="answer_37080_8" value="π ≠ 0.237">
-<label>π ≠ 0.237</label>
+<label>
+<input type="radio" name="answer_92894" id="answer_92894_8" value="π ≠ 0.237">
+π ≠ 0.237
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_37080"></div>
+<div id="result_92894"></div>
 </form>
-<script>function validate_form_37080() {var x, text; var x = document.forms['form_37080']['answer_37080'].value;if (x == 'π = 0.237'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_37080').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_92894() {var x, text; var x = document.forms['form_92894']['answer_92894'].value;if (x == 'π = 0.237'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_92894').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_37080').innerText == 'Correct';text = res1;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_92894').innerText == 'Correct';text = res1;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -766,37 +782,53 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.1.2" class="anchored" data-anchor-id="alternative-hypothesis"><span class="header-section-number">3.1.2</span> Alternative Hypothesis</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_45156" onsubmit="return validate_form_45156()" method="post">
-<input type="radio" name="answer_45156" id="answer_45156_1" value="π = 0">
-<label>π = 0</label>
+<form name="form_52994" onsubmit="return validate_form_52994()" method="post">
+<label>
+<input type="radio" name="answer_52994" id="answer_52994_1" value="π = 0">
+π = 0
+</label>
 <br>
-<input type="radio" name="answer_45156" id="answer_45156_2" value="π > 0">
-<label>π &gt; 0</label>
+<label>
+<input type="radio" name="answer_52994" id="answer_52994_2" value="π > 0">
+π &gt; 0
+</label>
 <br>
-<input type="radio" name="answer_45156" id="answer_45156_3" value="π < 0">
-<label>π &lt; 0</label>
+<label>
+<input type="radio" name="answer_52994" id="answer_52994_3" value="π < 0">
+π &lt; 0
+</label>
 <br>
-<input type="radio" name="answer_45156" id="answer_45156_4" value="π ≠ 0">
-<label>π ≠ 0</label>
+<label>
+<input type="radio" name="answer_52994" id="answer_52994_4" value="π ≠ 0">
+π ≠ 0
+</label>
 <br>
-<input type="radio" name="answer_45156" id="answer_45156_5" value="π = 0.237">
-<label>π = 0.237</label>
+<label>
+<input type="radio" name="answer_52994" id="answer_52994_5" value="π = 0.237">
+π = 0.237
+</label>
 <br>
-<input type="radio" name="answer_45156" id="answer_45156_6" value="π > 0.237">
-<label>π &gt; 0.237</label>
+<label>
+<input type="radio" name="answer_52994" id="answer_52994_6" value="π > 0.237">
+π &gt; 0.237
+</label>
 <br>
-<input type="radio" name="answer_45156" id="answer_45156_7" value="π < 0.237">
-<label>π &lt; 0.237</label>
+<label>
+<input type="radio" name="answer_52994" id="answer_52994_7" value="π < 0.237">
+π &lt; 0.237
+</label>
 <br>
-<input type="radio" name="answer_45156" id="answer_45156_8" value="π ≠ 0.237">
-<label>π ≠ 0.237</label>
+<label>
+<input type="radio" name="answer_52994" id="answer_52994_8" value="π ≠ 0.237">
+π ≠ 0.237
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_45156"></div>
+<div id="result_52994"></div>
 </form>
-<script>function validate_form_45156() {var x, text; var x = document.forms['form_45156']['answer_45156'].value;if (x == 'π > 0.237'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_45156').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_52994() {var x, text; var x = document.forms['form_52994']['answer_52994'].value;if (x == 'π > 0.237'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_52994').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_37080').innerText == 'Correct'; res2 = document.getElementById('result_45156').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_92894').innerText == 'Correct'; res2 = document.getElementById('result_52994').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -823,7 +855,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_7" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_7">
 <code id="interpolate-42" class="solution-code d-none">1 - pbinom(215 - 1, size = 592, prob = 0.237)</code>
-<div class="sourceCode cell-code" id="interpolate-43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-43-1"><a href="#interpolate-43-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">215</span> <span class="sc">-</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">592</span>, <span class="at">prob =</span> <span class="fl">0.237</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-43-1"><a href="#interpolate-43-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">215</span> <span class="sc">-</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">592</span>, <span class="at">prob =</span> <span class="fl">0.237</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -846,11 +878,11 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <p>Reorder the values below to write out the verbal alternative hypothesis, using the same order for the expected proportions as listed in the symbolic null hypothesis. Place the population in the last position.</p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_57377" onsubmit="return validate_form_57377()" method="post">
+<form name="form_21110" onsubmit="return validate_form_21110()" method="post">
 <table data-quarto-disable-processing="true">
-<tbody id="task_57377">
+<tbody id="task_21110">
 <tr>
-<td id="answer_57377_5" style="padding:5px; border:1px solid #ccc;">0.25 for blue eyes,</td>
+<td id="answer_21110_7" style="padding:5px; border:1px solid #ccc;">0.09 for green eyes,</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -858,7 +890,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_57377_1" style="padding:5px; border:1px solid #ccc;">at least one of the</td>
+<td id="answer_21110_9" style="padding:5px; border:1px solid #ccc;">among statistics students at the University of Delaware in 1974</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -866,7 +898,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_57377_6" style="padding:5px; border:1px solid #ccc;">0.55 for brown eyes,</td>
+<td id="answer_21110_1" style="padding:5px; border:1px solid #ccc;">at least one of the</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -874,7 +906,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_57377_2" style="padding:5px; border:1px solid #ccc;">population proportions</td>
+<td id="answer_21110_6" style="padding:5px; border:1px solid #ccc;">0.55 for brown eyes,</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -882,7 +914,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_57377_7" style="padding:5px; border:1px solid #ccc;">0.09 for green eyes,</td>
+<td id="answer_21110_2" style="padding:5px; border:1px solid #ccc;">population proportions</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -890,7 +922,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_57377_3" style="padding:5px; border:1px solid #ccc;">of eye color</td>
+<td id="answer_21110_4" style="padding:5px; border:1px solid #ccc;">is different than the expected values of</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -898,7 +930,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_57377_8" style="padding:5px; border:1px solid #ccc;">and 0.11 for hazel eyes</td>
+<td id="answer_21110_5" style="padding:5px; border:1px solid #ccc;">0.25 for blue eyes,</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -906,7 +938,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_57377_4" style="padding:5px; border:1px solid #ccc;">is different than the expected values of</td>
+<td id="answer_21110_3" style="padding:5px; border:1px solid #ccc;">of eye color</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -914,16 +946,16 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_57377_9" style="padding:5px; border:1px solid #ccc;">among statistics students at the University of Delaware in 1974</td>
+<td id="answer_21110_8" style="padding:5px; border:1px solid #ccc;">and 0.11 for hazel eyes</td>
 </tr>
 </tbody>
 </table>
 <input type="submit" value="check">
-<div id="result_57377"></div>
+<div id="result_21110"></div>
 </form>
-<script>function validate_form_57377() {var text;var ch = document.getElementById('task_57377').children; if(ch[0].children[0].id == 'answer_57377_1'&ch[2].children[0].id == 'answer_57377_2'&ch[4].children[0].id == 'answer_57377_3'&ch[6].children[0].id == 'answer_57377_4'&ch[8].children[0].id == 'answer_57377_5'&ch[10].children[0].id == 'answer_57377_6'&ch[12].children[0].id == 'answer_57377_7'&ch[14].children[0].id == 'answer_57377_8'&ch[16].children[0].id == 'answer_57377_9'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_57377').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
+<script>function validate_form_21110() {var text;var ch = document.getElementById('task_21110').children; if(ch[0].children[0].id == 'answer_21110_1'&ch[2].children[0].id == 'answer_21110_2'&ch[4].children[0].id == 'answer_21110_3'&ch[6].children[0].id == 'answer_21110_4'&ch[8].children[0].id == 'answer_21110_5'&ch[10].children[0].id == 'answer_21110_6'&ch[12].children[0].id == 'answer_21110_7'&ch[14].children[0].id == 'answer_21110_8'&ch[16].children[0].id == 'answer_21110_9'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_21110').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_37080').innerText == 'Correct'; res2 = document.getElementById('result_45156').innerText == 'Correct'; res3 = document.getElementById('result_57377').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_92894').innerText == 'Correct'; res2 = document.getElementById('result_52994').innerText == 'Correct'; res3 = document.getElementById('result_21110').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -946,7 +978,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_8" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_8">
 <code id="interpolate-47" class="solution-code d-none">xchisq.test(~Eye, data = eye_hair, p = c(0.25, 0.55, 0.09, 0.11))</code>
-<div class="sourceCode cell-code" id="interpolate-48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-48-1"><a href="#interpolate-48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xchisq.test</span>(<span class="sc">~</span>Eye, <span class="at">data =</span> eye_hair, <span class="at">p =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.55</span>, <span class="fl">0.09</span>, <span class="fl">0.11</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-48-1"><a href="#interpolate-48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xchisq.test</span>(<span class="sc">~</span>Eye, <span class="at">data =</span> eye_hair, <span class="at">p =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.55</span>, <span class="fl">0.09</span>, <span class="fl">0.11</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -960,28 +992,38 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="3.2.4" class="anchored" data-anchor-id="what-do-we-conclude-from-our-test"><span class="header-section-number">3.2.4</span> What do we conclude from our test?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_33983" onsubmit="return validate_form_33983()" method="post">
-<input type="radio" name="answer_33983" id="answer_33983_1" value="no evidence against the null">
-<label>no evidence against the null</label>
+<form name="form_43770" onsubmit="return validate_form_43770()" method="post">
+<label>
+<input type="radio" name="answer_43770" id="answer_43770_1" value="no evidence against the null">
+no evidence against the null
+</label>
 <br>
-<input type="radio" name="answer_33983" id="answer_33983_2" value="some evidence against the null">
-<label>some evidence against the null</label>
+<label>
+<input type="radio" name="answer_43770" id="answer_43770_2" value="some evidence against the null">
+some evidence against the null
+</label>
 <br>
-<input type="radio" name="answer_33983" id="answer_33983_3" value="moderate evidence against the null">
-<label>moderate evidence against the null</label>
+<label>
+<input type="radio" name="answer_43770" id="answer_43770_3" value="moderate evidence against the null">
+moderate evidence against the null
+</label>
 <br>
-<input type="radio" name="answer_33983" id="answer_33983_4" value="strong evidence against the null">
-<label>strong evidence against the null</label>
+<label>
+<input type="radio" name="answer_43770" id="answer_43770_4" value="strong evidence against the null">
+strong evidence against the null
+</label>
 <br>
-<input type="radio" name="answer_33983" id="answer_33983_5" value="very strong evidence against the null">
-<label>very strong evidence against the null</label>
+<label>
+<input type="radio" name="answer_43770" id="answer_43770_5" value="very strong evidence against the null">
+very strong evidence against the null
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_33983"></div>
+<div id="result_43770"></div>
 </form>
-<script>function validate_form_33983() {var x, text; var x = document.forms['form_33983']['answer_33983'].value;if (x == 'very strong evidence against the null'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_33983').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_43770() {var x, text; var x = document.forms['form_43770']['answer_43770'].value;if (x == 'very strong evidence against the null'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_43770').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_37080').innerText == 'Correct'; res2 = document.getElementById('result_45156').innerText == 'Correct'; res3 = document.getElementById('result_57377').innerText == 'Correct'; res4 = document.getElementById('result_33983').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_92894').innerText == 'Correct'; res2 = document.getElementById('result_52994').innerText == 'Correct'; res3 = document.getElementById('result_21110').innerText == 'Correct'; res4 = document.getElementById('result_43770').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -994,25 +1036,33 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <p>Check all the conditions we meet in our scenario to determine if we can use the Chi-Square Distribution as a model for the null distribution and trust our calculated p-value.</p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_29390" onsubmit="return validate_form_29390()" method="post">
-<input type="checkbox" id="answer_29390_1" value="The measurements are categorical">
-<label>The measurements are categorical</label>
+<form name="form_60477" onsubmit="return validate_form_60477()" method="post">
+<label>
+<input type="checkbox" id="answer_60477_1" value="The measurements are categorical">
+The measurements are categorical
+</label>
 <br>
-<input type="checkbox" id="answer_29390_2" value="Categories are mutually exclusive">
-<label>Categories are mutually exclusive</label>
+<label>
+<input type="checkbox" id="answer_60477_2" value="Categories are mutually exclusive">
+Categories are mutually exclusive
+</label>
 <br>
-<input type="checkbox" id="answer_29390_3" value="Observations are independent">
-<label>Observations are independent</label>
+<label>
+<input type="checkbox" id="answer_60477_3" value="Observations are independent">
+Observations are independent
+</label>
 <br>
-<input type="checkbox" id="answer_29390_4" value="No category has an expected frequency of less than 5">
-<label>No category has an expected frequency of less than 5</label>
+<label>
+<input type="checkbox" id="answer_60477_4" value="No category has an expected frequency of less than 5">
+No category has an expected frequency of less than 5
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_29390"></div>
+<div id="result_60477"></div>
 </form>
-<script>function validate_form_29390() {var text; var x1 = document.getElementById('answer_29390_1'); var x2 = document.getElementById('answer_29390_2'); var x3 = document.getElementById('answer_29390_3'); var x4 = document.getElementById('answer_29390_4'); if (x1.checked == true&x2.checked == true&x3.checked == true&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_29390').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_60477() {var text; var x1 = document.getElementById('answer_60477_1'); var x2 = document.getElementById('answer_60477_2'); var x3 = document.getElementById('answer_60477_3'); var x4 = document.getElementById('answer_60477_4'); if (x1.checked == true&x2.checked == true&x3.checked == true&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_60477').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_37080').innerText == 'Correct'; res2 = document.getElementById('result_45156').innerText == 'Correct'; res3 = document.getElementById('result_57377').innerText == 'Correct'; res4 = document.getElementById('result_33983').innerText == 'Correct'; res5 = document.getElementById('result_29390').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_92894').innerText == 'Correct'; res2 = document.getElementById('result_52994').innerText == 'Correct'; res3 = document.getElementById('result_21110').innerText == 'Correct'; res4 = document.getElementById('result_43770').innerText == 'Correct'; res5 = document.getElementById('result_60477').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1103,13 +1153,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

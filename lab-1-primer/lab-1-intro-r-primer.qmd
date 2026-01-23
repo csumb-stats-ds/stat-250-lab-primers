@@ -16,11 +16,13 @@ format:
         warning: true
         completion: false
 execute: 
-  warning: false
+  warning: false 
+  message: false
   echo: true
 code-copy: true
 code-overflow: wrap
 toc: true
+number-sections: true
 css: ../styles.css
 ---
 
@@ -54,7 +56,7 @@ Recall your earlier reading "Why R?" to remember all the reasons we will be lear
 
 ------------------------------------------------------------------------
 
-## Part 1: R Orientation
+## R Orientation
 
 You have gotten a quick orientation to R in class. If you need a refresher, read, watch and follow along with [Chapter 3.4: RStudio Layout (12 min)](https://ismayc.github.io/rbasics-book/3-rstudiobasics.html#rstudio-layout){target="_blank"} in your own RStudio window to understand the use of different panes. You only need to read the entirety (including subsections) of Chapter 3.4, not the entire chapter 3. Don't feel like you need to understand all of the coding at this point, just get a sense of what each pane does.
 
@@ -62,7 +64,7 @@ Now that we have an overview of R, lets get started using R! Don't forget to sta
 
 ------------------------------------------------------------------------
 
-## Part 2: Data Organization
+## Data Organization
 
 One of the key parts of statistical analyses is good organization of your data itself and your files.
 
@@ -74,14 +76,14 @@ R expects data to be organized in a particular way to calculate and manipulate y
 
 ------------------------------------------------------------------------
 
-## Part 3: R Coding
+## R Coding
 
 R, at its most basic, can be thought of as the most powerful calculator you've ever had. R isn't powerful just from its calculation ability, but its ability to utilize ***functions*** to apply complex mathematical operations to whole sets of data, which is what we're going to learn.
 
 Let's take a closer look at R commands. Complete the following primer: [RStudio Primer: Programming Basics (25 min)](https://r-primers.andrewheiss.com/basics/02-programming-basics/){target="_blank"}. (One additional note: the chapter gives some indication of the rules around object names, but doesn't include one last rule: object names can't have spaces!
 
 
-### 3.1 Loading Packages{#loading-packages}
+### Loading Packages {#sec-loading-packages}
 
 R comes with what is called a "Base" **package**, which contains numerous functions. There are tens of thousands of additional packages that contain even more packages for everything from 3-D visualizations to machine learning algorithms.  To use functions from other packages you must first install the package
 
@@ -111,7 +113,7 @@ library(tidyverse) #data management
 ```
 
 
-### 3.2: R Syntax
+### R Syntax
 
 As you covered in class, the R language has its own set of grammatical rules. The good news is that once you've learned the basic R structure, it is easy to apply to new commands.
 
@@ -179,7 +181,7 @@ We need to fill in each piece into our template. So our code `goal (y ~ x , data
 ```{r}
 #| label: read-study2
 #| include: false
-study2 <- read_csv("study2.csv")
+study2 <- read_csv("study2.csv", show_col_types = FALSE)
 ```
 
 ```{r}
@@ -191,6 +193,7 @@ study2 <- mutate(study2, day = factor(day, levels = c("M", "T", "W", "R", "F", "
 
 ```{r}
 #| label: barplot
+#| fig-alt: "Bar plot of hours spend studying across each day of the week. Monday was 3 hours, Tuesday 5 hours, Wednesday 7 hours, Thursday 6 hours, Friday 0 hours, Saturday and Sunday 4 hours each."
 gf_col(hours ~ day, data = study2, 
        ylab = "Hours spent studying in week 1 and week 2", 
        xlab = "Day of the week")
@@ -200,7 +203,7 @@ Learning any new software can feel daunting, but referring back to this template
 
 
 
-### 3.3: Vectors, Objects, & Dataframes
+### Vectors, Objects, & Dataframes
 
 The real power of R comes not from calculating values like a calculator, but in manipulating sets of data. ***Vectors*** are sets of data that are organized together. Groups of vectors that are associated are ***dataframes***.
 
@@ -223,7 +226,7 @@ read_csv("study.csv")
 
 ::: {.callout-warning collapse="true"}
 ## Error: `could not find function "read_csv"`
-If you get the error `could not find function "read_csv"` be sure you ran the code in Section 3.1.
+If you get the error `could not find function "read_csv"` be sure you ran the code in @sec-loading-packages.
 :::
 
 That is okay, but that code alone means that R reads it and then immediately forgets it. If you tried this, your data wouldn't appear in your "Environment" pane. We need R to remember *and store* the information in its active memory.
@@ -306,6 +309,6 @@ You will notice that the output of this is to return a vector. Each element of t
 
 A few other useful functions can help us understand the dataset we loaded into R. `ncol()` lets us determine the number of variables in the dataset. `nrow()` lets us determine the number of rows (sometimes the same as cases) in the dataset.
 
-## Part 4: R Grammer & Errors
+## R Grammer & Errors
 
 One of the most frustrating parts for people learning R is troubleshooting errors. R is incredibly powerful, but it is *dumb*. It can't guess what you meant, nor add in a comma that you forgot to type. Read [Chapter 6: Deciphering Common R Errors (5 min)](https://ismayc.github.io/rbasics-book/6-errors.html){target="_blank"} which covers the most common errors in R and how to decipher them. R errors aren't always clear to new users, but they almost always will direct you to where the problem occurs. Sometimes that is just telling you that it can't find the file or object you are trying to point it to. Other times, it will repeat your code right up to the point where it didn't understand. That helps focus your attention when searching for errors.

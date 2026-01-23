@@ -75,6 +75,7 @@ website:
        
 format:
   html:
+    axe: true
     theme: "minty"
     mainfont: "sans-serif"
     code-copy: true

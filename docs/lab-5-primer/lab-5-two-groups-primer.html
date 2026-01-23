@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,14 +68,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../lab-4-primer/lab-4-confidence-primer.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a00848ed57fe9097555b5bd7c001b509.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-142d9687c3f711bd3ef1b6bce998d27f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -122,7 +123,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -164,12 +165,11 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">STAT 250 Lab Primers</a> 
-        <div class="sidebar-tools-main">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
     <a href="https://github.com/csumb-stat-ds/stat-250-lab-primers" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
 </div>
-    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -381,12 +381,12 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlY2hvIjpmYWxzZSwiZWRpdCI6ZmFsc2UsImV2YWwi
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Digital Accessibility
+<span class="screen-reader-only">Note</span>Digital Accessibility
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -416,9 +416,9 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJMb2FkaW5nIFBhY2thZ2VzIiwiY29tcGxldGlvbiI6ZmFsc2UsImVk
 <code id="interpolate-5" class="solution-code d-none">library(ggformula) #for graphs
 library(mosaic) #for statistics
 library(tidyverse) #for data management</code>
-<div class="sourceCode cell-code" id="interpolate-6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-6-1"><a href="#interpolate-6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula) <span class="co">#for graphs</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-6-1"><a href="#interpolate-6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula) <span class="co">#for graphs</span></span>
 <span id="interpolate-6-2"><a href="#interpolate-6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mosaic) <span class="co">#for statistics</span></span>
-<span id="interpolate-6-3"><a href="#interpolate-6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#for data management</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-6-3"><a href="#interpolate-6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#for data management</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -451,25 +451,33 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h6 class="anchored" data-anchor-id="sex">Sex:</h6>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_35372" onsubmit="return validate_form_35372()" method="post">
-<input type="checkbox" id="answer_35372_1" value="Explanatory">
-<label>Explanatory</label>
+<form name="form_68014" onsubmit="return validate_form_68014()" method="post">
+<label>
+<input type="checkbox" id="answer_68014_1" value="Explanatory">
+Explanatory
+</label>
 <br>
-<input type="checkbox" id="answer_35372_2" value="Response">
-<label>Response</label>
+<label>
+<input type="checkbox" id="answer_68014_2" value="Response">
+Response
+</label>
 <br>
-<input type="checkbox" id="answer_35372_3" value="Categorical">
-<label>Categorical</label>
+<label>
+<input type="checkbox" id="answer_68014_3" value="Categorical">
+Categorical
+</label>
 <br>
-<input type="checkbox" id="answer_35372_4" value="Numeric">
-<label>Numeric</label>
+<label>
+<input type="checkbox" id="answer_68014_4" value="Numeric">
+Numeric
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_35372"></div>
+<div id="result_68014"></div>
 </form>
-<script>function validate_form_35372() {var text; var x1 = document.getElementById('answer_35372_1'); var x2 = document.getElementById('answer_35372_2'); var x3 = document.getElementById('answer_35372_3'); var x4 = document.getElementById('answer_35372_4'); if (x1.checked == true&x2.checked == false&x3.checked == true&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_35372').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_68014() {var text; var x1 = document.getElementById('answer_68014_1'); var x2 = document.getElementById('answer_68014_2'); var x3 = document.getElementById('answer_68014_3'); var x4 = document.getElementById('answer_68014_4'); if (x1.checked == true&x2.checked == false&x3.checked == true&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_68014').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_35372').innerText == 'Correct';text = res1;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_68014').innerText == 'Correct';text = res1;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -480,25 +488,33 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h6 class="anchored" data-anchor-id="rating">Rating:</h6>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_36852" onsubmit="return validate_form_36852()" method="post">
-<input type="checkbox" id="answer_36852_1" value="Explanatory">
-<label>Explanatory</label>
+<form name="form_13228" onsubmit="return validate_form_13228()" method="post">
+<label>
+<input type="checkbox" id="answer_13228_1" value="Explanatory">
+Explanatory
+</label>
 <br>
-<input type="checkbox" id="answer_36852_2" value="Response">
-<label>Response</label>
+<label>
+<input type="checkbox" id="answer_13228_2" value="Response">
+Response
+</label>
 <br>
-<input type="checkbox" id="answer_36852_3" value="Categorical">
-<label>Categorical</label>
+<label>
+<input type="checkbox" id="answer_13228_3" value="Categorical">
+Categorical
+</label>
 <br>
-<input type="checkbox" id="answer_36852_4" value="Numeric">
-<label>Numeric</label>
+<label>
+<input type="checkbox" id="answer_13228_4" value="Numeric">
+Numeric
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_36852"></div>
+<div id="result_13228"></div>
 </form>
-<script>function validate_form_36852() {var text; var x1 = document.getElementById('answer_36852_1'); var x2 = document.getElementById('answer_36852_2'); var x3 = document.getElementById('answer_36852_3'); var x4 = document.getElementById('answer_36852_4'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_36852').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_13228() {var text; var x1 = document.getElementById('answer_13228_1'); var x2 = document.getElementById('answer_13228_2'); var x3 = document.getElementById('answer_13228_3'); var x4 = document.getElementById('answer_13228_4'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_13228').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -514,19 +530,23 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>Be sure you are able to provide a full justification.</p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_71772" onsubmit="return validate_form_71772()" method="post">
-<input type="radio" name="answer_71772" id="answer_71772_1" value="Independent Two Sample">
-<label>Independent Two Sample</label>
+<form name="form_16263" onsubmit="return validate_form_16263()" method="post">
+<label>
+<input type="radio" name="answer_16263" id="answer_16263_1" value="Independent Two Sample">
+Independent Two Sample
+</label>
 <br>
-<input type="radio" name="answer_71772" id="answer_71772_2" value="Matched Pair Sample">
-<label>Matched Pair Sample</label>
+<label>
+<input type="radio" name="answer_16263" id="answer_16263_2" value="Matched Pair Sample">
+Matched Pair Sample
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_71772"></div>
+<div id="result_16263"></div>
 </form>
-<script>function validate_form_71772() {var x, text; var x = document.forms['form_71772']['answer_71772'].value;if (x == 'Independent Two Sample'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_71772').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_16263() {var x, text; var x = document.forms['form_16263']['answer_16263'].value;if (x == 'Independent Two Sample'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_16263').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -538,19 +558,23 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <p>Be sure you are able to provide a full justification.</p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_67959" onsubmit="return validate_form_67959()" method="post">
-<input type="radio" name="answer_67959" id="answer_67959_1" value="Experiment">
-<label>Experiment</label>
+<form name="form_95616" onsubmit="return validate_form_95616()" method="post">
+<label>
+<input type="radio" name="answer_95616" id="answer_95616_1" value="Experiment">
+Experiment
+</label>
 <br>
-<input type="radio" name="answer_67959" id="answer_67959_2" value="Observational">
-<label>Observational</label>
+<label>
+<input type="radio" name="answer_95616" id="answer_95616_2" value="Observational">
+Observational
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_67959"></div>
+<div id="result_95616"></div>
 </form>
-<script>function validate_form_67959() {var x, text; var x = document.forms['form_67959']['answer_67959'].value;if (x == 'Experiment'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_67959').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_95616() {var x, text; var x = document.forms['form_95616']['answer_95616'].value;if (x == 'Experiment'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_95616').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -583,10 +607,10 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 mean(Rating ~ Sex, data = bias)
 var(Rating ~ Sex, data = bias)
 sd(Rating ~ Sex, data = bias)</code>
-<div class="sourceCode cell-code" id="interpolate-12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-12-1"><a href="#interpolate-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df_stats</span>(Rating <span class="sc">~</span> Sex, <span class="at">data =</span> bias)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-12-1"><a href="#interpolate-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df_stats</span>(Rating <span class="sc">~</span> Sex, <span class="at">data =</span> bias)</span>
 <span id="interpolate-12-2"><a href="#interpolate-12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Rating <span class="sc">~</span> Sex, <span class="at">data =</span> bias)</span>
 <span id="interpolate-12-3"><a href="#interpolate-12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Rating <span class="sc">~</span> Sex, <span class="at">data =</span> bias)</span>
-<span id="interpolate-12-4"><a href="#interpolate-12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Rating <span class="sc">~</span> Sex, <span class="at">data =</span> bias)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-12-4"><a href="#interpolate-12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Rating <span class="sc">~</span> Sex, <span class="at">data =</span> bias)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -615,9 +639,9 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <code id="interpolate-16" class="solution-code d-none">gf_boxplot(Rating ~ Sex, data = bias, 
         ylab = "Rating of Professor (1-7)", 
         xlab = "Sex of the Professor") </code>
-<div class="sourceCode cell-code" id="interpolate-17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-17-1"><a href="#interpolate-17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(Rating <span class="sc">~</span> Sex, <span class="at">data =</span> bias, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-17-1"><a href="#interpolate-17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(Rating <span class="sc">~</span> Sex, <span class="at">data =</span> bias, </span>
 <span id="interpolate-17-2"><a href="#interpolate-17-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Rating of Professor (1-7)"</span>, </span>
-<span id="interpolate-17-3"><a href="#interpolate-17-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Sex of the Professor"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-17-3"><a href="#interpolate-17-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Sex of the Professor"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -633,14 +657,14 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h5 class="anchored" data-anchor-id="what-is-the-approximate-median-rating-for-females">What is the approximate median rating for females?</h5>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_27449" onsubmit="return validate_form_27449()" method="post">
-<input type="text" placeholder="" name="answer_27449">
+<form name="form_15247" onsubmit="return validate_form_15247()" method="post">
+<input type="text" placeholder="" name="answer_15247">
 <input type="submit" value="check">
-<div id="result_27449"></div>
+<div id="result_15247"></div>
 </form>
-<script>function validate_form_27449() {var x, text; var x = document.forms['form_27449']['answer_27449'].value;if (x == '4'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_27449').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_15247() {var x, text; var x = document.forms['form_15247']['answer_15247'].value;if (x == '4'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_15247').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -651,14 +675,14 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h5 class="anchored" data-anchor-id="what-is-the-approximate-median-rating-for-males">What is the approximate median rating for males?</h5>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_4492" onsubmit="return validate_form_4492()" method="post">
-<input type="text" placeholder="" name="answer_4492">
+<form name="form_23425" onsubmit="return validate_form_23425()" method="post">
+<input type="text" placeholder="" name="answer_23425">
 <input type="submit" value="check">
-<div id="result_4492"></div>
+<div id="result_23425"></div>
 </form>
-<script>function validate_form_4492() {var x, text; var x = document.forms['form_4492']['answer_4492'].value;if (x == '5'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_4492').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_23425() {var x, text; var x = document.forms['form_23425']['answer_23425'].value;if (x == '5'){text = 'correct';} else {text = 'not correct';} document.getElementById('result_23425').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct';text = res1 + res2 + res3 + res4 + res5 + res6;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -669,25 +693,33 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h5 class="anchored" data-anchor-id="which-of-the-following-is-an-appropriate-statistic-to-describe-the-variability-i.e.-dispersion-spread-in-rating-of-male-identifying-professors">Which of the following is an appropriate statistic to describe the variability (i.e.&nbsp;dispersion, spread) in rating of male-identifying professors?</h5>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_76004" onsubmit="return validate_form_76004()" method="post">
-<input type="checkbox" id="answer_76004_1" value="sd">
-<label>sd</label>
+<form name="form_85642" onsubmit="return validate_form_85642()" method="post">
+<label>
+<input type="checkbox" id="answer_85642_1" value="mean">
+mean
+</label>
 <br>
-<input type="checkbox" id="answer_76004_2" value="median">
-<label>median</label>
+<label>
+<input type="checkbox" id="answer_85642_2" value="IQR">
+IQR
+</label>
 <br>
-<input type="checkbox" id="answer_76004_3" value="IQR">
-<label>IQR</label>
+<label>
+<input type="checkbox" id="answer_85642_3" value="sd">
+sd
+</label>
 <br>
-<input type="checkbox" id="answer_76004_4" value="mean">
-<label>mean</label>
+<label>
+<input type="checkbox" id="answer_85642_4" value="median">
+median
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_76004"></div>
+<div id="result_85642"></div>
 </form>
-<script>function validate_form_76004() {var text; var x1 = document.getElementById('answer_76004_1'); var x2 = document.getElementById('answer_76004_2'); var x3 = document.getElementById('answer_76004_3'); var x4 = document.getElementById('answer_76004_4'); if (x1.checked == true&x2.checked == false&x3.checked == false&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_76004').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_85642() {var text; var x1 = document.getElementById('answer_85642_1'); var x2 = document.getElementById('answer_85642_2'); var x3 = document.getElementById('answer_85642_3'); var x4 = document.getElementById('answer_85642_4'); if (x1.checked == false&x2.checked == false&x3.checked == true&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_85642').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -698,25 +730,33 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h5 class="anchored" data-anchor-id="which-of-the-following-is-an-appropriate-statistic-to-describe-the-variability-i.e.-dispersion-spread-in-rating-of-female-identifying-professors">Which of the following is an appropriate statistic to describe the variability (i.e.&nbsp;dispersion, spread) in rating of female-identifying professors?</h5>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_54827" onsubmit="return validate_form_54827()" method="post">
-<input type="checkbox" id="answer_54827_1" value="median">
-<label>median</label>
+<form name="form_14330" onsubmit="return validate_form_14330()" method="post">
+<label>
+<input type="checkbox" id="answer_14330_1" value="IQR">
+IQR
+</label>
 <br>
-<input type="checkbox" id="answer_54827_2" value="IQR">
-<label>IQR</label>
+<label>
+<input type="checkbox" id="answer_14330_2" value="median">
+median
+</label>
 <br>
-<input type="checkbox" id="answer_54827_3" value="mean">
-<label>mean</label>
+<label>
+<input type="checkbox" id="answer_14330_3" value="mean">
+mean
+</label>
 <br>
-<input type="checkbox" id="answer_54827_4" value="sd">
-<label>sd</label>
+<label>
+<input type="checkbox" id="answer_14330_4" value="sd">
+sd
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_54827"></div>
+<div id="result_14330"></div>
 </form>
-<script>function validate_form_54827() {var text; var x1 = document.getElementById('answer_54827_1'); var x2 = document.getElementById('answer_54827_2'); var x3 = document.getElementById('answer_54827_3'); var x4 = document.getElementById('answer_54827_4'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_54827').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_14330() {var text; var x1 = document.getElementById('answer_14330_1'); var x2 = document.getElementById('answer_14330_2'); var x3 = document.getElementById('answer_14330_3'); var x4 = document.getElementById('answer_14330_4'); if (x1.checked == true&x2.checked == false&x3.checked == false&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_14330').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -747,10 +787,10 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
       xlab = "Theoretical Z-Scores",
       ylab = "Ratings of Professors") |&gt; 
   gf_qqline()</code>
-<div class="sourceCode cell-code" id="interpolate-22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-22-1"><a href="#interpolate-22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_qq</span>(<span class="sc">~</span>Rating <span class="sc">|</span> Sex, <span class="at">data =</span> bias,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-22-1"><a href="#interpolate-22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_qq</span>(<span class="sc">~</span>Rating <span class="sc">|</span> Sex, <span class="at">data =</span> bias,</span>
 <span id="interpolate-22-2"><a href="#interpolate-22-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">"Theoretical Z-Scores"</span>,</span>
 <span id="interpolate-22-3"><a href="#interpolate-22-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">ylab =</span> <span class="st">"Ratings of Professors"</span>) <span class="sc">|&gt;</span> </span>
-<span id="interpolate-22-4"><a href="#interpolate-22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gf_qqline</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-22-4"><a href="#interpolate-22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gf_qqline</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -777,18 +817,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="general-pattern">General Pattern:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_92043" onsubmit="return validate_form_92043()" method="post">
-<select name="answer_92043">
+<form name="form_30058" onsubmit="return validate_form_30058()" method="post">
+<select name="answer_30058">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_92043"></div>
+<div id="result_30058"></div>
 </form>
-<script>function validate_form_92043() {var x, text; var x = document.forms['form_92043']['answer_92043'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_92043').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_30058() {var x, text; var x = document.forms['form_30058']['answer_30058'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_30058').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -798,18 +838,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="specifics">Specifics:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_58774" onsubmit="return validate_form_58774()" method="post">
-<select name="answer_58774">
+<form name="form_57446" onsubmit="return validate_form_57446()" method="post">
+<select name="answer_57446">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_58774"></div>
+<div id="result_57446"></div>
 </form>
-<script>function validate_form_58774() {var x, text; var x = document.forms['form_58774']['answer_58774'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_58774').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_57446() {var x, text; var x = document.forms['form_57446']['answer_57446'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_57446').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -819,18 +859,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="consideration-for-n">Consideration for n:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_20910" onsubmit="return validate_form_20910()" method="post">
-<select name="answer_20910">
+<form name="form_24575" onsubmit="return validate_form_24575()" method="post">
+<select name="answer_24575">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_20910"></div>
+<div id="result_24575"></div>
 </form>
-<script>function validate_form_20910() {var x, text; var x = document.forms['form_20910']['answer_20910'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_20910').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_24575() {var x, text; var x = document.forms['form_24575']['answer_24575'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_24575').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -840,18 +880,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="cumulative-frequency-rate-of-increase">Cumulative frequency rate of increase:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_72767" onsubmit="return validate_form_72767()" method="post">
-<select name="answer_72767">
+<form name="form_69602" onsubmit="return validate_form_69602()" method="post">
+<select name="answer_69602">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_72767"></div>
+<div id="result_69602"></div>
 </form>
-<script>function validate_form_72767() {var x, text; var x = document.forms['form_72767']['answer_72767'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_72767').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_69602() {var x, text; var x = document.forms['form_69602']['answer_69602'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_69602').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -865,18 +905,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="general-pattern-1">General Pattern:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_88364" onsubmit="return validate_form_88364()" method="post">
-<select name="answer_88364">
+<form name="form_76872" onsubmit="return validate_form_76872()" method="post">
+<select name="answer_76872">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_88364"></div>
+<div id="result_76872"></div>
 </form>
-<script>function validate_form_88364() {var x, text; var x = document.forms['form_88364']['answer_88364'].value;if (x == 'Complete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_88364').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_76872() {var x, text; var x = document.forms['form_76872']['answer_76872'].value;if (x == 'Complete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_76872').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -886,18 +926,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="specifics-1">Specifics:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_28938" onsubmit="return validate_form_28938()" method="post">
-<select name="answer_28938">
+<form name="form_86477" onsubmit="return validate_form_86477()" method="post">
+<select name="answer_86477">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_28938"></div>
+<div id="result_86477"></div>
 </form>
-<script>function validate_form_28938() {var x, text; var x = document.forms['form_28938']['answer_28938'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_28938').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_86477() {var x, text; var x = document.forms['form_86477']['answer_86477'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_86477').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -907,18 +947,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="consideration-for-n-1">Consideration for n:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_24363" onsubmit="return validate_form_24363()" method="post">
-<select name="answer_24363">
+<form name="form_44229" onsubmit="return validate_form_44229()" method="post">
+<select name="answer_44229">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_24363"></div>
+<div id="result_44229"></div>
 </form>
-<script>function validate_form_24363() {var x, text; var x = document.forms['form_24363']['answer_24363'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_24363').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_44229() {var x, text; var x = document.forms['form_44229']['answer_44229'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_44229').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -928,18 +968,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="cumulative-frequency-rate-of-increase-1">Cumulative frequency rate of increase:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_29561" onsubmit="return validate_form_29561()" method="post">
-<select name="answer_29561">
+<form name="form_94147" onsubmit="return validate_form_94147()" method="post">
+<select name="answer_94147">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_29561"></div>
+<div id="result_94147"></div>
 </form>
-<script>function validate_form_29561() {var x, text; var x = document.forms['form_29561']['answer_29561'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_29561').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_94147() {var x, text; var x = document.forms['form_94147']['answer_94147'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_94147').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -953,18 +993,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="general-pattern-2">General Pattern:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_28035" onsubmit="return validate_form_28035()" method="post">
-<select name="answer_28035">
+<form name="form_51053" onsubmit="return validate_form_51053()" method="post">
+<select name="answer_51053">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_28035"></div>
+<div id="result_51053"></div>
 </form>
-<script>function validate_form_28035() {var x, text; var x = document.forms['form_28035']['answer_28035'].value;if (x == 'Complete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_28035').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_51053() {var x, text; var x = document.forms['form_51053']['answer_51053'].value;if (x == 'Complete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_51053').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -974,18 +1014,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="specifics-2">Specifics:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_68027" onsubmit="return validate_form_68027()" method="post">
-<select name="answer_68027">
+<form name="form_96892" onsubmit="return validate_form_96892()" method="post">
+<select name="answer_96892">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_68027"></div>
+<div id="result_96892"></div>
 </form>
-<script>function validate_form_68027() {var x, text; var x = document.forms['form_68027']['answer_68027'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_68027').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_96892() {var x, text; var x = document.forms['form_96892']['answer_96892'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_96892').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -995,18 +1035,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="consideration-for-n-2">Consideration for n:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_40910" onsubmit="return validate_form_40910()" method="post">
-<select name="answer_40910">
+<form name="form_80644" onsubmit="return validate_form_80644()" method="post">
+<select name="answer_80644">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_40910"></div>
+<div id="result_80644"></div>
 </form>
-<script>function validate_form_40910() {var x, text; var x = document.forms['form_40910']['answer_40910'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_40910').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_80644() {var x, text; var x = document.forms['form_80644']['answer_80644'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_80644').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1016,18 +1056,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="cumulative-frequency-rate-of-increase-2">Cumulative frequency rate of increase:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_39836" onsubmit="return validate_form_39836()" method="post">
-<select name="answer_39836">
+<form name="form_33396" onsubmit="return validate_form_33396()" method="post">
+<select name="answer_33396">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_39836"></div>
+<div id="result_33396"></div>
 </form>
-<script>function validate_form_39836() {var x, text; var x = document.forms['form_39836']['answer_39836'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_39836').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_33396() {var x, text; var x = document.forms['form_33396']['answer_33396'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_33396').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1041,18 +1081,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="general-pattern-3">General Pattern:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_42027" onsubmit="return validate_form_42027()" method="post">
-<select name="answer_42027">
+<form name="form_84603" onsubmit="return validate_form_84603()" method="post">
+<select name="answer_84603">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_42027"></div>
+<div id="result_84603"></div>
 </form>
-<script>function validate_form_42027() {var x, text; var x = document.forms['form_42027']['answer_42027'].value;if (x == 'Complete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_42027').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_84603() {var x, text; var x = document.forms['form_84603']['answer_84603'].value;if (x == 'Complete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_84603').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct'; res21 = document.getElementById('result_42027').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct'; res21 = document.getElementById('result_84603').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1062,18 +1102,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="specifics-3">Specifics:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_95243" onsubmit="return validate_form_95243()" method="post">
-<select name="answer_95243">
+<form name="form_1799" onsubmit="return validate_form_1799()" method="post">
+<select name="answer_1799">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_95243"></div>
+<div id="result_1799"></div>
 </form>
-<script>function validate_form_95243() {var x, text; var x = document.forms['form_95243']['answer_95243'].value;if (x == 'Complete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_95243').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_1799() {var x, text; var x = document.forms['form_1799']['answer_1799'].value;if (x == 'Complete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_1799').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct'; res21 = document.getElementById('result_42027').innerText == 'Correct'; res22 = document.getElementById('result_95243').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct'; res21 = document.getElementById('result_84603').innerText == 'Correct'; res22 = document.getElementById('result_1799').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1083,18 +1123,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="consideration-for-n-3">Consideration for n:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_51952" onsubmit="return validate_form_51952()" method="post">
-<select name="answer_51952">
+<form name="form_32068" onsubmit="return validate_form_32068()" method="post">
+<select name="answer_32068">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_51952"></div>
+<div id="result_32068"></div>
 </form>
-<script>function validate_form_51952() {var x, text; var x = document.forms['form_51952']['answer_51952'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_51952').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_32068() {var x, text; var x = document.forms['form_32068']['answer_32068'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_32068').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct'; res21 = document.getElementById('result_42027').innerText == 'Correct'; res22 = document.getElementById('result_95243').innerText == 'Correct'; res23 = document.getElementById('result_51952').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct'; res21 = document.getElementById('result_84603').innerText == 'Correct'; res22 = document.getElementById('result_1799').innerText == 'Correct'; res23 = document.getElementById('result_32068').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1104,18 +1144,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="cumulative-frequency-rate-of-increase-3">Cumulative frequency rate of increase:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_60416" onsubmit="return validate_form_60416()" method="post">
-<select name="answer_60416">
+<form name="form_87990" onsubmit="return validate_form_87990()" method="post">
+<select name="answer_87990">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_60416"></div>
+<div id="result_87990"></div>
 </form>
-<script>function validate_form_60416() {var x, text; var x = document.forms['form_60416']['answer_60416'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_60416').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_87990() {var x, text; var x = document.forms['form_87990']['answer_87990'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_87990').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct'; res21 = document.getElementById('result_42027').innerText == 'Correct'; res22 = document.getElementById('result_95243').innerText == 'Correct'; res23 = document.getElementById('result_51952').innerText == 'Correct'; res24 = document.getElementById('result_60416').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct'; res21 = document.getElementById('result_84603').innerText == 'Correct'; res22 = document.getElementById('result_1799').innerText == 'Correct'; res23 = document.getElementById('result_32068').innerText == 'Correct'; res24 = document.getElementById('result_87990').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1129,18 +1169,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="general-pattern-4">General Pattern:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_31263" onsubmit="return validate_form_31263()" method="post">
-<select name="answer_31263">
+<form name="form_66776" onsubmit="return validate_form_66776()" method="post">
+<select name="answer_66776">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_31263"></div>
+<div id="result_66776"></div>
 </form>
-<script>function validate_form_31263() {var x, text; var x = document.forms['form_31263']['answer_31263'].value;if (x == 'Complete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_31263').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_66776() {var x, text; var x = document.forms['form_66776']['answer_66776'].value;if (x == 'Complete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_66776').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct'; res21 = document.getElementById('result_42027').innerText == 'Correct'; res22 = document.getElementById('result_95243').innerText == 'Correct'; res23 = document.getElementById('result_51952').innerText == 'Correct'; res24 = document.getElementById('result_60416').innerText == 'Correct'; res25 = document.getElementById('result_31263').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct'; res21 = document.getElementById('result_84603').innerText == 'Correct'; res22 = document.getElementById('result_1799').innerText == 'Correct'; res23 = document.getElementById('result_32068').innerText == 'Correct'; res24 = document.getElementById('result_87990').innerText == 'Correct'; res25 = document.getElementById('result_66776').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1150,18 +1190,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="specifics-4">Specifics:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_92467" onsubmit="return validate_form_92467()" method="post">
-<select name="answer_92467">
+<form name="form_71551" onsubmit="return validate_form_71551()" method="post">
+<select name="answer_71551">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_92467"></div>
+<div id="result_71551"></div>
 </form>
-<script>function validate_form_92467() {var x, text; var x = document.forms['form_92467']['answer_92467'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_92467').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_71551() {var x, text; var x = document.forms['form_71551']['answer_71551'].value;if (x == 'Missing'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_71551').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct'; res21 = document.getElementById('result_42027').innerText == 'Correct'; res22 = document.getElementById('result_95243').innerText == 'Correct'; res23 = document.getElementById('result_51952').innerText == 'Correct'; res24 = document.getElementById('result_60416').innerText == 'Correct'; res25 = document.getElementById('result_31263').innerText == 'Correct'; res26 = document.getElementById('result_92467').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct'; res21 = document.getElementById('result_84603').innerText == 'Correct'; res22 = document.getElementById('result_1799').innerText == 'Correct'; res23 = document.getElementById('result_32068').innerText == 'Correct'; res24 = document.getElementById('result_87990').innerText == 'Correct'; res25 = document.getElementById('result_66776').innerText == 'Correct'; res26 = document.getElementById('result_71551').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1171,18 +1211,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="consideration-for-n-4">Consideration for n:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_97851" onsubmit="return validate_form_97851()" method="post">
-<select name="answer_97851">
+<form name="form_43601" onsubmit="return validate_form_43601()" method="post">
+<select name="answer_43601">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_97851"></div>
+<div id="result_43601"></div>
 </form>
-<script>function validate_form_97851() {var x, text; var x = document.forms['form_97851']['answer_97851'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_97851').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_43601() {var x, text; var x = document.forms['form_43601']['answer_43601'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_43601').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26, res27;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct'; res21 = document.getElementById('result_42027').innerText == 'Correct'; res22 = document.getElementById('result_95243').innerText == 'Correct'; res23 = document.getElementById('result_51952').innerText == 'Correct'; res24 = document.getElementById('result_60416').innerText == 'Correct'; res25 = document.getElementById('result_31263').innerText == 'Correct'; res26 = document.getElementById('result_92467').innerText == 'Correct'; res27 = document.getElementById('result_97851').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26 + res27;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26, res27;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct'; res21 = document.getElementById('result_84603').innerText == 'Correct'; res22 = document.getElementById('result_1799').innerText == 'Correct'; res23 = document.getElementById('result_32068').innerText == 'Correct'; res24 = document.getElementById('result_87990').innerText == 'Correct'; res25 = document.getElementById('result_66776').innerText == 'Correct'; res26 = document.getElementById('result_71551').innerText == 'Correct'; res27 = document.getElementById('result_43601').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26 + res27;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1192,18 +1232,18 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h6 class="anchored" data-anchor-id="cumulative-frequency-rate-of-increase-4">Cumulative frequency rate of increase:</h6>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<form name="form_98742" onsubmit="return validate_form_98742()" method="post">
-<select name="answer_98742">
+<form name="form_36477" onsubmit="return validate_form_36477()" method="post">
+<select name="answer_36477">
 <option>Complete</option>
 <option>Incomplete</option>
 <option>Missing</option>
 </select>
 <input type="submit" value="check">
-<div id="result_98742"></div>
+<div id="result_36477"></div>
 </form>
-<script>function validate_form_98742() {var x, text; var x = document.forms['form_98742']['answer_98742'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_98742').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_36477() {var x, text; var x = document.forms['form_36477']['answer_36477'].value;if (x == 'Incomplete'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_36477').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26, res27, res28;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct'; res21 = document.getElementById('result_42027').innerText == 'Correct'; res22 = document.getElementById('result_95243').innerText == 'Correct'; res23 = document.getElementById('result_51952').innerText == 'Correct'; res24 = document.getElementById('result_60416').innerText == 'Correct'; res25 = document.getElementById('result_31263').innerText == 'Correct'; res26 = document.getElementById('result_92467').innerText == 'Correct'; res27 = document.getElementById('result_97851').innerText == 'Correct'; res28 = document.getElementById('result_98742').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26 + res27 + res28;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26, res27, res28;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct'; res21 = document.getElementById('result_84603').innerText == 'Correct'; res22 = document.getElementById('result_1799').innerText == 'Correct'; res23 = document.getElementById('result_32068').innerText == 'Correct'; res24 = document.getElementById('result_87990').innerText == 'Correct'; res25 = document.getElementById('result_66776').innerText == 'Correct'; res26 = document.getElementById('result_71551').innerText == 'Correct'; res27 = document.getElementById('result_43601').innerText == 'Correct'; res28 = document.getElementById('result_36477').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26 + res27 + res28;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1234,25 +1274,33 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h6 class="anchored" data-anchor-id="sex-1">Sex:</h6>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_72567" onsubmit="return validate_form_72567()" method="post">
-<input type="checkbox" id="answer_72567_1" value="Explanatory">
-<label>Explanatory</label>
+<form name="form_24048" onsubmit="return validate_form_24048()" method="post">
+<label>
+<input type="checkbox" id="answer_24048_1" value="Explanatory">
+Explanatory
+</label>
 <br>
-<input type="checkbox" id="answer_72567_2" value="Response">
-<label>Response</label>
+<label>
+<input type="checkbox" id="answer_24048_2" value="Response">
+Response
+</label>
 <br>
-<input type="checkbox" id="answer_72567_3" value="Categorical">
-<label>Categorical</label>
+<label>
+<input type="checkbox" id="answer_24048_3" value="Categorical">
+Categorical
+</label>
 <br>
-<input type="checkbox" id="answer_72567_4" value="Numeric">
-<label>Numeric</label>
+<label>
+<input type="checkbox" id="answer_24048_4" value="Numeric">
+Numeric
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_72567"></div>
+<div id="result_24048"></div>
 </form>
-<script>function validate_form_72567() {var text; var x1 = document.getElementById('answer_72567_1'); var x2 = document.getElementById('answer_72567_2'); var x3 = document.getElementById('answer_72567_3'); var x4 = document.getElementById('answer_72567_4'); if (x1.checked == true&x2.checked == false&x3.checked == true&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_72567').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_24048() {var text; var x1 = document.getElementById('answer_24048_1'); var x2 = document.getElementById('answer_24048_2'); var x3 = document.getElementById('answer_24048_3'); var x4 = document.getElementById('answer_24048_4'); if (x1.checked == true&x2.checked == false&x3.checked == true&x4.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_24048').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26, res27, res28, res29;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct'; res21 = document.getElementById('result_42027').innerText == 'Correct'; res22 = document.getElementById('result_95243').innerText == 'Correct'; res23 = document.getElementById('result_51952').innerText == 'Correct'; res24 = document.getElementById('result_60416').innerText == 'Correct'; res25 = document.getElementById('result_31263').innerText == 'Correct'; res26 = document.getElementById('result_92467').innerText == 'Correct'; res27 = document.getElementById('result_97851').innerText == 'Correct'; res28 = document.getElementById('result_98742').innerText == 'Correct'; res29 = document.getElementById('result_72567').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26 + res27 + res28 + res29;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26, res27, res28, res29;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct'; res21 = document.getElementById('result_84603').innerText == 'Correct'; res22 = document.getElementById('result_1799').innerText == 'Correct'; res23 = document.getElementById('result_32068').innerText == 'Correct'; res24 = document.getElementById('result_87990').innerText == 'Correct'; res25 = document.getElementById('result_66776').innerText == 'Correct'; res26 = document.getElementById('result_71551').innerText == 'Correct'; res27 = document.getElementById('result_43601').innerText == 'Correct'; res28 = document.getElementById('result_36477').innerText == 'Correct'; res29 = document.getElementById('result_24048').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26 + res27 + res28 + res29;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1263,25 +1311,33 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h6 class="anchored" data-anchor-id="age">Age:</h6>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_64807" onsubmit="return validate_form_64807()" method="post">
-<input type="checkbox" id="answer_64807_1" value="Explanatory">
-<label>Explanatory</label>
+<form name="form_13412" onsubmit="return validate_form_13412()" method="post">
+<label>
+<input type="checkbox" id="answer_13412_1" value="Explanatory">
+Explanatory
+</label>
 <br>
-<input type="checkbox" id="answer_64807_2" value="Response">
-<label>Response</label>
+<label>
+<input type="checkbox" id="answer_13412_2" value="Response">
+Response
+</label>
 <br>
-<input type="checkbox" id="answer_64807_3" value="Categorical">
-<label>Categorical</label>
+<label>
+<input type="checkbox" id="answer_13412_3" value="Categorical">
+Categorical
+</label>
 <br>
-<input type="checkbox" id="answer_64807_4" value="Numeric">
-<label>Numeric</label>
+<label>
+<input type="checkbox" id="answer_13412_4" value="Numeric">
+Numeric
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_64807"></div>
+<div id="result_13412"></div>
 </form>
-<script>function validate_form_64807() {var text; var x1 = document.getElementById('answer_64807_1'); var x2 = document.getElementById('answer_64807_2'); var x3 = document.getElementById('answer_64807_3'); var x4 = document.getElementById('answer_64807_4'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_64807').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_13412() {var text; var x1 = document.getElementById('answer_13412_1'); var x2 = document.getElementById('answer_13412_2'); var x3 = document.getElementById('answer_13412_3'); var x4 = document.getElementById('answer_13412_4'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_13412').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26, res27, res28, res29, res30;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct'; res21 = document.getElementById('result_42027').innerText == 'Correct'; res22 = document.getElementById('result_95243').innerText == 'Correct'; res23 = document.getElementById('result_51952').innerText == 'Correct'; res24 = document.getElementById('result_60416').innerText == 'Correct'; res25 = document.getElementById('result_31263').innerText == 'Correct'; res26 = document.getElementById('result_92467').innerText == 'Correct'; res27 = document.getElementById('result_97851').innerText == 'Correct'; res28 = document.getElementById('result_98742').innerText == 'Correct'; res29 = document.getElementById('result_72567').innerText == 'Correct'; res30 = document.getElementById('result_64807').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26 + res27 + res28 + res29 + res30;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26, res27, res28, res29, res30;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct'; res21 = document.getElementById('result_84603').innerText == 'Correct'; res22 = document.getElementById('result_1799').innerText == 'Correct'; res23 = document.getElementById('result_32068').innerText == 'Correct'; res24 = document.getElementById('result_87990').innerText == 'Correct'; res25 = document.getElementById('result_66776').innerText == 'Correct'; res26 = document.getElementById('result_71551').innerText == 'Correct'; res27 = document.getElementById('result_43601').innerText == 'Correct'; res28 = document.getElementById('result_36477').innerText == 'Correct'; res29 = document.getElementById('result_24048').innerText == 'Correct'; res30 = document.getElementById('result_13412').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26 + res27 + res28 + res29 + res30;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1292,19 +1348,23 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h5 class="anchored" data-anchor-id="identify-the-study-design-of-this-study.-be-sure-you-are-able-to-provide-a-full-justification.">Identify the <em>study design</em> of this study. Be sure you are able to provide a full justification.</h5>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_21772" onsubmit="return validate_form_21772()" method="post">
-<input type="radio" name="answer_21772" id="answer_21772_1" value="Independent Two Sample">
-<label>Independent Two Sample</label>
+<form name="form_71881" onsubmit="return validate_form_71881()" method="post">
+<label>
+<input type="radio" name="answer_71881" id="answer_71881_1" value="Independent Two Sample">
+Independent Two Sample
+</label>
 <br>
-<input type="radio" name="answer_21772" id="answer_21772_2" value="Matched Pair Sample">
-<label>Matched Pair Sample</label>
+<label>
+<input type="radio" name="answer_71881" id="answer_71881_2" value="Matched Pair Sample">
+Matched Pair Sample
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_21772"></div>
+<div id="result_71881"></div>
 </form>
-<script>function validate_form_21772() {var x, text; var x = document.forms['form_21772']['answer_21772'].value;if (x == 'Matched Pair Sample'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_21772').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_71881() {var x, text; var x = document.forms['form_71881']['answer_71881'].value;if (x == 'Matched Pair Sample'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_71881').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26, res27, res28, res29, res30, res31;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct'; res21 = document.getElementById('result_42027').innerText == 'Correct'; res22 = document.getElementById('result_95243').innerText == 'Correct'; res23 = document.getElementById('result_51952').innerText == 'Correct'; res24 = document.getElementById('result_60416').innerText == 'Correct'; res25 = document.getElementById('result_31263').innerText == 'Correct'; res26 = document.getElementById('result_92467').innerText == 'Correct'; res27 = document.getElementById('result_97851').innerText == 'Correct'; res28 = document.getElementById('result_98742').innerText == 'Correct'; res29 = document.getElementById('result_72567').innerText == 'Correct'; res30 = document.getElementById('result_64807').innerText == 'Correct'; res31 = document.getElementById('result_21772').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26 + res27 + res28 + res29 + res30 + res31;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26, res27, res28, res29, res30, res31;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct'; res21 = document.getElementById('result_84603').innerText == 'Correct'; res22 = document.getElementById('result_1799').innerText == 'Correct'; res23 = document.getElementById('result_32068').innerText == 'Correct'; res24 = document.getElementById('result_87990').innerText == 'Correct'; res25 = document.getElementById('result_66776').innerText == 'Correct'; res26 = document.getElementById('result_71551').innerText == 'Correct'; res27 = document.getElementById('result_43601').innerText == 'Correct'; res28 = document.getElementById('result_36477').innerText == 'Correct'; res29 = document.getElementById('result_24048').innerText == 'Correct'; res30 = document.getElementById('result_13412').innerText == 'Correct'; res31 = document.getElementById('result_71881').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26 + res27 + res28 + res29 + res30 + res31;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1315,19 +1375,23 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h5 class="anchored" data-anchor-id="identify-the-study-type-of-this-study.-be-sure-you-are-able-to-provide-a-full-justification.">Identify the <em>study type</em> of this study. Be sure you are able to provide a full justification.</h5>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_47939" onsubmit="return validate_form_47939()" method="post">
-<input type="radio" name="answer_47939" id="answer_47939_1" value="Experiment">
-<label>Experiment</label>
+<form name="form_54618" onsubmit="return validate_form_54618()" method="post">
+<label>
+<input type="radio" name="answer_54618" id="answer_54618_1" value="Experiment">
+Experiment
+</label>
 <br>
-<input type="radio" name="answer_47939" id="answer_47939_2" value="Observational">
-<label>Observational</label>
+<label>
+<input type="radio" name="answer_54618" id="answer_54618_2" value="Observational">
+Observational
+</label>
 <br>
 <input type="submit" value="check">
-<div id="result_47939"></div>
+<div id="result_54618"></div>
 </form>
-<script>function validate_form_47939() {var x, text; var x = document.forms['form_47939']['answer_47939'].value;if (x == 'Observational'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_47939').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_54618() {var x, text; var x = document.forms['form_54618']['answer_54618'].value;if (x == 'Observational'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_54618').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26, res27, res28, res29, res30, res31, res32;res1 = document.getElementById('result_35372').innerText == 'Correct'; res2 = document.getElementById('result_36852').innerText == 'Correct'; res3 = document.getElementById('result_71772').innerText == 'Correct'; res4 = document.getElementById('result_67959').innerText == 'Correct'; res5 = document.getElementById('result_27449').innerText == 'correct'; res6 = document.getElementById('result_4492').innerText == 'correct'; res7 = document.getElementById('result_76004').innerText == 'Correct'; res8 = document.getElementById('result_54827').innerText == 'Correct'; res9 = document.getElementById('result_92043').innerText == 'Correct'; res10 = document.getElementById('result_58774').innerText == 'Correct'; res11 = document.getElementById('result_20910').innerText == 'Correct'; res12 = document.getElementById('result_72767').innerText == 'Correct'; res13 = document.getElementById('result_88364').innerText == 'Correct'; res14 = document.getElementById('result_28938').innerText == 'Correct'; res15 = document.getElementById('result_24363').innerText == 'Correct'; res16 = document.getElementById('result_29561').innerText == 'Correct'; res17 = document.getElementById('result_28035').innerText == 'Correct'; res18 = document.getElementById('result_68027').innerText == 'Correct'; res19 = document.getElementById('result_40910').innerText == 'Correct'; res20 = document.getElementById('result_39836').innerText == 'Correct'; res21 = document.getElementById('result_42027').innerText == 'Correct'; res22 = document.getElementById('result_95243').innerText == 'Correct'; res23 = document.getElementById('result_51952').innerText == 'Correct'; res24 = document.getElementById('result_60416').innerText == 'Correct'; res25 = document.getElementById('result_31263').innerText == 'Correct'; res26 = document.getElementById('result_92467').innerText == 'Correct'; res27 = document.getElementById('result_97851').innerText == 'Correct'; res28 = document.getElementById('result_98742').innerText == 'Correct'; res29 = document.getElementById('result_72567').innerText == 'Correct'; res30 = document.getElementById('result_64807').innerText == 'Correct'; res31 = document.getElementById('result_21772').innerText == 'Correct'; res32 = document.getElementById('result_47939').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26 + res27 + res28 + res29 + res30 + res31 + res32;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15, res16, res17, res18, res19, res20, res21, res22, res23, res24, res25, res26, res27, res28, res29, res30, res31, res32;res1 = document.getElementById('result_68014').innerText == 'Correct'; res2 = document.getElementById('result_13228').innerText == 'Correct'; res3 = document.getElementById('result_16263').innerText == 'Correct'; res4 = document.getElementById('result_95616').innerText == 'Correct'; res5 = document.getElementById('result_15247').innerText == 'correct'; res6 = document.getElementById('result_23425').innerText == 'correct'; res7 = document.getElementById('result_85642').innerText == 'Correct'; res8 = document.getElementById('result_14330').innerText == 'Correct'; res9 = document.getElementById('result_30058').innerText == 'Correct'; res10 = document.getElementById('result_57446').innerText == 'Correct'; res11 = document.getElementById('result_24575').innerText == 'Correct'; res12 = document.getElementById('result_69602').innerText == 'Correct'; res13 = document.getElementById('result_76872').innerText == 'Correct'; res14 = document.getElementById('result_86477').innerText == 'Correct'; res15 = document.getElementById('result_44229').innerText == 'Correct'; res16 = document.getElementById('result_94147').innerText == 'Correct'; res17 = document.getElementById('result_51053').innerText == 'Correct'; res18 = document.getElementById('result_96892').innerText == 'Correct'; res19 = document.getElementById('result_80644').innerText == 'Correct'; res20 = document.getElementById('result_33396').innerText == 'Correct'; res21 = document.getElementById('result_84603').innerText == 'Correct'; res22 = document.getElementById('result_1799').innerText == 'Correct'; res23 = document.getElementById('result_32068').innerText == 'Correct'; res24 = document.getElementById('result_87990').innerText == 'Correct'; res25 = document.getElementById('result_66776').innerText == 'Correct'; res26 = document.getElementById('result_71551').innerText == 'Correct'; res27 = document.getElementById('result_43601').innerText == 'Correct'; res28 = document.getElementById('result_36477').innerText == 'Correct'; res29 = document.getElementById('result_24048').innerText == 'Correct'; res30 = document.getElementById('result_13412').innerText == 'Correct'; res31 = document.getElementById('result_71881').innerText == 'Correct'; res32 = document.getElementById('result_54618').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5 + res6 + res7 + res8 + res9 + res10 + res11 + res12 + res13 + res14 + res15 + res16 + res17 + res18 + res19 + res20 + res21 + res22 + res23 + res24 + res25 + res26 + res27 + res28 + res29 + res30 + res31 + res32;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1355,10 +1419,10 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 mean(~(FatherAge - MotherAge), data = parents)
 var(~(FatherAge - MotherAge), data = parents)
 sd(~(FatherAge - MotherAge), data = parents)</code>
-<div class="sourceCode cell-code" id="interpolate-28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-28-1"><a href="#interpolate-28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df_stats</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-28-1"><a href="#interpolate-28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df_stats</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents)</span>
 <span id="interpolate-28-2"><a href="#interpolate-28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents)</span>
 <span id="interpolate-28-3"><a href="#interpolate-28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents)</span>
-<span id="interpolate-28-4"><a href="#interpolate-28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-28-4"><a href="#interpolate-28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1386,8 +1450,8 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_6">
 <code id="interpolate-32" class="solution-code d-none">gf_boxplot(~(FatherAge - MotherAge), data = parents,
       xlab = "Difference between Father's and Mother's Age of Newborn Infants in 2023") </code>
-<div class="sourceCode cell-code" id="interpolate-33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-33-1"><a href="#interpolate-33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents,</span>
-<span id="interpolate-33-2"><a href="#interpolate-33-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">"Difference between Father's and Mother's Age of Newborn Infants in 2023"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-33-1"><a href="#interpolate-33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents,</span>
+<span id="interpolate-33-2"><a href="#interpolate-33-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">"Difference between Father's and Mother's Age of Newborn Infants in 2023"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1417,10 +1481,10 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
       xlab = "Theoretical Z-Scores",
       ylab = "Difference between Father's and Mother's Age") |&gt; 
   gf_qqline()</code>
-<div class="sourceCode cell-code" id="interpolate-38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-38-1"><a href="#interpolate-38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_qq</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-38-1"><a href="#interpolate-38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_qq</span>(<span class="sc">~</span>(FatherAge <span class="sc">-</span> MotherAge), <span class="at">data =</span> parents,</span>
 <span id="interpolate-38-2"><a href="#interpolate-38-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">"Theoretical Z-Scores"</span>,</span>
 <span id="interpolate-38-3"><a href="#interpolate-38-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">ylab =</span> <span class="st">"Difference between Father's and Mother's Age"</span>) <span class="sc">|&gt;</span> </span>
-<span id="interpolate-38-4"><a href="#interpolate-38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gf_qqline</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-38-4"><a href="#interpolate-38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gf_qqline</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1515,13 +1579,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

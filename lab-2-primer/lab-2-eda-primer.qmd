@@ -15,12 +15,13 @@ format:
         warning: true
         completion: false
 execute: 
-  warning: false
+  warning: false 
   message: false
   echo: true
 code-copy: true
 code-overflow: wrap
 toc: true
+number-sections: true
 css: ../styles.css
 ---
 
@@ -52,7 +53,7 @@ Please note that all images were created with modifications to the defaults to m
 This Primer will introduce you to using Markdown to create documents. The good news is: you've already been doing this! The .qmd files you are using are **Q**uarto documents that are written with **m**ark**d**own and you've been editing them since week 1. We're just going to make some of what you've already learned more explicit. 
 
 
-## Part 1: Introduction to Markdown
+## Introduction to Markdown
 
 Markdown is a way to encode formatting on text in an unobtrusive way (compared to, say, html). Quarto documents use the Markdown language to code the text in the document, and allow you to embed code chunks that execute R code. Your finished .qmd document can be 'rendered' to other document types, and the markdown language converts to specific formatting. 
 
@@ -78,7 +79,7 @@ When you do so, you will see this Markdown document converted to an HTML documen
 We are going to learn some of the basic Quarto editing techniques. 
 
 
-### 1.0 Overview of Quarto
+### Overview of Quarto
 
 Before we continue, check out this Tutorial [Hello Quarto (25 min)](https://quarto.org/docs/get-started/hello/rstudio.html). Remember, you will want to take notes as you move through the tutorials. You can also read more via this optional introduction to [Quarto (30 min, all of Chapter 28)](https://r4ds.hadley.nz/quarto.html). 
 
@@ -93,7 +94,7 @@ The biggest thing to realize is that a Quarto document contains three types of c
 For our class (STAT 250), you will generally only be editing the **Chunks** and the Text.
 
 
-### 1.1. Basic Markdown
+### Basic Markdown
 
 Markdown can format a document just like you format your Word documents in other classes, but we'll just cover some of the basics here. You've already learned *italics*, **bold** and `code` displays. Markdown can make lists as well, using a variety of encoding (see the online tutorial). You've probably also noticed that when you format your text, its color display changes, to help you see the formatting easier. 
 
@@ -175,7 +176,7 @@ superscript^2^
 ````
 :::
 ::: {.g-col-6}
-# Header Size 1 {.unlisted}
+# Header Size 1 {.unlisted .unnumbered}
 :::
 :::
 ::: {.grid}
@@ -185,7 +186,7 @@ superscript^2^
 ````
 :::
 ::: {.g-col-6}
-## Header Size 2 {.unlisted}
+## Header Size 2 {.unlisted .unnumbered}
 :::
 :::
 ::: {.grid}
@@ -196,7 +197,7 @@ superscript^2^
 ````
 :::
 ::: {.g-col-6}
-### Header Size 3 {.unlisted}
+### Header Size 3 {.unlisted .unnumbered}
 :::
 :::
 ::: {.grid}
@@ -263,7 +264,7 @@ You'll also notice that if there are no line breaks, this formatting doesn't end
 
 
 
-### 1.2. Creating Tables
+### Creating Tables
 
 The easiest way to make a table in markdown is using this format: 
 
@@ -335,7 +336,7 @@ You might also notice that it doesn't mater if my `|` don't line up when we edit
 That said, it is easier to read in the .qmd file if you add spaces and dashes as needed so that they all do line up.
 
 
-### 1.3. Mathematics
+### Mathematics
 
 We often want to write small mathematics equations or write mathematical symbols. This is actually much easier in .qmd than in Word. 
 
@@ -437,7 +438,7 @@ $\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$
 :::
  
 
-### 1.4. Code Chunks
+### Code Chunks
 
 You've learned how to insert code chunks using the shortcuts Ctrl-Alt-I (or Cmd-Alt-I), by clicking the green Insert +C button above, but you can also just type the two sets of code that surround code chunks, ` ```{r} ` and the ending ` ``` ` . *Note, those are back-ticks, found above the tab key, not single quotation marks.* 
 
@@ -469,7 +470,7 @@ You can also comment your code, which is a way of annotating it without affectin
 ```
 
 
-### 1.5 In-line code
+### In-line code
 
 ```{r}
 #| label: function
@@ -537,7 +538,7 @@ Notice that we never ran that code in any code chunk. It was run and displayed c
 
 
 
-### 1.6. Checking code & Rendering your Document
+### Checking code & Rendering your Document
 
 You can run specific code chunks to check their output by pressing the green play button to run the specific code chunk, or the icon next to it to run all code chunks prior to that code chunk. 
 
@@ -584,7 +585,7 @@ This will print out any errors in your code chunks, but still render the documen
 The most common errors in your markdown that can cause issues are deleting back ticks (`) around your code chunks or dashes (-) from around the YAML code, so always check that first.
 
 
-## Part 2: R Code: Exploratory Data Analysis for Single Numeric Variables
+## R Code: Exploratory Data Analysis for Single Numeric Variables
 
 Here is a review of some of the code you will use in the rest of Lab 2.  
 
@@ -598,7 +599,7 @@ library(ggformula) #data visualization
 library(mosaic) #data summary statistics
 ```
 
-### 2.1 Reading in Data
+### Reading in Data
 
 Next, we must be sure to read in the data AND assign it to an `object` name so that we can call it later in other functions.  
 
@@ -609,7 +610,7 @@ penguins <- read_csv("penguins.csv")
 
 Read the output and add the argument to the function above to "quiet this message".
 
-### 2.2 Histograms
+### Histograms
 
 Histograms are a great way to explore the distribution (shape, center, spread, outliers) of a variable. Here is the basic structure for a histogram of body mass of the penguins. Add the following arguments.  
 
@@ -650,7 +651,7 @@ gradethis::grade_this_code()
 ```
 
 
-### 2.3 Boxplots  
+### Boxplots  
 
 Boxplots are a great way to explore the distribution (shape, center, spread, outliers) of a variable, though they do not give us information about modality. Here is the basic structure for a boxplot of body mass of the penguins. Add the following arguments.  
 
@@ -699,7 +700,7 @@ gf_boxplot(body_mass_g ~ species,
 ```
 
 
-### 2.4 Summary Statistics
+### Summary Statistics
 
 There are a lot of functions we learned for summary statistics, including:  
 
