@@ -35,10 +35,10 @@ website:
       contents:
       - href: instructions/importing-exporting.qmd
         text: "Lab Workflow"      
-      - href: 
-        text: "R Code Style Guide"
-      - href: 
-        text: "Common Errors"
+      # - href: 
+      #   text: "R Code Style Guide"
+      # - href: 
+      #   text: "Common Errors"
     - section: "Getting Started with R"
       contents:
       - href: prep-materials/rstudio-orientation.qmd
@@ -53,24 +53,24 @@ website:
         text: "Lab 1 Primer"
       - href: lab-2-primer/lab-2-eda-primer.qmd
         text: "Lab 2 Primer"
-      - href: lab-3-primer/lab-3-intro-inference-primer.qmd
-        text: "Lab 3 Primer"
-      - href: lab-4-primer/lab-4-confidence-primer.qmd
-        text: "Lab 4 Primer"
-      - href: lab-5-primer/lab-5-two-groups-primer.qmd
-        text: "Lab 5 Primer"
-      - href: lab-6-primer/lab-6-two-groups-primer.qmd
-        text: "Lab 6 Primer"
-      - href: lab-7-primer/lab-7-paired-groups-primer.qmd
-        text: "Lab 7 Primer"
-      - href: lab-8-primer/lab-8-anova-primer.qmd
-        text: "Lab 8 Primer"
-      - href: lab-9-primer/lab-9-eda-two-variable-primer.qmd
-        text: "Lab 9 Primer"        
-      - href: lab-10-primer/lab-10-regression-primer.qmd
-        text: "Lab 10 Primer"
-      - href: lab-11-primer/lab-11-categorical-primer.qmd
-        text: "Lab 11 Primer"
+      # - href: lab-3-primer/lab-3-intro-inference-primer.qmd
+      #   text: "Lab 3 Primer"
+      # - href: lab-4-primer/lab-4-confidence-primer.qmd
+      #   text: "Lab 4 Primer"
+      # - href: lab-5-primer/lab-5-two-groups-primer.qmd
+      #   text: "Lab 5 Primer"
+      # - href: lab-6-primer/lab-6-two-groups-primer.qmd
+      #   text: "Lab 6 Primer"
+      # - href: lab-7-primer/lab-7-paired-groups-primer.qmd
+      #   text: "Lab 7 Primer"
+      # - href: lab-8-primer/lab-8-anova-primer.qmd
+      #   text: "Lab 8 Primer"
+      # - href: lab-9-primer/lab-9-eda-two-variable-primer.qmd
+      #   text: "Lab 9 Primer"        
+      # - href: lab-10-primer/lab-10-regression-primer.qmd
+      #   text: "Lab 10 Primer"
+      # - href: lab-11-primer/lab-11-categorical-primer.qmd
+      #   text: "Lab 11 Primer"
 
        
 format:

@@ -64,7 +64,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../lab-10-primer/lab-10-regression-primer.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -150,7 +149,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab-1-primer/lab-1-intro-r-primer.html">Lab Primers</a></li><li class="breadcrumb-item"><a href="../lab-11-primer/lab-11-categorical-primer.html">Lab 11 Primer</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 11: Categorical Data Analysis</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -198,12 +197,6 @@ window.Quarto = {
  <span class="menu-text">Lab Workflow</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
- <span class="menu-text">R Code Style Guide</span>
-  </li>
-          <li class="sidebar-item">
- <span class="menu-text">Common Errors</span>
-  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -237,13 +230,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Lab Primers</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab-1-primer/lab-1-intro-r-primer.html" class="sidebar-item-text sidebar-link">
@@ -254,60 +247,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../lab-2-primer/lab-2-eda-primer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 2 Primer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lab-3-primer/lab-3-intro-inference-primer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab 3 Primer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lab-4-primer/lab-4-confidence-primer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab 4 Primer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lab-5-primer/lab-5-two-groups-primer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab 5 Primer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lab-6-primer/lab-6-two-groups-primer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab 6 Primer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lab-7-primer/lab-7-paired-groups-primer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab 7 Primer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lab-8-primer/lab-8-anova-primer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab 8 Primer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lab-9-primer/lab-9-eda-two-variable-primer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab 9 Primer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lab-10-primer/lab-10-regression-primer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab 10 Primer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../lab-11-primer/lab-11-categorical-primer.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lab 11 Primer</span></a>
   </div>
 </li>
       </ul>
@@ -339,7 +278,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab-1-primer/lab-1-intro-r-primer.html">Lab Primers</a></li><li class="breadcrumb-item"><a href="../lab-11-primer/lab-11-categorical-primer.html">Lab 11 Primer</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lab 11: Categorical Data Analysis</h1>
 </div>
@@ -725,53 +664,53 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.1.1" class="anchored" data-anchor-id="null-hypothesis"><span class="header-section-number">3.1.1</span> Null Hypothesis</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_92894" onsubmit="return validate_form_92894()" method="post">
+<form name="form_29311" onsubmit="return validate_form_29311()" method="post">
 <label>
-<input type="radio" name="answer_92894" id="answer_92894_1" value="π = 0">
+<input type="radio" name="answer_29311" id="answer_29311_1" value="π = 0">
 π = 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_92894" id="answer_92894_2" value="π > 0">
+<input type="radio" name="answer_29311" id="answer_29311_2" value="π > 0">
 π &gt; 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_92894" id="answer_92894_3" value="π < 0">
+<input type="radio" name="answer_29311" id="answer_29311_3" value="π < 0">
 π &lt; 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_92894" id="answer_92894_4" value="π ≠ 0">
+<input type="radio" name="answer_29311" id="answer_29311_4" value="π ≠ 0">
 π ≠ 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_92894" id="answer_92894_5" value="π = 0.237">
+<input type="radio" name="answer_29311" id="answer_29311_5" value="π = 0.237">
 π = 0.237
 </label>
 <br>
 <label>
-<input type="radio" name="answer_92894" id="answer_92894_6" value="π > 0.237">
+<input type="radio" name="answer_29311" id="answer_29311_6" value="π > 0.237">
 π &gt; 0.237
 </label>
 <br>
 <label>
-<input type="radio" name="answer_92894" id="answer_92894_7" value="π < 0.237">
+<input type="radio" name="answer_29311" id="answer_29311_7" value="π < 0.237">
 π &lt; 0.237
 </label>
 <br>
 <label>
-<input type="radio" name="answer_92894" id="answer_92894_8" value="π ≠ 0.237">
+<input type="radio" name="answer_29311" id="answer_29311_8" value="π ≠ 0.237">
 π ≠ 0.237
 </label>
 <br>
 <input type="submit" value="check">
-<div id="result_92894"></div>
+<div id="result_29311"></div>
 </form>
-<script>function validate_form_92894() {var x, text; var x = document.forms['form_92894']['answer_92894'].value;if (x == 'π = 0.237'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_92894').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_29311() {var x, text; var x = document.forms['form_29311']['answer_29311'].value;if (x == 'π = 0.237'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_29311').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_92894').innerText == 'Correct';text = res1;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_29311').innerText == 'Correct';text = res1;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -782,53 +721,53 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="3.1.2" class="anchored" data-anchor-id="alternative-hypothesis"><span class="header-section-number">3.1.2</span> Alternative Hypothesis</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_52994" onsubmit="return validate_form_52994()" method="post">
+<form name="form_53439" onsubmit="return validate_form_53439()" method="post">
 <label>
-<input type="radio" name="answer_52994" id="answer_52994_1" value="π = 0">
+<input type="radio" name="answer_53439" id="answer_53439_1" value="π = 0">
 π = 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_52994" id="answer_52994_2" value="π > 0">
+<input type="radio" name="answer_53439" id="answer_53439_2" value="π > 0">
 π &gt; 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_52994" id="answer_52994_3" value="π < 0">
+<input type="radio" name="answer_53439" id="answer_53439_3" value="π < 0">
 π &lt; 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_52994" id="answer_52994_4" value="π ≠ 0">
+<input type="radio" name="answer_53439" id="answer_53439_4" value="π ≠ 0">
 π ≠ 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_52994" id="answer_52994_5" value="π = 0.237">
+<input type="radio" name="answer_53439" id="answer_53439_5" value="π = 0.237">
 π = 0.237
 </label>
 <br>
 <label>
-<input type="radio" name="answer_52994" id="answer_52994_6" value="π > 0.237">
+<input type="radio" name="answer_53439" id="answer_53439_6" value="π > 0.237">
 π &gt; 0.237
 </label>
 <br>
 <label>
-<input type="radio" name="answer_52994" id="answer_52994_7" value="π < 0.237">
+<input type="radio" name="answer_53439" id="answer_53439_7" value="π < 0.237">
 π &lt; 0.237
 </label>
 <br>
 <label>
-<input type="radio" name="answer_52994" id="answer_52994_8" value="π ≠ 0.237">
+<input type="radio" name="answer_53439" id="answer_53439_8" value="π ≠ 0.237">
 π ≠ 0.237
 </label>
 <br>
 <input type="submit" value="check">
-<div id="result_52994"></div>
+<div id="result_53439"></div>
 </form>
-<script>function validate_form_52994() {var x, text; var x = document.forms['form_52994']['answer_52994'].value;if (x == 'π > 0.237'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_52994').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_53439() {var x, text; var x = document.forms['form_53439']['answer_53439'].value;if (x == 'π > 0.237'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_53439').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_92894').innerText == 'Correct'; res2 = document.getElementById('result_52994').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_29311').innerText == 'Correct'; res2 = document.getElementById('result_53439').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -878,11 +817,11 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <p>Reorder the values below to write out the verbal alternative hypothesis, using the same order for the expected proportions as listed in the symbolic null hypothesis. Place the population in the last position.</p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_21110" onsubmit="return validate_form_21110()" method="post">
+<form name="form_77726" onsubmit="return validate_form_77726()" method="post">
 <table data-quarto-disable-processing="true">
-<tbody id="task_21110">
+<tbody id="task_77726">
 <tr>
-<td id="answer_21110_7" style="padding:5px; border:1px solid #ccc;">0.09 for green eyes,</td>
+<td id="answer_77726_8" style="padding:5px; border:1px solid #ccc;">and 0.11 for hazel eyes</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -890,7 +829,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_21110_9" style="padding:5px; border:1px solid #ccc;">among statistics students at the University of Delaware in 1974</td>
+<td id="answer_77726_9" style="padding:5px; border:1px solid #ccc;">among statistics students at the University of Delaware in 1974</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -898,7 +837,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_21110_1" style="padding:5px; border:1px solid #ccc;">at least one of the</td>
+<td id="answer_77726_1" style="padding:5px; border:1px solid #ccc;">at least one of the</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -906,7 +845,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_21110_6" style="padding:5px; border:1px solid #ccc;">0.55 for brown eyes,</td>
+<td id="answer_77726_6" style="padding:5px; border:1px solid #ccc;">0.55 for brown eyes,</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -914,7 +853,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_21110_2" style="padding:5px; border:1px solid #ccc;">population proportions</td>
+<td id="answer_77726_4" style="padding:5px; border:1px solid #ccc;">is different than the expected values of</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -922,7 +861,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_21110_4" style="padding:5px; border:1px solid #ccc;">is different than the expected values of</td>
+<td id="answer_77726_5" style="padding:5px; border:1px solid #ccc;">0.25 for blue eyes,</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -930,7 +869,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_21110_5" style="padding:5px; border:1px solid #ccc;">0.25 for blue eyes,</td>
+<td id="answer_77726_7" style="padding:5px; border:1px solid #ccc;">0.09 for green eyes,</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -938,7 +877,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_21110_3" style="padding:5px; border:1px solid #ccc;">of eye color</td>
+<td id="answer_77726_3" style="padding:5px; border:1px solid #ccc;">of eye color</td>
 </tr>
 <tr>
 <td style="padding:5px">
@@ -946,16 +885,16 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 </td>
 </tr>
 <tr>
-<td id="answer_21110_8" style="padding:5px; border:1px solid #ccc;">and 0.11 for hazel eyes</td>
+<td id="answer_77726_2" style="padding:5px; border:1px solid #ccc;">population proportions</td>
 </tr>
 </tbody>
 </table>
 <input type="submit" value="check">
-<div id="result_21110"></div>
+<div id="result_77726"></div>
 </form>
-<script>function validate_form_21110() {var text;var ch = document.getElementById('task_21110').children; if(ch[0].children[0].id == 'answer_21110_1'&ch[2].children[0].id == 'answer_21110_2'&ch[4].children[0].id == 'answer_21110_3'&ch[6].children[0].id == 'answer_21110_4'&ch[8].children[0].id == 'answer_21110_5'&ch[10].children[0].id == 'answer_21110_6'&ch[12].children[0].id == 'answer_21110_7'&ch[14].children[0].id == 'answer_21110_8'&ch[16].children[0].id == 'answer_21110_9'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_21110').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
+<script>function validate_form_77726() {var text;var ch = document.getElementById('task_77726').children; if(ch[0].children[0].id == 'answer_77726_1'&ch[2].children[0].id == 'answer_77726_2'&ch[4].children[0].id == 'answer_77726_3'&ch[6].children[0].id == 'answer_77726_4'&ch[8].children[0].id == 'answer_77726_5'&ch[10].children[0].id == 'answer_77726_6'&ch[12].children[0].id == 'answer_77726_7'&ch[14].children[0].id == 'answer_77726_8'&ch[16].children[0].id == 'answer_77726_9'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_77726').innerHTML = text; evaluate_final_score(); return false;}function swapElementsV(element) {const parent = element.parentNode.parentNode; const afterNode = parent.nextElementSibling; const beforeNode = parent.previousElementSibling; parent.insertAdjacentElement('beforebegin', afterNode); parent.insertAdjacentElement('afterend', beforeNode);}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_92894').innerText == 'Correct'; res2 = document.getElementById('result_52994').innerText == 'Correct'; res3 = document.getElementById('result_21110').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_29311').innerText == 'Correct'; res2 = document.getElementById('result_53439').innerText == 'Correct'; res3 = document.getElementById('result_77726').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -992,38 +931,38 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h4 data-number="3.2.4" class="anchored" data-anchor-id="what-do-we-conclude-from-our-test"><span class="header-section-number">3.2.4</span> What do we conclude from our test?</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_43770" onsubmit="return validate_form_43770()" method="post">
+<form name="form_61834" onsubmit="return validate_form_61834()" method="post">
 <label>
-<input type="radio" name="answer_43770" id="answer_43770_1" value="no evidence against the null">
+<input type="radio" name="answer_61834" id="answer_61834_1" value="no evidence against the null">
 no evidence against the null
 </label>
 <br>
 <label>
-<input type="radio" name="answer_43770" id="answer_43770_2" value="some evidence against the null">
+<input type="radio" name="answer_61834" id="answer_61834_2" value="some evidence against the null">
 some evidence against the null
 </label>
 <br>
 <label>
-<input type="radio" name="answer_43770" id="answer_43770_3" value="moderate evidence against the null">
+<input type="radio" name="answer_61834" id="answer_61834_3" value="moderate evidence against the null">
 moderate evidence against the null
 </label>
 <br>
 <label>
-<input type="radio" name="answer_43770" id="answer_43770_4" value="strong evidence against the null">
+<input type="radio" name="answer_61834" id="answer_61834_4" value="strong evidence against the null">
 strong evidence against the null
 </label>
 <br>
 <label>
-<input type="radio" name="answer_43770" id="answer_43770_5" value="very strong evidence against the null">
+<input type="radio" name="answer_61834" id="answer_61834_5" value="very strong evidence against the null">
 very strong evidence against the null
 </label>
 <br>
 <input type="submit" value="check">
-<div id="result_43770"></div>
+<div id="result_61834"></div>
 </form>
-<script>function validate_form_43770() {var x, text; var x = document.forms['form_43770']['answer_43770'].value;if (x == 'very strong evidence against the null'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_43770').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_61834() {var x, text; var x = document.forms['form_61834']['answer_61834'].value;if (x == 'very strong evidence against the null'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_61834').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_92894').innerText == 'Correct'; res2 = document.getElementById('result_52994').innerText == 'Correct'; res3 = document.getElementById('result_21110').innerText == 'Correct'; res4 = document.getElementById('result_43770').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_29311').innerText == 'Correct'; res2 = document.getElementById('result_53439').innerText == 'Correct'; res3 = document.getElementById('result_77726').innerText == 'Correct'; res4 = document.getElementById('result_61834').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1036,33 +975,33 @@ very strong evidence against the null
 <p>Check all the conditions we meet in our scenario to determine if we can use the Chi-Square Distribution as a model for the null distribution and trust our calculated p-value.</p>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_60477" onsubmit="return validate_form_60477()" method="post">
+<form name="form_31749" onsubmit="return validate_form_31749()" method="post">
 <label>
-<input type="checkbox" id="answer_60477_1" value="The measurements are categorical">
+<input type="checkbox" id="answer_31749_1" value="The measurements are categorical">
 The measurements are categorical
 </label>
 <br>
 <label>
-<input type="checkbox" id="answer_60477_2" value="Categories are mutually exclusive">
+<input type="checkbox" id="answer_31749_2" value="Categories are mutually exclusive">
 Categories are mutually exclusive
 </label>
 <br>
 <label>
-<input type="checkbox" id="answer_60477_3" value="Observations are independent">
+<input type="checkbox" id="answer_31749_3" value="Observations are independent">
 Observations are independent
 </label>
 <br>
 <label>
-<input type="checkbox" id="answer_60477_4" value="No category has an expected frequency of less than 5">
+<input type="checkbox" id="answer_31749_4" value="No category has an expected frequency of less than 5">
 No category has an expected frequency of less than 5
 </label>
 <br>
 <input type="submit" value="check">
-<div id="result_60477"></div>
+<div id="result_31749"></div>
 </form>
-<script>function validate_form_60477() {var text; var x1 = document.getElementById('answer_60477_1'); var x2 = document.getElementById('answer_60477_2'); var x3 = document.getElementById('answer_60477_3'); var x4 = document.getElementById('answer_60477_4'); if (x1.checked == true&x2.checked == true&x3.checked == true&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_60477').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_31749() {var text; var x1 = document.getElementById('answer_31749_1'); var x2 = document.getElementById('answer_31749_2'); var x3 = document.getElementById('answer_31749_3'); var x4 = document.getElementById('answer_31749_4'); if (x1.checked == true&x2.checked == true&x3.checked == true&x4.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_31749').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_92894').innerText == 'Correct'; res2 = document.getElementById('result_52994').innerText == 'Correct'; res3 = document.getElementById('result_21110').innerText == 'Correct'; res4 = document.getElementById('result_43770').innerText == 'Correct'; res5 = document.getElementById('result_60477').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4, res5;res1 = document.getElementById('result_29311').innerText == 'Correct'; res2 = document.getElementById('result_53439').innerText == 'Correct'; res3 = document.getElementById('result_77726').innerText == 'Correct'; res4 = document.getElementById('result_61834').innerText == 'Correct'; res5 = document.getElementById('result_31749').innerText == 'Correct';text = res1 + res2 + res3 + res4 + res5;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -1502,15 +1441,6 @@ window._ojs.runtime.interpretFromScriptTags();
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../lab-10-primer/lab-10-regression-primer.html" class="pagination-link" aria-label="Lab 10 Primer">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 10 Primer</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

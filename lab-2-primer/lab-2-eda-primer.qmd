@@ -168,17 +168,7 @@ superscript^2^
 
 :::
 :::
-::: {.grid}
-::: {.g-col-6}
-````markdown
 
-# Header Size 1
-````
-:::
-::: {.g-col-6}
-# Header Size 1 {.unlisted .unnumbered}
-:::
-:::
 ::: {.grid}
 ::: {.g-col-6}
 ````markdown
