@@ -43,12 +43,39 @@ new_data <- read_csv("a_data_set.csv", show_col_types = FALSE)
 
 - Code is separated into meaningful code chunks, such as Data Reading/Cleaning, Descriptive Statistics, Graphics/Visualizations, and Analysis
 
+- Name your code chunks with appropriate labels using kebab-case. 
+
+```{r}
+#| echo: fenced
+#| label: read-study-data
+study <- read_csv("study.csv", show_col_types = FALSE) #stops some extra output
+```
+
+
+- Always load packages at the beginning of scripts or Quarto documents. In Quarto documents, set up the code chunk similar to the following example, labeling it as `setup`:
+
+```{r}
+#| echo: fenced
+#| label: setup
+library(tidyverse)
+library(mosaic)
+library(ggformula)
+```
+
 
 ## Naming
 
 - Variables, files, code chunks, and other objects are named appropriately and add to the scripts readability. 
 
-- Variable, file, and function names should use only lowercase letters, numbers, and _. Use underscores (_) (so called snake_case) to separate words within a name.
+- Variable and function names should use only lowercase letters, numbers, and \_. Use underscores (\_) (so called snake_case) to separate words within a name.
+
+- File names should use only lowercase letters, numbers and \-. Use dashes (\-) (so called kebab-case) to separate words within a name.  
+
+
+
+
+
+
 
 ## Comments
 

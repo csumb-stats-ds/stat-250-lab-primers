@@ -279,6 +279,12 @@ mean(~ wk1, data = study)
 ```
 
 
+::: {.callout-warning}
+If your data has missing values, or `NA`, you will need to add `na.rm = TRUE` as an argument in your code so that the `mean`, or other `goal` function calculates the correct values.  
+:::
+
+
+
 or the total number of hours studied across week 1:
 
 ```{webr}
