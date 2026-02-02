@@ -2,6 +2,7 @@
 title: "Lab 6: Hypothesis Testing - Two Independent Groups"
 format: 
   live-html:
+    html-math-method: mathml
     webr:
       packages: 
         - ggformula
@@ -18,6 +19,7 @@ execute:
   warning: false 
   message: false
   echo: true
+embed-resources: true
 code-copy: true
 code-overflow: wrap
 toc: true
@@ -27,7 +29,7 @@ css: ../styles.css
 ---
 
 {{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
-{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+{{< include ../_extensions/r-wasm/live/_gradethis.qmd >}}
 
 ```{webr}
 #| label: theme
@@ -60,7 +62,7 @@ options(ggplot2.continuous.color = scale_color_viridis_c,
 ```
 
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" aria-label="Collapsible content section"}
 ## Digital Accessibility
 
 Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
@@ -149,11 +151,11 @@ check_question(answer = "Independent Two Sample",
 ```{r}
 #| label: parameter-two
 #| echo: false
-check_question(answer = c("\u03BC\u2093\u2093 = true mean rating for female professor videos", 
-                           "\u03BC\u2093\u1D67 = true mean rating for male professor videos"), 
-               options = c("\u03BC\u2093\u2093 = true mean rating for female professor videos", 
-                           "\u03BC\u2093\u1D67 = true mean rating for male professor videos",
-                           "\u03BC\u2093\u2093\u208B\u2093\u1D67 = true mean of the differences of the ratings between male and female professor videos",
+check_question(answer = c("\u03BC<sub>f</sub> = true mean rating for female professor videos", 
+                           "\u03BC<sub>m</sub> = true mean rating for male professor videos"), 
+               options = c("\u03BC<sub>f</sub> =  true mean rating for female professor videos", 
+                           "\u03BC<sub>m</sub> = true mean rating for male professor videos",
+                           "\u03BC<sub>f-m</sub> = true mean of the differences of the ratings between male and female professor videos",
                            "x\u0304\u2093\u2093
  = mean rating for our sample of female professor videos",
                            "x\u0304\u2093\u1D67
@@ -211,21 +213,34 @@ Recall from the Lab 5 Primer, we calculated the following summary statistics and
 
 #### Summary Statistics
 ```{r}
-#| label: summary-stats-bias
-df_stats(Rating ~ Sex, data = bias) 
+#| label: summary-stats-bias-code
+#| eval: false
+df_stats(Rating ~ Sex, data = bias)
+```
+
+```{r}
+#| label: summary-stats-bias-output
+#| echo: false
+knitr::kable(df_stats(Rating ~ Sex, data = bias), 
+             row.names = TRUE, 
+             digits = 2,
+             format = "html")
 ```
 
 #### Data Visualization
 ```{r}
 #| label: boxplot-bias
+#| fig-alt: "Boxplot with the sex of the professor on the x-axis and professor rating on the y-axis. The ratings for male professors are shifter higher than for female professors."
 gf_boxplot(Rating ~ Sex, data = bias, 
         ylab = "Rating of Professor in Video (Scale 1-7)", 
         xlab = "Sex of the Professor in Video") 
+
 ```
 
 #### QQ Plot
 ```{r}
 #| label: qqplot-bias
+#| fig-alt: "Side-by-side QQplots that show if the ratings follow the 1:1 quantile line. The discrete nature of the data make the points appear in rows but generally follow the 1:1 quantile line for males, but not for females."
 gf_qq(~Rating | Sex, data = bias,
       xlab = "Theoretical Z-Scores",
       ylab = "Rating of Professor in Video") |> 
@@ -426,11 +441,11 @@ check_question(answer = "very strong evidence",
                type = "radio")
 ```
 
-:::{.callout-note collapse="true"}
+:::{.callout-note collapse="true" aria-label="Collapsible content section"}
 ## Full Evaluation of Strength of Evidence
 Remember we have specific details to include in a full evaluation of the strength of evidence.
 
-*We have {very strong/strong/moderate/some/little} evidence against  the null hypothesis (in favor of the alternative hypothesis) that {context of indicated hypothesis} (t = {xxx}, df = {xxx}, p-value = {xxx})*.  
+*We have {very strong/strong/moderate/some/little} evidence against  the null hypothesis (in favor of the alternative hypothesis) that {context of indicated hypothesis} (t = {xxx}, df = {xxx}, p-value = {xxx}, $\alpha$ = {xxx})*.  
 :::
 
 <br>
