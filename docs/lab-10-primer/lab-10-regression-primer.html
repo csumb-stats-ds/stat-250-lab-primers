@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,15 +68,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../lab-9-primer/lab-9-eda-two-variable-primer.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-142d9687c3f711bd3ef1b6bce998d27f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a00848ed57fe9097555b5bd7c001b509.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -123,7 +122,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -375,12 +374,12 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlY2hvIjpmYWxzZSwiZWRpdCI6ZmFsc2UsImV2YWwi
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Digital Accessibility
+Digital Accessibility
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -410,9 +409,9 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJMb2FkaW5nIFBhY2thZ2VzIiwiY29tcGxldGlvbiI6ZmFsc2UsImVk
 <code id="interpolate-5" class="solution-code d-none">library(ggformula) #for graphs
 library(mosaic) #for statistics
 library(tidyverse) #for data management</code>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-6-1"><a href="#interpolate-6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula) <span class="co">#for graphs</span></span>
+<div class="sourceCode cell-code" id="interpolate-6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-6-1"><a href="#interpolate-6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggformula) <span class="co">#for graphs</span></span>
 <span id="interpolate-6-2"><a href="#interpolate-6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mosaic) <span class="co">#for statistics</span></span>
-<span id="interpolate-6-3"><a href="#interpolate-6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#for data management</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="interpolate-6-3"><a href="#interpolate-6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#for data management</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -454,12 +453,12 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Hint: Creating a Linear Model
+Hint: Creating a Linear Model
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -476,43 +475,43 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="2.2.1" class="anchored" data-anchor-id="null-hypothesis"><span class="header-section-number">2.2.1</span> Null Hypothesis</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_72653" onsubmit="return validate_form_72653()" method="post">
+<form name="form_47329" onsubmit="return validate_form_47329()" method="post">
 <label>
-<input type="radio" name="answer_72653" id="answer_72653_1" value="β₀ = 0">
+<input type="radio" name="answer_47329" id="answer_47329_1" value="β₀ = 0">
 β₀ = 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_72653" id="answer_72653_2" value="β₁ = 0">
+<input type="radio" name="answer_47329" id="answer_47329_2" value="β₁ = 0">
 β₁ = 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_72653" id="answer_72653_3" value="β₁ = -1.19">
+<input type="radio" name="answer_47329" id="answer_47329_3" value="β₁ = -1.19">
 β₁ = -1.19
 </label>
 <br>
 <label>
-<input type="radio" name="answer_72653" id="answer_72653_4" value="β₁ > 0">
+<input type="radio" name="answer_47329" id="answer_47329_4" value="β₁ > 0">
 β₁ &gt; 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_72653" id="answer_72653_5" value="β₁ < 0">
+<input type="radio" name="answer_47329" id="answer_47329_5" value="β₁ < 0">
 β₁ &lt; 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_72653" id="answer_72653_6" value="β₁ ≠ 0">
+<input type="radio" name="answer_47329" id="answer_47329_6" value="β₁ ≠ 0">
 β₁ ≠ 0
 </label>
 <br>
 <input type="submit" value="check">
-<div id="result_72653"></div>
+<div id="result_47329"></div>
 </form>
-<script>function validate_form_72653() {var x, text; var x = document.forms['form_72653']['answer_72653'].value;if (x == 'β₁ = 0'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_72653').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_47329() {var x, text; var x = document.forms['form_47329']['answer_47329'].value;if (x == 'β₁ = 0'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_47329').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_72653').innerText == 'Correct';text = res1;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1;res1 = document.getElementById('result_47329').innerText == 'Correct';text = res1;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -522,43 +521,43 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJsYWJlbCI6
 <h4 data-number="2.2.2" class="anchored" data-anchor-id="alternative-hypothesis"><span class="header-section-number">2.2.2</span> Alternative Hypothesis</h4>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_89219" onsubmit="return validate_form_89219()" method="post">
+<form name="form_48643" onsubmit="return validate_form_48643()" method="post">
 <label>
-<input type="radio" name="answer_89219" id="answer_89219_1" value="β₀ = 0">
+<input type="radio" name="answer_48643" id="answer_48643_1" value="β₀ = 0">
 β₀ = 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_89219" id="answer_89219_2" value="β₁ = 0">
+<input type="radio" name="answer_48643" id="answer_48643_2" value="β₁ = 0">
 β₁ = 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_89219" id="answer_89219_3" value="β₁ = -1.19">
+<input type="radio" name="answer_48643" id="answer_48643_3" value="β₁ = -1.19">
 β₁ = -1.19
 </label>
 <br>
 <label>
-<input type="radio" name="answer_89219" id="answer_89219_4" value="β₁ > 0">
+<input type="radio" name="answer_48643" id="answer_48643_4" value="β₁ > 0">
 β₁ &gt; 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_89219" id="answer_89219_5" value="β₁ < 0">
+<input type="radio" name="answer_48643" id="answer_48643_5" value="β₁ < 0">
 β₁ &lt; 0
 </label>
 <br>
 <label>
-<input type="radio" name="answer_89219" id="answer_89219_6" value="β₁ ≠ 0">
+<input type="radio" name="answer_48643" id="answer_48643_6" value="β₁ ≠ 0">
 β₁ ≠ 0
 </label>
 <br>
 <input type="submit" value="check">
-<div id="result_89219"></div>
+<div id="result_48643"></div>
 </form>
-<script>function validate_form_89219() {var x, text; var x = document.forms['form_89219']['answer_89219'].value;if (x == 'β₁ < 0'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_89219').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_48643() {var x, text; var x = document.forms['form_48643']['answer_48643'].value;if (x == 'β₁ < 0'){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_48643').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_72653').innerText == 'Correct'; res2 = document.getElementById('result_89219').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2;res1 = document.getElementById('result_47329').innerText == 'Correct'; res2 = document.getElementById('result_48643').innerText == 'Correct';text = res1 + res2;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -589,9 +588,9 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <code id="interpolate-12" class="solution-code d-none">gf_point(muscle_mass ~ age, data = muscle,
            ylab = "Muscle Mass (kg)",
            xlab = "Age (in years) of Female Participants")</code>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-13-1"><a href="#interpolate-13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_point</span>(muscle_mass <span class="sc">~</span> age, <span class="at">data =</span> muscle,</span>
+<div class="sourceCode cell-code" id="interpolate-13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-13-1"><a href="#interpolate-13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_point</span>(muscle_mass <span class="sc">~</span> age, <span class="at">data =</span> muscle,</span>
 <span id="interpolate-13-2"><a href="#interpolate-13-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"Muscle Mass (kg)"</span>,</span>
-<span id="interpolate-13-3"><a href="#interpolate-13-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Age (in years) of Female Participants"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="interpolate-13-3"><a href="#interpolate-13-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Age (in years) of Female Participants"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -617,7 +616,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_2" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2">
 <code id="interpolate-17" class="solution-code d-none">plot(mm_age, 2)</code>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-18-1"><a href="#interpolate-18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mm_age, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="interpolate-18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-18-1"><a href="#interpolate-18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mm_age, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -643,7 +642,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_3" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_3">
 <code id="interpolate-22" class="solution-code d-none">plot(mm_age, 1, add.smooth = TRUE)</code>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-23-1"><a href="#interpolate-23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mm_age, <span class="dv">1</span>, <span class="at">add.smooth =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="interpolate-23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-23-1"><a href="#interpolate-23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mm_age, <span class="dv">1</span>, <span class="at">add.smooth =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -669,7 +668,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_4" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_4">
 <code id="interpolate-27" class="solution-code d-none">plot(mm_age, 5, add.smooth = TRUE)</code>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-28-1"><a href="#interpolate-28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mm_age, <span class="dv">5</span>, <span class="at">add.smooth =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="interpolate-28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-28-1"><a href="#interpolate-28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mm_age, <span class="dv">5</span>, <span class="at">add.smooth =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -684,38 +683,38 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h3 data-number="2.4" class="anchored" data-anchor-id="which-of-the-conditions-appear-to-be-reasonably-met"><span class="header-section-number">2.4</span> Which of the conditions appear to be reasonably met?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_79069" onsubmit="return validate_form_79069()" method="post">
+<form name="form_15028" onsubmit="return validate_form_15028()" method="post">
 <label>
-<input type="checkbox" id="answer_79069_1" value="Linearity">
+<input type="checkbox" id="answer_15028_1" value="Linearity">
 Linearity
 </label>
 <br>
 <label>
-<input type="checkbox" id="answer_79069_2" value="Normality of residuals">
+<input type="checkbox" id="answer_15028_2" value="Normality of residuals">
 Normality of residuals
 </label>
 <br>
 <label>
-<input type="checkbox" id="answer_79069_3" value="Equal variance of residuals">
+<input type="checkbox" id="answer_15028_3" value="Equal variance of residuals">
 Equal variance of residuals
 </label>
 <br>
 <label>
-<input type="checkbox" id="answer_79069_4" value="Independence of Residuals">
+<input type="checkbox" id="answer_15028_4" value="Independence of Residuals">
 Independence of Residuals
 </label>
 <br>
 <label>
-<input type="checkbox" id="answer_79069_5" value="No influential points">
+<input type="checkbox" id="answer_15028_5" value="No influential points">
 No influential points
 </label>
 <br>
 <input type="submit" value="check">
-<div id="result_79069"></div>
+<div id="result_15028"></div>
 </form>
-<script>function validate_form_79069() {var text; var x1 = document.getElementById('answer_79069_1'); var x2 = document.getElementById('answer_79069_2'); var x3 = document.getElementById('answer_79069_3'); var x4 = document.getElementById('answer_79069_4'); var x5 = document.getElementById('answer_79069_5'); if (x1.checked == true&x2.checked == true&x3.checked == true&x4.checked == true&x5.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_79069').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_15028() {var text; var x1 = document.getElementById('answer_15028_1'); var x2 = document.getElementById('answer_15028_2'); var x3 = document.getElementById('answer_15028_3'); var x4 = document.getElementById('answer_15028_4'); var x5 = document.getElementById('answer_15028_5'); if (x1.checked == true&x2.checked == true&x3.checked == true&x4.checked == true&x5.checked == true){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_15028').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_72653').innerText == 'Correct'; res2 = document.getElementById('result_89219').innerText == 'Correct'; res3 = document.getElementById('result_79069').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3;res1 = document.getElementById('result_47329').innerText == 'Correct'; res2 = document.getElementById('result_48643').innerText == 'Correct'; res3 = document.getElementById('result_15028').innerText == 'Correct';text = res1 + res2 + res3;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -741,7 +740,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_5" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_5">
 <code id="interpolate-32" class="solution-code d-none">summary(mm_age)</code>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-33-1"><a href="#interpolate-33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mm_age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="interpolate-33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-33-1"><a href="#interpolate-33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mm_age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -768,7 +767,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lz
 <div class="cell" data-exercise="ex_6" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_6">
 <code id="interpolate-37" class="solution-code d-none">confint(mm_age, parm = 2, level = 0.95)</code>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-38-1"><a href="#interpolate-38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(mm_age, <span class="at">parm =</span> <span class="dv">2</span>, <span class="at">level =</span> <span class="fl">0.95</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="interpolate-38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-38-1"><a href="#interpolate-38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(mm_age, <span class="at">parm =</span> <span class="dv">2</span>, <span class="at">level =</span> <span class="fl">0.95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -785,43 +784,43 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJjb21wbGV0aW9uIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6
 <h3 data-number="2.7" class="anchored" data-anchor-id="which-of-the-following-statements-are-true"><span class="header-section-number">2.7</span> Which of the following statements are true?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<form name="form_19121" onsubmit="return validate_form_19121()" method="post">
+<form name="form_55110" onsubmit="return validate_form_55110()" method="post">
 <label>
-<input type="checkbox" id="answer_19121_1" value="The individuals were sampled randomly, so it implies an observational study">
+<input type="checkbox" id="answer_55110_1" value="The individuals were sampled randomly, so it implies an observational study">
 The individuals were sampled randomly, so it implies an observational study
 </label>
 <br>
 <label>
-<input type="checkbox" id="answer_19121_2" value="The individuals were not randomly assigned to their value of the explanatory variable, so this is not an experiment but an observational study instead, so we can't determine causality">
+<input type="checkbox" id="answer_55110_2" value="The individuals were not randomly assigned to their value of the explanatory variable, so this is not an experiment but an observational study instead, so we can't determine causality">
 The individuals were not randomly assigned to their value of the explanatory variable, so this is not an experiment but an observational study instead, so we can't determine causality
 </label>
 <br>
 <label>
-<input type="checkbox" id="answer_19121_3" value="The individuals were randomly assigned to the explanatory variable, so this is an experiment, so we can say any changes we observed is due to the explanatory variable">
+<input type="checkbox" id="answer_55110_3" value="The individuals were randomly assigned to the explanatory variable, so this is an experiment, so we can say any changes we observed is due to the explanatory variable">
 The individuals were randomly assigned to the explanatory variable, so this is an experiment, so we can say any changes we observed is due to the explanatory variable
 </label>
 <br>
 <label>
-<input type="checkbox" id="answer_19121_4" value="The individuals were randomly assigned to the explanatory variable, so this is an experiment, but we can only determine an association, not causality">
+<input type="checkbox" id="answer_55110_4" value="The individuals were randomly assigned to the explanatory variable, so this is an experiment, but we can only determine an association, not causality">
 The individuals were randomly assigned to the explanatory variable, so this is an experiment, but we can only determine an association, not causality
 </label>
 <br>
 <label>
-<input type="checkbox" id="answer_19121_5" value="The individuals were randomly assigned to their value of the explanatory variable, but we cannot generalize to all individuals in the population since there was not also a random selection">
+<input type="checkbox" id="answer_55110_5" value="The individuals were randomly assigned to their value of the explanatory variable, but we cannot generalize to all individuals in the population since there was not also a random selection">
 The individuals were randomly assigned to their value of the explanatory variable, but we cannot generalize to all individuals in the population since there was not also a random selection
 </label>
 <br>
 <label>
-<input type="checkbox" id="answer_19121_6" value="The individuals were randomly selected, so we can generalize to the population.">
+<input type="checkbox" id="answer_55110_6" value="The individuals were randomly selected, so we can generalize to the population.">
 The individuals were randomly selected, so we can generalize to the population.
 </label>
 <br>
 <input type="submit" value="check">
-<div id="result_19121"></div>
+<div id="result_55110"></div>
 </form>
-<script>function validate_form_19121() {var text; var x1 = document.getElementById('answer_19121_1'); var x2 = document.getElementById('answer_19121_2'); var x3 = document.getElementById('answer_19121_3'); var x4 = document.getElementById('answer_19121_4'); var x5 = document.getElementById('answer_19121_5'); var x6 = document.getElementById('answer_19121_6'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == false&x5.checked == false&x6.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_19121').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
+<script>function validate_form_55110() {var text; var x1 = document.getElementById('answer_55110_1'); var x2 = document.getElementById('answer_55110_2'); var x3 = document.getElementById('answer_55110_3'); var x4 = document.getElementById('answer_55110_4'); var x5 = document.getElementById('answer_55110_5'); var x6 = document.getElementById('answer_55110_6'); if (x1.checked == false&x2.checked == true&x3.checked == false&x4.checked == false&x5.checked == false&x6.checked == false){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_55110').innerHTML = text; evaluate_final_score(); return false;}function evaluate_final_score(){
          element = document.getElementById('checkdown_final_score');
-         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_72653').innerText == 'Correct'; res2 = document.getElementById('result_89219').innerText == 'Correct'; res3 = document.getElementById('result_79069').innerText == 'Correct'; res4 = document.getElementById('result_19121').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
+         if(element === null){return false;} else {var element, text, res1, res2, res3, res4;res1 = document.getElementById('result_47329').innerText == 'Correct'; res2 = document.getElementById('result_48643').innerText == 'Correct'; res3 = document.getElementById('result_15028').innerText == 'Correct'; res4 = document.getElementById('result_55110').innerText == 'Correct';text = res1 + res2 + res3 + res4;element.innerHTML = text;
          return false;
          }}</script>
 </div>
@@ -911,14 +910,13 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

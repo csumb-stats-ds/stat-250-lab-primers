@@ -2,6 +2,7 @@
 title: "Lab 4: Estimation of a Population Mean Primer"
 format: 
   live-html:
+    html-math-method: mathml
     webr:
       packages: 
         - ggformula
@@ -52,7 +53,7 @@ library(tidyverse)
 ```
 
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" aria-label="Collapsible content section"}
 ## Digital Accessibility
 
 Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
@@ -113,7 +114,7 @@ Modify the function below to read in the dataset we will use in the example and 
 bee <- ________("honey-bee-colonies-2020.csv")
 ```
 
-::: {.callout-tip collapse="true"}
+::: {.callout-tip collapse="true" aria-label="Collapsible content section"}
 
 ## Hint for Importing Data
 
@@ -211,7 +212,7 @@ checkdown::check_hint(hint_text = "Once you have identified the variable, is it 
            hint_title = "Click Here for Hint about Variable Type",
            type = "onclick")
 ```
-
+<br>
 
 
 #### Which of the following is the case in this dataset?
@@ -436,6 +437,7 @@ Adjust the arguments in the code chunk below until your graphic looks like this:
 ```{r}
 #| label: histogram-example
 #| echo: false
+#| fig-alt: "Histogram of Number of Colonies (in thousands) in weeks since 2000."
 gf_histogram(~Colonies, data = bee_display,
              xlab = "Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 ", 
              ylab = "Frequency",
@@ -611,7 +613,7 @@ checkdown::check_hint(hint_text = "The skew is slight, but it is there, especial
            type = "onclick")
 ```
 
-
+<br>
 
 #### Based on the shape, the mean should be _______ the median.  
 <!--- answer set for if consider symmetric; edit if think not --->
@@ -629,7 +631,7 @@ checkdown::check_question(options = c("greater than",
                button_label = "Check Your Answer")
 ```
 
-
+<br>
 
 ### Single Numeric Variable Summary Statistics
 
@@ -695,7 +697,7 @@ checkdown::check_hint(hint_text = "What percent of cases would you expect betwee
            hint_title = "Click Here for Hint 2",
            type = "onclick")
 ```
-
+<br>
 
 #### What is the name for the distance between 2504 and 2672.75 thousand colonies on the boxplot? 
 
@@ -720,7 +722,7 @@ checkdown::check_hint(hint_text = "What statisitcs do those values correspond to
            type = "onclick")
 ```
 
-
+<br>
 
 #### There are more cases that have values between 2301 and 2504 thousand colonies than cases that have values between 2672.75 and 2812 thousand colonies. 
 
@@ -743,7 +745,7 @@ checkdown::check_hint(hint_text = "What statisitcs do those values correspond to
            type = "onclick")
 ```
 
-
+<br>
 
 #### The cases that have values between 2301 and 2504 thousand colonies are more dispersed then the cases that have values between 2672.75 and 2812 thousand colonies. 
 
@@ -766,7 +768,7 @@ checkdown::check_hint(hint_text = "Try looking at the boxplot and identifying th
            type = "onclick")
 ```
 
-
+<br>
 
 #### We could have determined the modality of the distribution without making a histogram (i.e. with just statistics or the boxplot). 
 
@@ -788,6 +790,8 @@ checkdown::check_hint(hint_text = "Review what modality measures. Can you see fr
            hint_title = "Click Here for Hint",
            type = "onclick")
 ```
+
+<br>
 
 
 ### Calculating a single numeric confidence interval using `qt()`
@@ -873,7 +877,7 @@ We can do the same calculation with saved objects, letting us be careful to (1) 
 
 
 ```{webr}
-#| lablabel: saved-values
+#| label: saved-values
 xbar <- mean(~Colonies, data = bee_display)
 s <- sd(~Colonies, data = bee_display)
 n <- length(bee_display$Colonies)
