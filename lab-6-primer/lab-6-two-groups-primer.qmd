@@ -151,11 +151,11 @@ check_question(answer = "Independent Two Sample",
 ```{r}
 #| label: parameter-two
 #| echo: false
-check_question(answer = c("\u03BC<sub>f</sub> = true mean rating for female professor videos", 
-                           "\u03BC<sub>m</sub> = true mean rating for male professor videos"), 
-               options = c("\u03BC<sub>f</sub> =  true mean rating for female professor videos", 
-                           "\u03BC<sub>m</sub> = true mean rating for male professor videos",
-                           "\u03BC<sub>f-m</sub> = true mean of the differences of the ratings between male and female professor videos",
+check_question(answer = c("\u03BC\u2093\u2093> = true mean rating for female professor videos", 
+                           "\u03BC\u2093\u1D67 = true mean rating for male professor videos"), 
+               options = c("\u03BC\u2093\u2093 =  true mean rating for female professor videos", 
+                           "\u03BC\u2093\u1D67 = true mean rating for male professor videos",
+                           "\u03BC\u2093\u2093\u208B\u2093\u1D67 = true mean of the differences of the ratings between male and female professor videos",
                            "x\u0304\u2093\u2093
  = mean rating for our sample of female professor videos",
                            "x\u0304\u2093\u1D67
