@@ -226,6 +226,7 @@ df_stats(~(FatherAge - MotherAge), data = parents)
 #### Data Visualization
 ```{r}
 #| label: boxplot-age
+#| fig-alt: "Horizontal boxplot of the difference in ages (Father minus Mother) for a sample of 50 births in 2022. The distribution is slightly right-skewed with a median around 2-3 years, indicating fathers tend to be older than mothers."
 gf_boxplot(~(FatherAge - MotherAge), data = parents,
            xlab = "Difference in Ages Between Fathers and Mothers") |> 
   gf_theme(axis.ticks.y = element_blank(),  #removes y-axis ticks
@@ -235,6 +236,7 @@ gf_boxplot(~(FatherAge - MotherAge), data = parents,
 #### QQ Plot
 ```{r}
 #| label: qqplot-bias
+#| fig-alt: "QQ plot of the differences in ages between fathers and mothers at birth. Points generally follow the 1:1 quantile line with some deviation in the upper tail, suggesting approximate normality with a slight right skew."
 gf_qq(~(FatherAge - MotherAge), data = parents,
       ylab = "Difference in Ages Between Fathers and Mothers",
       xlab = "Theoretical Z-Scores") |> 
