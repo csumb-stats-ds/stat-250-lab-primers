@@ -78,6 +78,8 @@ website:
        
 format:
   html:
+    lang: en
+    html-math-method: mathml
     axe: true
     theme: "minty"
     mainfont: "sans-serif"

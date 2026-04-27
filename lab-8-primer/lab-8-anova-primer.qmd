@@ -58,7 +58,7 @@ options(ggplot2.continuous.color = scale_color_viridis_c,
 ```
 
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" aria-label="Digital accessibility note"}
 ## Digital Accessibility
 
 Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
@@ -252,7 +252,7 @@ check_question(answer = c("All true means are equal",
 brain_aov <- aov(________ ~ factor(________), data = ________)
 ```
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" aria-label="Solution: ANOVA model code"}
 ## Solution
 ```{r}
 #| label: aov-solution
@@ -470,7 +470,7 @@ check_question("",
 
 
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" aria-label="Note on ANOVA and post-hoc test disagreement"}
 ## When Post-Hoc and ANOVA Tests "Disagree"
 You might be wondering why we found evidence against the null for the ANOVA, but only "some" evidence against the null for one pairwise comparison from the Tukey Test. There are several possible reasons this could happen.  
 

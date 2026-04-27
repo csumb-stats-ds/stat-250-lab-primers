@@ -59,7 +59,7 @@ options(ggplot2.continuous.color = scale_color_viridis_c,
 ```
 
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" aria-label="Digital accessibility note"}
 ## Digital Accessibility
 
 Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
@@ -128,7 +128,7 @@ names(parents)
 
 ### Identify the Parameters
 
-##### Identify the *study design* of this study. 
+#### Identify the *study design* of this study. 
 Be sure you are able to provide a full justification. This is review from the Lab 5 Primer.
 ```{r}
 #| label: type-sample
@@ -142,7 +142,7 @@ check_question(answer = "Matched Pair Sample",
 
 
 
-##### Identify the correct parameter type for this study. Be sure you are able to complete the full parameter in context.  
+#### Identify the correct parameter type for this study. Be sure you are able to complete the full parameter in context.  
 
 ```{r}
 #| label: type-parameter
@@ -155,7 +155,7 @@ check_question(answer = "True mean difference",
 <br>
 
 
-##### Identify the parameter(s) that would be of interest based on the study design.  
+#### Identify the parameter(s) that would be of interest based on the study design.  
 
 ```{r}
 #| label: parameter-paired
@@ -175,7 +175,7 @@ check_question(answer = c("\u03BC\u2093\u1D67\u208B\u2093\u2093 = true mean of t
 
 
 
-##### Identify the null hypothesis that would be of interest based on the study design.  
+#### Identify the null hypothesis that would be of interest based on the study design.  
 The researchers want to determine if the fathers' ages are greater than the mothers' ages at birth.  
 ```{r}
 #| label: hyp-null
@@ -194,7 +194,7 @@ check_question(answer = "\u03BC\u2093\u1D67\u208B\u2093\u2093 = 0",
 <br>
 
 
-##### Identify the alternative hypothesis that would be of interest based on the study design.  
+#### Identify the alternative hypothesis that would be of interest based on the study design.  
 The researchers want to determine if the fathers' ages are greater than the mothers' ages at birth.
 ```{r}
 #| label: hyp-alt
@@ -226,6 +226,7 @@ df_stats(~(FatherAge - MotherAge), data = parents)
 #### Data Visualization
 ```{r}
 #| label: boxplot-age
+#| fig-cap: "Distribution of age differences (father minus mother) among 50 birth records from 2022."
 #| fig-alt: "Horizontal boxplot of the difference in ages (Father minus Mother) for a sample of 50 births in 2022. The distribution is slightly right-skewed with a median around 2-3 years, indicating fathers tend to be older than mothers."
 gf_boxplot(~(FatherAge - MotherAge), data = parents,
            xlab = "Difference in Ages Between Fathers and Mothers") |> 
@@ -236,6 +237,7 @@ gf_boxplot(~(FatherAge - MotherAge), data = parents,
 #### QQ Plot
 ```{r}
 #| label: qqplot-bias
+#| fig-cap: "QQ plot of father-minus-mother age differences, used to assess normality."
 #| fig-alt: "QQ plot of the differences in ages between fathers and mothers at birth. Points generally follow the 1:1 quantile line with some deviation in the upper tail, suggesting approximate normality with a slight right skew."
 gf_qq(~(FatherAge - MotherAge), data = parents,
       ylab = "Difference in Ages Between Fathers and Mothers",
@@ -267,7 +269,7 @@ check_question(answer = "Yes, because our sample size is greater than 30",
 We will practice code for both a "by-hand" calculation and using `t.test()` (which is what we will be using from in general).  
 
 
-##### Calculate the summary statistics for each sample. Modify the code below to calculate the summary statistics for each group. 
+#### Calculate the summary statistics for each sample. Modify the code below to calculate the summary statistics for each group. 
 
 
 ```{webr}
@@ -439,7 +441,7 @@ gradethis::grade_this_code()
 ### Interpreting and Evaluating the p-Value
 Using the calculate p-value from the `t.test()` function to answer the following questions. (Use the original ordering of Father's Age - Mother's Age). 
 
-##### Which of the following are correct interpretations of a p-value?
+#### Which of the following are correct interpretations of a p-value?
 ```{r}
 #| label: p-value-interp
 #| echo: false
@@ -457,7 +459,7 @@ check_question(c("The probability of observing our test statistic or greater, as
 
  
 
-##### Evaluate the strength of evidence against the null hypothesis, using a significance level of $\alpha = 0.05$
+#### Evaluate the strength of evidence against the null hypothesis, using a significance level of $\alpha = 0.05$
 ```{r}
 #| label: evaluate-p-value
 #| echo: false
@@ -471,7 +473,7 @@ check_question(answer = "very strong evidence",
                type = "radio")
 ```
 
-:::{.callout-note collapse="true"}
+:::{.callout-note collapse="true" aria-label="Full evaluation of strength of evidence template"}
 ## Full Evaluation of Strength of Evidence
 Remember we have specific details to include in a full evaluation of the strength of evidence.
 
@@ -482,7 +484,7 @@ Remember we have specific details to include in a full evaluation of the strengt
   
   
 
-##### Which of the following statements are true based on the p-value?
+#### Which of the following statements are true based on the p-value?
 ```{r}
 #| label: p-value-meaning
 #| echo: false
@@ -497,7 +499,7 @@ check_question(answer = c("our data/test statistic is very unlikely to be observ
 <br>
 
 
-##### Which of the following are possible, given the results of the hypothesis test?
+#### Which of the following are possible, given the results of the hypothesis test?
 ```{r}
 #| label: error-types
 #| echo: false
@@ -511,7 +513,7 @@ check_question(answer = c("Our result is a Type I Error",
 <br>
 
 
-##### Which is the best definintion of *Power* in the context of the study?
+#### Which is the best definintion of *Power* in the context of the study?
 ```{r}
 #| label: power
 #| echo: false
@@ -600,7 +602,7 @@ gradethis::grade_this_code()
 ```
 <br>
 
-##### Provide an interpretation of the confidence interval by reordering the phrases below.
+#### Provide an interpretation of the confidence interval by reordering the phrases below.
 ```{r}
 #| label: ci-interpretation
 #| echo: false
@@ -618,7 +620,7 @@ check_question(c("Based on the sample",
 ```
 <br>
 
-##### Which of the following would be plausible estimates for the true mean of the differences between fathers' and mothers' ages?
+#### Which of the following would be plausible estimates for the true mean of the differences between fathers' and mothers' ages?
 ```{r}
 #| label: ci-plausible
 #| echo: false
@@ -628,7 +630,7 @@ check_question(answer = c("0.5", "1", "1.5", "2"),
 ```
 <br>
 
-##### What can we conclude about the study?  
+#### What can we conclude about the study?  
 ```{r}
 #| label: conclusions
 #| echo: false
@@ -647,7 +649,7 @@ check_question(answer = c("there is evidence that fathers tend to be older than 
 <br>
 
 
-##### Indentify the population to which you can generalize.  
+#### Indentify the population to which you can generalize.  
 ```{r}
 #| label: generalize
 #| echo: false

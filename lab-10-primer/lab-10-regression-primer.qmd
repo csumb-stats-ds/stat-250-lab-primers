@@ -58,7 +58,7 @@ options(ggplot2.continuous.color = scale_color_viridis_c,
 ```
 
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" aria-label="Digital accessibility note"}
 ## Digital Accessibility
 
 Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
@@ -137,7 +137,7 @@ mm_age <- _____(________ ~ ________, data = ________)
 ```
 
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" aria-label="Hint: creating a linear model with lm()"}
 ## Hint: Creating a Linear Model
 
 Use the `lm()` function to create the model.  

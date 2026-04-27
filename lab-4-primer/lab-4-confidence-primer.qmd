@@ -53,7 +53,7 @@ library(tidyverse)
 ```
 
 
-::: {.callout-note collapse="true" aria-label="Collapsible content section"}
+::: {.callout-note collapse="true" aria-label="Digital accessibility note"}
 ## Digital Accessibility
 
 Please note that all images were created with modifications to the defaults to make them digitally accessible. If you recreate this code in another environment, your plots have different colors and backgrounds.
@@ -114,7 +114,7 @@ Modify the function below to read in the dataset we will use in the example and 
 bee <- ________("honey-bee-colonies-2020.csv")
 ```
 
-::: {.callout-tip collapse="true" aria-label="Collapsible content section"}
+::: {.callout-tip collapse="true" aria-label="Hint for importing data with read_csv"}
 
 ## Hint for Importing Data
 
@@ -437,6 +437,7 @@ Adjust the arguments in the code chunk below until your graphic looks like this:
 ```{r}
 #| label: histogram-example
 #| echo: false
+#| fig-cap: "Distribution of U.S. honeybee colony counts in thousands, by week since 2000."
 #| fig-alt: "Histogram of Number of Colonies (in thousands) in weeks since 2000."
 gf_histogram(~Colonies, data = bee_display,
              xlab = "Number of U.S. Honeybee Colonies (in thousands) in weeks since 2000 ", 
